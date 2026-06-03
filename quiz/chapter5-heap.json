@@ -1,0 +1,522 @@
+[
+  {
+    "id": 1,
+    "question": "What is another common computational name for the Heap data structure?",
+    "options": [
+      "Stack",
+      "Queue",
+      "Priority Queue",
+      "Binary Search Tree"
+    ],
+    "answer": 2,
+    "explanation": "Hàng đợi ưu tiên (Priority queue) là cấu trúc dữ liệu luôn cho phép truy xuất và loại bỏ phần tử có độ ưu tiên cao nhất trước. Heap là cách cài đặt hoàn hảo và phổ biến nhất cho cấu trúc này vì nó luôn duy trì phần tử lớn nhất hoặc nhỏ nhất ở ngay vị trí node gốc.",
+    "category": "Chapter 5: Heap"
+  },
+  {
+    "id": 2,
+    "question": "What specific type of tree is fundamentally required to form a standard Heap?",
+    "options": [
+      "A Skewed Binary Tree",
+      "A Complete Binary Tree",
+      "A Full Binary Tree",
+      "A Binary Search Tree"
+    ],
+    "answer": 1,
+    "explanation": "Để được gọi là một Heap chuẩn, cấu trúc cây bắt buộc phải là Cây nhị phân hoàn chỉnh (Complete Binary Tree). Điều này có nghĩa là các tầng của cây phải được lấp đầy tuần tự từ trên xuống dưới và từ trái qua phải, không được có khoảng trống ở giữa.",
+    "category": "Chapter 5: Heap"
+  },
+  {
+    "id": 3,
+    "question": "What structural condition perfectly defines a 'max tree'?",
+    "options": [
+      "The key value in each node is exactly equal to its children",
+      "The key value in each node is no smaller than the key values in its children",
+      "The key value in each node is strictly smaller than its children",
+      "The left child must be smaller than the right child"
+    ],
+    "answer": 1,
+    "explanation": "Theo định nghĩa, cây lớn nhất (Max tree) là một cây mà trong đó giá trị khóa của mỗi node cha không bao giờ được nhỏ hơn giá trị khóa của các node con trực tiếp của nó. Tuy nhiên, nó chưa quy định hình dáng cây phải hoàn chỉnh.",
+    "category": "Chapter 5: Heap"
+  },
+  {
+    "id": 4,
+    "question": "What clearly differentiates a 'max heap' from a general 'max tree'?",
+    "options": [
+      "A max heap must strictly be a complete binary tree",
+      "A max heap can have any number of children per node",
+      "A max tree uses pointers while a max heap does not",
+      "A max heap sorts elements from left to right"
+    ],
+    "answer": 0,
+    "explanation": "Sự khác biệt cốt lõi là hình dáng. Một Max tree chỉ yêu cầu cha lớn hơn con, nó có thể méo mó hoặc thiếu hụt. Nhưng khi nâng cấp lên thành Max Heap, nó bị ép buộc thêm một điều kiện khắt khe: phải là Cây nhị phân hoàn chỉnh.",
+    "category": "Chapter 5: Heap"
+  },
+  {
+    "id": 5,
+    "question": "In a 1-based array representation of a heap, where is the parent of a node located at index 'i'?",
+    "options": [
+      "i * 2",
+      "i / 2",
+      "i + 1",
+      "i - 1"
+    ],
+    "answer": 1,
+    "explanation": "Nhờ tính chất lấp đầy liên tục của cây nhị phân hoàn chỉnh trong mảng bắt đầu từ vị trí 1, toán học chỉ ra rằng chỉ mục của node cha luôn bằng chỉ mục của node con chia nguyên cho 2 (i/2).",
+    "category": "Chapter 5: Heap"
+  },
+  {
+    "id": 6,
+    "question": "In a 1-based array representation of a heap, where is the strictly left child of a node located at index 'i'?",
+    "options": [
+      "i / 2",
+      "2 * i",
+      "2 * i + 1",
+      "i + 2"
+    ],
+    "answer": 1,
+    "explanation": "Khi gốc của cây nằm ở chỉ số 1, toàn bộ các node con bên trái của một node ở vị trí i bất kỳ sẽ luôn tự động rớt vào vị trí nhân đôi của nó, tức là 2*i.",
+    "category": "Chapter 5: Heap"
+  },
+  {
+    "id": 7,
+    "question": "In a 1-based array representation of a heap, where is the right child of a node located at index 'i'?",
+    "options": [
+      "2 * i",
+      "2 * i + 1",
+      "i / 2",
+      "i * 2 - 1"
+    ],
+    "answer": 1,
+    "explanation": "Tương tự như con trái ở vị trí 2*i, con phải sẽ nằm ngay ô nhớ liền kề kế tiếp trong mảng, do đó công thức chính xác là 2*i + 1.",
+    "category": "Chapter 5: Heap"
+  },
+  {
+    "id": 8,
+    "question": "In a 0-based array representation of a heap (where the root is at index 0), where is the left child of a node located at index 'i'?",
+    "options": [
+      "2 * i",
+      "2 * i + 1",
+      "2 * i + 2",
+      "i / 2"
+    ],
+    "answer": 1,
+    "explanation": "Khi ta dời gốc từ vị trí 1 lùi về vị trí 0, toàn bộ công thức bị dịch chuyển. Con trái của node i lúc này không còn là 2*i nữa, mà bị đẩy lên một nấc thành 2*i + 1.",
+    "category": "Chapter 5: Heap"
+  },
+  {
+    "id": 9,
+    "question": "In a 0-based array representation of a heap, where is the right child of a node located at index 'i'?",
+    "options": [
+      "2 * i",
+      "2 * i + 1",
+      "2 * i + 2",
+      "i / 2"
+    ],
+    "answer": 2,
+    "explanation": "Với gốc nằm tại chỉ mục 0, con phải nằm ngay sau con trái (2*i + 1). Cộng thêm 1 đơn vị, ta có công thức định vị con phải là 2*i + 2.",
+    "category": "Chapter 5: Heap"
+  },
+  {
+    "id": 10,
+    "question": "Where is the absolute maximum value structurally located in a valid max heap?",
+    "options": [
+      "At the very end of the array",
+      "At the root node (index 1)",
+      "At any leaf node randomly",
+      "It cannot be reliably determined"
+    ],
+    "answer": 1,
+    "explanation": "Quy tắc của Max Heap là cha luôn lớn hơn hoặc bằng con. Sự thống trị này lan truyền từ dưới lên trên, dẫn đến việc đỉnh cao nhất của cây (node gốc ở vị trí 1) chắc chắn là nơi chứa giá trị lớn nhất của toàn bộ tập dữ liệu.",
+    "category": "Chapter 5: Heap"
+  },
+  {
+    "id": 11,
+    "question": "When algorithmically inserting a new element into an existing heap, what is its initial structural placement?",
+    "options": [
+      "At the root node directly",
+      "Replacing the current smallest element",
+      "At the very last available entry of the array to maintain a complete binary tree",
+      "In the exact middle of the array"
+    ],
+    "answer": 2,
+    "explanation": "Thuật toán chèn vào Heap ưu tiên bảo toàn hình dáng Cây nhị phân hoàn chỉnh trước tiên. Do đó, phần tử mới luôn được nhét vào vị trí trống cuối cùng ở đáy cây (cuối mảng), sau đó mới bắt đầu quá trình tráo đổi để tìm đúng vị trí.",
+    "category": "Chapter 5: Heap"
+  },
+  {
+    "id": 12,
+    "question": "During insertion in a max heap, what logical action is taken if the newly inserted element is strictly greater than its parent?",
+    "options": [
+      "The entire tree is completely rebuilt from scratch",
+      "The new element is exchanged with its parent to move up the tree",
+      "The new element is immediately deleted to avoid rule breaking",
+      "The parent is pushed to the bottom of the tree"
+    ],
+    "answer": 1,
+    "explanation": "Nếu phần tử mới chèn ở đáy lớn hơn cha của nó, nó đã vi phạm quy tắc Max Heap. Thuật toán xử lý bằng cách tráo đổi (swap) nó với cha, làm cho phần tử mới này nổi dần lên trên (bubble up) cho đến khi gặp được node cha lớn hơn nó.",
+    "category": "Chapter 5: Heap"
+  },
+  {
+    "id": 13,
+    "question": "What specific condition terminates the upward movement (bubbling up) during a max heap insertion?",
+    "options": [
+      "The new element is smaller than or equal to its parent, or it reaches the absolute root",
+      "The element hits any leaf node",
+      "The array physically becomes full",
+      "The parent reaches a value of zero"
+    ],
+    "answer": 0,
+    "explanation": "Quá trình nổi lên của một node mới kết thúc trong hai trường hợp: một là nó gặp một node cha có giá trị lớn hơn hoặc bằng nó (thỏa mãn luật Max Heap), hai là nó đã leo lên tới đỉnh (root), không còn node cha nào để so sánh nữa.",
+    "category": "Chapter 5: Heap"
+  },
+  {
+    "id": 14,
+    "question": "What is the computational worst-case time complexity for inserting a single element into a heap containing 'n' nodes?",
+    "options": [
+      "O(1)",
+      "O(log n)",
+      "O(n)",
+      "O(n log n)"
+    ],
+    "answer": 1,
+    "explanation": "Thời gian chèn phụ thuộc hoàn toàn vào số lần tráo đổi node mới từ đáy lên gốc. Khoảng cách lớn nhất từ đáy lên gốc chính là chiều cao của cây. Vì Heap là cây nhị phân hoàn chỉnh, chiều cao này xấp xỉ log2(n), mang lại độ phức tạp O(log n).",
+    "category": "Chapter 5: Heap"
+  },
+  {
+    "id": 15,
+    "question": "Mathematically, what is the height of a complete binary tree (heap) containing 'n' nodes?",
+    "options": [
+      "n",
+      "n^2",
+      "log_2(n+1)",
+      "2^n"
+    ],
+    "answer": 2,
+    "explanation": "Dựa trên số lượng lấp đầy của cây nhị phân, chiều cao của một heap n phần tử được thiết lập công thức chính xác là giới hạn trần của logarit cơ số 2 của (n+1).",
+    "category": "Chapter 5: Heap"
+  },
+  {
+    "id": 16,
+    "question": "In a max heap deletion operation, which specific element is exclusively targeted for removal?",
+    "options": [
+      "The root node (the maximum element)",
+      "The minimum element anywhere in the tree",
+      "The last leaf node at the bottom right",
+      "A completely random element"
+    ],
+    "answer": 0,
+    "explanation": "Bản chất của Priority Queue (được thiết kế bằng Max Heap) là lấy ra đối tượng quan trọng nhất trước. Do đó, thao tác Delete trên Max Heap mặc định luôn luôn nhắm vào node gốc để trích xuất giá trị lớn nhất.",
+    "category": "Chapter 5: Heap"
+  },
+  {
+    "id": 17,
+    "question": "Immediately after removing the root in a max heap deletion, which element is temporarily placed at the root position?",
+    "options": [
+      "The extremely largest child of the root",
+      "The very last element in the heap array (the rightmost leaf)",
+      "A newly allocated empty dummy node",
+      "The absolute smallest leaf in the entire tree"
+    ],
+    "answer": 1,
+    "explanation": "Khi nhổ bỏ gốc, cấu trúc cây bị rỗng ở đỉnh. Để duy trì tính chất mảng liên tục của Cây nhị phân hoàn chỉnh, ta nhổ phần tử cuối cùng của mảng (node lá ngoài cùng bên phải) đem lên lấp vào vị trí gốc, sau đó mới tiến hành vun đống lại.",
+    "category": "Chapter 5: Heap"
+  },
+  {
+    "id": 18,
+    "question": "During the downward adjustment phase of a max heap deletion, which child does the current parent actively compare itself to?",
+    "options": [
+      "Always the left child blindly",
+      "Always the right child blindly",
+      "The larger of its two children",
+      "The smaller of its two children"
+    ],
+    "answer": 2,
+    "explanation": "Khi gốc mới chìm xuống (sink down) để khôi phục Max Heap, nó phải tráo đổi với con lớn hơn trong hai đứa con của nó. Nếu nó đổi chỗ với con nhỏ hơn, đứa con nhỏ hơn này sẽ leo lên làm cha của đứa con lớn, vi phạm nghiêm trọng luật Max Heap.",
+    "category": "Chapter 5: Heap"
+  },
+  {
+    "id": 19,
+    "question": "What specifically happens if the current parent node is strictly smaller than its largest child during a max heap adjustment?",
+    "options": [
+      "The child moves up to replace the parent, and the parent sinks down",
+      "The child is immediately deleted from memory",
+      "The adjustment process terminates normally",
+      "The algorithm crashes"
+    ],
+    "answer": 0,
+    "explanation": "Vì đang xây dựng Max Heap, cha phải lớn nhất. Nếu cha nhỏ hơn đứa con lớn nhất của nó, hai phần tử này bắt buộc phải hoán đổi vị trí. Con lớn được đẩy lên làm cha, cha nhỏ bị chìm xuống dưới để tiếp tục kiểm tra ở tầng tiếp theo.",
+    "category": "Chapter 5: Heap"
+  },
+  {
+    "id": 20,
+    "question": "What is the algorithmic time complexity of deleting the max element from a heap and reestablishing the structural property?",
+    "options": [
+      "O(1)",
+      "O(log n)",
+      "O(n)",
+      "O(n^2)"
+    ],
+    "answer": 1,
+    "explanation": "Thao tác xóa yêu cầu di chuyển phần tử tạm từ gốc chìm dần xuống đáy. Số bước đi tối đa chính là số tầng của cây (chiều cao), tương đương với O(log n).",
+    "category": "Chapter 5: Heap"
+  },
+  {
+    "id": 21,
+    "question": "In the standard Heap Sort algorithm, what is the very first operational phase before the actual sorting iterations can begin?",
+    "options": [
+      "Divide the array conceptually into two independent halves",
+      "Build a valid max heap out of the initially unsorted array",
+      "Swap the first and last elements blindly",
+      "Perform a sequential search for the minimum"
+    ],
+    "answer": 1,
+    "explanation": "Heap Sort hoạt động bằng cách liên tục lấy ra phần tử lớn nhất. Tuy nhiên, một mảng lộn xộn ban đầu chưa có phần tử lớn nhất ở đỉnh. Vì vậy, bước tiền đề sống còn là phải vun toàn bộ mảng đó thành một Max Heap hợp lệ.",
+    "category": "Chapter 5: Heap"
+  },
+  {
+    "id": 22,
+    "question": "To systematically build a max heap from an unsorted array of 'n' elements, from which index does the `adjust` loop strategically start?",
+    "options": [
+      "Index 1",
+      "Index n",
+      "Index n/2",
+      "Index 0"
+    ],
+    "answer": 2,
+    "explanation": "Thuật toán Build Heap chạy vòng lặp ngược. Nó bắt đầu gọi hàm vun đống (adjust) từ chỉ mục n/2 và lùi dần về 1. Lý do toán học là vì n/2 là node cha cuối cùng trong mảng, tất cả các node phía sau nó đều là lá.",
+    "category": "Chapter 5: Heap"
+  },
+  {
+    "id": 23,
+    "question": "Why does the heap-building process explicitly start at index 'n/2' and ignore the indices from 'n/2 + 1' to 'n'?",
+    "options": [
+      "To save half the physical memory",
+      "Because elements beyond n/2 are leaf nodes, which inherently already satisfy the heap property individually",
+      "Because the array is literally split into two different structures",
+      "To prevent pointer overflow errors"
+    ],
+    "answer": 1,
+    "explanation": "Trong cây nhị phân hoàn chỉnh, mọi phần tử từ vị trí n/2 + 1 đến n đều không có con. Một node đơn lẻ không có con thì hiển nhiên đã tự động thỏa mãn điều kiện cha lớn hơn con (vì không có con để so sánh). Do đó, ta không cần phải adjust các node lá này.",
+    "category": "Chapter 5: Heap"
+  },
+  {
+    "id": 24,
+    "question": "What exactly does the `adjust()` function functionally achieve when invoked on a specific node 'i'?",
+    "options": [
+      "It moves the node upward to replace the root",
+      "It deletes the node completely from the array",
+      "It shifts the node downward to its correct relational position to ensure its sub-tree perfectly satisfies the max heap property",
+      "It calculates the total sum of the sub-tree"
+    ],
+    "answer": 2,
+    "explanation": "Hàm adjust (hay heapify) nhận một node có khả năng đang vi phạm quy tắc Heap. Nhiệm vụ của nó là sàng lọc, thả chìm node này xuống các tầng thấp hơn cho đến khi toàn bộ nhánh cây bên dưới node đó trở thành một Max Heap vững chắc.",
+    "category": "Chapter 5: Heap"
+  },
+  {
+    "id": 25,
+    "question": "In the sorting phase of Heap Sort, what is the root (max element) systematically swapped with during each iteration?",
+    "options": [
+      "The extremely largest child currently available",
+      "The exact middle element of the array",
+      "The last element of the currently active, unsorted portion of the heap",
+      "The first leaf node physically found"
+    ],
+    "answer": 2,
+    "explanation": "Khi gốc đang giữ giá trị lớn nhất, ta bốc nó ra và đem cất vào cuối mảng để hình thành dãy đã sắp xếp. Để lấy chỗ ở cuối mảng, ta hoán đổi nó với phần tử đang đứng cuối cùng của phần Heap chưa sắp xếp, rồi thu hẹp ranh giới Heap lại 1 đơn vị.",
+    "category": "Chapter 5: Heap"
+  },
+  {
+    "id": 26,
+    "question": "After swapping the root with the last element in Heap Sort, what logical restriction is dynamically applied to the heap?",
+    "options": [
+      "The active heap size is conceptually decreased by 1, excluding the newly placed max element",
+      "The active heap size is fully doubled",
+      "The entire array is automatically cleared of data",
+      "No structural boundary changes occur"
+    ],
+    "answer": 0,
+    "explanation": "Sau khi phần tử lớn nhất đã được chốt ở cuối mảng, nó đã nằm đúng vị trí vĩnh viễn. Thuật toán sẽ giảm kích thước giới hạn của Heap đi 1 (n--) để các thao tác adjust tiếp theo không bao giờ đụng chạm tới phần tử đã được sắp xếp này nữa.",
+    "category": "Chapter 5: Heap"
+  },
+  {
+    "id": 27,
+    "question": "What is the overall mathematically evaluated worst-case time complexity of the complete Heap Sort algorithm?",
+    "options": [
+      "O(n)",
+      "O(n log n)",
+      "O(n^2)",
+      "O(2^n)"
+    ],
+    "answer": 1,
+    "explanation": "Việc xây dựng Heap ban đầu tốn O(n). Giai đoạn sắp xếp phải lấy ra phần tử lớn nhất n-1 lần, mỗi lần lấy ra kèm theo thao tác vun đống lại tốn O(log n). Gộp lại, độ phức tạp thời gian giới hạn là O(n log n) trong mọi trường hợp.",
+    "category": "Chapter 5: Heap"
+  },
+  {
+    "id": 28,
+    "question": "If a programmer specifically desires to sort an array in strictly descending order using Heap Sort, what structure must they initialize?",
+    "options": [
+      "A classical Max Heap",
+      "A classical Min Heap",
+      "A Binary Search Tree completely",
+      "A doubly linked circular list"
+    ],
+    "answer": 1,
+    "explanation": "Max Heap giúp lấy phần tử lớn nhất đẩy về cuối mảng, tạo ra chuỗi tăng dần (Ascending). Ngược lại, nếu muốn mảng giảm dần (Descending), ta phải dùng Min Heap để liên tục đẩy phần tử nhỏ nhất về cuối mảng.",
+    "category": "Chapter 5: Heap"
+  },
+  {
+    "id": 29,
+    "question": "Why is a fixed array representation overwhelmingly preferred over a pointer-based linked representation for Heaps?",
+    "options": [
+      "Because standard arrays can dynamically grow infinitely without OS calls",
+      "Because pointer dereferencing is computationally too fast to control",
+      "Because a complete binary tree structurally guarantees no wasted spaces, making arrays highly memory-efficient and avoiding pointer overhead",
+      "Because standard arrays automatically sort values continuously"
+    ],
+    "answer": 2,
+    "explanation": "Cây nhị phân hoàn chỉnh luôn được lấp đầy chặt chẽ từ trái qua phải, không bao giờ có mảng trống ở giữa. Việc đưa nó vào mảng không gây lãng phí bộ nhớ như cây lệch, đồng thời loại bỏ hoàn toàn việc phải lưu trữ hàng tá con trỏ cồng kềnh như trong danh sách liên kết.",
+    "category": "Chapter 5: Heap"
+  },
+  {
+    "id": 30,
+    "question": "In the typical `deleteMaxHeap` implementation, how does the algorithm explicitly identify the larger of the two structural children?",
+    "options": [
+      "By checking if `heap[child].key < heap[child+1].key` and incrementing the child index if true",
+      "By permanently dividing the parent index by 2",
+      "By executing an entirely recursive binary search",
+      "By directly comparing both children to the absolute root"
+    ],
+    "answer": 0,
+    "explanation": "Thuật toán khởi tạo con trỏ 'child' trỏ vào con trái (2*i). Sau đó, nó kiểm tra xem con phải (child+1) có tồn tại và có lớn hơn con trái hay không. Nếu có, nó tăng 'child' lên 1 (child++) để trỏ vào con phải. Như vậy, 'child' luôn đại diện cho con lớn nhất.",
+    "category": "Chapter 5: Heap"
+  },
+  {
+    "id": 31,
+    "question": "What condition correctly causes the downward `adjust` loop to break and terminate early?",
+    "options": [
+      "When the parent's key is fundamentally greater than or equal to the largest child's key",
+      "When the active child variable randomly exceeds the heap array limit 'n'",
+      "Both A and B",
+      "When the root becomes mathematically zero"
+    ],
+    "answer": 2,
+    "explanation": "Vòng lặp chìm xuống kết thúc khi thỏa một trong hai điều kiện: node hiện tại đã rớt xuống đáy (child > n), hoặc node hiện tại có giá trị lớn hơn cả hai con của nó (đã thiết lập lại thành công vị thế của Max Heap).",
+    "category": "Chapter 5: Heap"
+  },
+  {
+    "id": 32,
+    "question": "In a max heap of 'n' nodes, if the maximum element is strictly at A, where can the absolute minimum element fundamentally be found?",
+    "options": [
+      "Exclusively at A",
+      "Exclusively at A",
+      "Strictly at A[n] only",
+      "At one of the leaf nodes (indices from floor(n/2) + 1 to n)"
+    ],
+    "answer": 3,
+    "explanation": "Trong Max Heap, giá trị giảm dần từ trên xuống dưới. Tuy nhiên, giữa các nhánh không có sự phân loại trái/phải như Binary Search Tree. Phần tử nhỏ nhất bị đẩy xuống tầng thấp nhất, nên nó có thể nằm ở bất kỳ vị trí lá nào trong nửa sau của mảng.",
+    "category": "Chapter 5: Heap"
+  },
+  {
+    "id": 33,
+    "question": "During the structural `adjust` operation, what mathematical update is applied to the `child` index to traverse down to the next topological level of the tree?",
+    "options": [
+      "child += 1",
+      "child *= 2",
+      "child /= 2",
+      "child = child * child"
+    ],
+    "answer": 1,
+    "explanation": "Để di chuyển tiêu điểm từ một node hiện tại xuống node con trái của nó ở tầng ngay bên dưới, công thức tính toán chỉ mục mảng đơn giản và chuẩn xác nhất là nhân đôi giá trị của chỉ mục hiện tại (child *= 2).",
+    "category": "Chapter 5: Heap"
+  },
+  {
+    "id": 34,
+    "question": "How many total times is the `adjust` function explicitly called during the entire root-swapping (sorting) phase of Heap Sort for an array of 'n' elements?",
+    "options": [
+      "Exactly 1 time",
+      "Exactly n/2 times",
+      "Exactly n-1 times",
+      "Exactly log_2 n times"
+    ],
+    "answer": 2,
+    "explanation": "Trong giai đoạn Sort, mảng có n phần tử thì ta cần trích xuất phần tử lớn nhất đẩy về cuối mảng n-1 lần (phần tử cuối cùng còn sót lại mặc định là nhỏ nhất). Do đó, hàm adjust để khôi phục Heap cũng được gọi tương ứng n-1 lần.",
+    "category": "Chapter 5: Heap"
+  },
+  {
+    "id": 35,
+    "question": "What is the exact physical array state after executing a `deleteMaxHeap` operation on the max heap ``?",
+    "options": [
+      "",
+      "",
+      "",
+      ""
+    ],
+    "answer": 0,
+    "explanation": "Gốc 20 bị xóa. Số 10 ở cuối được bốc lên làm gốc tạm:. So sánh 10 với hai con là 15 và 2, đổi chỗ với 15:. 10 lúc này nằm ở chỉ số 2, tiếp tục so sánh với con của nó là 14. Đổi chỗ 10 với 14:. Thuật toán kết thúc.",
+    "category": "Chapter 5: Heap"
+  },
+  {
+    "id": 36,
+    "question": "In the standard C implementation of `insertMaxHeap`, how does the active pointer variable 'i' logically traverse UP the tree?",
+    "options": [
+      "i = i * 2",
+      "i = i / 2",
+      "i = i + 1",
+      "i = i - 1"
+    ],
+    "answer": 1,
+    "explanation": "Trong thao tác chèn, phần tử mới từ đáy (chỉ số i) phải leo dần lên trên. Để nhảy từ node con lên vị trí của node cha ở tầng ngay phía trên, thuật toán liên tục cập nhật chỉ mục bằng phép chia nguyên cho 2 (i /= 2).",
+    "category": "Chapter 5: Heap"
+  },
+  {
+    "id": 37,
+    "question": "What explicitly defines the fundamental topology of a 'min tree'?",
+    "options": [
+      "The key value in each node is no greater than the key values mathematically present in its children",
+      "The key value is heavily randomized",
+      "The tree entirely consists of negative numbers",
+      "The rightmost leaf must contain the mathematical minimum"
+    ],
+    "answer": 0,
+    "explanation": "Min Tree là cấu trúc ngược lại hoàn toàn với Max Tree. Luật lệ độc nhất của nó quy định rằng giá trị của một node cha không bao giờ được phép lớn hơn giá trị của bất kỳ node con nào trực thuộc nhánh của nó.",
+    "category": "Chapter 5: Heap"
+  },
+  {
+    "id": 38,
+    "question": "In Heap Sort, what characterizes the exact state of the array immediately after the `Build Max Heap` macro-phase concludes, but before the sorting phase begins?",
+    "options": [
+      "It is completely and strictly sorted in ascending order",
+      "It is completely and strictly sorted in descending order",
+      "It is physically formatted as a valid max heap where A undeniably holds the maximum element",
+      "All memory elements are cleanly initialized to zero"
+    ],
+    "answer": 2,
+    "explanation": "Sau khi hàm Build Heap kết thúc, mảng vẫn chưa hề được sắp xếp (chưa thành chuỗi tăng dần hay giảm dần). Tuy nhiên, nó đã được biến đổi thành một cấu trúc Max Heap hoàn chỉnh, sẵn sàng bảo đảm phần tử lớn nhất luôn nằm ở đầu mảng (A).",
+    "category": "Chapter 5: Heap"
+  },
+  {
+    "id": 39,
+    "question": "Why is the absolute last element of the active heap explicitly chosen to replace the root during a deletion operation?",
+    "options": [
+      "Because it is mathematically guaranteed to be the second largest element",
+      "Because moving it preserves the rigid structure of a Complete Binary Tree before relational adjustments begin",
+      "Because it is structurally the absolute smallest element",
+      "Because it strictly requires no memory pointers to move"
+    ],
+    "answer": 1,
+    "explanation": "Xóa gốc sẽ tạo ra lỗ hổng. Nếu lấy phần tử ở giữa đưa lên, cây sẽ bị thủng và phá vỡ định dạng Cây nhị phân hoàn chỉnh. Do đó, ta phải hy sinh phần tử nằm ở rìa ngoài cùng (cuối mảng) đưa lên lấp chỗ trống để bảo toàn cấu trúc vật lý của mảng.",
+    "category": "Chapter 5: Heap"
+  },
+  {
+    "id": 40,
+    "question": "When structurally sorting an array using a Max Heap, why does the final outcome result in a strictly ascending sequence?",
+    "options": [
+      "Because the maximum extracted element is repeatedly swapped to the growing end of the array and subsequently excluded from the shrinking heap",
+      "Because the heap natively sorts elements from left to right",
+      "Because the minimum elements are physically extracted first",
+      "Because the physical array is mathematically reversed at the very end"
+    ],
+    "answer": 0,
+    "explanation": "Thuật toán Heap Sort sử dụng Max Heap không đặt phần tử lớn nhất lên đầu, mà bốc nó khỏi đỉnh và tống nó về cuối mảng. Lặp lại quá trình này, các phần tử lớn thứ hai, thứ ba sẽ lần lượt xếp vào các vị trí áp chót, tạo ra một mảng tăng dần tự nhiên.",
+    "category": "Chapter 5: Heap"
+  }
+]

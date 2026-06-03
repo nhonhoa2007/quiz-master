@@ -1,0 +1,523 @@
+
+[
+  {
+    "id": 1,
+    "question": "In discrete mathematics and data structures, how is a Graph conceptually defined?",
+    "options": [
+      "As a strict hierarchy of nodes starting from a single root",
+      "As a pair of sets G = (V, E), where V is a finite non-empty set of vertices and E is a set of edges",
+      "As a sequential collection of connected arrays",
+      "As a completely linear data structure utilizing LIFO principle"
+    ],
+    "answer": 1,
+    "explanation": "Đồ thị (Graph) được định nghĩa chuẩn xác bằng một cặp tập hợp G = (V, E). Trong đó, V (Vertices) là một tập hợp hữu hạn các đỉnh (không được rỗng), và E (Edges) là tập hợp các cạnh dùng để kết nối các đỉnh đó lại với nhau.",
+    "category": "Terminology"
+  },
+  {
+    "id": 2,
+    "question": "What is the fundamental difference in edge representation between an Undirected Graph and a Directed Graph (Digraph)?",
+    "options": [
+      "Directed graphs only allow edges between adjacent levels",
+      "Undirected graphs use unordered pairs (u, v) representing the exact same edge as (v, u), while directed graphs use ordered pairs <u, v>",
+      "Undirected graphs cannot contain cycles",
+      "Directed graphs do not use vertices"
+    ],
+    "answer": 1,
+    "explanation": "Đồ thị vô hướng (Undirected) sử dụng cặp đỉnh không có thứ tự, nghĩa là cạnh (u, v) và (v, u) là một, cho phép đi lại hai chiều. Đồ thị có hướng (Directed) dùng cặp có thứ tự <u, v>, mang ý nghĩa cạnh chỉ đi một chiều từ u sang v.",
+    "category": "Terminology"
+  },
+  {
+    "id": 3,
+    "question": "What is the maximum mathematical number of edges in a Complete Undirected Graph containing 'n' vertices?",
+    "options": [
+      "n * (n - 1)",
+      "n^2",
+      "n * (n - 1) / 2",
+      "2^n"
+    ],
+    "answer": 2,
+    "explanation": "Trong đồ thị vô hướng hoàn chỉnh (Complete Undirected Graph), mỗi đỉnh kết nối trực tiếp với tất cả (n-1) đỉnh còn lại. Tổng số kết nối là n*(n-1), nhưng vì cạnh vô hướng được tính hai lần (từ u đến v và v đến u), ta phải chia đôi kết quả: n*(n-1)/2.",
+    "category": "Terminology"
+  },
+  {
+    "id": 4,
+    "question": "What is the maximum possible number of edges in a Complete Directed Graph logically containing 'n' vertices?",
+    "options": [
+      "n * (n - 1) / 2",
+      "n * (n - 1)",
+      "n^2",
+      "2 * n"
+    ],
+    "answer": 1,
+    "explanation": "Với đồ thị có hướng (Digraph), giữa hai đỉnh bất kỳ có thể tồn tại tối đa hai cạnh trỏ ngược chiều nhau (<u,v> và <v,u>). Vì không phải chia đôi số lượng bị trùng lặp như đồ thị vô hướng, số cạnh tối đa đạt mức n*(n-1).",
+    "category": "Terminology"
+  },
+  {
+    "id": 5,
+    "question": "In graph terminology, when are two vertices 'u' and 'v' explicitly considered 'Adjacent'?",
+    "options": [
+      "When they have the same degree",
+      "When there is an explicit edge connecting them directly",
+      "When they are in the same strongly connected component",
+      "When they are both leaf nodes"
+    ],
+    "answer": 1,
+    "explanation": "Hai đỉnh u và v được gọi là kề nhau (Adjacent) khi và chỉ khi tồn tại một cạnh vật lý nối trực tiếp giữa chúng. Nếu phải đi qua một đỉnh trung gian, chúng không được coi là liền kề.",
+    "category": "Terminology"
+  },
+  {
+    "id": 6,
+    "question": "What does it mean when an edge is said to be 'Incident' on a vertex?",
+    "options": [
+      "The edge connects the vertex to itself",
+      "The edge structurally touches or connects to that specific vertex",
+      "The edge has a weight of zero",
+      "The edge forms a complete cycle"
+    ],
+    "answer": 1,
+    "explanation": "Thuật ngữ liên thuộc (Incident) dùng để mô tả mối quan hệ giữa một cạnh và một đỉnh. Một cạnh được gọi là liên thuộc với đỉnh u nếu đỉnh u là một trong hai đầu mút của cạnh đó.",
+    "category": "Terminology"
+  },
+  {
+    "id": 7,
+    "question": "Which of the following structurally defines a valid 'Subgraph' G' of a main graph G?",
+    "options": [
+      "A graph containing completely different vertices from G",
+      "A graph where V(G') is a subset of V(G), and E(G') is a subset of E(G)",
+      "A graph with more edges than G",
+      "A completely inverted version of graph G"
+    ],
+    "answer": 1,
+    "explanation": "Đồ thị con (Subgraph) G' đơn giản là một phần trích xuất từ đồ thị gốc G. Do đó, tập hợp đỉnh V(G') bắt buộc phải là tập con của V(G), và tập hợp cạnh E(G') cũng phải là tập con của E(G).",
+    "category": "Terminology"
+  },
+  {
+    "id": 8,
+    "question": "How is the 'Length' of a path in an unweighted graph precisely measured?",
+    "options": [
+      "By the total number of vertices on the path",
+      "By the total number of edges crossed on that path",
+      "By subtracting the destination index from the source index",
+      "By the number of cycles encountered"
+    ],
+    "answer": 1,
+    "explanation": "Trong lý thuyết đồ thị cơ bản (không tính trọng số), chiều dài của một đường đi (Path Length) được đo lường duy nhất bằng tổng số lượng các cạnh (edges) mà ta phải bước qua để đi từ đỉnh xuất phát đến đỉnh đích.",
+    "category": "Terminology"
+  },
+  {
+    "id": 9,
+    "question": "What specific characteristic flawlessly defines a 'Simple Path'?",
+    "options": [
+      "It only contains straight lines",
+      "It includes all vertices of the graph exactly once",
+      "All vertices on the path are completely distinct, except possibly the first and last vertices",
+      "It has a length of exactly 1"
+    ],
+    "answer": 2,
+    "explanation": "Một đường đi đơn (Simple Path) là đường đi không tự cắt chéo chính nó. Tức là trên hành trình đó, không có bất kỳ đỉnh nào bị đi ngang qua hai lần (tất cả các đỉnh phải phân biệt), ngoại trừ trường hợp đỉnh đầu và đỉnh cuối có thể trùng nhau để tạo thành chu trình.",
+    "category": "Terminology"
+  },
+  {
+    "id": 10,
+    "question": "What is conceptually formed when a simple path strictly starts and ends at the exact same vertex?",
+    "options": [
+      "A Forest",
+      "A Binary Search Tree",
+      "A Cycle",
+      "An adjacency matrix"
+    ],
+    "answer": 2,
+    "explanation": "Khi một đường đi đơn xuất phát từ một đỉnh, đi qua các đỉnh khác nhau và cuối cùng lại quay trở về đúng đỉnh xuất phát đó, nó khép kín và tạo thành một vòng lặp, được gọi là Chu trình (Cycle).",
+    "category": "Terminology"
+  },
+  {
+    "id": 11,
+    "question": "Under what condition is an Undirected Graph fully classified as 'Connected'?",
+    "options": [
+      "When every node is directly attached to the root",
+      "When there is at least one valid path between any arbitrarily chosen pair of vertices (u, v)",
+      "When the graph contains no cycles",
+      "When all edges have the exact same weight"
+    ],
+    "answer": 1,
+    "explanation": "Một đồ thị vô hướng được gọi là liên thông (Connected) nếu nó là một khối thống nhất, không bị đứt gãy đứt đoạn. Điều này có nghĩa là luôn luôn tìm được ít nhất một con đường (path) để đi từ bất kỳ đỉnh nào đến bất kỳ đỉnh nào khác trong đồ thị.",
+    "category": "Terminology"
+  },
+  {
+    "id": 12,
+    "question": "What is the precise relationship between a 'Tree' and a 'Graph' in data structure theory?",
+    "options": [
+      "A tree is completely unrelated to a graph",
+      "A tree is fundamentally defined as a connected acyclic graph",
+      "A graph is a specialized version of a binary tree",
+      "A tree is a graph that must have cycles"
+    ],
+    "answer": 1,
+    "explanation": "Cây (Tree) bản chất là một trường hợp đặc biệt cực kỳ chặt chẽ của đồ thị. Một đồ thị vô hướng chỉ được phong chức là 'Cây' khi nó thỏa mãn song song 2 điều kiện: liên thông hoàn toàn (connected) và tuyệt đối không chứa chu trình (acyclic).",
+    "category": "Terminology"
+  },
+  {
+    "id": 13,
+    "question": "In a Directed Graph (Digraph), what strict requirement fulfills the 'Strongly Connected' property?",
+    "options": [
+      "There is a directed path from u to v AND a directed path from v to u for every vertex pair",
+      "All nodes point sequentially in a single line",
+      "The graph is structurally completely undirected",
+      "Every node points exclusively to itself"
+    ],
+    "answer": 0,
+    "explanation": "Tính liên thông mạnh (Strongly Connected) trong đồ thị có hướng là một tiêu chuẩn khắt khe. Giữa mọi cặp đỉnh u và v, hệ thống không chỉ đòi hỏi phải có đường đi từ u sang v, mà còn bắt buộc phải có đường đi ngược lại từ v trở về u.",
+    "category": "Terminology"
+  },
+  {
+    "id": 14,
+    "question": "How is the 'Degree' of a vertex in an undirected graph evaluated?",
+    "options": [
+      "By the value stored strictly inside its node",
+      "By calculating the number of edges physically incident to that vertex",
+      "By taking the square root of all its paths",
+      "By counting its out-degree only"
+    ],
+    "answer": 1,
+    "explanation": "Bậc (Degree) của một đỉnh trong đồ thị vô hướng đơn giản là số lượng các cạnh cắm trực tiếp vào đỉnh đó. Đỉnh càng có nhiều cạnh liên thuộc (incident edges), bậc của nó càng cao.",
+    "category": "Terminology"
+  },
+  {
+    "id": 15,
+    "question": "What is the global mathematical relationship regarding the sum of the degrees of all vertices in any undirected graph?",
+    "options": [
+      "It equals the number of vertices",
+      "It equals exactly half the number of edges",
+      "It equals exactly twice the total number of edges",
+      "It is always an odd number"
+    ],
+    "answer": 2,
+    "explanation": "Mỗi một cạnh trong đồ thị vô hướng giống như một cây cầu nối liền 2 đỉnh. Khi cộng dồn bậc của toàn bộ các đỉnh lại với nhau, mỗi một cạnh sẽ luôn luôn bị đếm đúng 2 lần (ở 2 đầu mút). Vì vậy, tổng bậc của đồ thị luôn chẵn và bằng 2 lần số cạnh (2E).",
+    "category": "Terminology"
+  },
+  {
+    "id": 16,
+    "question": "When edges of a graph are algorithmically assigned specific values (like distance or cost), what is the resulting graph called?",
+    "options": [
+      "A Null Graph",
+      "A Network",
+      "A Balanced Tree",
+      "A Heap"
+    ],
+    "answer": 1,
+    "explanation": "Khi các cạnh của đồ thị được gán thêm trọng số (weight) để biểu thị chi phí, khoảng cách vật lý hay thời gian di chuyển, đồ thị đó được nâng cấp và gọi tên là Mạng (Network). Đây là cơ sở cho các bài toán định tuyến GPS thực tế.",
+    "category": "Terminology"
+  },
+  {
+    "id": 17,
+    "question": "If a graph has exactly 'n' vertices, what are the physical matrix dimensions of its corresponding Adjacency Matrix?",
+    "options": [
+      "n x 1",
+      "2 x n",
+      "n x n",
+      "n x (n-1)"
+    ],
+    "answer": 2,
+    "explanation": "Ma trận kề (Adjacency Matrix) là một bảng lưới hai chiều dùng để ánh xạ mối quan hệ giữa mọi cặp đỉnh. Do đồ thị có n đỉnh, ma trận bắt buộc phải có n hàng và n cột, tạo thành một lưới vuông kích thước n x n.",
+    "category": "Graph Representations"
+  },
+  {
+    "id": 18,
+    "question": "What distinct geometric property does the Adjacency Matrix of an Undirected Graph always heavily exhibit?",
+    "options": [
+      "It is always entirely populated by zeroes",
+      "It is mathematically Symmetric across its main diagonal",
+      "It only has ones on its main diagonal",
+      "It is inherently asymmetrical"
+    ],
+    "answer": 1,
+    "explanation": "Trong đồ thị vô hướng, cạnh nối u và v là hai chiều tương đương. Nếu có cạnh (u, v), thì A[u][v] = 1 và A[v][u] = 1. Điều này ép buộc ma trận luôn có tính Đối xứng (Symmetric) hoàn hảo qua đường chéo chính.",
+    "category": "Graph Representations"
+  },
+  {
+    "id": 19,
+    "question": "In the Adjacency Matrix representation of a Directed Graph, how do you quickly calculate the 'Out-Degree' of vertex 'i'?",
+    "options": [
+      "By summing all the elements in column 'i'",
+      "By heavily summing all the elements in row 'i'",
+      "By multiplying row 'i' and column 'i'",
+      "By looking entirely at the main diagonal"
+    ],
+    "answer": 1,
+    "explanation": "Đối với ma trận kề của đồ thị có hướng, hàng i liệt kê toàn bộ các cạnh đi ra (xuất phát) từ đỉnh i. Do đó, việc cộng tổng tất cả các phần tử (các số 1) nằm ngang trên hàng i sẽ cung cấp chính xác bậc ra (Out-Degree) của đỉnh đó.",
+    "category": "Graph Representations"
+  },
+  {
+    "id": 20,
+    "question": "In the Adjacency Matrix representation of a Directed Graph, how is the 'In-Degree' of vertex 'i' logically computed?",
+    "options": [
+      "By summing all the elements purely in row 'i'",
+      "By summing all the elements down column 'i'",
+      "By summing the entire matrix entirely",
+      "By counting zeroes"
+    ],
+    "answer": 1,
+    "explanation": "Trái ngược với bậc ra, cột i trong ma trận biểu diễn các cạnh đi vào (đâm tới) đỉnh i. Phép tính tổng dọc theo tất cả các số 1 nằm trên cột i sẽ trực tiếp trả về bậc vào (In-Degree) của đỉnh đó.",
+    "category": "Graph Representations"
+  },
+  {
+    "id": 21,
+    "question": "What is the fundamental programmatic Space Complexity disadvantage of using an Adjacency Matrix for a sparse graph with 'n' vertices?",
+    "options": [
+      "It requires O(1) space",
+      "It requires exactly O(n + e) space",
+      "It indiscriminately requires O(n^2) space, wasting massive memory on zeros for non-existent edges",
+      "It compresses data too tightly"
+    ],
+    "answer": 2,
+    "explanation": "Ma trận kề phân bổ sẵn một khung lưới cứng O(n^2). Nếu đồ thị thưa (rất ít cạnh), hàng tá ô vuông trong lưới chỉ chứa giá trị 0 (không có cạnh). Hệ thống vẫn phải lãng phí bộ nhớ khổng lồ để lưu trữ những số 0 vô giá trị này.",
+    "category": "Graph Representations"
+  },
+  {
+    "id": 22,
+    "question": "How does an Adjacency List structurally organize the graph connection data in computer memory?",
+    "options": [
+      "It uses a single monolithic integer array",
+      "It replaces the rows of the adjacency matrix with 'n' dynamic linked lists, storing only existing edges",
+      "It relies exclusively on a hash table with quadratic probing",
+      "It stores the graph strictly in an external hard drive file"
+    ],
+    "answer": 1,
+    "explanation": "Để tiết kiệm bộ nhớ, danh sách kề (Adjacency List) loại bỏ hoàn toàn các ô trống (số 0). Mỗi đỉnh được cấp một danh sách liên kết động; đỉnh này nối với ai thì hệ thống mới tạo node trỏ tới người đó, chỉ lưu trữ duy nhất những cạnh thực sự tồn tại.",
+    "category": "Graph Representations"
+  },
+  {
+    "id": 23,
+    "question": "In an Adjacency List representing an Undirected Graph with 'n' vertices and 'e' edges, exactly how many total list nodes are allocated?",
+    "options": [
+      "e nodes",
+      "n^2 nodes",
+      "2 * e list nodes (plus the n head nodes)",
+      "n * e nodes"
+    ],
+    "answer": 2,
+    "explanation": "Trong đồ thị vô hướng, một cạnh vật lý nối hai đỉnh u và v sẽ xuất hiện ở hai nơi: một bản sao nằm trong chuỗi liên kết của u, và một bản sao nằm trong chuỗi liên kết của v. Vì sự nhân đôi này, 'e' cạnh sẽ tốn chính xác '2e' list nodes để lưu trữ.",
+    "category": "Graph Representations"
+  },
+  {
+    "id": 24,
+    "question": "Which basic objective unites both Depth First Search (DFS) and Breadth First Search (BFS) graph traversals?",
+    "options": [
+      "Finding the absolutely shortest path globally",
+      "Converting the graph immediately into a hash table",
+      "Systematically visiting all vertices 'w' that are connected to a starting vertex 'v'",
+      "Sorting the vertices in strictly alphabetical order"
+    ],
+    "answer": 2,
+    "explanation": "Dù phương pháp càn quét khác nhau (sâu hay rộng), mục đích tối thượng của cả DFS và BFS là xuất phát từ một đỉnh nguồn, dò dẫm và khám phá toàn bộ tất cả các đỉnh có thể đi tới được (liên thông) với đỉnh nguồn đó trong mạng lưới.",
+    "category": "Graph Traversals"
+  },
+  {
+    "id": 25,
+    "question": "What is the explicit exploration philosophy of Depth-First Search (DFS)?",
+    "options": [
+      "Search level by level evenly across all paths",
+      "Search as deeply as possible along a single branch, recursively exploring unvisited neighbors, and backtracking only when blocked",
+      "Visit all leaf nodes instantly",
+      "Randomly jump between unconnected components"
+    ],
+    "answer": 1,
+    "explanation": "Chiến thuật của Duyệt theo chiều sâu (DFS) là 'đâm lao thì phải theo lao'. Từ một đỉnh, nó bám sát một con đường và đi thẳng xuống sâu nhất có thể. Nó chỉ chịu quay đầu lùi lại (backtrack) khi đâm vào ngõ cụt không còn đỉnh mới nào để thăm.",
+    "category": "Graph Traversals"
+  },
+  {
+    "id": 26,
+    "question": "Depth-First Search (DFS) execution is highly mathematically analogous to which specific Tree Traversal algorithm?",
+    "options": [
+      "Level-order traversal",
+      "Preorder traversal",
+      "Postorder traversal",
+      "Inorder traversal"
+    ],
+    "answer": 1,
+    "explanation": "Theo quy luật DFS: Xử lý đỉnh hiện tại ngay lập tức, rồi đi sâu vào nhánh con đầu tiên (nhánh trái), rồi mới tới nhánh thứ hai (nhánh phải). Thứ tự Node -> Nhánh 1 -> Nhánh 2 này hoàn toàn trùng khớp với tư tưởng Duyệt tiền tố (Preorder) trên Cây.",
+    "category": "Graph Traversals"
+  },
+  {
+    "id": 27,
+    "question": "What explicit algorithmic Data Structure is fundamentally required to successfully track execution and backtracks in DFS?",
+    "options": [
+      "A Queue",
+      "A Stack (either explicit or implicit via Recursion Call Stack)",
+      "A Linked List specifically",
+      "A Hash Map"
+    ],
+    "answer": 1,
+    "explanation": "Hành động lùi lại (backtrack) đòi hỏi hệ thống phải nhớ chính xác ngã rẽ gần nhất mà nó vừa bỏ lại phía sau (Last-In-First-Out). Do đó, Ngăn xếp (Stack) là cấu trúc bắt buộc của DFS, thường được che giấu khéo léo thông qua Stack của bộ nhớ đệ quy.",
+    "category": "Graph Traversals"
+  },
+  {
+    "id": 28,
+    "question": "What is the explicit exploration philosophy of Breadth-First Search (BFS)?",
+    "options": [
+      "Search as broadly as possible, visiting all immediately adjacent nodes completely before moving deeper",
+      "Search deeply down one single path until a dead end",
+      "Use heavy recursive calls to force backtracking",
+      "Sort all edges by weight before visiting"
+    ],
+    "answer": 0,
+    "explanation": "Chiến thuật của Duyệt theo chiều rộng (BFS) là vết dầu loang. Đứng tại một đỉnh, nó sẽ nhìn sang ngang và thăm hỏi toàn bộ những người hàng xóm kế cận ngay sát vách nó trước. Xong xuôi lớp ngoài cùng này, nó mới tiếp tục loang ra lớp hàng xóm thứ hai.",
+    "category": "Graph Traversals"
+  },
+  {
+    "id": 29,
+    "question": "Breadth-First Search (BFS) execution is highly mathematically analogous to which specific Tree Traversal algorithm?",
+    "options": [
+      "Inorder traversal",
+      "Preorder traversal",
+      "Postorder traversal",
+      "Level-order traversal"
+    ],
+    "answer": 3,
+    "explanation": "Bởi vì BFS xử lý triệt để lớp hàng xóm cách nó 1 bước, rồi mới đến lớp 2 bước, lớp 3 bước... Điều này ánh xạ trực tiếp với Duyệt theo Mức (Level-order) trên Cây nhị phân: quét hết tầng 1, xuống tầng 2, rồi quét tầng 3.",
+    "category": "Graph Traversals"
+  },
+  {
+    "id": 30,
+    "question": "Which explicit Data Structure correctly provides the First-In-First-Out (FIFO) mechanics essential to executing a Breadth-First Search (BFS)?",
+    "options": [
+      "Stack",
+      "Queue",
+      "Binary Search Tree",
+      "Array without pointers"
+    ],
+    "answer": 1,
+    "explanation": "Để bảo đảm nguyên tắc 'ai được khám phá trước (ở tầng nông hơn) thì phải được xử lý khai thác trước', BFS tuyệt đối phụ thuộc vào Hàng đợi (Queue). Node nào đẩy vào hàng đợi sớm sẽ được nhổ ra sớm để duy trì đúng sóng loang.",
+    "category": "Graph Traversals"
+  },
+  {
+    "id": 31,
+    "question": "When implementing a graph utilizing Adjacency Lists, what is the theoretical Time Complexity of a complete DFS or BFS traversal?",
+    "options": [
+      "O(n^2)",
+      "O(n^3)",
+      "O(n + e)",
+      "O(log n)"
+    ],
+    "answer": 2,
+    "explanation": "Với danh sách kề, thuật toán không phải duyệt các ô trống. Mỗi đỉnh (n) được đưa vào hàng đợi/ngăn xếp một lần. Với mỗi đỉnh đó, ta duyệt qua sợi xích liên kết chứa các cạnh của nó. Tổng chi phí duyệt bằng đúng tổng số đỉnh cộng với số cạnh thực có, tương đương O(n + e).",
+    "category": "Graph Traversals"
+  },
+  {
+    "id": 32,
+    "question": "When implementing a graph heavily utilizing an Adjacency Matrix, what is the theoretical Time Complexity of a complete DFS or BFS traversal?",
+    "options": [
+      "O(n + e)",
+      "O(n log n)",
+      "O(n^2)",
+      "O(e^2)"
+    ],
+    "answer": 2,
+    "explanation": "Trong ma trận kề, dù đồ thị có trống rỗng, khi đang đứng tại đỉnh i, thuật toán BFS/DFS vẫn bắt buộc phải cày dọc toàn bộ một hàng n cột để tìm xem có ô nào chứa số 1 hay không. Vòng lặp n đỉnh nhân với n thao tác quét hàng tạo ra gánh nặng độ phức tạp O(n^2).",
+    "category": "Graph Traversals"
+  },
+  {
+    "id": 33,
+    "question": "During graph traversal coding, what crucial algorithmic purpose does the 'visited' array array definitively serve?",
+    "options": [
+      "It mathematically computes the shortest path accurately",
+      "It sorts the vertices rapidly",
+      "It prevents infinite loops dynamically by marking nodes so they are never processed more than once",
+      "It deletes nodes from memory completely"
+    ],
+    "answer": 2,
+    "explanation": "Khác với cây (chỉ đi một chiều xuống), đồ thị có mạng lưới chằng chịt và các chu trình (vòng lặp). Nếu không dùng mảng cờ hiệu 'visited' (đã thăm) để đánh dấu các đỉnh đã đi qua, thuật toán sẽ bị mắc kẹt, chạy quẩn quanh các đỉnh đó mãi mãi đến khi treo máy.",
+    "category": "Graph Traversals"
+  },
+  {
+    "id": 34,
+    "question": "In Breadth-First Search (BFS), explicitly when does a specific node practically get added to the Queue?",
+    "options": [
+      "Immediately after it is deleted from the queue",
+      "When it is verified as an unvisited adjacent neighbor of the currently processed node",
+      "When it reaches a dead end",
+      "Randomly during initialization"
+    ],
+    "answer": 1,
+    "explanation": "Thuật toán BFS bốc một đỉnh u ra khỏi Hàng đợi, sau đó kiểm kê danh bạ hàng xóm của u. Bất kỳ người hàng xóm nào chưa từng được viếng thăm (!visited) sẽ lập tức bị 'tóm cổ' đẩy vào cuối Hàng đợi và đánh dấu đã thăm để chốt lịch xử lý về sau.",
+    "category": "Graph Traversals"
+  },
+  {
+    "id": 35,
+    "question": "In the standard execution of a Depth-First Search (DFS), what functional condition forcibly triggers a 'backtrack'?",
+    "options": [
+      "Encountering a node that natively has a heavily weighted edge",
+      "Reaching a vertex that mathematically has absolutely no unvisited adjacent neighbors left to explore",
+      "Reaching the literal end of an array",
+      "When the stack becomes completely full"
+    ],
+    "answer": 1,
+    "explanation": "Lệnh đệ quy đi sâu của DFS sẽ tiến tới liên tục. Điểm dừng (Base case) của việc đâm sâu này xuất hiện khi đỉnh hiện tại bị cô lập: mọi cạnh nối từ nó đều dẫn tới những đỉnh đã bị đánh dấu 'visited' từ trước. Lúc này không còn đường để đi, DFS đành phải trở ra nhánh cũ.",
+    "category": "Graph Traversals"
+  },
+  {
+    "id": 36,
+    "question": "Which of the following is a classic computationally highly effective application of graph traversal algorithms (DFS/BFS)?",
+    "options": [
+      "Finding connected components and spanning trees mathematically",
+      "Compressing image files efficiently",
+      "Converting hexadecimal numbers to binary",
+      "Encrypting string passwords safely"
+    ],
+    "answer": 0,
+    "explanation": "Nhờ khả năng quét sạch mạng lưới liên thông, DFS và BFS được dùng làm cốt lõi để giải quyết bài toán: tìm các thành phần liên thông (Connected components) cắt chia đồ thị, hoặc tạo ra cây khung (Spanning tree) bao trùm toàn bộ mạng lưới mà không có chu trình.",
+    "category": "Graph Traversals"
+  },
+  {
+    "id": 37,
+    "question": "In the process of tracing DFS theoretically, when starting at vertex 'A', if 'A' has adjacent vertices 'B' and 'H', which node is typically pushed to the execution sequence first?",
+    "options": [
+      "It skips to the next graph component",
+      "It visits whichever unvisited adjacent node the specific programming implementation logically picks first (e.g., sequentially 'B')",
+      "It must mathematically visit both simultaneously",
+      "It deletes 'H'"
+    ],
+    "answer": 1,
+    "explanation": "DFS không có quy định bắt buộc phải chọn nhánh nào trước nếu có nhiều nhánh rẽ. Sự lựa chọn hoàn toàn phụ thuộc vào danh sách kề được lập trình ưu tiên lưu đỉnh nào trước (thường là theo thứ tự bảng chữ cái hoặc thứ tự mảng). Nên nếu A nối với B và H, nó bốc B để đi sâu tiếp.",
+    "category": "Graph Traversals"
+  },
+  {
+    "id": 38,
+    "question": "If a graph is mathematically composed of several isolated, completely disconnected components, what will a single call to DFS/BFS starting from one node accomplish?",
+    "options": [
+      "It will somehow jump seamlessly to all components and visit every node globally",
+      "It will completely crash throwing a Null Pointer exception",
+      "It will exclusively visit and discover only the vertices residing within that starting node's specific connected component",
+      "It will mathematically connect the components together"
+    ],
+    "answer": 2,
+    "explanation": "Bản chất của thuật toán là bò dọc theo các cạnh. Nếu đồ thị bị đứt lìa thành nhiều mảnh đảo (disconnected components), thì đứng ở mảnh đảo này, thuật toán không thể bay qua mảnh đảo kia được. Nó chỉ có thể quét sạch mảnh đất liên thông chứa đỉnh xuất phát mà thôi.",
+    "category": "Graph Traversals"
+  },
+  {
+    "id": 39,
+    "question": "What is mathematically inherently true regarding a 'Spanning Tree' structurally derived from graph G using DFS or BFS?",
+    "options": [
+      "It aggressively includes all edges of graph G",
+      "It selectively includes all vertices of graph G but contains exactly zero cycles",
+      "It only contains half of the vertices randomly",
+      "It mathematically creates a directed complete graph"
+    ],
+    "answer": 1,
+    "explanation": "Khi DFS/BFS càn quét một đồ thị liên thông, các đường đi mà nó vẽ ra (loại trừ các cạnh rác gây chu trình vòng lặp) sẽ tạo thành bộ khung kết nối tất cả mọi đỉnh. Bộ khung này chính là Cây Khung (Spanning tree), chứa đủ V đỉnh nhưng tuyệt đối không có vòng.",
+    "category": "Graph Traversals"
+  },
+  {
+    "id": 40,
+    "question": "In a pure BFS implementation, exactly what element does the function `deleteq(&front)` systematically extract?",
+    "options": [
+      "The mathematically maximum value node recursively",
+      "The node physically at the very back (rear) of the queue",
+      "The node currently resting physically at the front of the FIFO queue to process its unexplored neighbors",
+      "The completely unvisited root node randomly"
+    ],
+    "answer": 2,
+    "explanation": "Đúng với nguyên lý FIFO của Queue, hàm delete (dequeue) chỉ được phép trích xuất phần tử đứng đầu tiên (front) trong hàng chờ. Đỉnh này vừa được lấy ra sẽ đảm nhận vai trò trung tâm, giúp phát tín hiệu radar tìm kiếm các hàng xóm xung quanh nó.",
+    "category": "Graph Traversals"
+  }
+]

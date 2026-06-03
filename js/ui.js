@@ -17,6 +17,7 @@ class QuizUI {
 
     this.initEventListeners();
     this.renderHistory();
+    this.renderPresetGrid();
 
     // Check for saved ongoing quiz progress
     setTimeout(() => this.checkForActiveQuiz(), 100);
@@ -142,14 +143,58 @@ class QuizUI {
       }
     });
 
-    // 3. Preset Quizzes click handlers
-    document.querySelectorAll('.preset-card').forEach(card => {
-      card.addEventListener('click', () => {
-        const file = card.dataset.file;
-        const name = card.dataset.name;
-        this.loadPresetQuiz(file, name);
+    // 3. Preset Quizzes click handlers (using event delegation)
+    const presetGrid = document.getElementById('preset-grid');
+    if (presetGrid) {
+      presetGrid.addEventListener('click', (e) => {
+        // Find if they clicked a delete button
+        const deleteBtn = e.target.closest('.delete-quiz-btn');
+        if (deleteBtn) {
+          e.stopPropagation();
+          const quizId = deleteBtn.dataset.id;
+          const customQuizzes = QuizStorage.getCustomQuizzes();
+          const quiz = customQuizzes.find(q => q.id === quizId);
+          const quizName = quiz ? quiz.name : 'bộ đề';
+          
+          this.showConfirmDialog(
+            "Xóa bộ đề",
+            `Bạn có chắc chắn muốn xóa bộ đề '${quizName}' không?`,
+            () => {
+              QuizStorage.deleteCustomQuiz(quizId);
+              this.renderPresetGrid();
+              this.showToast(`Đã xóa bộ đề '${quizName}'.`, "success");
+            }
+          );
+          return;
+        }
+
+        // Find if they clicked a preset card
+        const card = e.target.closest('.preset-card');
+        if (card) {
+          if (card.classList.contains('custom-preset-card')) {
+            // It's a custom quiz!
+            const quizId = card.dataset.id;
+            const customQuizzes = QuizStorage.getCustomQuizzes();
+            const quiz = customQuizzes.find(q => q.id === quizId);
+            if (quiz) {
+              this.currentQuizData = quiz.questions;
+              this.currentQuizName = quiz.name;
+              this.showToast(`Đã chọn bộ đề: ${quiz.name}`, "success");
+              this.showScreen('setup');
+              document.getElementById('setup-quiz-title').innerText = quiz.name;
+              document.getElementById('setup-question-count').innerText = `${quiz.questions.length} câu hỏi`;
+            } else {
+              this.showToast("Không tìm thấy dữ liệu bộ đề.", "error");
+            }
+          } else {
+            // It's a default preset quiz
+            const file = card.dataset.file;
+            const name = card.dataset.name;
+            this.loadPresetQuiz(file, name);
+          }
+        }
       });
-    });
+    }
 
     // 4. Setup Screen navigation back
     document.getElementById('setup-back-btn').addEventListener('click', () => {
@@ -250,6 +295,19 @@ class QuizUI {
     window.addEventListener('beforeunload', () => {
       this.persistActiveQuiz();
     });
+
+    // 12. History list retake click handler
+    const historyList = document.getElementById('history-list');
+    if (historyList) {
+      historyList.addEventListener('click', (e) => {
+        const retakeBtn = e.target.closest('.retake-history-btn');
+        if (retakeBtn) {
+          e.stopPropagation();
+          const quizName = retakeBtn.dataset.name;
+          this.loadQuizByName(quizName);
+        }
+      });
+    }
   }
 
   /**
@@ -281,7 +339,14 @@ class QuizUI {
         this.currentQuizData = data;
         this.currentQuizName = file.name.replace('.json', '');
         
-        this.showToast(`Nạp bộ đề '${this.currentQuizName}' thành công (${data.length} câu)!`, "success");
+        // Save to localStorage as custom quiz so it persists!
+        const savedQuiz = QuizStorage.saveCustomQuiz(this.currentQuizName, this.currentQuizData);
+        if (savedQuiz) {
+          this.renderPresetGrid();
+          this.showToast(`Nạp bộ đề '${this.currentQuizName}' thành công (${data.length} câu) và đã lưu vào máy!`, "success");
+        } else {
+          this.showToast(`Nạp bộ đề thành công (${data.length} câu), nhưng không thể lưu vào bộ nhớ trình duyệt (LocalStorage đầy).`, "warning");
+        }
         
         // Auto navigate to setup screen
         this.showScreen('setup');
@@ -819,10 +884,15 @@ class QuizUI {
           <span class="history-item-name" title="${item.quizName}">${item.quizName}</span>
           <span class="history-item-score">${item.score}/${item.totalQuestions} (${item.accuracy}%)</span>
         </div>
-        <div class="history-item-details">
-          <span>📅 ${formattedDate}</span>
-          <span>⏱️ ${this.formatTime(item.timeSpent)}</span>
-          <span class="preset-tag" style="padding:0.1rem 0.4rem; font-size:0.7rem">${modeLabel}</span>
+        <div class="history-item-details" style="align-items: center; justify-content: space-between; display: flex; width: 100%;">
+          <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; align-items: center;">
+            <span>📅 ${formattedDate}</span>
+            <span>⏱️ ${this.formatTime(item.timeSpent)}</span>
+            <span class="preset-tag" style="padding:0.1rem 0.4rem; font-size:0.7rem">${modeLabel}</span>
+          </div>
+          <button class="retake-history-btn" data-name="${item.quizName}" title="Làm lại bộ đề này">
+            🔄 Làm lại
+          </button>
         </div>
       `;
       list.appendChild(div);
@@ -1016,6 +1086,105 @@ class QuizUI {
         <text x="${pt.x}" y="${height - 8}" text-anchor="middle" class="comparison-text" style="font-size:9px">Lần ${idx + 1}</text>
       `;
     });
+  }
+
+  /**
+   * Renders preset quizzes including default ones and custom saved quizzes from localStorage.
+   */
+  renderPresetGrid() {
+    const presetGrid = document.getElementById('preset-grid');
+    if (!presetGrid) return;
+    presetGrid.innerHTML = '';
+
+    // 1. Default Presets
+    const defaultPresets = [
+      {
+        file: 'data/sample-general.json',
+        name: 'Kiến thức chung',
+        displayName: 'Kiến Thức Tổng Hợp',
+        category: 'Xã hội',
+        description: '5 câu hỏi trắc nghiệm',
+        isPreset: true
+      },
+      {
+        file: 'data/sample-javascript.json',
+        name: 'Lập trình JavaScript',
+        displayName: 'Lập Trình JavaScript',
+        category: 'IT / Code',
+        description: '5 câu hỏi kỹ thuật ES6+',
+        isPreset: true
+      }
+    ];
+
+    // 2. Custom Quizzes from Storage
+    const customQuizzes = QuizStorage.getCustomQuizzes();
+
+    // Render default presets
+    defaultPresets.forEach(preset => {
+      const card = document.createElement('button');
+      card.className = 'preset-card';
+      card.dataset.file = preset.file;
+      card.dataset.name = preset.name;
+      card.innerHTML = `
+        <span class="preset-tag">${preset.category}</span>
+        <h4>${preset.displayName}</h4>
+        <span>${preset.description}</span>
+      `;
+      presetGrid.appendChild(card);
+    });
+
+    // Render custom presets
+    customQuizzes.forEach(quiz => {
+      const card = document.createElement('div');
+      card.className = 'preset-card custom-preset-card';
+      card.dataset.id = quiz.id;
+      
+      card.innerHTML = `
+        <div class="preset-card-content" style="flex: 1; display: flex; flex-direction: column; gap: 0.5rem; cursor: pointer;">
+          <span class="preset-tag" style="background-color: var(--info-light); color: var(--info-color);">${quiz.category}</span>
+          <h4>${quiz.name}</h4>
+          <span>${quiz.questions.length} câu hỏi trắc nghiệm</span>
+        </div>
+        <button class="delete-quiz-btn" data-id="${quiz.id}" title="Xóa bộ đề này">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="3 6 5 6 21 6"></polyline>
+            <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+            <line x1="10" y1="11" x2="10" y2="17"></line>
+            <line x1="14" y1="11" x2="14" y2="17"></line>
+          </svg>
+        </button>
+      `;
+      presetGrid.appendChild(card);
+    });
+  }
+
+  /**
+   * Helper to load a quiz by its name (checks default presets and custom stored quizzes).
+   */
+  loadQuizByName(quizName) {
+    // 1. Check default presets
+    if (quizName === 'Kiến thức chung' || quizName === 'Kiến Thức Tổng Hợp') {
+      this.loadPresetQuiz('data/sample-general.json', 'Kiến thức chung');
+      return;
+    }
+    if (quizName === 'Lập trình JavaScript' || quizName === 'Lập Trình JavaScript') {
+      this.loadPresetQuiz('data/sample-javascript.json', 'Lập trình JavaScript');
+      return;
+    }
+
+    // 2. Check custom quizzes
+    const customQuizzes = QuizStorage.getCustomQuizzes();
+    const customQuiz = customQuizzes.find(q => q.name.trim().toLowerCase() === quizName.trim().toLowerCase());
+    if (customQuiz) {
+      this.currentQuizData = customQuiz.questions;
+      this.currentQuizName = customQuiz.name;
+      this.showToast(`Đã nạp bộ đề: ${customQuiz.name}`, "success");
+      this.showScreen('setup');
+      document.getElementById('setup-quiz-title').innerText = customQuiz.name;
+      document.getElementById('setup-question-count').innerText = `${customQuiz.questions.length} câu hỏi`;
+    } else {
+      this.showToast(`Không tìm thấy câu hỏi cho bộ đề "${quizName}". Tệp có thể đã bị xóa.`, "error");
+    }
   }
 }
 

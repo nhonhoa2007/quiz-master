@@ -1,0 +1,523 @@
+
+[
+  {
+    "id": 1,
+    "question": "What specifically designates a standard 'Tree' data structure?",
+    "options": [
+      "A linear sequence of strictly connected nodes",
+      "A finite set of nodes with a specially designated root and disjoint sub-trees",
+      "A collection of edges with no nodes",
+      "A graph where every node connects to all other nodes"
+    ],
+    "answer": 1,
+    "explanation": "Theo định nghĩa cốt lõi, cây là một cấu trúc phân cấp bao gồm một tập hợp hữu hạn các node. Trong đó có một node đặc biệt đóng vai trò là gốc (root), và các node còn lại được chia thành nhiều tập hợp không giao nhau (disjoint sets), mỗi tập hợp lại đóng vai trò là một cây con (sub-tree).",
+    "category": "Trees"
+  },
+  {
+    "id": 2,
+    "question": "How is the 'degree' of a node defined in a tree?",
+    "options": [
+      "The total number of nodes in the entire tree",
+      "The number of parent nodes it is connected to",
+      "The number of sub-trees (or children) belonging to that node",
+      "The length of the path from the root to that node"
+    ],
+    "answer": 2,
+    "explanation": "Bậc (degree) của một node chính là số lượng cây con (sub-trees) trực tiếp nảy sinh từ node đó, hay nói cách khác dễ hiểu hơn là số lượng node con trực tiếp (children) mà nó đang quản lý.",
+    "category": "Trees"
+  },
+  {
+    "id": 3,
+    "question": "In a tree structure, what determines the 'level' of any given child node?",
+    "options": [
+      "The level of the root multiplied by two",
+      "It is always equal to its degree",
+      "The level of its parent node plus one",
+      "The total count of all leaf nodes"
+    ],
+    "answer": 2,
+    "explanation": "Cấp độ (level) phản ánh độ sâu của node đó so với gốc. Gốc mặc định ở cấp 1, do đó bất kỳ node con nào cũng sẽ nằm ở một tầng thấp hơn cha của nó đúng 1 đơn vị (level của cha + 1).",
+    "category": "Trees"
+  },
+  {
+    "id": 4,
+    "question": "What is mathematically referred to as the 'height' or 'depth' of a tree?",
+    "options": [
+      "The minimum level among all leaf nodes",
+      "The total number of edges in the tree",
+      "The maximum degree of any single node",
+      "The maximum level of any node present in the tree"
+    ],
+    "answer": 3,
+    "explanation": "Chiều cao (height) hay độ sâu (depth) của toàn bộ cây được quyết định bởi nhánh dài nhất, tương đương với cấp độ (level) cao nhất mà một node có thể đạt tới trong cấu trúc cây đó.",
+    "category": "Trees"
+  },
+  {
+    "id": 5,
+    "question": "In the 'Left Child-Right Sibling' representation of a tree, what does the right sibling pointer do?",
+    "options": [
+      "It points to the node's parent",
+      "It points to the immediately adjacent sibling sharing the same parent",
+      "It points to the rightmost leaf of the tree",
+      "It points back to the root"
+    ],
+    "answer": 1,
+    "explanation": "Trong cấu trúc biểu diễn 'Con Trái - Anh Em Phải', con trỏ trái chỉ dẫn tới đứa con đầu lòng. Vì không giới hạn số con, những đứa con còn lại sẽ được liên kết với nhau bằng con trỏ phải (right sibling), trỏ tới anh chị em nằm ngay cạnh nó.",
+    "category": "Trees"
+  },
+  {
+    "id": 6,
+    "question": "What defining characteristic strictly separates a Binary Tree from a general Tree?",
+    "options": [
+      "A binary tree has no root node",
+      "Every node in a binary tree must have exactly two children",
+      "A binary tree consists of a root and at most two disjoint binary sub-trees (left and right)",
+      "A binary tree allows cycles and circular links"
+    ],
+    "answer": 2,
+    "explanation": "Cây nhị phân (Binary Tree) bị giới hạn nghiêm ngặt: một node có tối đa 2 node con, và hai cây con này phải phân biệt rạch ròi thành cây con trái (left sub-tree) và cây con phải (right sub-tree), kể cả khi chỉ có một con.",
+    "category": "Binary Trees"
+  },
+  {
+    "id": 7,
+    "question": "What is the maximum mathematical number of nodes theoretically possible on level i of a binary tree?",
+    "options": [
+      "2^i",
+      "2^(i-1)",
+      "2^i - 1",
+      "i^2"
+    ],
+    "answer": 1,
+    "explanation": "Mỗi một tầng của cây nhị phân có sức chứa gấp đôi tầng ngay phía trên nó. Bắt đầu từ cấp 1 có 1 node (2^0), cấp 2 có 2 node (2^1)... Tổng quát lại, sức chứa tối đa của tầng thứ i luôn là 2^(i-1).",
+    "category": "Binary Trees"
+  },
+  {
+    "id": 8,
+    "question": "What is the absolute maximum number of nodes in a full binary tree spanning a depth of k?",
+    "options": [
+      "2^(k-1)",
+      "2^k",
+      "(2^k) - 1",
+      "k^2"
+    ],
+    "answer": 2,
+    "explanation": "Cây nhị phân đầy đủ có tất cả các tầng được lấp kín. Khi cộng dồn số lượng node tối đa từ tầng 1 đến tầng k theo cấp số nhân, công thức rút gọn ta thu được là (2^k) - 1 phần tử.",
+    "category": "Binary Trees"
+  },
+  {
+    "id": 9,
+    "question": "For any nonempty binary tree, what is the exact algebraic relationship between the number of leaf nodes (n0) and the number of nodes of degree 2 (n2)?",
+    "options": [
+      "n0 = n2",
+      "n0 = n2 + 1",
+      "n0 = 2 * n2",
+      "n2 = n0 + 1"
+    ],
+    "answer": 1,
+    "explanation": "Đây là một định lý toán học cơ bản trong cây nhị phân: Bất kể cây có hình dáng méo mó hay cân bằng thế nào, số lượng node lá (node không có con - n0) luôn luôn nhiều hơn số lượng node có đủ 2 con (n2) chính xác 1 đơn vị.",
+    "category": "Binary Trees"
+  },
+  {
+    "id": 10,
+    "question": "Which of the following describes a 'Complete Binary Tree'?",
+    "options": [
+      "A tree where all nodes have zero children",
+      "A tree where all left children are smaller than right children",
+      "A tree whose nodes correspond sequentially to the nodes numbered from 1 to n in a full binary tree",
+      "A tree where every parent node has exactly one child"
+    ],
+    "answer": 2,
+    "explanation": "Cây nhị phân hoàn chỉnh (Complete Binary Tree) là cây được lấp đầy từ trên xuống dưới, từ trái qua phải mà không hề bị ngắt quãng. Các node của nó tương ứng chính xác với chỉ mục từ 1 đến n của một cây nhị phân đầy đủ.",
+    "category": "Binary Trees"
+  },
+  {
+    "id": 11,
+    "question": "In a 1-based array representation of a complete binary tree, where is the parent of a node located at index i?",
+    "options": [
+      "i / 2",
+      "2 * i",
+      "i + 1",
+      "i - 1"
+    ],
+    "answer": 0,
+    "explanation": "Nhờ tính chất lấp đầy liên tục của cây hoàn chỉnh, toán học chỉ ra rằng node cha của một node bất kỳ ở vị trí i luôn nằm gọn tại chỉ mục i chia nguyên cho 2 (i/2).",
+    "category": "Binary Trees"
+  },
+  {
+    "id": 12,
+    "question": "In a 1-based array representation of a complete binary tree, what is the index of the right child of a node located at index i?",
+    "options": [
+      "i / 2",
+      "2 * i",
+      "2 * i + 1",
+      "2 * i + 2"
+    ],
+    "answer": 2,
+    "explanation": "Quy luật thiết lập mảng cho cây chỉ định rằng: con trái của node i luôn nằm ở vị trí 2*i, và con phải sẽ nằm ngay kế tiếp ở vị trí 2*i + 1 (với điều kiện nó không vượt quá số lượng phần tử tối đa).",
+    "category": "Binary Trees"
+  },
+  {
+    "id": 13,
+    "question": "Why is an array representation generally considered a poor choice for a 'Skewed Binary Tree'?",
+    "options": [
+      "Because arrays cannot handle parent-child relationships",
+      "Because it wastes a significant amount of memory, leaving more than half the array empty",
+      "Because accessing elements becomes O(N^2)",
+      "Because skewed trees strictly require three pointers per node"
+    ],
+    "answer": 1,
+    "explanation": "Cây lệch (Skewed Tree) chỉ phát triển dài ngoằng về một phía. Nếu ép nó vào mảng, hệ thống vẫn phải cấp phát toàn bộ ô nhớ dự phòng cho nhánh còn lại dù không dùng đến, dẫn đến lãng phí không gian lưu trữ cực kỳ nghiêm trọng.",
+    "category": "Binary Trees"
+  },
+  {
+    "id": 14,
+    "question": "Which traversal method dictates visiting the nodes in the strict order: Node -> Left -> Right?",
+    "options": [
+      "Inorder Traversal",
+      "Preorder Traversal",
+      "Postorder Traversal",
+      "Level-order Traversal"
+    ],
+    "answer": 1,
+    "explanation": "Duyệt tiền tố (Preorder Traversal - VLR) mang ý nghĩa 'xử lý trước': Thuật toán sẽ ngay lập tức thao tác trên node gốc (Visit) ngay khi vừa chạm tới, sau đó mới tiến hành đệ quy xuống nhánh bên trái (Left) rồi cuối cùng mới qua nhánh phải (Right).",
+    "category": "Binary Trees"
+  },
+  {
+    "id": 15,
+    "question": "Which specific data structure is fundamentally required to successfully implement an Iterative Inorder Traversal?",
+    "options": [
+      "Queue",
+      "Stack",
+      "Linked List",
+      "Hash Table"
+    ],
+    "answer": 1,
+    "explanation": "Duyệt cây không đệ quy yêu cầu ta đi sâu xuống tận cùng bên trái và phải tìm cách quay ngược trở lên. Ngăn xếp (Stack) với đặc tính LIFO (Vào sau ra trước) chính là công cụ hoàn hảo để lưu vết các node cha nhằm lấy ra sử dụng khi cần lùi lại.",
+    "category": "Binary Trees"
+  },
+  {
+    "id": 16,
+    "question": "Which data structure is fundamentally utilized to simulate and track nodes during a Level-Order Traversal?",
+    "options": [
+      "Stack",
+      "Priority Queue",
+      "Queue",
+      "Graph"
+    ],
+    "answer": 2,
+    "explanation": "Duyệt theo mức (Level-order) là càn quét từ trên xuống dưới, từ trái qua phải. Để giữ đúng thứ tự 'ai xuất hiện ở tầng trên trước thì được xử lý trước', thuật toán bắt buộc phải dùng Hàng đợi (Queue - FIFO) để lưu trữ các node con.",
+    "category": "Binary Trees"
+  },
+  {
+    "id": 17,
+    "question": "What core characteristic logically defines a Binary Search Tree (BST)?",
+    "options": [
+      "All leaf nodes must be at the exact same depth level",
+      "Every node in the left sub-tree is smaller than the root, and every node in the right sub-tree is larger",
+      "The root node must always contain the mathematically smallest value",
+      "It must be perfectly balanced at all times"
+    ],
+    "answer": 1,
+    "explanation": "Nguyên lý định hình Cây Tìm kiếm Nhị phân (BST) là sự phân loại giá trị rạch ròi: mọi phần tử nằm bên nhánh trái đều mang giá trị nhỏ hơn node hiện tại, và mọi phần tử nằm bên nhánh phải đều mang giá trị lớn hơn. Điều này đúng cho mọi node trên cây.",
+    "category": "Binary Search Trees"
+  },
+  {
+    "id": 18,
+    "question": "If you perform an Inorder traversal precisely on a valid Binary Search Tree, what is the guaranteed format of the output?",
+    "options": [
+      "Elements sorted in strictly descending order",
+      "Elements sorted in strictly ascending order",
+      "Elements appearing completely randomly",
+      "The root element appearing last"
+    ],
+    "answer": 1,
+    "explanation": "Duyệt trung tố (Inorder - LVR) đi nhánh trái (nhỏ nhất), rồi thăm node gốc (vừa phải), sau đó sang nhánh phải (lớn nhất). Nhờ vào sự sắp xếp chặt chẽ của BST, thao tác duyệt này sẽ tự động trải phẳng cây ra thành một danh sách tăng dần từ nhỏ đến lớn.",
+    "category": "Binary Search Trees"
+  },
+  {
+    "id": 19,
+    "question": "What is the worst-case time complexity logically expected when searching for an element in a Binary Search Tree of n nodes?",
+    "options": [
+      "O(1)",
+      "O(log n)",
+      "O(n)",
+      "O(n^2)"
+    ],
+    "answer": 2,
+    "explanation": "Tình huống tồi tệ nhất xảy ra khi người dùng nhập vào chuỗi dữ liệu đã được sắp xếp sẵn, khiến BST bị suy thoái thành một cây lệch (Skewed Tree) giống hệt một danh sách liên kết. Lúc này hệ thống phải duyệt qua toàn bộ n phần tử, tốn O(n) thời gian.",
+    "category": "Binary Search Trees"
+  },
+  {
+    "id": 20,
+    "question": "When structurally inserting a completely new node into a Binary Search Tree, where is it inherently placed?",
+    "options": [
+      "It always replaces the current root",
+      "It is inserted exactly in the middle level of the tree",
+      "It is always attached as a new leaf node at the bottom where the search naturally terminates",
+      "It randomly shifts all existing nodes downwards"
+    ],
+    "answer": 2,
+    "explanation": "Thuật toán chèn luôn chạy song song với thuật toán tìm kiếm. Nó luồn lách qua các node hiện có để dò tìm chỗ trống. Khi việc tìm kiếm đi vào ngõ cụt (gặp con trỏ NULL), đó chính là vị trí hợp lệ duy nhất để nối giá trị mới vào dưới dạng một node lá.",
+    "category": "Binary Search Trees"
+  },
+  {
+    "id": 21,
+    "question": "What programmatic action occurs if you try to insert a key into a BST that already perfectly exists within it?",
+    "options": [
+      "The tree crashes immediately",
+      "The node is inserted anyway, creating a duplicate child",
+      "The algorithm identifies the duplication, does nothing, and typically ignores the insert",
+      "All old values are incremented by 1"
+    ],
+    "answer": 2,
+    "explanation": "Cây Tìm kiếm Nhị phân tiêu chuẩn yêu cầu mỗi khóa (key) phải là duy nhất. Khi dò tìm thấy giá trị đã tồn tại, thuật toán sẽ bỏ qua và không thực hiện thao tác tạo mới để bảo toàn cấu trúc rẽ nhánh.",
+    "category": "Binary Search Trees"
+  },
+  {
+    "id": 22,
+    "question": "How do you systematically find the absolutely minimum value residing in a Binary Search Tree?",
+    "options": [
+      "Travel down the rightmost child pointers constantly",
+      "Travel down the leftmost child pointers constantly until reaching a node with no left child",
+      "Check the exact root node",
+      "Do a complete Level-order traversal"
+    ],
+    "answer": 1,
+    "explanation": "Vì giá trị nhỏ hơn luôn bị dạt về bên trái, nên phần tử mang giá trị bé nhất của toàn bộ cây chắc chắn phải nằm sâu ở tận cùng bên trái. Ta chỉ việc men theo con trỏ trái cho đến khi bị chặn lại bởi ngõ cụt.",
+    "category": "Binary Search Trees"
+  },
+  {
+    "id": 23,
+    "question": "When selectively deleting a node that has exactly zero children (a leaf) from a BST, what operational action is taken?",
+    "options": [
+      "The entire tree is structurally rebuilt",
+      "The node's parent's link is redirected to NULL and the memory is freed",
+      "It is replaced by a duplicate of the root",
+      "A dummy node is inserted in its place"
+    ],
+    "answer": 1,
+    "explanation": "Node lá là phần tử vô hại nhất vì nó không cõng theo bất kỳ hậu duệ nào. Việc xóa bỏ nó cực kỳ đơn giản: chỉ cần ngắt liên kết từ node cha trỏ xuống nó (đổi thành NULL) rồi giải phóng bộ nhớ của nó là xong.",
+    "category": "Binary Search Trees"
+  },
+  {
+    "id": 24,
+    "question": "When executing deletion on a node that possesses exactly one child in a BST, how is the structural gap repaired?",
+    "options": [
+      "By replacing the node with the absolute maximum value of the tree",
+      "By completely severing the child tree and discarding it",
+      "By linking the deleted node's parent directly to the deleted node's sole child",
+      "By moving the child to the root position"
+    ],
+    "answer": 2,
+    "explanation": "Khi node bị xóa có đúng 1 nhánh con, ta đóng vai trò làm cầu nối: mang toàn bộ nhánh con duy nhất đó nối thẳng trực tiếp vào vị trí của node cha vừa mất. Điều này cho phép bảo tồn toàn bộ dữ liệu bên dưới mà không làm vỡ cấu trúc cây.",
+    "category": "Binary Search Trees"
+  },
+  {
+    "id": 25,
+    "question": "When deleting a highly complex node with two full sub-trees (two children) from a BST, which element functionally replaces its value?",
+    "options": [
+      "The direct right child only",
+      "The largest element strictly from its left sub-tree (or the smallest from its right sub-tree)",
+      "The node's parent is pulled down",
+      "An entirely randomly chosen leaf node"
+    ],
+    "answer": 1,
+    "explanation": "Xóa node có 2 con là trường hợp rắc rối nhất. Ta không thể nối bừa các nhánh. Giải pháp là đi tìm 'người thế mạng' có giá trị gần gũi nhất với node sắp xóa: phần tử lớn nhất của nhánh trái (hoặc nhỏ nhất nhánh phải), chép giá trị của nó lên thay thế, rồi tiến hành xóa 'người thế mạng' đó ở phía dưới.",
+    "category": "Binary Search Trees"
+  },
+  {
+    "id": 26,
+    "question": "In the process of evaluating deletion case 4 (two children), what structural guarantee ensures the replacement node is easy to delete?",
+    "options": [
+      "The replacement node is always the exact root",
+      "The replacement node is guaranteed to have at most one child (or no children)",
+      "The replacement node guarantees it has two children",
+      "The replacement node is a ghost node"
+    ],
+    "answer": 1,
+    "explanation": "Bởi vì phần tử lớn nhất nhánh trái (hoặc nhỏ nhất nhánh phải) luôn nằm ở ngoài cùng biên giới, nó chắc chắn không thể có con bên chiều ngược lại (vì nếu có, nó đã không phải là tận cùng). Do đó, việc xóa phần tử thế mạng này sẽ rơi vào trường hợp dễ (chỉ có 0 hoặc 1 con).",
+    "category": "Binary Search Trees"
+  },
+  {
+    "id": 27,
+    "question": "What is the best-case computational time complexity for searching an item in a perfectly balanced Binary Search Tree?",
+    "options": [
+      "O(1)",
+      "O(log n)",
+      "O(n)",
+      "O(n log n)"
+    ],
+    "answer": 1,
+    "explanation": "Khi cây cân bằng hoàn hảo, mỗi nhát cắt (so sánh) sẽ loại trừ thành công chính xác một nửa không gian tìm kiếm. Quá trình chia đôi liên tục này mang lại tốc độ logarit O(log n), làm nên sức mạnh cốt lõi của Binary Search Tree.",
+    "category": "Binary Search Trees"
+  },
+  {
+    "id": 28,
+    "question": "What is mathematically defined as a 'Forest' in data structure theory?",
+    "options": [
+      "A tree with exclusively leaf nodes",
+      "An ordered set of zero or more disjoint trees",
+      "A graph containing interconnected cycles",
+      "A binary search tree containing string values"
+    ],
+    "answer": 1,
+    "explanation": "Khu rừng (Forest) được định nghĩa là một tập hợp chứa không hoặc nhiều cây hoàn toàn độc lập với nhau (disjoint trees). Khi loại bỏ node gốc của bất kỳ một cây nào, toàn bộ các cây con của nó sẽ tự động bị tách ra và tạo thành một khu rừng mới.",
+    "category": "Forests"
+  },
+  {
+    "id": 29,
+    "question": "How is a Forest algorithmically transformed into a single unified Binary Tree?",
+    "options": [
+      "By placing all roots sequentially into an array",
+      "By transforming each tree using Left-Child Right-Sibling, and connecting the top roots as siblings",
+      "By adding an artificial super-root and treating the forest as its children array",
+      "By adding nodes together algebraically"
+    ],
+    "answer": 1,
+    "explanation": "Để gom nhiều cây vào chung một cấu trúc nhị phân, người ta áp dụng kỹ thuật Con Trái - Anh Em Phải. Ở cấp độ cao nhất, các gốc của từng cây riêng lẻ trong rừng được coi như anh em với nhau và được xâu chuỗi thông qua con trỏ Right-Sibling.",
+    "category": "Forests"
+  },
+  {
+    "id": 30,
+    "question": "When recursively counting the total number of nodes in a standard binary tree, what is the core logical operation applied?",
+    "options": [
+      "return 1 + count(left_child) + count(right_child)",
+      "return count(left_child) * count(right_child)",
+      "return max(count(left_child), count(right_child))",
+      "return level(left_child) + level(right_child)"
+    ],
+    "answer": 0,
+    "explanation": "Tổng số lượng node của một cây chính là bản thân node hiện tại (đếm là 1) cộng dồn với tổng số lượng node được đệ quy trả về từ toàn bộ nhánh cây bên trái và nhánh cây bên phải của nó.",
+    "category": "Trees"
+  },
+  {
+    "id": 31,
+    "question": "When designing a function to exclusively count 'Leaf' nodes, what precise condition triggers the return value of 1?",
+    "options": [
+      "When the node has exactly one child",
+      "When the node's data is exactly 1",
+      "When both the left and right child pointers of the node are strictly NULL",
+      "When the node is the absolute root"
+    ],
+    "answer": 2,
+    "explanation": "Đặc điểm nhận dạng vật lý duy nhất của node lá là sự cằn cỗi: nó không trỏ tới bất kỳ node con nào cả. Do đó, điều kiện bắt buộc để ghi nhận 1 lá là cả hai nhánh left và right đều đang giữ trạng thái rỗng (NULL).",
+    "category": "Trees"
+  },
+  {
+    "id": 32,
+    "question": "What specific traversal method structurally corresponds to naturally reading an algebraic expression from an Expression Tree into Postfix notation?",
+    "options": [
+      "Inorder Traversal",
+      "Preorder Traversal",
+      "Postorder Traversal",
+      "Level Order Traversal"
+    ],
+    "answer": 2,
+    "explanation": "Trong biểu thức hậu tố (Postfix), toán tử đứng sau hai toán hạng (Trái - Phải - Toán tử). Trật tự này ánh xạ chuẩn xác 100% với nguyên lý của duyệt hậu tố Postorder Traversal (Left - Right - Node/Visit).",
+    "category": "Binary Trees"
+  },
+  {
+    "id": 33,
+    "question": "Which traversal scheme is profoundly the safest to employ when systematically destroying (freeing memory of) an entire Binary Tree?",
+    "options": [
+      "Preorder Traversal",
+      "Inorder Traversal",
+      "Postorder Traversal",
+      "Random Traversal"
+    ],
+    "answer": 2,
+    "explanation": "Xóa bộ nhớ cần tuân thủ quy tắc 'xóa con trước khi xóa cha'. Nếu xóa cha trước (Preorder), ta mất luôn con trỏ trỏ xuống con và rò rỉ bộ nhớ. Do đó, phải dùng Duyệt Hậu tố (Postorder) để đi sâu xóa mầm mống nhánh trái, nhánh phải xong xuôi rồi mới quay về hủy diệt node gốc hiện tại.",
+    "category": "Trees"
+  },
+  {
+    "id": 34,
+    "question": "If transforming an original 'Forest' into a Binary Tree using LCRS, what does an In-order traversal on the resulting binary tree conceptually match in the original forest?",
+    "options": [
+      "Pre-order traversal of the forest",
+      "In-order traversal of the forest",
+      "Post-order traversal of the forest",
+      "Level-order traversal of the forest"
+    ],
+    "answer": 1,
+    "explanation": "Vì cấu trúc LCRS (Con trái - Anh em phải) bẻ cong hình thái cây, các nhà toán học đã chỉ ra sự tương đồng: Hành động duyệt In-order (giữa) trên cây nhị phân đại diện mô phỏng chính xác đường đi In-order trên cấu trúc của khu rừng gốc.",
+    "category": "Forests"
+  },
+  {
+    "id": 35,
+    "question": "When developing an algorithm to compute the absolute 'Height' of a binary tree, what mathematical function consolidates the results from the subtrees?",
+    "options": [
+      "Min()",
+      "Sum()",
+      "Max()",
+      "Average()"
+    ],
+    "answer": 2,
+    "explanation": "Chiều cao của cây bị chi phối bởi nhánh sâu nhất. Tại mỗi trạm dừng (node), thuật toán đo chiều cao nhánh trái và nhánh phải, sau đó dùng hàm Max() để kén chọn nhánh dài hơn, cộng thêm 1 (cho chính node hiện tại) và đẩy ngược kết quả lên trên.",
+    "category": "Trees"
+  },
+  {
+    "id": 36,
+    "question": "What is conceptually created when replacing all elements from a randomly ordered array into an initially empty Binary Search Tree?",
+    "options": [
+      "A tree with height explicitly guaranteed to be O(log n)",
+      "A standard BST ordered correctly according to the array inputs",
+      "A purely skewed Linked List always",
+      "A graph with structural cycles"
+    ],
+    "answer": 1,
+    "explanation": "Việc đọc lần lượt từng phần tử của mảng và gọi hàm Insert() sẽ xây dựng nên một Cây BST hoàn chỉnh, bảo đảm tính chất phân loại. Tùy thuộc vào thứ tự dữ liệu mảng ngẫu nhiên hay có quy luật, cây sinh ra có thể cân bằng hoặc bị lệch.",
+    "category": "Binary Search Trees"
+  },
+  {
+    "id": 37,
+    "question": "Which specific condition in a recursive function evaluates if two binary trees topologically and fundamentally equal each other?",
+    "options": [
+      "Roots match, and left sub-tree matches right sub-tree identically",
+      "Current node data matches, and both left-left and right-right subtrees match recursively",
+      "They have the exact same number of total nodes",
+      "Their physical memory pointer addresses are exactly identical"
+    ],
+    "answer": 1,
+    "explanation": "Để hai cây tương đương, không chỉ dữ liệu tại điểm nút phải bằng nhau, mà cấu trúc hình học bên trái và bên phải cũng phải song hành khớp nhau. Do đó ta đệ quy đối chiếu đồng thời: data == data, nhánh trái so nhánh trái, nhánh phải so nhánh phải.",
+    "category": "Binary Trees"
+  },
+  {
+    "id": 38,
+    "question": "What is essentially being duplicated in the 'Copying Binary Trees' algorithmic approach?",
+    "options": [
+      "Just the pointer to the root, aliasing the same memory",
+      "An entirely new tree allocating separate memory mimicking the precise structure and values recursively",
+      "Only the leaf nodes are preserved",
+      "The tree is flattened into a one-dimensional array string"
+    ],
+    "answer": 1,
+    "explanation": "Copy cây không phải là gán con trỏ (shallow copy). Thuật toán phải sử dụng duyệt cây để đi tới đâu, xin hệ điều hành cấp phát bộ nhớ (malloc) tạo node mới tới đó, sao chép dữ liệu và dựng nên một bản sao độc lập (deep copy) hệt như bản gốc.",
+    "category": "Binary Trees"
+  },
+  {
+    "id": 39,
+    "question": "In a BST insertion, if the value being inserted is heavily larger than all elements inside the tree, where will it eventually end up?",
+    "options": [
+      "At the very top, effectively replacing the root node",
+      "As the deepest leftmost strictly terminal node",
+      "As the deepest rightmost explicitly terminal node",
+      "At an indeterminate random internal location"
+    ],
+    "answer": 2,
+    "explanation": "Theo quy luật phân tích, giá trị lớn hơn luôn đẩy luồng thực thi chạy về ngã rẽ bên phải. Nếu giá trị đó lớn hơn mọi thứ, nó sẽ càn quét liên tục toàn bộ các con trỏ bên phải cho đến điểm chết cuối cùng và neo đậu thành node ở tận cùng bên phải của cây.",
+    "category": "Binary Search Trees"
+  },
+  {
+    "id": 40,
+    "question": "If you strictly implement an Iterative Search in a BST instead of a Recursive Search, what primary computational resource are you conceptually trying to save?",
+    "options": [
+      "Hard disk database storage capability",
+      "Execution time speed by reducing raw comparison limits",
+      "The system Call Stack memory strictly overheaded by heavy recursion",
+      "Processor graphics cache"
+    ],
+    "answer": 2,
+    "explanation": "Dù bản chất đều tốn vòng lặp để dò tìm, việc dùng vòng lặp while (Iterative) tránh được việc phải đẩy liên tục hàng tá trạng thái hàm (Activation Records) vào Stack hệ thống như thuật toán đệ quy (Recursive). Điều này ngăn ngừa tràn bộ nhớ Stack và gia tăng tính an toàn.",
+    "category": "Binary Search Trees"
+  }
+]

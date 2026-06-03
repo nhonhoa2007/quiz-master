@@ -117,6 +117,72 @@ class QuizStorage {
       console.error("Error clearing active quiz state:", e);
     }
   }
+
+  static CUSTOM_QUIZZES_KEY = 'quizmaster_custom_quizzes';
+
+  /**
+   * Fetch all custom quizzes from localStorage.
+   * @returns {Array} Array of custom quiz objects
+   */
+  static getCustomQuizzes() {
+    try {
+      const customJson = localStorage.getItem(this.CUSTOM_QUIZZES_KEY);
+      return customJson ? JSON.parse(customJson) : [];
+    } catch (e) {
+      console.error("Error reading custom quizzes from localStorage:", e);
+      return [];
+    }
+  }
+
+  /**
+   * Save a custom quiz to localStorage (overwrites if the name already exists).
+   * @param {string} name - Name of the quiz
+   * @param {Array} questions - Questions list
+   * @returns {Object} The saved custom quiz object
+   */
+  static saveCustomQuiz(name, questions) {
+    try {
+      const customQuizzes = this.getCustomQuizzes();
+      // Check if one with same name already exists (case insensitive, trimmed)
+      const existingIndex = customQuizzes.findIndex(q => q.name.trim().toLowerCase() === name.trim().toLowerCase());
+      
+      const quizObject = {
+        id: existingIndex !== -1 ? customQuizzes[existingIndex].id : 'custom_' + Date.now(),
+        name: name,
+        questions: questions,
+        category: 'Tự chọn',
+        dateAdded: new Date().toISOString()
+      };
+      
+      if (existingIndex !== -1) {
+        // Overwrite
+        customQuizzes[existingIndex] = quizObject;
+      } else {
+        // Append
+        customQuizzes.push(quizObject);
+      }
+      
+      localStorage.setItem(this.CUSTOM_QUIZZES_KEY, JSON.stringify(customQuizzes));
+      return quizObject;
+    } catch (e) {
+      console.error("Error saving custom quiz to localStorage:", e);
+      return null;
+    }
+  }
+
+  /**
+   * Delete a custom quiz by ID.
+   * @param {string} id - The quiz ID
+   */
+  static deleteCustomQuiz(id) {
+    try {
+      let customQuizzes = this.getCustomQuizzes();
+      customQuizzes = customQuizzes.filter(q => q.id !== id);
+      localStorage.setItem(this.CUSTOM_QUIZZES_KEY, JSON.stringify(customQuizzes));
+    } catch (e) {
+      console.error("Error deleting custom quiz from localStorage:", e);
+    }
+  }
 }
 
 // Export class globally or for ES modules

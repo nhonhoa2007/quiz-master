@@ -1574,3 +1574,53 @@ p {
     padding-bottom: 0.5rem;
   }
 }
+
+/* --- Custom Quizzes and History Retake Styles --- */
+.custom-preset-card {
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+}
+
+.delete-quiz-btn {
+  background: none;
+  border: none;
+  color: var(--danger-color);
+  cursor: pointer;
+  padding: 0.35rem;
+  border-radius: var(--border-radius-sm);
+  transition: all var(--transition-fast);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+}
+
+.delete-quiz-btn:hover {
+  background-color: var(--danger-light);
+  color: var(--danger-color);
+  transform: scale(1.1);
+}
+
+.retake-history-btn {
+  background: none;
+  border: 1px solid var(--border-color);
+  color: var(--accent-color);
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+  border-radius: var(--border-radius-sm);
+  font-size: 0.75rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  transition: all var(--transition-fast);
+}
+
+.retake-history-btn:hover {
+  background-color: var(--accent-light) !important;
+  border-color: var(--accent-color) !important;
+  color: var(--accent-color) !important;
+  transform: translateY(-1px);
+}
