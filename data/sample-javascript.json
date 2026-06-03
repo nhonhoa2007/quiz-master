@@ -1,0 +1,67 @@
+[
+  {
+    "id": 1,
+    "question": "Kết quả của biểu thức `typeof null` trong JavaScript là gì?",
+    "options": [
+      "\"null\"",
+      "\"undefined\"",
+      "\"object\"",
+      "\"function\""
+    ],
+    "answer": 2,
+    "explanation": "Trong JavaScript, `typeof null` trả về `\"object\"`. Đây được coi là một lỗi thiết kế lịch sử trong ngôn ngữ nhưng được giữ lại để đảm bảo tính tương thích ngược.",
+    "category": "JavaScript Core"
+  },
+  {
+    "id": 2,
+    "question": "Lệnh nào dùng để khai báo một biến có phạm vi khối (block scope) và giá trị của nó có thể thay đổi?",
+    "options": [
+      "var",
+      "let",
+      "const",
+      "def"
+    ],
+    "answer": 1,
+    "explanation": "`let` được sử dụng để khai báo biến có phạm vi khối (block scope) và giá trị của nó có thể gán lại. Ngược lại, `const` không thể gán lại giá trị, còn `var` có phạm vi hàm (function scope).",
+    "category": "ES6+"
+  },
+  {
+    "id": 3,
+    "question": "Phương thức nào của mảng được dùng để tạo một mảng mới với tất cả phần tử thỏa mãn điều kiện nhất định?",
+    "options": [
+      "map()",
+      "forEach()",
+      "filter()",
+      "reduce()"
+    ],
+    "answer": 2,
+    "explanation": "Phương thức `filter()` tạo ra một mảng mới chứa tất cả phần tử vượt qua bài kiểm tra (trả về true trong callback function).",
+    "category": "Array Methods"
+  },
+  {
+    "id": 4,
+    "question": "Sự khác biệt chính giữa toán tử so sánh `==` và `===` là gì?",
+    "options": [
+      "`==` so sánh cả giá trị và kiểu dữ liệu, `===` chỉ so sánh giá trị",
+      "`===` so sánh cả giá trị và kiểu dữ liệu (so sánh nghiêm ngặt), `==` tự động ép kiểu trước khi so sánh",
+      "Không có sự khác biệt nào",
+      "`==` dùng cho chuỗi, `===` dùng cho số"
+    ],
+    "answer": 1,
+    "explanation": "`===` là toán tử so sánh nghiêm ngặt, nó kiểm tra cả giá trị và kiểu dữ liệu mà không ép kiểu. `==` sẽ cố gắng ép kiểu hai giá trị về cùng kiểu dữ liệu trước khi so sánh.",
+    "category": "Operators"
+  },
+  {
+    "id": 5,
+    "question": "Khái niệm 'Closure' trong JavaScript có nghĩa là gì?",
+    "options": [
+      "Một hàm tự đóng sau khi thực thi xong để giải phóng bộ nhớ",
+      "Khả năng của một hàm ghi nhớ và truy cập vào phạm vi bên ngoài của nó (lexical environment) ngay cả khi nó đang thực thi bên ngoài phạm vi đó",
+      "Một phương thức đóng kết nối mạng",
+      "Một khối lệnh try-catch để bắt lỗi"
+    ],
+    "answer": 1,
+    "explanation": "Closure là sự kết hợp giữa một hàm và môi trường từ vựng (lexical environment) nơi hàm đó được khai báo. Nó cho phép hàm truy cập các biến từ phạm vi cha ngay cả sau khi phạm vi cha đã thực thi xong.",
+    "category": "Advanced JS"
+  }
+]

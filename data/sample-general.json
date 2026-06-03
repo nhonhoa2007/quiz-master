@@ -1,0 +1,67 @@
+[
+  {
+    "id": 1,
+    "question": "Trái Đất là hành tinh thứ mấy tính từ Mặt Trời trong Hệ Mặt Trời?",
+    "options": [
+      "Hành tinh thứ hai",
+      "Hành tinh thứ ba",
+      "Hành tinh thứ tư",
+      "Hành tinh thứ năm"
+    ],
+    "answer": 1,
+    "explanation": "Trái Đất xếp vị trí thứ ba tính từ Mặt Trời, sau Sao Thủy (Mercury) và Sao Kim (Venus).",
+    "category": "Khoa học"
+  },
+  {
+    "id": 2,
+    "question": "Kim loại nào dẫn điện tốt nhất trong số các kim loại dưới đây?",
+    "options": [
+      "Vàng",
+      "Đồng",
+      "Bạc",
+      "Nhôm"
+    ],
+    "answer": 2,
+    "explanation": "Bạc (Ag) là kim loại có độ dẫn điện cao nhất trong các kim loại, tiếp theo là Đồng (Cu) rồi đến Vàng (Au).",
+    "category": "Khoa học"
+  },
+  {
+    "id": 3,
+    "question": "Đại dương nào có diện tích lớn nhất trên Trái Đất?",
+    "options": [
+      "Đại Tây Dương",
+      "Ấn Độ Dương",
+      "Bắc Băng Dương",
+      "Thái Bình Dương"
+    ],
+    "answer": 3,
+    "explanation": "Thái Bình Dương là đại dương lớn nhất và sâu nhất trên Trái Đất, chiếm hơn một phần ba diện tích bề mặt Trái Đất.",
+    "category": "Địa lý"
+  },
+  {
+    "id": 4,
+    "question": "Ai là tác giả của tác phẩm văn học nổi tiếng 'Truyện Kiều'?",
+    "options": [
+      "Nguyễn Trãi",
+      "Nguyễn Du",
+      "Hồ Xuân Hương",
+      "Đoàn Thị Điểm"
+    ],
+    "answer": 1,
+    "explanation": "Truyện Kiều (tên gốc: Đoạn trường tân thanh) là một truyện thơ Nôm kinh điển của Việt Nam do Đại thi hào Nguyễn Du sáng tác.",
+    "category": "Văn học"
+  },
+  {
+    "id": 5,
+    "question": "Công thức hóa học của muối ăn thông thường là gì?",
+    "options": [
+      "NaCl",
+      "HCl",
+      "NaOH",
+      "NaHCO3"
+    ],
+    "answer": 0,
+    "explanation": "Muối ăn có thành phần hóa học chủ yếu là Natri Clorua (NaCl).",
+    "category": "Khoa học"
+  }
+]

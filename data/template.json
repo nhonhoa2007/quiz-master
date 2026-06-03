@@ -1,0 +1,27 @@
+[
+  {
+    "id": 1,
+    "question": "Nội dung câu hỏi số 1 ở đây?",
+    "options": [
+      "Lựa chọn A (Chỉ mục 0)",
+      "Lựa chọn B (Chỉ mục 1)",
+      "Lựa chọn C (Chỉ mục 2)",
+      "Lựa chọn D (Chỉ mục 3)"
+    ],
+    "answer": 0,
+    "explanation": "Giải thích chi tiết vì sao đáp án A (chỉ mục 0) là đáp án đúng.",
+    "category": "Tên Danh mục (Tùy chọn)"
+  },
+  {
+    "id": 2,
+    "question": "Nội dung câu hỏi số 2 ở đây? (Sử dụng đáp án dạng chữ)",
+    "options": [
+      "Đáp án Sai 1",
+      "Đáp án Đúng 1",
+      "Đáp án Sai 2"
+    ],
+    "answer": "Đáp án Đúng 1",
+    "explanation": "Với dạng này, ứng dụng sẽ tự khớp chuỗi văn bản của đáp án.",
+    "category": "Tên Danh mục (Tùy chọn)"
+  }
+]
