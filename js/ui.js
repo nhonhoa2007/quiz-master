@@ -17,6 +17,9 @@ class QuizUI {
 
     this.initEventListeners();
     this.renderHistory();
+
+    // Check for saved ongoing quiz progress
+    setTimeout(() => this.checkForActiveQuiz(), 100);
   }
 
   /**
@@ -66,7 +69,7 @@ class QuizUI {
   /**
    * Confirmation Dialog Modal
    */
-  showConfirmDialog(title, message, onConfirm) {
+  showConfirmDialog(title, message, onConfirm, onCancel) {
     const overlay = document.createElement('div');
     overlay.className = 'dialog-overlay';
     
@@ -83,7 +86,10 @@ class QuizUI {
     
     document.body.appendChild(overlay);
     
-    overlay.querySelector('#dlg-cancel').addEventListener('click', () => overlay.remove());
+    overlay.querySelector('#dlg-cancel').addEventListener('click', () => {
+      overlay.remove();
+      if (onCancel) onCancel();
+    });
     overlay.querySelector('#dlg-confirm').addEventListener('click', () => {
       overlay.remove();
       onConfirm();
@@ -198,6 +204,7 @@ class QuizUI {
       this.showToast(bookmarked ? "Đã đánh dấu câu hỏi này!" : "Đã bỏ đánh dấu câu hỏi.", 'info');
       this.renderQuestionGrid();
       this.updateBookmarkButtonUI();
+      this.persistActiveQuiz();
     });
 
     document.getElementById('quiz-submit-btn').addEventListener('click', () => {
@@ -237,6 +244,11 @@ class QuizUI {
         e.target.classList.add('active');
         this.filterReviewResults(e.target.dataset.filter);
       });
+    });
+
+    // 11. Page reload auto-save handler
+    window.addEventListener('beforeunload', () => {
+      this.persistActiveQuiz();
     });
   }
 
@@ -309,6 +321,7 @@ class QuizUI {
    * Initializes and starts a new Quiz run
    */
   startQuiz() {
+    QuizStorage.clearActiveQuizState();
     const timeLimitVal = parseInt(document.querySelector('input[name="quiz-time"]:checked').value);
     const modeVal = document.querySelector('input[name="quiz-mode"]:checked').value;
     
@@ -429,6 +442,9 @@ class QuizUI {
     } else {
       nextBtn.style.display = 'inline-flex';
     }
+
+    // Persist ongoing state
+    this.persistActiveQuiz();
   }
 
   /**
@@ -441,6 +457,8 @@ class QuizUI {
     if (this.quizEngine.mode === 'practice') {
       // Re-render immediately to show correct/incorrect explanations
       this.renderQuizQuestion();
+    } else {
+      this.persistActiveQuiz();
     }
   }
 
@@ -514,6 +532,11 @@ class QuizUI {
       const s = String(spent % 60).padStart(2, '0');
       timerText.innerText = `${m}:${s}`;
       
+      // Save state every 10 seconds of time spent
+      if (spent > 0 && spent % 10 === 0) {
+        this.persistActiveQuiz();
+      }
+      
       // Keep stroke full green
       progressCircle.style.strokeDashoffset = '0';
       progressCircle.className.baseVal = 'timer-circle-progress';
@@ -524,6 +547,11 @@ class QuizUI {
     const m = String(Math.floor(remaining / 60)).padStart(2, '0');
     const s = String(remaining % 60).padStart(2, '0');
     timerText.innerText = `${m}:${s}`;
+
+    // Save state every 10 seconds of countdown remaining
+    if (remaining > 0 && remaining % 10 === 0) {
+      this.persistActiveQuiz();
+    }
     
     // Circle stroke calculations
     const totalDuration = this.quizEngine.timeLimit * 60;
@@ -571,6 +599,9 @@ class QuizUI {
     
     // Save to LocalStorage
     const savedResult = QuizStorage.saveResult(results);
+
+    // Clear active state since quiz is submitted
+    QuizStorage.clearActiveQuizState();
     
     // Open results screen
     this.showScreen('results');
@@ -796,6 +827,67 @@ class QuizUI {
       `;
       list.appendChild(div);
     });
+  }
+
+  /**
+   * Check if there's any active quiz progress in localStorage.
+   */
+  checkForActiveQuiz() {
+    const savedState = QuizStorage.getActiveQuizState();
+    if (savedState) {
+      this.showConfirmDialog(
+        "Khôi phục bài làm",
+        `Bạn có bài trắc nghiệm '${savedState.quizName}' đang làm dở. Bạn có muốn tiếp tục làm tiếp không?`,
+        () => {
+          this.resumeQuiz(savedState);
+        },
+        () => {
+          QuizStorage.clearActiveQuizState();
+        }
+      );
+    }
+  }
+
+  /**
+   * Restores the quiz from saved state.
+   */
+  resumeQuiz(savedState) {
+    this.quizEngine = QuizEngine.restore(savedState);
+    this.currentQuizData = savedState.questions;
+    this.currentQuizName = savedState.quizName;
+
+    // Setup Engine events
+    this.quizEngine.onTick = (remaining, spent) => {
+      this.updateTimerUI(remaining, spent);
+    };
+
+    this.quizEngine.onTimeUp = () => {
+      this.showToast("Hết giờ làm bài! Ứng dụng tự động nộp bài.", "error");
+      this.submitQuiz();
+    };
+
+    // Transition to quiz view
+    this.showScreen('quiz');
+    document.getElementById('quiz-title').innerText = this.currentQuizName;
+    
+    // Resume timer
+    this.quizEngine.startTimer();
+    
+    // Render restored question, grid and timer
+    this.renderQuizQuestion();
+    this.renderQuestionGrid();
+    this.updateTimerUI(this.quizEngine.timeRemaining, this.quizEngine.timeSpent);
+
+    this.showToast("Đã khôi phục tiến độ làm bài thành công!", "success");
+  }
+
+  /**
+   * Save the current quiz engine state to localStorage.
+   */
+  persistActiveQuiz() {
+    if (this.quizEngine && this.quizEngine.quizStarted && !this.quizEngine.quizSubmitted) {
+      QuizStorage.saveActiveQuizState(this.quizEngine.serialize());
+    }
   }
 
   /**

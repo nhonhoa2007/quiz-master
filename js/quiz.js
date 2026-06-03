@@ -73,11 +73,12 @@ class QuizEngine {
     
     const startTime = Date.now();
     const initialTimeRemaining = this.timeRemaining;
+    const initialTimeSpent = this.timeSpent;
     
     this.timerInterval = setInterval(() => {
       const elapsedSeconds = Math.floor((Date.now() - startTime) / 1000);
       
-      this.timeSpent = elapsedSeconds;
+      this.timeSpent = initialTimeSpent + elapsedSeconds;
       
       if (this.timeLimit > 0) {
         this.timeRemaining = initialTimeRemaining - elapsedSeconds;
@@ -190,6 +191,37 @@ class QuizEngine {
       mode: this.mode,
       details: details
     };
+  }
+
+  /**
+   * Serialize active engine state into a plain object.
+   */
+  serialize() {
+    return {
+      quizName: this.quizName,
+      questions: this.questions,
+      timeLimit: this.timeLimit,
+      mode: this.mode,
+      currentQuestionIndex: this.currentQuestionIndex,
+      userAnswers: this.userAnswers,
+      bookmarkedQuestions: Array.from(this.bookmarkedQuestions),
+      timeRemaining: this.timeRemaining,
+      timeSpent: this.timeSpent
+    };
+  }
+
+  /**
+   * Restore engine from a serialized state object.
+   */
+  static restore(state) {
+    const engine = new QuizEngine(state.questions, state.quizName, state.timeLimit, state.mode);
+    engine.currentQuestionIndex = state.currentQuestionIndex || 0;
+    engine.userAnswers = state.userAnswers || {};
+    engine.bookmarkedQuestions = new Set(state.bookmarkedQuestions || []);
+    engine.timeRemaining = state.timeRemaining !== undefined ? state.timeRemaining : state.timeLimit * 60;
+    engine.timeSpent = state.timeSpent || 0;
+    engine.quizStarted = true;
+    return engine;
   }
 }
 

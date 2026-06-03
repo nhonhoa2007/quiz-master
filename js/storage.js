@@ -80,6 +80,43 @@ class QuizStorage {
       console.error("Error setting theme in localStorage:", e);
     }
   }
+
+  static ACTIVE_QUIZ_KEY = 'quizmaster_active_quiz';
+
+  /**
+   * Save the active quiz progress state.
+   */
+  static saveActiveQuizState(state) {
+    try {
+      localStorage.setItem(this.ACTIVE_QUIZ_KEY, JSON.stringify(state));
+    } catch (e) {
+      console.error("Error saving active quiz state:", e);
+    }
+  }
+
+  /**
+   * Fetch the saved active quiz progress state.
+   */
+  static getActiveQuizState() {
+    try {
+      const stateJson = localStorage.getItem(this.ACTIVE_QUIZ_KEY);
+      return stateJson ? JSON.parse(stateJson) : null;
+    } catch (e) {
+      console.error("Error getting active quiz state:", e);
+      return null;
+    }
+  }
+
+  /**
+   * Clear active quiz progress state.
+   */
+  static clearActiveQuizState() {
+    try {
+      localStorage.removeItem(this.ACTIVE_QUIZ_KEY);
+    } catch (e) {
+      console.error("Error clearing active quiz state:", e);
+    }
+  }
 }
 
 // Export class globally or for ES modules
