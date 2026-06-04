@@ -370,15 +370,11 @@ class QuizUI {
 
     // 7. Quiz controls
     document.getElementById('quiz-prev-btn').addEventListener('click', () => {
-      if (this.quizEngine.prevQuestion()) {
-        this.renderQuizQuestion();
-      }
+      this.goToPreviousQuestion();
     });
 
     document.getElementById('quiz-next-btn').addEventListener('click', () => {
-      if (this.quizEngine.nextQuestion()) {
-        this.renderQuizQuestion();
-      }
+      this.goToNextQuestion();
     });
 
     document.getElementById('quiz-bookmark-btn').addEventListener('click', () => {
@@ -434,6 +430,10 @@ class QuizUI {
     // 12. Page reload auto-save handler
     window.addEventListener('beforeunload', () => {
       this.persistActiveQuiz();
+    });
+
+    window.addEventListener('keydown', (e) => {
+      this.handleKeyboardNavigation(e);
     });
 
     // 13. History list retake click handler
@@ -935,6 +935,52 @@ class QuizUI {
     } else {
       this.persistActiveQuiz();
     }
+  }
+
+  goToPreviousQuestion() {
+    if (this.quizEngine && this.quizEngine.prevQuestion()) {
+      this.renderQuizQuestion();
+    }
+  }
+
+  goToNextQuestion() {
+    if (this.quizEngine && this.quizEngine.nextQuestion()) {
+      this.renderQuizQuestion();
+    }
+  }
+
+  handleKeyboardNavigation(e) {
+    if (!this.shouldHandleQuestionShortcut(e)) return;
+
+    if (e.key === 'ArrowLeft') {
+      e.preventDefault();
+      this.goToPreviousQuestion();
+    } else if (e.key === 'ArrowRight') {
+      e.preventDefault();
+      this.goToNextQuestion();
+    }
+  }
+
+  shouldHandleQuestionShortcut(e) {
+    if (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') return false;
+    if (e.altKey || e.ctrlKey || e.metaKey || e.shiftKey) return false;
+    if (!this.quizEngine || this.quizEngine.quizSubmitted) return false;
+    if (!this.screens.quiz.classList.contains('active')) return false;
+    if (document.querySelector('.dialog-overlay')) return false;
+
+    const activeElement = document.activeElement;
+    if (!activeElement) return true;
+    if (activeElement.isContentEditable) return false;
+
+    const tagName = activeElement.tagName;
+    if (tagName === 'TEXTAREA' || tagName === 'SELECT') return false;
+
+    if (tagName === 'INPUT') {
+      const inputType = (activeElement.type || '').toLowerCase();
+      return inputType === 'radio' || inputType === 'checkbox' || inputType === 'button';
+    }
+
+    return true;
   }
 
   /**

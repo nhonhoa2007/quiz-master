@@ -20,6 +20,9 @@ class QuizEngine {
     this.quizSubmitted = false;
     
     this.timerInterval = null;
+    this.timerStartedAt = null;
+    this.timerInitialTimeRemaining = this.timeRemaining;
+    this.timerInitialTimeSpent = this.timeSpent;
     
     // Callback events
     this.onTick = null; // function(timeRemaining, timeSpent)
@@ -69,26 +72,23 @@ class QuizEngine {
     
     if (this.timeLimit > 0) {
       this.timeRemaining = this.timeLimit * 60;
-      this.startTimer();
     }
+
+    this.startTimer();
   }
 
   startTimer() {
     if (this.timerInterval) clearInterval(this.timerInterval);
     
-    const startTime = Date.now();
-    const initialTimeRemaining = this.timeRemaining;
-    const initialTimeSpent = this.timeSpent;
+    this.timerStartedAt = Date.now();
+    this.timerInitialTimeRemaining = this.timeRemaining;
+    this.timerInitialTimeSpent = this.timeSpent;
     
     this.timerInterval = setInterval(() => {
-      const elapsedSeconds = Math.floor((Date.now() - startTime) / 1000);
-      
-      this.timeSpent = initialTimeSpent + elapsedSeconds;
+      this.updateElapsedTime();
       
       if (this.timeLimit > 0) {
-        this.timeRemaining = initialTimeRemaining - elapsedSeconds;
         if (this.timeRemaining <= 0) {
-          this.timeRemaining = 0;
           this.stopTimer();
           if (this.onTimeUp) this.onTimeUp();
           return;
@@ -101,11 +101,26 @@ class QuizEngine {
     }, 1000);
   }
 
+  updateElapsedTime() {
+    if (!this.timerStartedAt) return;
+
+    const elapsedSeconds = Math.floor((Date.now() - this.timerStartedAt) / 1000);
+    this.timeSpent = this.timerInitialTimeSpent + elapsedSeconds;
+
+    if (this.timeLimit > 0) {
+      this.timeRemaining = Math.max(0, this.timerInitialTimeRemaining - elapsedSeconds);
+    }
+  }
+
   stopTimer() {
+    this.updateElapsedTime();
+
     if (this.timerInterval) {
       clearInterval(this.timerInterval);
       this.timerInterval = null;
     }
+
+    this.timerStartedAt = null;
   }
 
   /**
