@@ -41,24 +41,35 @@ class QuizEngine {
         options: Array.isArray(q.options) ? q.options : [],
         explanation: q.explanation || 'Không có giải thích cho câu hỏi này.',
         category: q.category || 'Chung',
-        originalAnswer: q.answer
+        answer: q.answer !== undefined ? q.answer : q.originalAnswer,
+        originalAnswer: q.answer !== undefined ? q.answer : q.originalAnswer
       };
 
       // Determine correct answer index
       let correctIndex = -1;
-      if (typeof q.answer === 'number') {
-        if (q.answer >= 0 && q.answer < question.options.length) {
-          correctIndex = q.answer;
+      if (q.correctIndex !== undefined && q.correctIndex !== null) {
+        correctIndex = Number(q.correctIndex);
+      } else {
+        const answerVal = question.answer;
+        if (typeof answerVal === 'number') {
+          if (answerVal >= 0 && answerVal < question.options.length) {
+            correctIndex = answerVal;
+          }
+        } else if (typeof answerVal === 'string' && /^\d+$/.test(answerVal.trim())) {
+          const numericAnswer = Number(answerVal.trim());
+          if (numericAnswer >= 0 && numericAnswer < question.options.length) {
+            correctIndex = numericAnswer;
+          }
+        } else if (typeof answerVal === 'string') {
+          const cleanAnswer = answerVal.trim().toLowerCase();
+          // First try to match exact option text
+          correctIndex = question.options.findIndex(opt => opt.toString().trim().toLowerCase() === cleanAnswer);
+          
+          // Fallback: check if it's a single letter A, B, C, D mapping to 0, 1, 2, 3
+          if (correctIndex === -1 && /^[a-d]$/.test(cleanAnswer)) {
+            correctIndex = cleanAnswer.charCodeAt(0) - 97;
+          }
         }
-      } else if (typeof q.answer === 'string' && /^\d+$/.test(q.answer.trim())) {
-        const numericAnswer = Number(q.answer.trim());
-        if (numericAnswer >= 0 && numericAnswer < question.options.length) {
-          correctIndex = numericAnswer;
-        }
-      } else if (typeof q.answer === 'string') {
-        // Find option index that matches string exactly or trim/case-insensitively
-        const cleanAnswer = q.answer.trim().toLowerCase();
-        correctIndex = question.options.findIndex(opt => opt.toString().trim().toLowerCase() === cleanAnswer);
       }
 
       question.correctIndex = correctIndex;

@@ -135,6 +135,9 @@ class QuizUI {
         if (/^\d+$/.test(trimmedAnswer)) {
           const numericAnswer = Number(trimmedAnswer);
           answerIsValid = numericAnswer >= 0 && numericAnswer < item.options.length;
+        } else if (/^[a-dA-D]$/.test(trimmedAnswer)) {
+          const letterIndex = trimmedAnswer.toLowerCase().charCodeAt(0) - 97;
+          answerIsValid = letterIndex >= 0 && letterIndex < item.options.length;
         } else {
           answerIsValid = item.options.some(option => option.toString().trim().toLowerCase() === trimmedAnswer.toLowerCase());
         }
@@ -858,9 +861,9 @@ class QuizUI {
       // Determine CSS classes for practice mode feedback
       let feedbackClass = '';
       if (isAnsweredInPractice) {
-        if (idx === question.correctIndex) {
+        if (idx === Number(question.correctIndex)) {
           feedbackClass = 'correct';
-        } else if (isChecked && idx !== question.correctIndex) {
+        } else if (isChecked && idx !== Number(question.correctIndex)) {
           feedbackClass = 'incorrect';
         }
       }
@@ -1264,10 +1267,10 @@ class QuizUI {
         let iconHTML = '';
         
         // Highlight states
-        if (optIdx === q.correctIndex) {
+        if (optIdx === Number(q.correctIndex)) {
           optItemClass += ' correct-target';
           iconHTML = `<svg width="18" height="18" viewBox="0 0 20 20" fill="currentColor" class="review-option-icon"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>`;
-        } else if (optIdx === q.userSelectedIndex && optIdx !== q.correctIndex) {
+        } else if (optIdx === Number(q.userSelectedIndex) && optIdx !== Number(q.correctIndex)) {
           optItemClass += ' selected-wrong';
           iconHTML = `<svg width="18" height="18" viewBox="0 0 20 20" fill="currentColor" class="review-option-icon"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1.414-9.414a1 1 0 10-1.414-1.414L10 8.586 8.586 7.172a1 1 0 00-1.414 1.414L8.586 10l-1.414 1.414a1 1 0 101.414 1.414L10 11.414l1.414 1.414a1 1 0 001.414-1.414L11.414 10l1.414-1.414z" clip-rule="evenodd"/></svg>`;
         }

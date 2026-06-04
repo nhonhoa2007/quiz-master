@@ -46,6 +46,9 @@ function validateQuizData(data, filePath) {
       if (/^\d+$/.test(trimmedAnswer)) {
         const numericAnswer = Number(trimmedAnswer);
         answerIsValid = numericAnswer >= 0 && numericAnswer < item.options.length;
+      } else if (/^[a-dA-D]$/.test(trimmedAnswer)) {
+        const letterIndex = trimmedAnswer.toLowerCase().charCodeAt(0) - 97;
+        answerIsValid = letterIndex >= 0 && letterIndex < item.options.length;
       } else {
         answerIsValid = item.options.some(option => option.toString().trim().toLowerCase() === trimmedAnswer.toLowerCase());
       }
