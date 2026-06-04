@@ -2,6 +2,79 @@
  * UI Controller - Manages DOM manipulation, page states, event handlers, animations, and chart rendering.
  */
 class QuizUI {
+  static DEFAULT_PRESETS = [
+    {
+      file: 'data/sample-general.json',
+      name: 'Kiến thức chung',
+      displayName: 'Kiến Thức Tổng Hợp',
+      category: 'Xã hội',
+      description: '5 câu hỏi trắc nghiệm'
+    },
+    {
+      file: 'data/sample-javascript.json',
+      name: 'Lập trình JavaScript',
+      displayName: 'Lập Trình JavaScript',
+      category: 'IT / Code',
+      description: '5 câu hỏi kỹ thuật ES6+'
+    },
+    {
+      file: 'quiz/chapter1-algorithm-analysis.json',
+      name: 'Phân tích thuật toán',
+      displayName: 'Chương 1: Phân Tích Thuật Toán',
+      category: 'Cấu trúc dữ liệu',
+      description: '40 câu hỏi'
+    },
+    {
+      file: 'quiz/chapter2-stack-queue.json',
+      name: 'Stack và Queue',
+      displayName: 'Chương 2: Stack & Queue',
+      category: 'Cấu trúc dữ liệu',
+      description: '40 câu hỏi'
+    },
+    {
+      file: 'quiz/chapter3-search-sort.json',
+      name: 'Tìm kiếm và sắp xếp',
+      displayName: 'Chương 3: Search & Sort',
+      category: 'Cấu trúc dữ liệu',
+      description: '40 câu hỏi'
+    },
+    {
+      file: 'quiz/chapter4-tree.json',
+      name: 'Cây',
+      displayName: 'Chương 4: Tree',
+      category: 'Cấu trúc dữ liệu',
+      description: '40 câu hỏi'
+    },
+    {
+      file: 'quiz/chapter5-heap.json',
+      name: 'Heap',
+      displayName: 'Chương 5: Heap',
+      category: 'Cấu trúc dữ liệu',
+      description: '40 câu hỏi'
+    },
+    {
+      file: 'quiz/chapter6-graph.json',
+      name: 'Đồ thị',
+      displayName: 'Chương 6: Graph',
+      category: 'Cấu trúc dữ liệu',
+      description: '40 câu hỏi'
+    },
+    {
+      file: 'quiz/chapter7-hashing.json',
+      name: 'Hashing',
+      displayName: 'Chương 7: Hashing',
+      category: 'Cấu trúc dữ liệu',
+      description: '40 câu hỏi'
+    },
+    {
+      file: 'quiz/extra-binarySearchTree.json',
+      name: 'Binary Search Tree',
+      displayName: 'Bổ sung: Binary Search Tree',
+      category: 'Cấu trúc dữ liệu',
+      description: '40 câu hỏi'
+    }
+  ];
+
   constructor() {
     this.currentQuizData = null;
     this.currentQuizName = 'Bộ đề trắc nghiệm';
@@ -21,6 +94,58 @@ class QuizUI {
 
     // Check for saved ongoing quiz progress
     setTimeout(() => this.checkForActiveQuiz(), 100);
+  }
+
+  createTextElement(tagName, className, text) {
+    const element = document.createElement(tagName);
+    if (className) element.className = className;
+    element.textContent = text ?? '';
+    return element;
+  }
+
+  validateQuizData(data) {
+    if (!Array.isArray(data) || data.length === 0) {
+      throw new Error("Dữ liệu JSON phải là một mảng chứa danh sách câu hỏi.");
+    }
+
+    data.forEach((item, index) => {
+      const questionNo = index + 1;
+      if (!item || typeof item !== 'object') {
+        throw new Error(`Câu ${questionNo} phải là một object.`);
+      }
+      if (typeof item.question !== 'string' || item.question.trim() === '') {
+        throw new Error(`Câu ${questionNo} thiếu trường 'question' dạng chuỗi.`);
+      }
+      if (!Array.isArray(item.options) || item.options.length < 2) {
+        throw new Error(`Câu ${questionNo} cần trường 'options' có tối thiểu 2 lựa chọn.`);
+      }
+      if (!item.options.every(option => typeof option === 'string' || typeof option === 'number')) {
+        throw new Error(`Câu ${questionNo} chỉ hỗ trợ option dạng chuỗi hoặc số.`);
+      }
+      if (item.answer === undefined || item.answer === null) {
+        throw new Error(`Câu ${questionNo} thiếu trường 'answer'.`);
+      }
+
+      const answer = item.answer;
+      let answerIsValid = false;
+      if (typeof answer === 'number') {
+        answerIsValid = Number.isInteger(answer) && answer >= 0 && answer < item.options.length;
+      } else if (typeof answer === 'string') {
+        const trimmedAnswer = answer.trim();
+        if (/^\d+$/.test(trimmedAnswer)) {
+          const numericAnswer = Number(trimmedAnswer);
+          answerIsValid = numericAnswer >= 0 && numericAnswer < item.options.length;
+        } else {
+          answerIsValid = item.options.some(option => option.toString().trim().toLowerCase() === trimmedAnswer.toLowerCase());
+        }
+      }
+
+      if (!answerIsValid) {
+        throw new Error(`Câu ${questionNo} có 'answer' không khớp index hoặc nội dung lựa chọn.`);
+      }
+    });
+
+    return data;
   }
 
   /**
@@ -55,10 +180,8 @@ class QuizUI {
       icon = `<svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" style="color:var(--info-color)"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zm-1 9a1 1 0 00-1-1v-4a1 1 0 102 0v4a1 1 0 00-1 1z" clip-rule="evenodd"/></svg>`;
     }
 
-    toast.innerHTML = `
-      ${icon}
-      <span class="toast-message">${message}</span>
-    `;
+    toast.innerHTML = icon;
+    toast.appendChild(this.createTextElement('span', 'toast-message', message));
     document.body.appendChild(toast);
     
     setTimeout(() => {
@@ -73,25 +196,34 @@ class QuizUI {
   showConfirmDialog(title, message, onConfirm, onCancel) {
     const overlay = document.createElement('div');
     overlay.className = 'dialog-overlay';
-    
-    overlay.innerHTML = `
-      <div class="dialog-box">
-        <h3>${title}</h3>
-        <p>${message}</p>
-        <div class="dialog-buttons">
-          <button class="btn btn-secondary btn-sm" id="dlg-cancel">Hủy</button>
-          <button class="btn btn-primary btn-sm" id="dlg-confirm">Xác nhận</button>
-        </div>
-      </div>
-    `;
+
+    const dialogBox = document.createElement('div');
+    dialogBox.className = 'dialog-box';
+    dialogBox.appendChild(this.createTextElement('h3', '', title));
+    dialogBox.appendChild(this.createTextElement('p', '', message));
+
+    const buttons = document.createElement('div');
+    buttons.className = 'dialog-buttons';
+
+    const cancelBtn = this.createTextElement('button', 'btn btn-secondary btn-sm', 'Hủy');
+    cancelBtn.type = 'button';
+    cancelBtn.id = 'dlg-cancel';
+
+    const confirmBtn = this.createTextElement('button', 'btn btn-primary btn-sm', 'Xác nhận');
+    confirmBtn.type = 'button';
+    confirmBtn.id = 'dlg-confirm';
+
+    buttons.append(cancelBtn, confirmBtn);
+    dialogBox.appendChild(buttons);
+    overlay.appendChild(dialogBox);
     
     document.body.appendChild(overlay);
     
-    overlay.querySelector('#dlg-cancel').addEventListener('click', () => {
+    cancelBtn.addEventListener('click', () => {
       overlay.remove();
       if (onCancel) onCancel();
     });
-    overlay.querySelector('#dlg-confirm').addEventListener('click', () => {
+    confirmBtn.addEventListener('click', () => {
       overlay.remove();
       onConfirm();
     });
@@ -177,12 +309,17 @@ class QuizUI {
             const customQuizzes = QuizStorage.getCustomQuizzes();
             const quiz = customQuizzes.find(q => q.id === quizId);
             if (quiz) {
-              this.currentQuizData = quiz.questions;
-              this.currentQuizName = quiz.name;
-              this.showToast(`Đã chọn bộ đề: ${quiz.name}`, "success");
-              this.showScreen('setup');
-              document.getElementById('setup-quiz-title').innerText = quiz.name;
-              document.getElementById('setup-question-count').innerText = `${quiz.questions.length} câu hỏi`;
+              try {
+                this.validateQuizData(quiz.questions);
+                this.currentQuizData = quiz.questions;
+                this.currentQuizName = quiz.name;
+                this.showToast(`Đã chọn bộ đề: ${quiz.name}`, "success");
+                this.showScreen('setup');
+                document.getElementById('setup-quiz-title').innerText = quiz.name;
+                document.getElementById('setup-question-count').innerText = `${quiz.questions.length} câu hỏi`;
+              } catch (err) {
+                this.showToast(`Bộ đề đã lưu không hợp lệ: ${err.message}`, "error");
+              }
             } else {
               this.showToast("Không tìm thấy dữ liệu bộ đề.", "error");
             }
@@ -291,12 +428,15 @@ class QuizUI {
       });
     });
 
-    // 11. Page reload auto-save handler
+    // 11. Translation helper
+    this.initTranslationControls();
+
+    // 12. Page reload auto-save handler
     window.addEventListener('beforeunload', () => {
       this.persistActiveQuiz();
     });
 
-    // 12. History list retake click handler
+    // 13. History list retake click handler
     const historyList = document.getElementById('history-list');
     if (historyList) {
       historyList.addEventListener('click', (e) => {
@@ -308,6 +448,266 @@ class QuizUI {
         }
       });
     }
+  }
+
+  initTranslationControls() {
+    const translateBtn = document.getElementById('translate-selected-btn');
+    const lookupBtn = document.getElementById('lookup-word-btn');
+    const saveBtn = document.getElementById('save-translation-settings-btn');
+    const endpointInput = document.getElementById('translation-endpoint-input');
+    const apiKeyInput = document.getElementById('translation-api-key-input');
+    const dictionaryInput = document.getElementById('dictionary-word-input');
+
+    if (!translateBtn || !lookupBtn || !saveBtn || !endpointInput || !apiKeyInput || !dictionaryInput) return;
+
+    const settings = QuizStorage.getTranslationSettings();
+    endpointInput.value = settings.endpoint;
+    apiKeyInput.value = settings.apiKey;
+
+    saveBtn.addEventListener('click', () => {
+      QuizStorage.setTranslationSettings({
+        endpoint: endpointInput.value.trim(),
+        apiKey: apiKeyInput.value.trim()
+      });
+      this.showToast("Đã lưu cấu hình dịch.", "success");
+    });
+
+    translateBtn.addEventListener('click', () => this.translateSelectedText());
+    lookupBtn.addEventListener('click', () => this.lookupSelectedWord());
+
+    document.addEventListener('selectionchange', () => {
+      const selectedText = window.getSelection().toString().trim();
+      if (selectedText && selectedText.length <= 80) {
+        dictionaryInput.value = this.normalizeDictionaryLookupText(selectedText);
+      }
+    });
+  }
+
+  getSelectedQuizText() {
+    const selectedText = window.getSelection().toString().trim();
+    if (selectedText) return selectedText;
+    if (this.quizEngine) {
+      return this.quizEngine.questions[this.quizEngine.currentQuestionIndex].question;
+    }
+    return '';
+  }
+
+  setTranslationResult(message, state = 'idle') {
+    const result = document.getElementById('translation-result');
+    if (!result) return;
+    result.classList.remove('loading', 'error', 'success');
+    if (state) result.classList.add(state);
+    result.textContent = message;
+  }
+
+  normalizeDictionaryLookupText(text) {
+    return text
+      .replace(/[^\p{L}\p{N}\s-]/gu, ' ')
+      .trim()
+      .split(/\s+/)
+      .slice(0, 3)
+      .join(' ');
+  }
+
+  getDictionaryLookupText() {
+    const input = document.getElementById('dictionary-word-input');
+    const typedText = input ? input.value.trim() : '';
+    if (typedText) return this.normalizeDictionaryLookupText(typedText);
+
+    const selectedText = window.getSelection().toString().trim();
+    if (selectedText) return this.normalizeDictionaryLookupText(selectedText);
+
+    return '';
+  }
+
+  async lookupSelectedWord() {
+    const term = this.getDictionaryLookupText();
+    if (!term) {
+      this.setTranslationResult("Hãy bôi đen hoặc nhập một từ tiếng Anh cần tra.", "error");
+      return;
+    }
+    if (term.split(/\s+/).length > 3) {
+      this.setTranslationResult("Tra từ chỉ phù hợp với 1-3 từ. Với câu dài, hãy dùng nút dịch.", "error");
+      return;
+    }
+
+    this.setTranslationResult(`Đang tra "${term}"...`, "loading");
+
+    try {
+      const entries = await this.lookupDictionaryEntry(term);
+      this.renderDictionaryResult(term, entries);
+    } catch (err) {
+      this.setTranslationResult(`Không tìm thấy nghĩa từ điển cho "${term}". ${err.message} Với cụm thuật ngữ, hãy thử nút dịch.`, "error");
+    }
+  }
+
+  async lookupDictionaryEntry(term) {
+    const response = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${encodeURIComponent(term)}`);
+    const data = await response.json().catch(() => ({}));
+
+    if (!response.ok || !Array.isArray(data) || data.length === 0) {
+      throw new Error(data.message || `Dictionary API trả về lỗi HTTP ${response.status}.`);
+    }
+
+    return data;
+  }
+
+  renderDictionaryResult(term, entries) {
+    const result = document.getElementById('translation-result');
+    if (!result) return;
+
+    result.classList.remove('loading', 'error', 'success');
+    result.classList.add('success');
+    result.textContent = '';
+
+    const entry = entries[0];
+    const title = this.createTextElement('div', 'dictionary-title', entry.word || term);
+    const phonetic = entry.phonetic || (entry.phonetics || []).find(item => item.text)?.text || '';
+    if (phonetic) {
+      title.appendChild(this.createTextElement('span', 'dictionary-phonetic', ` ${phonetic}`));
+    }
+
+    const definitions = document.createElement('div');
+    definitions.className = 'dictionary-definitions';
+
+    (entry.meanings || []).slice(0, 3).forEach(meaning => {
+      const block = document.createElement('div');
+      block.className = 'dictionary-meaning';
+
+      if (meaning.partOfSpeech) {
+        block.appendChild(this.createTextElement('span', 'dictionary-part', meaning.partOfSpeech));
+      }
+
+      const firstDefinition = (meaning.definitions || [])[0];
+      if (firstDefinition && firstDefinition.definition) {
+        block.appendChild(this.createTextElement('span', '', firstDefinition.definition));
+      }
+
+      if (firstDefinition && firstDefinition.example) {
+        block.appendChild(this.createTextElement('em', 'dictionary-example', `Example: ${firstDefinition.example}`));
+      }
+
+      definitions.appendChild(block);
+    });
+
+    result.append(title, definitions);
+  }
+
+  async translateSelectedText() {
+    const text = this.getSelectedQuizText();
+    if (!text) {
+      this.setTranslationResult("Hãy bôi đen một vài từ trong đề hoặc đáp án trước.", "error");
+      return;
+    }
+    if (text.length > 500) {
+      this.setTranslationResult("Đoạn chọn hơi dài. Hãy chọn vài từ hoặc một câu ngắn để dịch nhanh hơn.", "error");
+      return;
+    }
+
+    const endpointInput = document.getElementById('translation-endpoint-input');
+    const apiKeyInput = document.getElementById('translation-api-key-input');
+    const settings = {
+      endpoint: endpointInput.value.trim() || 'https://libretranslate.com/translate',
+      apiKey: apiKeyInput.value.trim()
+    };
+
+    QuizStorage.setTranslationSettings(settings);
+    this.setTranslationResult("Đang dịch...", "loading");
+
+    const isCustomEndpoint = settings.endpoint && settings.endpoint !== 'https://libretranslate.com/translate';
+    const hasApiKey = !!settings.apiKey;
+
+    // 1. Nếu có tùy chỉnh endpoint hoặc API key LibreTranslate, thử dùng trước
+    if (isCustomEndpoint || hasApiKey) {
+      try {
+        const translatedText = await this.translateWithLibreTranslate(text, settings);
+        this.setTranslationResult(`${text} → ${translatedText} (LibreTranslate)`, "success");
+        return;
+      } catch (err) {
+        console.warn("LibreTranslate failed, trying hybrid translation...", err);
+      }
+    }
+
+    // 2. Thử dịch bằng Lingva Translate (Google) làm mặc định miễn phí chất lượng cao
+    try {
+      const translatedText = await this.translateWithLingva(text);
+      this.setTranslationResult(`${text} → ${translatedText} (Google Translate)`, "success");
+    } catch (err) {
+      console.warn("Lingva Translate failed, falling back to MyMemory...", err);
+      
+      // 3. Fallback dự phòng cuối cùng bằng MyMemory với hạn mức 10.000 từ/ngày
+      try {
+        const translatedText = await this.translateWithMyMemory(text);
+        this.setTranslationResult(`${text} → ${translatedText} (MyMemory dự phòng)`, "success");
+      } catch (fallbackErr) {
+        this.setTranslationResult(`Không dịch được. (Lingva: ${err.message}, MyMemory: ${fallbackErr.message})`, "error");
+      }
+    }
+  }
+
+  async translateWithLibreTranslate(text, settings) {
+    const payload = {
+      q: text,
+      source: 'auto',
+      target: 'vi',
+      format: 'text'
+    };
+    if (settings.apiKey) payload.api_key = settings.apiKey;
+
+    const response = await fetch(settings.endpoint, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(payload)
+    });
+
+    const data = await response.json().catch(() => ({}));
+    if (!response.ok) {
+      throw new Error(data.error || `Dịch vụ trả về lỗi HTTP ${response.status}.`);
+    }
+
+    const translatedText = Array.isArray(data.translatedText) ? data.translatedText.join(' ') : data.translatedText;
+    if (!translatedText) {
+      throw new Error("Không nhận được kết quả dịch.");
+    }
+
+    return translatedText;
+  }
+
+  async translateWithLingva(text) {
+    const response = await fetch(`https://lingva.ml/api/v1/en/vi/${encodeURIComponent(text)}`);
+    if (!response.ok) {
+      throw new Error(`Lingva API trả về lỗi HTTP ${response.status}.`);
+    }
+
+    const data = await response.json().catch(() => ({}));
+    if (!data || !data.translation) {
+      throw new Error("Không nhận được kết quả dịch từ Lingva.");
+    }
+
+    return data.translation;
+  }
+
+  async translateWithMyMemory(text) {
+    const params = new URLSearchParams({
+      q: text,
+      langpair: 'en|vi',
+      de: 'nhonhoa2007@gmail.com' // Tăng giới hạn lên 10,000 từ/ngày cho người dùng
+    });
+    const response = await fetch(`https://api.mymemory.translated.net/get?${params.toString()}`);
+    const data = await response.json().catch(() => ({}));
+
+    if (!response.ok || data.responseStatus >= 400) {
+      throw new Error(data.responseDetails || `MyMemory trả về lỗi HTTP ${response.status}.`);
+    }
+
+    const translatedText = data.responseData && data.responseData.translatedText;
+    if (!translatedText) {
+      throw new Error("MyMemory không trả về kết quả dịch.");
+    }
+
+    return translatedText;
   }
 
   /**
@@ -323,18 +723,7 @@ class QuizUI {
     reader.onload = (e) => {
       try {
         const data = JSON.parse(e.target.result);
-        if (!Array.isArray(data) || data.length === 0) {
-          throw new Error("Dữ liệu JSON phải là một mảng chứa danh sách câu hỏi.");
-        }
-        
-        // Basic schema validation
-        const isValid = data.every(item => {
-          return item.question && Array.isArray(item.options) && item.options.length >= 2 && item.answer !== undefined;
-        });
-
-        if (!isValid) {
-          throw new Error("Một số câu hỏi bị thiếu trường 'question', 'options' (tối thiểu 2) hoặc 'answer'.");
-        }
+        this.validateQuizData(data);
 
         this.currentQuizData = data;
         this.currentQuizName = file.name.replace('.json', '');
@@ -368,6 +757,7 @@ class QuizUI {
       const response = await fetch(filePath);
       if (!response.ok) throw new Error("Không thể kết nối tới tệp mẫu.");
       const data = await response.json();
+      this.validateQuizData(data);
       
       this.currentQuizData = data;
       this.currentQuizName = quizName;
@@ -386,6 +776,20 @@ class QuizUI {
    * Initializes and starts a new Quiz run
    */
   startQuiz() {
+    if (!this.currentQuizData) {
+      this.showToast("Vui lòng chọn hoặc tải lên một bộ đề trước khi bắt đầu.", "error");
+      this.showScreen('landing');
+      return;
+    }
+
+    try {
+      this.validateQuizData(this.currentQuizData);
+    } catch (err) {
+      this.showToast(`Bộ đề không hợp lệ: ${err.message}`, "error");
+      this.showScreen('landing');
+      return;
+    }
+
     QuizStorage.clearActiveQuizState();
     const timeLimitVal = parseInt(document.querySelector('input[name="quiz-time"]:checked').value);
     const modeVal = document.querySelector('input[name="quiz-mode"]:checked').value;
@@ -465,21 +869,27 @@ class QuizUI {
         optionItem.classList.add(feedbackClass);
       }
 
-      optionItem.innerHTML = `
-        <input type="radio" name="quiz-option" id="opt-${idx}" value="${idx}" 
-          ${isChecked ? 'checked' : ''} 
-          ${isAnsweredInPractice ? 'disabled' : ''}>
-        <label class="option-label" for="opt-${idx}">
-          <span class="option-prefix">${String.fromCharCode(65 + idx)}</span>
-          <span class="option-text">${option}</span>
-        </label>
-      `;
+      const input = document.createElement('input');
+      input.type = 'radio';
+      input.name = 'quiz-option';
+      input.id = `opt-${idx}`;
+      input.value = String(idx);
+      input.checked = isChecked;
+      input.disabled = isAnsweredInPractice;
+
+      const label = document.createElement('label');
+      label.className = 'option-label';
+      label.htmlFor = input.id;
+      label.appendChild(this.createTextElement('span', 'option-prefix', String.fromCharCode(65 + idx)));
+      label.appendChild(this.createTextElement('span', 'option-text', option));
+
+      optionItem.append(input, label);
       
       optionsContainer.appendChild(optionItem);
 
       // Event listener for selecting an option
       if (!isAnsweredInPractice) {
-        optionItem.querySelector('input').addEventListener('change', () => {
+        input.addEventListener('change', () => {
           this.handleOptionSelection(idx);
         });
       }
@@ -784,9 +1194,25 @@ class QuizUI {
       }
 
       card.className = cardClass;
-      
-      // Generate Options UI elements
-      let optionsHTML = '';
+
+      const header = document.createElement('div');
+      header.className = 'review-card-header';
+
+      const headerText = document.createElement('div');
+      headerText.style.flex = '1';
+      const category = this.createTextElement('span', 'quiz-tag', q.category);
+      category.style.marginBottom = '0.5rem';
+      category.style.display = 'inline-block';
+      const title = this.createTextElement('h4', '', `Câu hỏi ${idx + 1}: ${q.questionText}`);
+      title.style.fontWeight = '700';
+      headerText.append(category, title);
+
+      const badge = this.createTextElement('span', badgeClass, badgeText);
+      header.append(headerText, badge);
+
+      const options = document.createElement('div');
+      options.className = 'review-options';
+
       q.options.forEach((option, optIdx) => {
         let optItemClass = 'review-option-item';
         let iconHTML = '';
@@ -799,33 +1225,23 @@ class QuizUI {
           optItemClass += ' selected-wrong';
           iconHTML = `<svg width="18" height="18" viewBox="0 0 20 20" fill="currentColor" class="review-option-icon"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1.414-9.414a1 1 0 10-1.414-1.414L10 8.586 8.586 7.172a1 1 0 00-1.414 1.414L8.586 10l-1.414 1.414a1 1 0 101.414 1.414L10 11.414l1.414 1.414a1 1 0 001.414-1.414L11.414 10l1.414-1.414z" clip-rule="evenodd"/></svg>`;
         }
-        
-        optionsHTML += `
-          <div class="${optItemClass}">
-            ${iconHTML}
-            <span class="review-option-text"><strong>${String.fromCharCode(65 + optIdx)}.</strong> ${option}</span>
-          </div>
-        `;
+
+        const optionItem = document.createElement('div');
+        optionItem.className = optItemClass;
+        if (iconHTML) {
+          optionItem.insertAdjacentHTML('beforeend', iconHTML);
+        }
+        const optionText = this.createTextElement('span', 'review-option-text', `${String.fromCharCode(65 + optIdx)}. ${option}`);
+        optionItem.appendChild(optionText);
+        options.appendChild(optionItem);
       });
 
-      card.innerHTML = `
-        <div class="review-card-header">
-          <div style="flex:1">
-            <span class="quiz-tag" style="margin-bottom:0.5rem; display:inline-block">${q.category}</span>
-            <h4 style="font-weight:700">Câu hỏi ${idx + 1}: ${q.questionText}</h4>
-          </div>
-          <span class="${badgeClass}">${badgeText}</span>
-        </div>
-        
-        <div class="review-options">
-          ${optionsHTML}
-        </div>
-        
-        <div class="review-explanation-box">
-          <div class="review-explanation-title">Giải thích đáp án</div>
-          <p class="review-explanation-text">${q.explanation}</p>
-        </div>
-      `;
+      const explanationBox = document.createElement('div');
+      explanationBox.className = 'review-explanation-box';
+      explanationBox.appendChild(this.createTextElement('div', 'review-explanation-title', 'Giải thích đáp án'));
+      explanationBox.appendChild(this.createTextElement('p', 'review-explanation-text', q.explanation));
+
+      card.append(header, options, explanationBox);
       
       list.appendChild(card);
     });
@@ -849,11 +1265,7 @@ class QuizUI {
     const landingChartDiv = document.getElementById('landing-chart-container');
     
     if (history.length === 0) {
-      list.innerHTML = `
-        <div class="empty-history">
-          Lịch sử trống. Hãy hoàn thành bài thi trắc nghiệm đầu tiên để lưu kết quả ôn tập!
-        </div>
-      `;
+      list.appendChild(this.createTextElement('div', 'empty-history', 'Lịch sử trống. Hãy hoàn thành bài thi trắc nghiệm đầu tiên để lưu kết quả ôn tập!'));
       landingChartDiv.style.display = 'none';
       return;
     }
@@ -879,22 +1291,43 @@ class QuizUI {
       
       const modeLabel = item.mode === 'practice' ? 'Luyện tập' : 'Thi';
 
-      div.innerHTML = `
-        <div class="history-item-top">
-          <span class="history-item-name" title="${item.quizName}">${item.quizName}</span>
-          <span class="history-item-score">${item.score}/${item.totalQuestions} (${item.accuracy}%)</span>
-        </div>
-        <div class="history-item-details" style="align-items: center; justify-content: space-between; display: flex; width: 100%;">
-          <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; align-items: center;">
-            <span>📅 ${formattedDate}</span>
-            <span>⏱️ ${this.formatTime(item.timeSpent)}</span>
-            <span class="preset-tag" style="padding:0.1rem 0.4rem; font-size:0.7rem">${modeLabel}</span>
-          </div>
-          <button class="retake-history-btn" data-name="${item.quizName}" title="Làm lại bộ đề này">
-            🔄 Làm lại
-          </button>
-        </div>
-      `;
+      const itemTop = document.createElement('div');
+      itemTop.className = 'history-item-top';
+      const itemName = this.createTextElement('span', 'history-item-name', item.quizName);
+      itemName.title = item.quizName;
+      itemTop.append(
+        itemName,
+        this.createTextElement('span', 'history-item-score', `${item.score}/${item.totalQuestions} (${item.accuracy}%)`)
+      );
+
+      const itemDetails = document.createElement('div');
+      itemDetails.className = 'history-item-details';
+      itemDetails.style.alignItems = 'center';
+      itemDetails.style.justifyContent = 'space-between';
+      itemDetails.style.display = 'flex';
+      itemDetails.style.width = '100%';
+
+      const meta = document.createElement('div');
+      meta.style.display = 'flex';
+      meta.style.gap = '0.5rem';
+      meta.style.flexWrap = 'wrap';
+      meta.style.alignItems = 'center';
+      meta.append(
+        this.createTextElement('span', '', `📅 ${formattedDate}`),
+        this.createTextElement('span', '', `⏱️ ${this.formatTime(item.timeSpent)}`)
+      );
+      const mode = this.createTextElement('span', 'preset-tag', modeLabel);
+      mode.style.padding = '0.1rem 0.4rem';
+      mode.style.fontSize = '0.7rem';
+      meta.appendChild(mode);
+
+      const retake = this.createTextElement('button', 'retake-history-btn', '🔄 Làm lại');
+      retake.type = 'button';
+      retake.dataset.name = item.quizName;
+      retake.title = 'Làm lại bộ đề này';
+
+      itemDetails.append(meta, retake);
+      div.append(itemTop, itemDetails);
       list.appendChild(div);
     });
   }
@@ -1096,40 +1529,21 @@ class QuizUI {
     if (!presetGrid) return;
     presetGrid.innerHTML = '';
 
-    // 1. Default Presets
-    const defaultPresets = [
-      {
-        file: 'data/sample-general.json',
-        name: 'Kiến thức chung',
-        displayName: 'Kiến Thức Tổng Hợp',
-        category: 'Xã hội',
-        description: '5 câu hỏi trắc nghiệm',
-        isPreset: true
-      },
-      {
-        file: 'data/sample-javascript.json',
-        name: 'Lập trình JavaScript',
-        displayName: 'Lập Trình JavaScript',
-        category: 'IT / Code',
-        description: '5 câu hỏi kỹ thuật ES6+',
-        isPreset: true
-      }
-    ];
-
-    // 2. Custom Quizzes from Storage
+    // 1. Custom Quizzes from Storage
     const customQuizzes = QuizStorage.getCustomQuizzes();
 
     // Render default presets
-    defaultPresets.forEach(preset => {
+    QuizUI.DEFAULT_PRESETS.forEach(preset => {
       const card = document.createElement('button');
       card.className = 'preset-card';
+      card.type = 'button';
       card.dataset.file = preset.file;
       card.dataset.name = preset.name;
-      card.innerHTML = `
-        <span class="preset-tag">${preset.category}</span>
-        <h4>${preset.displayName}</h4>
-        <span>${preset.description}</span>
-      `;
+      card.append(
+        this.createTextElement('span', 'preset-tag', preset.category),
+        this.createTextElement('h4', '', preset.displayName),
+        this.createTextElement('span', '', preset.description)
+      );
       presetGrid.appendChild(card);
     });
 
@@ -1138,22 +1552,38 @@ class QuizUI {
       const card = document.createElement('div');
       card.className = 'preset-card custom-preset-card';
       card.dataset.id = quiz.id;
-      
-      card.innerHTML = `
-        <div class="preset-card-content" style="flex: 1; display: flex; flex-direction: column; gap: 0.5rem; cursor: pointer;">
-          <span class="preset-tag" style="background-color: var(--info-light); color: var(--info-color);">${quiz.category}</span>
-          <h4>${quiz.name}</h4>
-          <span>${quiz.questions.length} câu hỏi trắc nghiệm</span>
-        </div>
-        <button class="delete-quiz-btn" data-id="${quiz.id}" title="Xóa bộ đề này">
+
+      const content = document.createElement('div');
+      content.className = 'preset-card-content';
+      content.style.flex = '1';
+      content.style.display = 'flex';
+      content.style.flexDirection = 'column';
+      content.style.gap = '0.5rem';
+      content.style.cursor = 'pointer';
+
+      const category = this.createTextElement('span', 'preset-tag', quiz.category || 'Tự chọn');
+      category.style.backgroundColor = 'var(--info-light)';
+      category.style.color = 'var(--info-color)';
+      content.append(
+        category,
+        this.createTextElement('h4', '', quiz.name),
+        this.createTextElement('span', '', `${Array.isArray(quiz.questions) ? quiz.questions.length : 0} câu hỏi trắc nghiệm`)
+      );
+
+      const deleteBtn = document.createElement('button');
+      deleteBtn.className = 'delete-quiz-btn';
+      deleteBtn.type = 'button';
+      deleteBtn.dataset.id = quiz.id;
+      deleteBtn.title = 'Xóa bộ đề này';
+      deleteBtn.innerHTML = `
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <polyline points="3 6 5 6 21 6"></polyline>
             <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
             <line x1="10" y1="11" x2="10" y2="17"></line>
             <line x1="14" y1="11" x2="14" y2="17"></line>
           </svg>
-        </button>
       `;
+      card.append(content, deleteBtn);
       presetGrid.appendChild(card);
     });
   }
@@ -1163,12 +1593,12 @@ class QuizUI {
    */
   loadQuizByName(quizName) {
     // 1. Check default presets
-    if (quizName === 'Kiến thức chung' || quizName === 'Kiến Thức Tổng Hợp') {
-      this.loadPresetQuiz('data/sample-general.json', 'Kiến thức chung');
-      return;
-    }
-    if (quizName === 'Lập trình JavaScript' || quizName === 'Lập Trình JavaScript') {
-      this.loadPresetQuiz('data/sample-javascript.json', 'Lập trình JavaScript');
+    const preset = QuizUI.DEFAULT_PRESETS.find(item => {
+      const names = [item.name, item.displayName].map(name => name.trim().toLowerCase());
+      return names.includes(quizName.trim().toLowerCase());
+    });
+    if (preset) {
+      this.loadPresetQuiz(preset.file, preset.name);
       return;
     }
 
@@ -1176,12 +1606,17 @@ class QuizUI {
     const customQuizzes = QuizStorage.getCustomQuizzes();
     const customQuiz = customQuizzes.find(q => q.name.trim().toLowerCase() === quizName.trim().toLowerCase());
     if (customQuiz) {
-      this.currentQuizData = customQuiz.questions;
-      this.currentQuizName = customQuiz.name;
-      this.showToast(`Đã nạp bộ đề: ${customQuiz.name}`, "success");
-      this.showScreen('setup');
-      document.getElementById('setup-quiz-title').innerText = customQuiz.name;
-      document.getElementById('setup-question-count').innerText = `${customQuiz.questions.length} câu hỏi`;
+      try {
+        this.validateQuizData(customQuiz.questions);
+        this.currentQuizData = customQuiz.questions;
+        this.currentQuizName = customQuiz.name;
+        this.showToast(`Đã nạp bộ đề: ${customQuiz.name}`, "success");
+        this.showScreen('setup');
+        document.getElementById('setup-quiz-title').innerText = customQuiz.name;
+        document.getElementById('setup-question-count').innerText = `${customQuiz.questions.length} câu hỏi`;
+      } catch (err) {
+        this.showToast(`Bộ đề đã lưu không hợp lệ: ${err.message}`, "error");
+      }
     } else {
       this.showToast(`Không tìm thấy câu hỏi cho bộ đề "${quizName}". Tệp có thể đã bị xóa.`, "error");
     }

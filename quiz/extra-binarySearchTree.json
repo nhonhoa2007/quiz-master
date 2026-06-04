@@ -1,0 +1,523 @@
+
+[
+  {
+    "id": 1,
+    "question": "What fundamentally defines a Binary Search Tree (BST) compared to a regular Binary Tree?",
+    "options": [
+      "Every node must have exactly two children",
+      "The left subtree contains strictly greater values, and the right subtree contains smaller values",
+      "The identifier of any node in the left subtree is less than the root, and any node in the right subtree is greater",
+      "It must be completely balanced at all times"
+    ],
+    "answer": 2,
+    "explanation": "Đặc trưng định hình nên Cây Tìm kiếm Nhị phân (BST) là quy tắc phân loại giá trị rạch ròi: mọi node nằm ở nhánh cây bên trái đều mang giá trị nhỏ hơn node gốc, và mọi node nằm ở nhánh cây bên phải đều mang giá trị lớn hơn node gốc. Quy tắc này áp dụng đệ quy cho toàn bộ cây.",
+    "category": "The Concept of BST"
+  },
+  {
+    "id": 2,
+    "question": "According to the fundamental properties of a BST, are duplicate keys typically allowed?",
+    "options": [
+      "Yes, they are placed in the left subtree",
+      "Yes, they are placed in the right subtree",
+      "No, every element must have a unique identifier/key",
+      "Yes, but only at the leaf nodes"
+    ],
+    "answer": 2,
+    "explanation": "Trong định nghĩa chuẩn của một Cây Tìm kiếm Nhị phân cơ bản, mỗi node bắt buộc phải lưu trữ một khóa (identifier/key) độc nhất. Việc không cho phép khóa trùng lặp giúp các thuật toán tìm kiếm, chèn và xóa hoạt động chính xác và không bị nhầm lẫn định tuyến.",
+    "category": "The Concept of BST"
+  },
+  {
+    "id": 3,
+    "question": "Is an entirely empty binary tree considered a valid Binary Search Tree?",
+    "options": [
+      "No, it must have at least a root node",
+      "Yes, a binary search tree may be empty",
+      "No, an empty tree is a leaf, not a BST",
+      "Yes, but only if memory is dynamically allocated"
+    ],
+    "answer": 1,
+    "explanation": "Về mặt toán học và cấu trúc dữ liệu, một cây rỗng (con trỏ root trỏ tới NULL) vẫn được công nhận là một Cây Tìm kiếm Nhị phân hợp lệ. Nó đóng vai trò là điểm khởi đầu (base case) cho các thuật toán đệ quy thao tác trên cây.",
+    "category": "The Concept of BST"
+  },
+  {
+    "id": 4,
+    "question": "Why is a binary tree where a node with value 3 is located in the right subtree of a node with value 4 NOT a valid Binary Search Tree?",
+    "options": [
+      "Because 3 is an odd number",
+      "Because the right subtree must exclusively contain values strictly greater than the root value 4",
+      "Because 3 must be the absolute root",
+      "Because binary search trees cannot contain the number 4"
+    ],
+    "answer": 1,
+    "explanation": "Bản chất của BST yêu cầu mọi phần tử nằm bên nhánh phải của một node bắt buộc phải có giá trị lớn hơn node đó. Do 3 nhỏ hơn 4, nó đáng lẽ phải được xếp vào nhánh trái. Việc đặt 3 ở nhánh phải đã vi phạm vĩnh viễn quy tắc cấu trúc của BST.",
+    "category": "The Concept of BST"
+  },
+  {
+    "id": 5,
+    "question": "Can two completely different binary search tree topologies represent the exact same set of numeric elements?",
+    "options": [
+      "No, a set of numbers can only form one specific BST",
+      "Yes, the structure of the tree heavily depends on the order in which the elements were originally inserted",
+      "No, balancing algorithms force them to look identical",
+      "Yes, but only if the trees contain duplicate values"
+    ],
+    "answer": 1,
+    "explanation": "Cùng một tập hợp số, nhưng nếu thứ tự bạn nạp chúng vào cây khác nhau, hình dáng của cây BST sinh ra sẽ khác biệt hoàn toàn. Ví dụ, nhập dữ liệu tăng dần sẽ tạo ra một cây lệch phải dài ngoằng, trong khi nhập dữ liệu lộn xộn có thể tạo ra một cây xòe đều ra hai bên.",
+    "category": "Representation"
+  },
+  {
+    "id": 6,
+    "question": "For a dictionary with 'n' items implemented as a BST, what is the Space Complexity required?",
+    "options": [
+      "O(1)",
+      "O(log n)",
+      "O(n)",
+      "O(n^2)"
+    ],
+    "answer": 2,
+    "explanation": "Để lưu trữ n phần tử, hệ thống bắt buộc phải cấp phát động đúng n vùng nhớ (nodes) để chứa dữ liệu và các con trỏ liên kết. Do đó, độ phức tạp không gian lưu trữ luôn tỷ lệ thuận trực tiếp với số lượng phần tử, mang lại hàm O(n).",
+    "category": "Representation"
+  },
+  {
+    "id": 7,
+    "question": "What is the theoretical Worst-Case time complexity for find, insert, and remove operations in a BST?",
+    "options": [
+      "O(1)",
+      "O(log n)",
+      "O(n)",
+      "O(n log n)"
+    ],
+    "answer": 2,
+    "explanation": "Các thao tác cơ bản trên BST có chi phí thời gian tỷ lệ thuận với chiều cao của cây (O(h)). Trong trường hợp tồi tệ nhất, dữ liệu nạp vào đã được sắp xếp sẵn, làm cây bị thoái hóa thành một danh sách liên kết tuyến tính (độ cao h = n). Khi đó, để tìm phần tử cuối cùng, ta phải mất O(n) thời gian.",
+    "category": "Representation"
+  },
+  {
+    "id": 8,
+    "question": "What is the Best-Case time complexity for search operations in a perfectly structured BST?",
+    "options": [
+      "O(1)",
+      "O(log n)",
+      "O(n)",
+      "O(n^2)"
+    ],
+    "answer": 1,
+    "explanation": "Trường hợp tuyệt vời nhất xảy ra khi cây được cân bằng hoàn hảo, chia đều dữ liệu sang hai nhánh. Mỗi bước so sánh sẽ chặt bỏ một nửa không gian tìm kiếm, dẫn đến chiều cao của cây chỉ là logarit cơ số 2 của n, mang lại tốc độ truy xuất cực nhanh O(log n).",
+    "category": "Representation"
+  },
+  {
+    "id": 9,
+    "question": "Which specific traversal operation on a valid Binary Search Tree natively produces a perfectly sorted list of elements?",
+    "options": [
+      "Preorder Traversal",
+      "Postorder Traversal",
+      "Inorder Traversal",
+      "Level-order Traversal"
+    ],
+    "answer": 2,
+    "explanation": "Duyệt trung tố (Inorder Traversal) hoạt động theo nguyên lý: quét toàn bộ nhánh trái (các số nhỏ nhất), sau đó in ra node hiện tại (số trung bình), rồi mới quét nhánh phải (các số lớn nhất). Nhờ vậy, chuỗi kết quả sinh ra tự động được sắp xếp tăng dần một cách hoàn hảo.",
+    "category": "Operations"
+  },
+  {
+    "id": 10,
+    "question": "What is the major operational disadvantage of using a standard, unoptimized Binary Search Tree?",
+    "options": [
+      "Searching operations are incredibly slow compared to a linked list",
+      "Insert and Delete operations can become very slow if the tree shape becomes highly unbalanced or skewed",
+      "It cannot be used for sorting",
+      "It requires O(n^2) space complexity"
+    ],
+    "answer": 1,
+    "explanation": "Điểm yếu chí mạng của BST cơ bản là nó không có cơ chế tự cân bằng. Nếu bạn liên tục chèn hoặc xóa dữ liệu làm cây bị lệch hẳn về một phía, thời gian thực thi các thao tác này sẽ lao dốc từ O(log n) xuống mức O(n) chậm chạp, y hệt như thao tác trên mảng thông thường.",
+    "category": "Representation"
+  },
+  {
+    "id": 11,
+    "question": "In Database systems, what is a highly practical and widespread application of the Binary Search Tree structure?",
+    "options": [
+      "Encrypting user passwords",
+      "Networking protocol routing",
+      "Using the Index property to accelerate large-scale database query searching",
+      "Rendering visual UI elements"
+    ],
+    "answer": 2,
+    "explanation": "Các hệ quản trị cơ sở dữ liệu (Database systems) thường xuyên ứng dụng Cây Tìm kiếm (thường là biến thể B-Tree) để xây dựng hệ thống Chỉ mục (Index). Việc băm dữ liệu qua cấu trúc rẽ nhánh giúp máy chủ tìm ra bản ghi từ hàng triệu dòng dữ liệu chỉ trong vài bước nhảy.",
+    "category": "Representation"
+  },
+  {
+    "id": 12,
+    "question": "In the `searchNode` algorithm for a BST, what physical path is traced if the target key 'x' is greater than the current node's data?",
+    "options": [
+      "The path shifts immediately to the left child",
+      "The path shifts immediately to the right child",
+      "The search resets to the root",
+      "The node is directly deleted"
+    ],
+    "answer": 1,
+    "explanation": "Theo đúng thiết kế phân dòng của BST, mọi giá trị lớn hơn node đang đứng đều bị đẩy về phía bên phải. Do đó, nếu khóa mục tiêu lớn hơn giá trị hiện tại, thuật toán lập tức dời con trỏ sang phải (p = p->right) để tiếp tục săn lùng.",
+    "category": "Operations"
+  },
+  {
+    "id": 13,
+    "question": "During a BST node search, what explicit programmatic outcome occurs if the target key is simply not present in the tree?",
+    "options": [
+      "The program enters an infinite loop",
+      "The algorithm reaches a leaf node, fails to find the key, and cleanly returns NULL",
+      "The root node is returned instead",
+      "A new node is automatically fabricated and returned"
+    ],
+    "answer": 1,
+    "explanation": "Khi luồng tìm kiếm đi vào ngõ cụt ở một node lá nhưng vẫn chưa thấy giá trị cần tìm, con trỏ tiếp theo sẽ bị trượt vào khoảng không (NULL). Hàm tìm kiếm bắt được trạng thái NULL này và trả nó về, báo hiệu cho người dùng rằng phần tử hoàn toàn vắng mặt trong cây.",
+    "category": "Operations"
+  },
+  {
+    "id": 14,
+    "question": "When structurally inserting a newly created key 'k' into a BST, where exactly is it attached?",
+    "options": [
+      "It forcefully replaces the root node",
+      "It is expanded into a new internal node immediately in the middle of the tree",
+      "It is attached as a new leaf node exactly at the NULL pointer where the search logically terminated",
+      "It replaces the leftmost node"
+    ],
+    "answer": 2,
+    "explanation": "Thuật toán chèn (Insert) hoạt động song song với thuật toán tìm kiếm. Nó luồn lách qua các ngã rẽ để tìm vị trí hợp lệ. Ngay khi đâm đầu vào một con trỏ rỗng (NULL), nó biết rằng đây chính là chốn an tọa hoàn hảo không phá vỡ quy tắc, và gắn node mới vào đó dưới dạng một chiếc lá.",
+    "category": "Operations"
+  },
+  {
+    "id": 15,
+    "question": "In the standard `insertNode` algorithm implementation, what value is returned if the key 'X' already explicitly exists in the tree?",
+    "options": [
+      "1",
+      "-1",
+      "0",
+      "The memory address of the root"
+    ],
+    "answer": 2,
+    "explanation": "Vì Cây Tìm kiếm Nhị phân gốc không chứa khóa trùng lặp, nên khi đệ quy phát hiện node hiện tại có dữ liệu bằng đúng với X (root->data == X), hàm sẽ lập tức ngắt đệ quy và trả về 0 (hoặc false) để thông báo thao tác thêm mới đã bị từ chối.",
+    "category": "Operations"
+  },
+  {
+    "id": 16,
+    "question": "In an `insertNode` function, what does returning a value of `-1` strictly indicate?",
+    "options": [
+      "The key was successfully inserted",
+      "The key already existed",
+      "The tree was successfully balanced",
+      "Memory allocation for the new node drastically failed (Out of memory)"
+    ],
+    "answer": 3,
+    "explanation": "Trước khi nối dữ liệu vào cây, hệ thống phải xin hệ điều hành cấp phát bộ nhớ (`new Node`). Nếu máy tính cạn kiệt RAM, con trỏ trả về sẽ là NULL. Mã lỗi -1 được dùng để báo động tình trạng thiếu hụt bộ nhớ nghiêm trọng này.",
+    "category": "Operations"
+  },
+  {
+    "id": 17,
+    "question": "How many distinct structural cases systematically exist when attempting to delete a specific node from a BST?",
+    "options": [
+      "1 case",
+      "2 cases",
+      "3 distinct cases",
+      "4 distinct cases"
+    ],
+    "answer": 2,
+    "explanation": "Việc xóa node khỏi BST được chia thành 3 kịch bản khác biệt dựa trên số lượng 'hậu duệ' của nó: Xóa node lá (0 con), Xóa node có đúng 1 con, và trường hợp phức tạp nhất là Xóa node đang gánh trên vai cả 2 con.",
+    "category": "Operations"
+  },
+  {
+    "id": 18,
+    "question": "When deleting a node that possesses NO children (a leaf) from a BST, what direct action solves the problem?",
+    "options": [
+      "Shift the entire tree structure up by one level",
+      "Set the corresponding link in the node's parent to NULL, and completely free the node's memory",
+      "Replace it with the root node",
+      "Swap it with the leftmost node"
+    ],
+    "answer": 1,
+    "explanation": "Node lá là phần tử râu ria vô hại vì nó không trỏ tới ai cả. Cách tiêu diệt nó vô cùng gọn gàng: chỉ cần ngắt kết nối từ node cha của nó (bằng cách gán con trỏ nhánh đó thành NULL), rồi gọi hàm delete để dọn dẹp bộ nhớ của node lá đó là xong.",
+    "category": "Operations"
+  },
+  {
+    "id": 19,
+    "question": "When algorithmically deleting a node 'x' that has exactly ONE child, what pointer bypass operation is performed?",
+    "options": [
+      "The parent 'y' of node 'x' is completely deleted",
+      "The parent 'y' of node 'x' is linked directly to the single child of 'x', entirely bypassing 'x'",
+      "Node 'x' swaps data with its single child",
+      "The single child is moved to the root"
+    ],
+    "answer": 1,
+    "explanation": "Nếu node bị xóa (x) chỉ có một nhánh con duy nhất, ta đóng vai trò làm người nối dõi: lấy toàn bộ nhánh con bơ vơ đó đem cắm trực tiếp vào vị trí của node cha (y). Như vậy, x bị tách rời khỏi dòng chảy một cách êm ái mà không làm thất lạc dữ liệu bên dưới.",
+    "category": "Operations"
+  },
+  {
+    "id": 20,
+    "question": "When deleting a complex node with TWO children, the algorithm strategically replaces its value with its 'In-order Predecessor'. Where is this predecessor structurally located?",
+    "options": [
+      "The leftmost child of the right subtree",
+      "The leftmost child of the left subtree",
+      "The strictly rightmost child of the left subtree",
+      "The absolutely maximum value of the right subtree"
+    ],
+    "answer": 2,
+    "explanation": "Để thay thế một node 2 con mà không phá vỡ quy luật BST, ta phải tìm một 'kẻ thế mạng' có giá trị sát nút nhất ở phía dưới nó. Kẻ đó chính là phần tử lớn nhất trong nhóm nhỏ hơn: đi sang nhánh trái 1 bước, rồi rẽ phải liên tục đến tận cùng (rightmost child of left subtree).",
+    "category": "Operations"
+  },
+  {
+    "id": 21,
+    "question": "During the deletion of a node with two children, immediately after copying the in-order predecessor's value into the target node, what is the final functional step?",
+    "options": [
+      "Rebalancing the entire tree",
+      "Unlinking the root",
+      "Recursively deleting the physically original in-order predecessor node from the left subtree",
+      "Returning the root memory address"
+    ],
+    "answer": 2,
+    "explanation": "Sau khi đã chép giá trị của phần tử thế mạng (predecessor) lên đè vào node cần xóa, ta có hai node chứa cùng một giá trị. Bước dọn dẹp cuối cùng là phải xuống nhánh trái và xóa đi vỏ bọc cũ của phần tử thế mạng đó. Việc xóa này chắc chắn sẽ rơi vào trường hợp dễ (chỉ có 0 hoặc 1 con).",
+    "category": "Operations"
+  },
+  {
+    "id": 22,
+    "question": "In the `deleteNode` function, what algorithmic purpose does the pointer variable `temp` serve?",
+    "options": [
+      "It mathematically computes the height of the tree",
+      "It counts the number of leaves",
+      "It temporarily holds the exact memory address of the node being bypassed so it can be securely deleted (freed) from memory",
+      "It duplicates the entire tree"
+    ],
+    "answer": 2,
+    "explanation": "Khi thực hiện thao tác xóa có 1 con, ta phải bẻ con trỏ của node cha chỉ thẳng xuống node cháu. Lúc này node ở giữa bị văng ra ngoài. Nếu không dùng biến `temp` để giữ địa chỉ của nó từ trước, ta sẽ mất dấu nó vĩnh viễn, gây ra hiện tượng rò rỉ bộ nhớ (memory leak).",
+    "category": "Operations"
+  },
+  {
+    "id": 23,
+    "question": "What is the correct mathematical base case to gracefully terminate the recursion when functionally calculating the total number of nodes in a BST?",
+    "options": [
+      "if (p == NULL) return 0;",
+      "if (p == NULL) return 1;",
+      "if (p->left == NULL) return 0;",
+      "if (p->right == NULL) return 1;"
+    ],
+    "answer": 0,
+    "explanation": "Mọi thuật toán đếm trên cây nhị phân đều cần điểm dừng đệ quy. Khi con trỏ đi quá ranh giới lá và chạm vào NULL, điều đó có nghĩa là không có node nào tồn tại ở không gian đó cả. Hàm phải trả về 0 để không làm thay đổi tổng số lượng đang cộng dồn.",
+    "category": "Operations"
+  },
+  {
+    "id": 24,
+    "question": "What is the core recursive mathematical formula efficiently used to count all nodes in a standard Binary Tree?",
+    "options": [
+      "1 + count(p->left) * count(p->right)",
+      "count(p->left) + count(p->right)",
+      "1 + count(p->left) + count(p->right)",
+      "1 + max(count(p->left), count(p->right))"
+    ],
+    "answer": 2,
+    "explanation": "Tổng số node của một cây bằng chính xác 1 (tượng trưng cho node đang xét ở thời điểm hiện tại) cộng với toàn bộ số lượng node đếm được từ nhánh cây con bên trái, và cộng tiếp với toàn bộ số node từ nhánh cây con bên phải.",
+    "category": "Operations"
+  },
+  {
+    "id": 25,
+    "question": "What explicitly distinguishes the exact programmatic condition required to identify a 'Leaf' node inside a BST?",
+    "options": [
+      "The node has an even numerical value",
+      "Both the left child pointer AND the right child pointer are strictly NULL",
+      "The node is the absolute root of the tree",
+      "The node has exactly one active child"
+    ],
+    "answer": 1,
+    "explanation": "Đặc điểm nhân dạng vật lý duy nhất của một chiếc 'lá' là sự cằn cỗi: nó nằm ở vị trí tận cùng và không cõng thêm bất kỳ hậu duệ nào. Phép kiểm tra `r->left == NULL && r->right == NULL` là bài test kinh điển để xác nhận tính chất này.",
+    "category": "Operations"
+  },
+  {
+    "id": 26,
+    "question": "When developing a function to count ONLY the strictly even-valued nodes in a BST, what crucial validation check is applied to the current node?",
+    "options": [
+      "r->data / 2 == 0",
+      "r->data % 2 == 0",
+      "r->data == 2",
+      "r->data % 2 == 1"
+    ],
+    "answer": 1,
+    "explanation": "Toán tử chia lấy phần dư (modulus `%`) là công cụ tiêu chuẩn để kiểm tra tính chẵn lẻ. Một node mang giá trị chẵn khi và chỉ khi phần dư của phép chia giá trị đó (data) cho 2 bằng đúng 0.",
+    "category": "Operations"
+  },
+  {
+    "id": 27,
+    "question": "What is the core recursive mathematical formula systematically used to calculate the absolute 'Height' of a BST?",
+    "options": [
+      "1 + max(Height(n->left), Height(n->right))",
+      "1 + Height(n->left) + Height(n->right)",
+      "max(Height(n->left), Height(n->right))",
+      "Height(n->left) * Height(n->right)"
+    ],
+    "answer": 0,
+    "explanation": "Chiều cao của một cây được định đoạt bởi nhánh sâu nhất của nó. Tại bất kỳ node nào, thuật toán sẽ đi đo đạc chiều cao của cả hai nhánh con, dùng hàm `max` để chọn ra nhánh dài hơn, rồi cộng thêm 1 đơn vị (tương ứng với cấp độ của chính node hiện tại) để truyền ngược lên trên.",
+    "category": "Operations"
+  },
+  {
+    "id": 28,
+    "question": "What structural strategy must cleanly be employed to safely delete an ENTIRE Binary Search Tree and entirely avoid memory leaks?",
+    "options": [
+      "Use Pre-order traversal logic strictly",
+      "Iteratively delete the root repeatedly until empty",
+      "Recursively delete the left subtree, recursively delete the right subtree, and then finally delete the root node itself",
+      "Just set the global root pointer to NULL immediately"
+    ],
+    "answer": 2,
+    "explanation": "Xóa toàn bộ cây tuân theo quy luật sinh tồn 'hủy con trước khi hủy cha' (giống duyệt hậu tố Post-order). Nếu bạn xóa gốc trước, bạn sẽ mất vĩnh viễn đường dẫn đi xuống các nhánh con, để lại hàng loạt vùng nhớ rác mồ côi (memory leak) trôi nổi trong hệ thống.",
+    "category": "Operations"
+  },
+  {
+    "id": 29,
+    "question": "To programmatically calculate the sum of all numerical values contained within a BST, what recursive formula is strictly applied?",
+    "options": [
+      "1 + sum(p->left) + sum(p->right)",
+      "p->data + sum(p->left) + sum(p->right)",
+      "p->data * (sum(p->left) + sum(p->right))",
+      "max(sum(p->left), sum(p->right))"
+    ],
+    "answer": 1,
+    "explanation": "Tương tự như thuật toán đếm node, nhưng thay vì cộng 1 (tượng trưng cho sự tồn tại), thuật toán tính tổng sẽ lấy chính giá trị thật của node đó (`p->data`) để cộng dồn với tổng khối lượng giá trị rút lên từ hai nhánh con trái phải.",
+    "category": "Operations"
+  },
+  {
+    "id": 30,
+    "question": "If you rigorously analyze the Iterative Search loop `while ((x != p->data) && (p != NULL))`, what specific condition gracefully terminates the search?",
+    "options": [
+      "Only when the key 'x' is successfully found",
+      "Only when a leaf node is physically reached",
+      "Either when the target key 'x' is explicitly found, or when the pointer 'p' falls off the tree (becomes NULL)",
+      "When the tree heavily rebalances"
+    ],
+    "answer": 2,
+    "explanation": "Vòng lặp dò dẫm (Iterative) sử dụng hai rào chắn an toàn: nó sẽ chạy liên tục chừng nào chưa tìm thấy dữ liệu (x != data) VÀ chưa bị rớt ra ngoài cây (p != NULL). Việc vi phạm bất kỳ một trong hai điều kiện này đều kích hoạt tín hiệu thoát vòng lặp lập tức.",
+    "category": "Operations"
+  },
+  {
+    "id": 31,
+    "question": "To structurally locate the rightmost child of the left subtree (the in-order predecessor), which pointer navigation loop is logically executed?",
+    "options": [
+      "while (temp->left != NULL) { temp = temp->left; }",
+      "while (temp->right != NULL) { temp = temp->right; }",
+      "while (temp != NULL) { temp = temp->right; }",
+      "while (temp->left == NULL) { temp = temp->right; }"
+    ],
+    "answer": 1,
+    "explanation": "Sau khi đã rẽ sang trái 1 bước, phần tử lớn nhất của nhánh này chắc chắn nằm ở ngoài cùng biên giới bên phải. Lệnh `while (temp->right != NULL)` chỉ đạo con trỏ trượt liên tục theo đường chéo bên phải cho đến khi bị chặn lại bởi ngõ cụt.",
+    "category": "Operations"
+  },
+  {
+    "id": 32,
+    "question": "What algorithmic concept heavily relies on calling the `insertNode` function inside a sequential looping block?",
+    "options": [
+      "Traversing a tree",
+      "Deleting a tree completely",
+      "Creating/Building a completely new Binary Search Tree from a raw array of inputs",
+      "Searching for a sub-tree"
+    ],
+    "answer": 2,
+    "explanation": "Hành động Khởi tạo cây (Create Tree) về bản chất không có thuật toán riêng biệt. Nó đơn giản là quá trình đọc lần lượt từng con số từ bàn phím hoặc danh sách, rồi liên tục gọi hàm `insertNode` để nạp từng số đó vào cấu trúc cây đang lớn dần.",
+    "category": "Operations"
+  },
+  {
+    "id": 33,
+    "question": "In the standard Preorder Traversal sequence, what defining structural property is absolutely guaranteed?",
+    "options": [
+      "The root node of the completely traversed tree (or subtree) is printed absolutely first",
+      "The root node is printed absolutely last",
+      "The values are always strictly ascending",
+      "The leaf nodes are processed first"
+    ],
+    "answer": 0,
+    "explanation": "Duyệt tiền tố (Preorder) mang ý nghĩa 'Xử lý trước'. Ngay khi chạm chân đến bất kỳ một node nào (đóng vai trò là gốc của bản thân nó hoặc của nhánh con), lệnh In dữ liệu (Visit) sẽ được kích hoạt đầu tiên, sau đó luồng đệ quy mới rẽ xuống các tầng thấp hơn.",
+    "category": "Operations"
+  },
+  {
+    "id": 34,
+    "question": "In the exact context of the Postorder Traversal sequence, what defining structural property is absolutely guaranteed?",
+    "options": [
+      "The values are always strictly descending",
+      "The root node of the completely traversed tree (or subtree) is evaluated and printed absolutely last",
+      "It completely skips leaf nodes",
+      "The rightmost node is printed first"
+    ],
+    "answer": 1,
+    "explanation": "Duyệt hậu tố (Postorder) mang ý nghĩa 'Xử lý sau cùng'. Nó bắt hệ thống phải quét sạch sẽ mọi ngóc ngách của nhánh trái, rồi cày xới nốt toàn bộ nhánh phải. Chỉ khi không còn gì ở phía dưới để khám phá, nó mới cho phép node gốc hiện tại được xướng tên.",
+    "category": "Operations"
+  },
+  {
+    "id": 35,
+    "question": "If a BST has the exact structure: Root=50, Left Child=30, Right Child=60. If you insert the value 20, where will it be structurally positioned?",
+    "options": [
+      "As the right child of 30",
+      "As the left child of 30",
+      "As the left child of 60",
+      "It mathematically replaces 50"
+    ],
+    "answer": 1,
+    "explanation": "Dò tìm vị trí chèn: 20 nhỏ hơn 50, nên nó bị ném sang nhánh trái gặp 30. Tiếp tục, 20 lại nhỏ hơn 30, nên nó lại bị đẩy tiếp sang trái. Vì 30 chưa có con trái (NULL), 20 sẽ hạ cánh và đóng chốt tại vị trí left child của 30.",
+    "category": "Operations"
+  },
+  {
+    "id": 36,
+    "question": "When actively searching for the minimum value contained within a BST, what direct pointer navigation strategy is mechanically employed?",
+    "options": [
+      "Continuously follow the right child pointers to the bottom",
+      "Continuously follow the left child pointers until a node with a NULL left child is encountered",
+      "Check only the exact root node",
+      "Perform a full Postorder traversal"
+    ],
+    "answer": 1,
+    "explanation": "Do nguyên lý mọi giá trị nhỏ hơn đều bị ép sang bên trái, nên kẻ nhỏ bé nhất chắc chắn bị dạt ra rìa ngoài cùng bên trái của cây. Ta chỉ việc lấy một con trỏ đi đâm thẳng xuống `left` liên tục cho đến khi rớt đáy.",
+    "category": "Operations"
+  },
+  {
+    "id": 37,
+    "question": "What is explicitly missing from the logic if a tree counting function meant to strictly find nodes with EXACTLY ONE child evaluates `if (r->left == NULL && r->right == NULL)`?",
+    "options": [
+      "It is checking for two children instead",
+      "It is mistakenly identifying Leaf nodes (0 children) instead of nodes with precisely 1 child",
+      "It is checking for the root",
+      "It is accurately tracking height"
+    ],
+    "answer": 1,
+    "explanation": "Biểu thức `left == NULL && right == NULL` là dấu hiệu nhận biết của cành cụt (node lá - 0 con). Để bắt trúng một node chỉ có đúng 1 con (đơn thân), điều kiện logic phải là một bên bị NULL và bên kia bắt buộc CÓ chứa dữ liệu (trái với phép XOR).",
+    "category": "Operations"
+  },
+  {
+    "id": 38,
+    "question": "Why is implementing an Iterative Search often preferred over a Recursive Search in highly constrained embedded systems?",
+    "options": [
+      "Because it mathematically runs in O(1) time",
+      "Because it avoids generating heavy Activation Records on the Call Stack, crucially preventing Stack Overflow errors during deep tree traversals",
+      "Because compilers reject recursion completely",
+      "Because it inherently uses a queue structure"
+    ],
+    "answer": 1,
+    "explanation": "Dù tốc độ vòng lặp của cả hai tương đương nhau O(h), nhưng đệ quy đè gánh nặng rất lớn lên bộ nhớ Stack của hệ thống do phải lưu trữ trạng thái hàm liên tục. Dùng vòng lặp `while` (Iterative) hoàn toàn giải phóng bộ nhớ Stack, giúp hệ thống không bao giờ bị tràn RAM khi cây quá sâu.",
+    "category": "Operations"
+  },
+  {
+    "id": 39,
+    "question": "In the recursive algorithm formulation `T->left = insert(x, T->left)`, what is the fundamental purpose of the assignment operator?",
+    "options": [
+      "It deletes the left node securely",
+      "It inherently re-links the current parent node to the potentially newly created child node structure returned by the recursive call",
+      "It calculates the height of the left tree",
+      "It unbalances the tree intentionally"
+    ],
+    "answer": 1,
+    "explanation": "Đệ quy chèn hoạt động theo cơ chế tháo dỡ và lắp ráp lại. Lệnh gán `T->left = ...` đảm bảo rằng nếu lời gọi đệ quy tạo ra một node lá hoàn toàn mới ở tầng dưới cùng, địa chỉ của node mới này sẽ được gửi ngược lên và ghim chặt vào đúng chốt `left` của node cha hiện tại.",
+    "category": "Operations"
+  },
+  {
+    "id": 40,
+    "question": "When recursively tracking the Height of a tree, if node A has a left subtree height of 5 and a right subtree height of 2, what exact value is mathematically returned for node A?",
+    "options": [
+      "5",
+      "7",
+      "6",
+      "3"
+    ],
+    "answer": 2,
+    "explanation": "Dựa trên công thức cốt lõi `1 + max(Height(left), Height(right))`. Hàm `max` sẽ so sánh 5 và 2, chọn ra nhánh sâu hơn là 5. Sau đó cộng thêm 1 đơn vị bản lề của chính node A. Kết quả chiều cao tổng thể đổ về là 6.",
+    "category": "Operations"
+  }
+]

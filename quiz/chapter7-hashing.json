@@ -1,0 +1,523 @@
+
+[
+  {
+    "id": 1,
+    "question": "In table management and database systems, what is the primary characteristic of a 'key' field?",
+    "options": [
+      "It encrypts the entry data",
+      "It dynamically changes its value",
+      "It uniquely identifies an entry",
+      "It is always a numeric value"
+    ],
+    "answer": 2,
+    "explanation": "Khóa (key) là một trường dữ liệu mang giá trị độc nhất. Nhờ tính chất không trùng lặp này (ví dụ: mã số sinh viên, số căn cước), hệ thống có thể định vị và truy xuất chính xác một bản ghi cụ thể mà không bị nhầm lẫn với bất kỳ bản ghi nào khác trong bảng.",
+    "category": "Introduction to Hashing"
+  },
+  {
+    "id": 2,
+    "question": "What is the theoretical time complexity for the 'insert' operation in an Unsorted Sequential Array?",
+    "options": [
+      "O(1)",
+      "O(log n)",
+      "O(n)",
+      "O(n log n)"
+    ],
+    "answer": 0,
+    "explanation": "Trong một mảng tuần tự không sắp xếp (Unsorted Sequential Array), dữ liệu mới luôn được chèn trực tiếp vào vị trí trống ở cuối mảng. Thao tác này hoàn toàn độc lập với số lượng phần tử hiện có, mang lại độ phức tạp thời gian hằng số O(1).",
+    "category": "Introduction to Hashing"
+  },
+  {
+    "id": 3,
+    "question": "What is the time complexity for the 'find' operation in a Sorted Sequential Array?",
+    "options": [
+      "O(1)",
+      "O(log n)",
+      "O(n)",
+      "O(n^2)"
+    ],
+    "answer": 1,
+    "explanation": "Vì mảng đã được sắp xếp theo thứ tự, hệ thống có thể áp dụng thuật toán Tìm kiếm nhị phân (Binary Search). Việc liên tục chia đôi không gian tìm kiếm giúp giảm thiểu số phép so sánh, đạt được độ phức tạp thời gian logarit O(log n).",
+    "category": "Introduction to Hashing"
+  },
+  {
+    "id": 4,
+    "question": "What makes a Hash Table exceptionally efficient compared to Arrays and Linked Lists?",
+    "options": [
+      "It compresses data to save memory",
+      "It automatically sorts elements during insertion",
+      "It calculates the physical storage place using a hash function, allowing O(1) time complexity for insert, find, and remove operations",
+      "It uses binary trees internally to manage connections"
+    ],
+    "answer": 2,
+    "explanation": "Sức mạnh cốt lõi của Hash Table (Bảng băm) nằm ở hàm băm. Thay vì phải duyệt qua từng phần tử, hàm băm biến đổi trực tiếp khóa (key) thành một địa chỉ chỉ mục duy nhất. Điều này cho phép thao tác truy xuất, thêm và xóa diễn ra gần như ngay lập tức với chi phí O(1).",
+    "category": "Introduction to Hashing"
+  },
+  {
+    "id": 5,
+    "question": "In a Hash Table, what does the 'load factor' mathematically represent?",
+    "options": [
+      "The total capacity of the memory",
+      "The ratio of the number of elements to the number of buckets (n / k)",
+      "The time taken to compute the hash function",
+      "The maximum number of collisions allowed"
+    ],
+    "answer": 1,
+    "explanation": "Hệ số tải (Load factor) được tính bằng tỷ lệ giữa tổng số phần tử đang lưu trữ (n) và tổng số lượng rổ (k) trong bảng băm. Khi hệ số tải nhỏ (xấp xỉ 1) và hàm băm phân bố đều, hiệu suất của bảng băm sẽ đạt mức tối ưu nhất.",
+    "category": "Introduction to Hashing"
+  },
+  {
+    "id": 6,
+    "question": "Which of the following is a highly practical application of Hashing in computer science?",
+    "options": [
+      "Rendering 3D graphics",
+      "Tracking declared variables in compilers and powering on-line spelling checkers",
+      "Calculating the shortest path in a GPS network",
+      "Converting recursive functions into iterative loops"
+    ],
+    "answer": 1,
+    "explanation": "Bảng băm được ứng dụng rộng rãi nhờ tốc độ tra cứu O(1). Trình biên dịch dùng nó để theo dõi biến số; các phần mềm kiểm tra chính tả (spelling checker) băm toàn bộ từ điển để phát hiện từ viết sai chỉ trong chớp mắt; hệ thống game lưu trữ các nước đi đã duyệt để tiết kiệm thời gian tính toán.",
+    "category": "Introduction to Hashing"
+  },
+  {
+    "id": 7,
+    "question": "In which specific scenario is a Hash Table considered functionally unsuitable?",
+    "options": [
+      "When memory space is abundantly available",
+      "When the system strictly requires constant time O(1) access",
+      "When there are many insertions and deletions, or if sequential table traversals are frequently needed",
+      "When dealing with extremely large datasets"
+    ],
+    "answer": 2,
+    "explanation": "Bảng băm phân bố dữ liệu một cách lộn xộn và ngẫu nhiên dựa trên kết quả của hàm băm. Do đó, nó hoàn toàn vô dụng nếu ứng dụng đòi hỏi phải duyệt dữ liệu theo một thứ tự tuần tự (như in danh sách tăng dần), hoặc khi số lượng thao tác xóa/chèn làm biến động kích thước bảng quá lớn.",
+    "category": "Introduction to Hashing"
+  },
+  {
+    "id": 8,
+    "question": "What specifically distinguishes 'Static Hashing' from 'Dynamic Hashing'?",
+    "options": [
+      "Static hashing allows duplicate keys, dynamic does not",
+      "Static hashing tables have a rigidly fixed size, whereas dynamic hashing tables can vary their size",
+      "Static hashing does not use buckets",
+      "Static hashing stores data externally on a hard drive"
+    ],
+    "answer": 1,
+    "explanation": "Băm tĩnh (Static hashing) phân bổ một bảng có kích thước cố định vĩnh viễn ngay từ đầu. Ngược lại, băm động (Dynamic hashing) có khả năng tự động co giãn kích thước bảng tùy theo số lượng dữ liệu thực tế để tránh lãng phí bộ nhớ và hạn chế xung đột.",
+    "category": "Static Hashing"
+  },
+  {
+    "id": 9,
+    "question": "Structurally, how is a Hash Table partitioned?",
+    "options": [
+      "Into binary trees and leaf nodes",
+      "Into contiguous dynamic arrays exclusively",
+      "Into many buckets, where each bucket can optionally contain multiple slots",
+      "Into stacks and queues"
+    ],
+    "answer": 2,
+    "explanation": "Về mặt cấu trúc, một bảng băm được chia thành nhiều rổ (buckets). Mỗi rổ lại có thể được chia nhỏ thành nhiều khe (slots). Mỗi khe giữ nhiệm vụ lưu trữ chính xác một bản ghi dữ liệu (record).",
+    "category": "Static Hashing"
+  },
+  {
+    "id": 10,
+    "question": "What is the precise definition of a 'Collision' in hash table terminology?",
+    "options": [
+      "When the hash table completely runs out of physical memory",
+      "When two identical keys are mistakenly inserted",
+      "When a hash function evaluates two distinctly different keys and outputs the exact same hash value (home bucket)",
+      "When a bucket is physically destroyed"
+    ],
+    "answer": 2,
+    "explanation": "Xung đột (Collision) là hiện tượng toán học xảy ra khi hàm băm xử lý hai từ khóa hoàn toàn khác nhau (ví dụ 'John' và 'Lisa') nhưng vô tình lại cho ra cùng một kết quả chỉ mục. Lúc này cả hai phần tử đều tranh giành chung một rổ lưu trữ.",
+    "category": "Static Hashing"
+  },
+  {
+    "id": 11,
+    "question": "What negative phenomenon occurs when a hashing function groups many key values closely together into a few buckets?",
+    "options": [
+      "Fragmentation",
+      "Clustering",
+      "Parsing",
+      "Chaining"
+    ],
+    "answer": 1,
+    "explanation": "Tụ cụm (Clustering) là tình trạng hàm băm phân bổ dữ liệu không đều, khiến các khóa bị dồn ứ cục bộ tại một vài rổ nhất định. Cụm càng lớn, thuật toán càng mất nhiều thời gian để giải quyết xung đột, làm suy giảm nghiêm trọng tốc độ tìm kiếm.",
+    "category": "Static Hashing"
+  },
+  {
+    "id": 12,
+    "question": "For a random variable X representing keys, what probability strictly defines a perfectly uniform hash function over 'b' buckets?",
+    "options": [
+      "P(X=i) = 1",
+      "P(X=i) = b",
+      "P(X=i) = 1 / b",
+      "P(X=i) = b / 2"
+    ],
+    "answer": 2,
+    "explanation": "Một hàm băm lý tưởng phải rải đều dữ liệu. Về mặt xác suất thống kê, điều này có nghĩa là cơ hội để một khóa bất kỳ rơi vào một rổ cụ thể (trong tổng số b rổ) phải bằng nhau hoàn toàn, tức là xác suất P = 1/b.",
+    "category": "Static Hashing"
+  },
+  {
+    "id": 13,
+    "question": "Which hashing method functions by simply ignoring part of the key and using the remaining part directly as the array index?",
+    "options": [
+      "Mid-square method",
+      "Folding method",
+      "Truncation method",
+      "Division method"
+    ],
+    "answer": 2,
+    "explanation": "Phương pháp Cắt cụt (Truncation) hoạt động cực kỳ thô sơ bằng cách vứt bỏ bớt các chữ số không cần thiết. Ví dụ, với mã số 925371622, hệ thống chỉ cắt lấy 3 số cuối là 622 để làm địa chỉ băm. Tuy nhanh nhưng nó dễ gây xung đột.",
+    "category": "Hash Methods"
+  },
+  {
+    "id": 14,
+    "question": "In the Division hashing method (f(k) = k % b), what type of number is heavily recommended for the table size 'b' to minimize collisions?",
+    "options": [
+      "A power of 2",
+      "An even number",
+      "A prime number",
+      "A multiple of 10"
+    ],
+    "answer": 2,
+    "explanation": "Khi dùng phép chia lấy dư, nếu chọn b là lũy thừa của 2, hàm băm sẽ chỉ phụ thuộc vào một vài bit cuối cùng của khóa, bỏ qua các bit cao hơn. Chọn b là một số nguyên tố (prime number) giúp phép chia phân tách các chuỗi mẫu dữ liệu tốt hơn, phát huy tác dụng của toàn bộ các bit.",
+    "category": "Hash Methods"
+  },
+  {
+    "id": 15,
+    "question": "How does the 'Mid-square' hashing method algorithmically compute the bucket address?",
+    "options": [
+      "It adds the first and last digits of the key",
+      "It multiplies the key by itself (squares it) and extracts a specific number of bits from the exact middle of the result",
+      "It divides the key by its middle digit",
+      "It calculates the square root of the key"
+    ],
+    "answer": 1,
+    "explanation": "Phương pháp Bình phương giữa (Mid-square) bắt đầu bằng việc nhân khóa với chính nó. Phép bình phương có ưu điểm là làm xáo trộn mọi thành phần của khóa gốc. Sau đó, nó rút trích một nhóm các chữ số ở ngay vị trí trung tâm của kết quả để làm địa chỉ, đảm bảo độ ngẫu nhiên cao.",
+    "category": "Hash Methods"
+  },
+  {
+    "id": 16,
+    "question": "Which of the following are the two standard mathematical variations of the 'Folding' hash method?",
+    "options": [
+      "Division folding and Modulus folding",
+      "Shift folding and Folding and reverse",
+      "Truncation folding and Root folding",
+      "Even folding and Odd folding"
+    ],
+    "answer": 1,
+    "explanation": "Kỹ thuật Gập (Folding) băm khóa bằng cách chia khóa thành nhiều phần bằng nhau. Nó có hai biến thể: Shift folding (xếp chồng các phần lên nhau rồi cộng thẳng lại) và Folding and reverse (lật ngược xen kẽ một số phần trước khi cộng để tăng độ nhiễu).",
+    "category": "Hash Methods"
+  },
+  {
+    "id": 17,
+    "question": "What is a strict prerequisite required to effectively use the 'Digit Analysis' hashing method?",
+    "options": [
+      "The table must be an array of linked lists",
+      "All the identifiers/keys in the table must be known perfectly in advance",
+      "The keys must be exclusively alphabetic strings",
+      "The keys must be prime numbers"
+    ],
+    "answer": 1,
+    "explanation": "Phương pháp Phân tích chữ số (Digit Analysis) dựa trên việc thống kê tần suất xuất hiện của từng vị trí chữ số trong tập dữ liệu. Để biết được vị trí nào có độ phân tán cao nhất mà chọn lọc, hệ thống bắt buộc phải nắm trong tay toàn bộ tất cả các khóa ngay từ ban đầu.",
+    "category": "Hash Methods"
+  },
+  {
+    "id": 18,
+    "question": "For pointer-based character strings, how is the basic 'Folding' hash function functionally implemented in C?",
+    "options": [
+      "By multiplying the lengths of the strings",
+      "By summing the ASCII values of each individual character in the string and taking the modulus with the table size",
+      "By extracting only the first character's ASCII value",
+      "By converting the string directly into a floating-point number"
+    ],
+    "answer": 1,
+    "explanation": "Để băm một chuỗi ký tự (như một cái tên), hàm băm phổ biến sẽ dùng vòng lặp quét qua từng ký tự một, cộng dồn giá trị mã ASCII của chúng lại thành một số nguyên khổng lồ. Cuối cùng, dùng phép chia lấy dư (modulus) cho kích thước bảng để ép số này vào giới hạn mảng.",
+    "category": "Hash Methods"
+  },
+  {
+    "id": 19,
+    "question": "What exact condition fundamentally defines an 'Overflow' in a hash table?",
+    "options": [
+      "When a newly calculated home bucket has strictly no empty slots left to store the incoming pair",
+      "When the hash function takes too long to compute",
+      "When a search fails to find a key",
+      "When the table contains deleted entries"
+    ],
+    "answer": 0,
+    "explanation": "Xung đột (Collision) xảy ra khi 2 khóa chung một rổ. Nhưng Tràn (Overflow) là tình huống vật lý trầm trọng hơn: nó xảy ra khi một rổ (bucket) đã bị nhét đầy các phần tử đến mức không còn bất kỳ khe trống (slot) nào để chứa thêm phần tử mới vừa bị băm vào đó.",
+    "category": "Collision Resolution"
+  },
+  {
+    "id": 20,
+    "question": "Which distinct strategy does the 'Open Addressing' technique use to solve collisions?",
+    "options": [
+      "It deletes the old element to make room for the new one",
+      "It attaches a linked list to the bucket",
+      "It systematically searches for and inserts the element into the very next available free position sequentially within the same table array",
+      "It mathematically creates a new hash function immediately"
+    ],
+    "answer": 2,
+    "explanation": "Mở địa chỉ (Open Addressing) xử lý xung đột mà không cần cấu trúc dữ liệu phụ. Nếu một rổ đã bị chiếm đóng, nó sẽ 'gõ cửa' tuần tự các rổ tiếp theo trong mảng cho đến khi tìm thấy một ô trống để định cư phần tử mới.",
+    "category": "Collision Resolution"
+  },
+  {
+    "id": 21,
+    "question": "In Linear Probing, how is the sequence of alternative cells mathematically probed?",
+    "options": [
+      "f_i(k) = (f(k) + i^2) % b",
+      "f_i(k) = (f(k) * i) % b",
+      "f_i(k) = (f(k) + i) % b",
+      "f_i(k) = (f_1(k) + i*f_2(k)) % b"
+    ],
+    "answer": 2,
+    "explanation": "Thăm dò tuyến tính (Linear Probing) thực hiện bước nhảy tĩnh i=1, 2, 3... Nghĩa là nó bắt đầu từ rổ ban đầu f(k), cứ thế nhích thêm 1 bước (+i) sang rổ sát vách để tìm chỗ trống. Phép % b đảm bảo khi chạm cuối mảng, nó sẽ vòng ngược lại đầu mảng.",
+    "category": "Collision Resolution"
+  },
+  {
+    "id": 22,
+    "question": "Why is the deletion operation exceptionally tricky in Linear Probing?",
+    "options": [
+      "Because you cannot delete data from arrays",
+      "Because setting a bucket to empty fractures the probe chain, forcing the algorithm to search the cluster and shift subsequent synonyms to fill the vacated gap",
+      "Because the hash function must be inverted",
+      "Because memory leaks inevitably occur"
+    ],
+    "answer": 1,
+    "explanation": "Khi xóa một ô trong Linear Probing, nếu ta chỉ xóa trắng nó, thì các phần tử bị xung đột (nằm ngay sau nó) sẽ bị đứt mạch liên kết và không bao giờ được tìm thấy nữa. Thuật toán buộc phải tốn công rà soát cụm dữ liệu phía sau và dồn chúng lên trước để lấp đầy hố trống.",
+    "category": "Collision Resolution"
+  },
+  {
+    "id": 23,
+    "question": "What is the theoretical worst-case time complexity for operations (find/insert/erase) when using Linear Probing?",
+    "options": [
+      "O(1)",
+      "O(log n)",
+      "O(n)",
+      "O(n^2)"
+    ],
+    "answer": 2,
+    "explanation": "Trong trường hợp tồi tệ nhất, toàn bộ bảng băm bị thoái hóa thành một khối tụ cụm (cluster) khổng lồ liên tiếp nhau. Khi đó, để chèn hoặc tìm một phần tử, hệ thống phải trượt từ đầu đến cuối cụm này, biến thời gian xử lý từ O(1) tuột dốc thê thảm thành O(n).",
+    "category": "Collision Resolution"
+  },
+  {
+    "id": 24,
+    "question": "How does 'Quadratic Probing' dynamically change the probing distance compared to Linear Probing?",
+    "options": [
+      "It strictly uses prime numbers only",
+      "It probes alternative cells using a square of the step index (e.g., +i^2, -i^2)",
+      "It inherently combines two completely different hash functions",
+      "It randomizes the step distance using a seed"
+    ],
+    "answer": 1,
+    "explanation": "Thay vì lết từng bước một dễ gây tụ cụm như Linear Probing, Thăm dò bậc hai (Quadratic Probing) giãn cách khoảng nhảy theo hàm bậc hai của i. Các bước nhảy lần lượt sẽ là +1, -1, +4, -4, +9... giúp phần tử văng xa khỏi điểm nóng xung đột.",
+    "category": "Collision Resolution"
+  },
+  {
+    "id": 25,
+    "question": "Which Open Addressing technique resolves collisions by computing a completely second, independent hash function to determine the step size?",
+    "options": [
+      "Double hashing",
+      "Quadratic probing",
+      "Random probing",
+      "Separate chaining"
+    ],
+    "answer": 0,
+    "explanation": "Băm kép (Double Hashing) là phương pháp tối ưu nhất của Mở địa chỉ. Khi hàm băm 1 bị đụng độ, nó kích hoạt hàm băm 2 để tạo ra một bước nhảy i*f2(k). Bước nhảy này thay đổi linh hoạt tùy theo chính giá trị của khóa, dập tắt hoàn toàn hiện tượng tụ cụm.",
+    "category": "Collision Resolution"
+  },
+  {
+    "id": 26,
+    "question": "What precise actions are algorithmically taken during the 'Rehashing' process?",
+    "options": [
+      "The entire table is erased permanently",
+      "A brand new table of roughly double the size is allocated, and all entries are recalculated and transferred into it",
+      "Only collided elements are moved to an external list",
+      "The hash function is heavily encrypted"
+    ],
+    "answer": 1,
+    "explanation": "Khi bảng băm chạm ngưỡng giới hạn sức chứa, hiệu suất sẽ sụp đổ. Rehashing (Băm lại) giải cứu bằng cách cấp phát một bảng mới to gấp đôi, sau đó bốc từng phần tử cũ, chạy lại hàm băm với kích thước mới và cắm chúng vào các tọa độ mới rộng rãi hơn.",
+    "category": "Collision Resolution"
+  },
+  {
+    "id": 27,
+    "question": "How does the 'Separate Chaining' technique physically bypass the limitations of a fixed array size?",
+    "options": [
+      "By compressing the element values recursively",
+      "By replacing the hash table strictly with a binary search tree",
+      "By converting each bucket into an independent linked list that grows dynamically to store all keys that hash to the same address",
+      "By actively pushing overflow elements to the operating system disk"
+    ],
+    "answer": 2,
+    "explanation": "Móc nối phân biệt (Separate Chaining) gạt bỏ nỗi lo rổ bị đầy. Mỗi một ô trong bảng băm không chứa dữ liệu trực tiếp, mà đóng vai trò là một điểm neo cho một danh sách liên kết. Bất kỳ có bao nhiêu khóa bị băm trùng vào ô đó, chúng đều được nối đuôi vào danh sách liên kết này vô hạn.",
+    "category": "Collision Resolution"
+  },
+  {
+    "id": 28,
+    "question": "When implementing Separate Chaining, where is a strictly new incoming key attached if the bucket already contains a linked list?",
+    "options": [
+      "At the very end of the list, requiring a full traversal",
+      "At the precise mathematical middle of the list",
+      "At the very beginning of the linked list for maximum O(1) efficiency",
+      "It completely overwrites the first element"
+    ],
+    "answer": 2,
+    "explanation": "Trong lập trình danh sách liên kết, thao tác chèn vào đuôi tốn rất nhiều thời gian vì phải duyệt mảng. Do đó, để tối ưu tốc độ, thuật toán Separate Chaining luôn chèn phần tử mới thẳng vào vị trí đầu tiên của danh sách (head), chỉ mất chi phí O(1).",
+    "category": "Collision Resolution"
+  },
+  {
+    "id": 29,
+    "question": "What is a major programmatic disadvantage of using Separate Chaining over Open Addressing?",
+    "options": [
+      "Separate chaining mathematically severely limits the array size",
+      "Deletion operations are heavily complicated",
+      "The constant memory allocation and manipulation overhead for constructing linked list nodes can actively slow down program execution",
+      "It inevitably clusters primary keys together"
+    ],
+    "answer": 2,
+    "explanation": "Dù giải quyết xung đột rất mượt mà, điểm yếu chí mạng của Separate Chaining là nó phụ thuộc vào danh sách liên kết. Mỗi lần chèn một phần tử, hệ thống phải gọi hàm cấp phát bộ nhớ động (malloc/new) cho một node mới. Việc triệu gọi hệ điều hành liên tục này làm chậm đáng kể hiệu suất thực thi tổng thể.",
+    "category": "Collision Resolution"
+  },
+  {
+    "id": 30,
+    "question": "What is the primary motivation for shifting from Static Hashing to Dynamic Hashing architectures?",
+    "options": [
+      "Static hashing strictly forbids alphanumeric strings",
+      "Dynamic hashing inherently encrypts data keys better",
+      "The total number of identifiers fluctuates heavily over time; dynamic hashing grows or shrinks the table size to maintain performance without crashing",
+      "Static hashing completely lacks collision resolution"
+    ],
+    "answer": 2,
+    "explanation": "Trong các hệ thống thực tế (như Cơ sở dữ liệu), lượng dữ liệu tăng giảm liên tục không thể lường trước. Bảng tĩnh (Static) sẽ bị tràn hoặc lãng phí nghiêm trọng. Băm động (Dynamic/Extendible Hashing) khắc phục bằng cách thiết kế kiến trúc cho phép giãn nở hoặc thu hẹp dung lượng một cách linh hoạt.",
+    "category": "Dynamic Hashing"
+  },
+  {
+    "id": 31,
+    "question": "What is the standard alternative nomenclature universally used to describe 'Dynamic Hashing'?",
+    "options": [
+      "Extendible hashing",
+      "Recursive hashing",
+      "Truncated hashing",
+      "Synchronous hashing"
+    ],
+    "answer": 0,
+    "explanation": "Thuật ngữ 'Băm mở rộng' (Extendible Hashing) thường được dùng đồng nghĩa với Băm động. Nó phản ánh bản chất kiến trúc có thể tự động bẻ nhánh, phân chia rổ (split buckets) và gia tăng thư mục quản lý khi cần mở rộng khả năng lưu trữ.",
+    "category": "Dynamic Hashing"
+  },
+  {
+    "id": 32,
+    "question": "In the context of Dynamic Hashing applied to robust database systems, what is the alternate term frequently used for 'buckets'?",
+    "options": [
+      "Sectors",
+      "Directories",
+      "Pages",
+      "Indexes"
+    ],
+    "answer": 2,
+    "explanation": "Băm động chủ yếu thao tác với dữ liệu nằm trên ổ cứng (bộ nhớ ngoài). Trong ngôn ngữ của hệ quản trị cơ sở dữ liệu, một rổ (bucket) chứa được nhiều bản ghi chính là một khối bộ nhớ được định dạng dưới tên gọi là Trang (Pages).",
+    "category": "Dynamic Hashing"
+  },
+  {
+    "id": 33,
+    "question": "How is the 'Space Utilization' ratio mathematically calculated within a Dynamic Hashing environment?",
+    "options": [
+      "n / (m * p)",
+      "(m * p) / n",
+      "m / (n * p)",
+      "p / (m * n)"
+    ],
+    "answer": 0,
+    "explanation": "Hiệu suất sử dụng không gian (Space Utilization) đánh giá xem ta đang lãng phí bao nhiêu bộ nhớ. Công thức là lấy tổng số bản ghi thực tế đang có (n) chia cho tổng sức chứa tối đa của hệ thống, được tính bằng số lượng trang đã cấp phát (m) nhân với sức chứa của mỗi trang (p).",
+    "category": "Dynamic Hashing"
+  },
+  {
+    "id": 34,
+    "question": "In the Space Utilization formula (n / mp), what does the variable 'p' strictly represent?",
+    "options": [
+      "The total prime numbers stored",
+      "The exact number of reserved pages",
+      "The precise number of records physically allowed per page",
+      "The memory pointers allocated"
+    ],
+    "answer": 2,
+    "explanation": "Biến 'p' đại diện cho khối lượng tải trọng của một đơn vị lưu trữ: số lượng bản ghi (records) tối đa có thể được nhồi nhét vào bên trong một trang (page) vật lý duy nhất.",
+    "category": "Dynamic Hashing"
+  },
+  {
+    "id": 35,
+    "question": "What is a major algorithmic objective when developing an extendible (dynamic) hashing function?",
+    "options": [
+      "To maximize the amount of page access for thorough scanning",
+      "To inherently minimize the number of external pages physically accessed while keeping space utilization as high as possible",
+      "To decrease the capacity 'p' of every page",
+      "To force all identical hashes into a single massive cluster"
+    ],
+    "answer": 1,
+    "explanation": "Việc đọc/ghi ổ cứng cực kỳ chậm chạp. Do đó, mục tiêu thiết kế tối thượng của băm động là phải làm sao để tìm được một bản ghi với số lần truy cập vào các trang (pages) ít nhất có thể, đồng thời không cấp phát thừa thãi quá nhiều trang gây rỗng không gian.",
+    "category": "Dynamic Hashing"
+  },
+  {
+    "id": 36,
+    "question": "What are the two predominant structural approaches explicitly utilized to architect Dynamic Hashing?",
+    "options": [
+      "Dynamic Hashing using binary trees and using AVL trees",
+      "Dynamic Hashing with Using Directories and Dynamic Hashing without Using Directories",
+      "Dynamic Hashing with Linked Lists and with Arrays",
+      "Dynamic Hashing with Double hashing and with Probing"
+    ],
+    "answer": 1,
+    "explanation": "Kiến trúc băm động được phân làm hai trường phái chính: sử dụng Thư mục (Directories) làm bảng tham chiếu trung gian để trỏ tới các trang dữ liệu, và không sử dụng Thư mục (vận hành trực tiếp dựa trên phép toán phân chia nhị phân).",
+    "category": "Dynamic Hashing"
+  },
+  {
+    "id": 37,
+    "question": "If a hash function yields highly uniform and random bucket distribution, what is the expected practical performance of a Separate Chaining Hash Table?",
+    "options": [
+      "O(n^2) for operations",
+      "Constant time O(1) for search, insertion, and deletion",
+      "O(log n) exactly like a BST",
+      "It requires infinite memory"
+    ],
+    "answer": 1,
+    "explanation": "Nếu hàm băm xịn và phát tán tốt, các danh sách liên kết gắn tại mỗi rổ sẽ rất ngắn (chỉ chứa 1 hoặc 2 phần tử). Khi đó, dù có phải duyệt danh sách, chi phí vẫn chỉ là một hằng số nhỏ bé. Bảng băm đạt đỉnh cao phong độ với tốc độ hoàn thành O(1).",
+    "category": "Collision Resolution"
+  },
+  {
+    "id": 38,
+    "question": "Why is the deletion operation fundamentally much simpler in Separate Chaining compared to Open Addressing (like Linear Probing)?",
+    "options": [
+      "Because Open Addressing requires manual OS memory freeing",
+      "Because Separate Chaining only requires a basic linked list node removal bypassing complex shifting and cluster management",
+      "Because you can just delete the whole bucket instantly",
+      "Because the keys are automatically inherently ordered"
+    ],
+    "answer": 1,
+    "explanation": "Trong Separate Chaining, nếu muốn xóa, thuật toán chỉ việc đi vào danh sách liên kết của rổ đó, cắt đứt dây nối của node chứa khóa và giải phóng nó. Không hề có hệ lụy nào ảnh hưởng đến các rổ khác, cũng không cần dời chỗ hay xây lại cấu trúc như Open Addressing.",
+    "category": "Collision Resolution"
+  },
+  {
+    "id": 39,
+    "question": "In the Linear Probing insertion algorithm, what specific error should be definitively reported if the while-loop index traverses completely and matches the originally calculated hash_value again?",
+    "options": [
+      "A fatal duplicate entry error",
+      "The table is entirely full and cannot accept the item",
+      "A memory segmentation fault",
+      "An invalid hash function format"
+    ],
+    "answer": 1,
+    "explanation": "Trong quá trình tìm ô trống (probe), con trỏ rà soát mảng sẽ đi một vòng lặp. Nếu nó đi giáp một vòng và quay trở lại đúng ngay vạch xuất phát ban đầu (index == hash_value) mà vẫn chưa tìm được khe hở nào, điều đó là bằng chứng toán học xác nhận bảng băm đã hoàn toàn bị lấp đầy 100%.",
+    "category": "Collision Resolution"
+  },
+  {
+    "id": 40,
+    "question": "If a 'Division' hash function f(k) = k % 10 is applied sequentially to the keys 401, 111, and 510, what occurs mathematically?",
+    "options": [
+      "They securely map to completely separate buckets",
+      "A collision undeniably happens between keys 401 and 111 as they both strictly map to bucket 1",
+      "All keys collide at bucket 0",
+      "Key 510 throws an invalid modulo exception"
+    ],
+    "answer": 1,
+    "explanation": "Phép chia lấy phần dư cho 10 sẽ lấy chữ số cuối cùng. Với khóa 401, kết quả là 1. Với khóa 111, kết quả cũng là 1. Hai khóa khác nhau cùng tranh chấp vị trí chỉ mục số 1, tạo ra một trường hợp Xung đột (Collision) kinh điển cần được giải quyết bằng các cơ chế xử lý lỗi.",
+    "category": "Hash Methods"
+  }
+]

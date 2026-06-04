@@ -4,6 +4,7 @@
 class QuizStorage {
   static HISTORY_KEY = 'quizmaster_history';
   static THEME_KEY = 'quizmaster_theme';
+  static TRANSLATION_SETTINGS_KEY = 'quizmaster_translation_settings';
 
   /**
    * Fetch all historical quiz results.
@@ -78,6 +79,34 @@ class QuizStorage {
       localStorage.setItem(this.THEME_KEY, theme);
     } catch (e) {
       console.error("Error setting theme in localStorage:", e);
+    }
+  }
+
+  static getTranslationSettings() {
+    try {
+      const settingsJson = localStorage.getItem(this.TRANSLATION_SETTINGS_KEY);
+      return settingsJson ? JSON.parse(settingsJson) : {
+        endpoint: 'https://libretranslate.com/translate',
+        apiKey: ''
+      };
+    } catch (e) {
+      console.error("Error reading translation settings from localStorage:", e);
+      return {
+        endpoint: 'https://libretranslate.com/translate',
+        apiKey: ''
+      };
+    }
+  }
+
+  static setTranslationSettings(settings) {
+    try {
+      const normalizedSettings = {
+        endpoint: settings.endpoint || 'https://libretranslate.com/translate',
+        apiKey: settings.apiKey || ''
+      };
+      localStorage.setItem(this.TRANSLATION_SETTINGS_KEY, JSON.stringify(normalizedSettings));
+    } catch (e) {
+      console.error("Error setting translation settings in localStorage:", e);
     }
   }
 

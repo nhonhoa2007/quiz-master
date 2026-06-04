@@ -47,6 +47,11 @@ class QuizEngine {
         if (q.answer >= 0 && q.answer < question.options.length) {
           correctIndex = q.answer;
         }
+      } else if (typeof q.answer === 'string' && /^\d+$/.test(q.answer.trim())) {
+        const numericAnswer = Number(q.answer.trim());
+        if (numericAnswer >= 0 && numericAnswer < question.options.length) {
+          correctIndex = numericAnswer;
+        }
       } else if (typeof q.answer === 'string') {
         // Find option index that matches string exactly or trim/case-insensitively
         const cleanAnswer = q.answer.trim().toLowerCase();
@@ -206,7 +211,8 @@ class QuizEngine {
       userAnswers: this.userAnswers,
       bookmarkedQuestions: Array.from(this.bookmarkedQuestions),
       timeRemaining: this.timeRemaining,
-      timeSpent: this.timeSpent
+      timeSpent: this.timeSpent,
+      savedAt: Date.now()
     };
   }
 
@@ -220,6 +226,15 @@ class QuizEngine {
     engine.bookmarkedQuestions = new Set(state.bookmarkedQuestions || []);
     engine.timeRemaining = state.timeRemaining !== undefined ? state.timeRemaining : state.timeLimit * 60;
     engine.timeSpent = state.timeSpent || 0;
+
+    if (state.savedAt) {
+      const elapsedSeconds = Math.max(0, Math.floor((Date.now() - state.savedAt) / 1000));
+      engine.timeSpent += elapsedSeconds;
+      if (engine.timeLimit > 0) {
+        engine.timeRemaining = Math.max(0, engine.timeRemaining - elapsedSeconds);
+      }
+    }
+
     engine.quizStarted = true;
     return engine;
   }

@@ -269,6 +269,38 @@
               </h4>
               <p id="practice-explanation-text">Lý giải chi tiết về câu hỏi này...</p>
             </div>
+
+            <!-- Quick Translation Helper -->
+            <div class="translation-panel" id="translation-panel">
+              <div class="translation-panel-header">
+                <div>
+                  <h4>Dịch nhanh từ khó</h4>
+                  <p>Bôi đen từ trong đề hoặc đáp án để tra nghĩa, hoặc dịch nhanh cả cụm.</p>
+                </div>
+                <div class="translation-actions">
+                  <button class="btn btn-secondary btn-sm" id="lookup-word-btn" type="button">
+                    Tra từ
+                  </button>
+                  <button class="btn btn-secondary btn-sm" id="translate-selected-btn" type="button">
+                    Dịch sang tiếng Việt
+                  </button>
+                </div>
+              </div>
+
+              <div class="dictionary-config">
+                <input type="text" id="dictionary-word-input" placeholder="Từ cần tra, ví dụ: queue" autocomplete="off">
+              </div>
+
+              <div class="translation-config">
+                <input type="url" id="translation-endpoint-input" placeholder="LibreTranslate URL" autocomplete="off">
+                <input type="password" id="translation-api-key-input" placeholder="LibreTranslate API key nếu cần" autocomplete="off">
+                <button class="btn btn-secondary btn-sm" id="save-translation-settings-btn" type="button">Lưu</button>
+              </div>
+
+              <div class="translation-result" id="translation-result" aria-live="polite">
+                Chưa có nội dung dịch.
+              </div>
+            </div>
           </div>
 
           <!-- Control navigation -->
