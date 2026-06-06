@@ -1956,6 +1956,21 @@ h1, h2, h3, h4, .logo {
   margin-top: 0;
 }
 
+.preset-section-header,
+.preset-section-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.catalog-status {
+  margin: -0.35rem 0 1rem;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+}
+
 .preset-grid {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
@@ -2209,6 +2224,14 @@ h1, h2, h3, h4, .logo {
 
   .preset-grid {
     grid-template-columns: 1fr;
+  }
+
+  .preset-section-actions {
+    width: 100%;
+  }
+
+  .preset-section-actions .btn {
+    flex: 1;
   }
 
   .dropzone {

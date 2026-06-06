@@ -1,0 +1,262 @@
+[
+  {
+    "id": 1,
+    "question": "Which search algorithm can be used on an unsorted array without preprocessing?",
+    "options": [
+      "Binary search",
+      "Sequential search",
+      "Heap sort",
+      "Merge sort"
+    ],
+    "answer": 1,
+    "explanation": "Đáp án B đúng vì sequential search duyệt từng phần tử nên không cần mảng đã sắp xếp. Binary search cần sorted array. Heap sort và merge sort là sắp xếp.",
+    "category": "Set 3 - Searching and Sorting"
+  },
+  {
+    "id": 2,
+    "question": "For sequential search, what is the worst-case time complexity?",
+    "options": [
+      "O(1)",
+      "O(log n)",
+      "O(n)",
+      "O(n log n)"
+    ],
+    "answer": 2,
+    "explanation": "Đáp án C đúng vì trường hợp xấu nhất phải kiểm tra hết n phần tử. A chỉ khi tìm thấy ngay đầu. B là binary search. D thường gặp ở một số thuật toán sort.",
+    "category": "Set 3 - Searching and Sorting"
+  },
+  {
+    "id": 3,
+    "question": "For binary search, what happens if searchNum is smaller than list[middle]?",
+    "options": [
+      "Search the right half",
+      "Search the left half",
+      "Stop unsuccessfully immediately",
+      "Sort the array again"
+    ],
+    "answer": 1,
+    "explanation": "Đáp án B đúng vì mảng tăng dần, nếu giá trị cần tìm nhỏ hơn phần tử giữa thì chỉ có thể nằm bên trái. A ngược lại. C sai vì vẫn còn nửa trái. D không cần.",
+    "category": "Set 3 - Searching and Sorting"
+  },
+  {
+    "id": 4,
+    "question": "Which sorting algorithm builds the sorted part by inserting A[i] into A[0..i-1]?",
+    "options": [
+      "Insertion sort",
+      "Selection sort",
+      "Bubble sort",
+      "Quick sort"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì insertion sort chèn phần tử hiện tại vào đoạn đã sắp xếp bên trái. Selection sort chọn phần tử nhỏ nhất còn lại. Bubble sort đổi chỗ cặp kề. Quick sort chia theo pivot.",
+    "category": "Set 3 - Searching and Sorting"
+  },
+  {
+    "id": 5,
+    "question": "What is the worst-case Big-O of insertion sort?",
+    "options": [
+      "O(n)",
+      "O(n log n)",
+      "O(n^2)",
+      "O(log n)"
+    ],
+    "answer": 2,
+    "explanation": "Đáp án C đúng vì trong worst case mỗi phần tử có thể phải so sánh/dịch qua nhiều phần tử trước nó, tổng khoảng n(n-1)/2. O(n) là best case khi gần sorted.",
+    "category": "Set 3 - Searching and Sorting"
+  },
+  {
+    "id": 6,
+    "question": "Which sorting algorithm repeatedly selects the smallest remaining element and places it in its correct position?",
+    "options": [
+      "Insertion sort",
+      "Selection sort",
+      "Merge sort",
+      "Binary search"
+    ],
+    "answer": 1,
+    "explanation": "Đáp án B đúng vì selection sort chọn min trong phần chưa sắp xếp rồi đổi vào vị trí i. Insertion sort chèn, merge sort chia-trộn, binary search không phải sort.",
+    "category": "Set 3 - Searching and Sorting"
+  },
+  {
+    "id": 7,
+    "question": "What is the worst-case Big-O of selection sort?",
+    "options": [
+      "O(n)",
+      "O(log n)",
+      "O(n^2)",
+      "O(2^n)"
+    ],
+    "answer": 2,
+    "explanation": "Đáp án C đúng vì selection sort dùng hai vòng lặp để tìm min, số so sánh xấp xỉ n(n-1)/2. Các đáp án khác không phù hợp.",
+    "category": "Set 3 - Searching and Sorting"
+  },
+  {
+    "id": 8,
+    "question": "Which sorting algorithm compares adjacent elements and swaps them if they are out of order?",
+    "options": [
+      "Bubble sort",
+      "Binary search",
+      "Hashing",
+      "DFS"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì bubble sort dựa vào đổi chỗ các cặp kề sai thứ tự. Các đáp án còn lại không phải thuật toán sắp xếp kiểu này.",
+    "category": "Set 3 - Searching and Sorting"
+  },
+  {
+    "id": 9,
+    "question": "Which of the following is a stable sorting algorithm according to the lecture content?",
+    "options": [
+      "Insertion sort",
+      "Selection sort in all implementations",
+      "Heap sort",
+      "Binary search"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì insertion sort giữ thứ tự tương đối của các khóa bằng nhau nếu cài đặt chuẩn. Selection sort thường không ổn định nếu swap xa. Heap sort không ổn định. Binary search không phải sort.",
+    "category": "Set 3 - Searching and Sorting"
+  },
+  {
+    "id": 10,
+    "question": "What is the key idea of merge sort?",
+    "options": [
+      "Choose the smallest element repeatedly",
+      "Divide the list, sort sublists, and merge them",
+      "Swap adjacent elements many times",
+      "Use a hash function"
+    ],
+    "answer": 1,
+    "explanation": "Đáp án B đúng vì merge sort là thuật toán chia để trị: chia mảng, sắp xếp các phần, rồi trộn. A là selection sort. C là bubble sort. D thuộc hashing.",
+    "category": "Set 3 - Searching and Sorting"
+  },
+  {
+    "id": 11,
+    "question": "What is the average Big-O of merge sort?",
+    "options": [
+      "O(n)",
+      "O(n log n)",
+      "O(n^2)",
+      "O(1)"
+    ],
+    "answer": 1,
+    "explanation": "Đáp án B đúng vì merge sort chia log n mức và mỗi mức trộn O(n). O(n^2) là các thuật toán đơn giản như selection/bubble trong worst case.",
+    "category": "Set 3 - Searching and Sorting"
+  },
+  {
+    "id": 12,
+    "question": "What is the key idea of quick sort?",
+    "options": [
+      "Use a queue",
+      "Partition around a pivot, then recursively sort parts",
+      "Use only linear search",
+      "Always build a max heap first"
+    ],
+    "answer": 1,
+    "explanation": "Đáp án B đúng vì quick sort chọn pivot, phân hoạch mảng, rồi sắp xếp đệ quy hai phía. A, C, D mô tả cấu trúc/thuật toán khác.",
+    "category": "Set 3 - Searching and Sorting"
+  },
+  {
+    "id": 13,
+    "question": "Which algorithm is more suitable to find an element in a sorted array?",
+    "options": [
+      "Sequential search only",
+      "Binary search",
+      "Bubble sort",
+      "DFS"
+    ],
+    "answer": 1,
+    "explanation": "Đáp án B đúng vì sorted array cho phép binary search O(log n). Sequential search vẫn dùng được nhưng chậm hơn O(n). Bubble sort sắp xếp. DFS dùng cho cây/đồ thị.",
+    "category": "Set 3 - Searching and Sorting"
+  },
+  {
+    "id": 14,
+    "question": "Given sorted array [4, 15, 17, 26, 30, 46, 48], what is the first middle value checked by binary search for 30?",
+    "options": [
+      "17",
+      "26",
+      "30",
+      "46"
+    ],
+    "answer": 1,
+    "explanation": "Đáp án B đúng nếu chỉ số 0..6 thì middle = 3, giá trị là 26. Sau đó vì 30 > 26, tìm nửa phải. Các đáp án khác không phải middle đầu tiên.",
+    "category": "Set 3 - Searching and Sorting"
+  },
+  {
+    "id": 15,
+    "question": "After one pass of bubble sort ascending from right to left, which type of element moves to the front in the lecture's version?",
+    "options": [
+      "The largest remaining element",
+      "The smallest remaining element",
+      "A random element",
+      "The middle element"
+    ],
+    "answer": 1,
+    "explanation": "Đáp án B đúng theo mô tả trong slide: mỗi bước i làm phần tử nhỏ nhất trong đoạn chưa sắp xếp nổi về vị trí i. A là biến thể bubble từ trái sang phải thường đẩy max về cuối.",
+    "category": "Set 3 - Searching and Sorting"
+  },
+  {
+    "id": 16,
+    "question": "Why can sorting help list verification?",
+    "options": [
+      "It makes comparison of two lists easier in linear time after sorting",
+      "It makes all elements equal",
+      "It removes the need for memory",
+      "It changes keys randomly"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì sau khi sort hai danh sách, có thể so sánh bằng hai con trỏ trong O(m+n). B, C, D sai về bản chất.",
+    "category": "Set 3 - Searching and Sorting"
+  },
+  {
+    "id": 17,
+    "question": "Which search has average comparisons about (n + 1) / 2 for successful search?",
+    "options": [
+      "Sequential search",
+      "Binary search",
+      "DFS",
+      "Hashing with perfect distribution"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì tìm kiếm tuần tự thành công trung bình kiểm tra khoảng nửa danh sách. Binary search là log n. DFS và hashing không theo công thức này.",
+    "category": "Set 3 - Searching and Sorting"
+  },
+  {
+    "id": 18,
+    "question": "Which statement about binary insertion sort is true?",
+    "options": [
+      "It reduces comparisons but movements are unchanged",
+      "It removes all movements",
+      "It changes insertion sort to O(1)",
+      "It requires a graph"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì binary search giúp tìm vị trí chèn với ít so sánh hơn, nhưng trong mảng vẫn phải dịch phần tử. B, C, D sai.",
+    "category": "Set 3 - Searching and Sorting"
+  },
+  {
+    "id": 19,
+    "question": "Which statement defines a stable sort?",
+    "options": [
+      "It never uses extra memory",
+      "Equal keys keep their original relative order",
+      "It always runs in O(log n)",
+      "It only works for integers"
+    ],
+    "answer": 1,
+    "explanation": "Đáp án B đúng vì stable nghĩa là các record có key bằng nhau giữ thứ tự tương đối ban đầu. Các đáp án còn lại không phải định nghĩa stability.",
+    "category": "Set 3 - Searching and Sorting"
+  },
+  {
+    "id": 20,
+    "question": "Which algorithm below is not a sorting algorithm?",
+    "options": [
+      "Insertion sort",
+      "Selection sort",
+      "Binary search",
+      "Merge sort"
+    ],
+    "answer": 2,
+    "explanation": "Đáp án C đúng vì binary search là thuật toán tìm kiếm, không sắp xếp. Ba đáp án còn lại là thuật toán sắp xếp.",
+    "category": "Set 3 - Searching and Sorting"
+  }
+]

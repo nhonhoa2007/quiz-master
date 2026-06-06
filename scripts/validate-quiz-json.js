@@ -4,12 +4,19 @@ const fs = require('fs');
 const path = require('path');
 
 const roots = ['data', 'quiz'];
+function listJsonFiles(rootPath) {
+  if (!fs.existsSync(rootPath)) return [];
+  return fs.readdirSync(rootPath, { withFileTypes: true }).flatMap(entry => {
+    const entryPath = path.join(rootPath, entry.name);
+    return entry.isDirectory()
+      ? listJsonFiles(entryPath)
+      : entry.name.endsWith('.json') && entry.name !== 'quiz-manifest.json' ? [entryPath] : [];
+  });
+}
+
 const files = roots.flatMap(root => {
   const absoluteRoot = path.join(process.cwd(), root);
-  if (!fs.existsSync(absoluteRoot)) return [];
-  return fs.readdirSync(absoluteRoot)
-    .filter(file => file.endsWith('.json'))
-    .map(file => path.join(root, file));
+  return listJsonFiles(absoluteRoot).map(file => path.relative(process.cwd(), file));
 });
 
 function validateQuizData(data, filePath) {

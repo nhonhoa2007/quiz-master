@@ -7,10 +7,20 @@ QuizMaster is a static quiz practice app built with plain HTML, CSS, and JavaScr
 Because preset quizzes are loaded with `fetch`, serve the folder over HTTP instead of opening `index.html` directly:
 
 ```bash
-python3 -m http.server 8000
+node scripts/dev-server.js
 ```
 
-Then open `http://localhost:8000`.
+Then open `http://127.0.0.1:8000`. This server scans `quiz/**/*.json` whenever
+the browser requests the catalog, so newly added quiz files appear within
+about 3 seconds without editing `js/ui.js` or restarting the server.
+
+Opening `index.html` directly with `file://` uses the last generated catalog
+and cannot discover filesystem changes automatically because browsers do not
+allow web pages to list local directories. Refresh that catalog manually with:
+
+```bash
+node scripts/generate-quiz-manifest.js
+```
 
 ## Quiz JSON Format
 

@@ -1,0 +1,652 @@
+[
+  {
+    "id": 1,
+    "question": "Which statement is true about a singly linked list?",
+    "options": [
+      "All nodes must be contiguous in memory",
+      "Each node usually stores data and a pointer to the next node",
+      "It allows O(1) random access by index",
+      "The last node points to the first node in all cases"
+    ],
+    "answer": 1,
+    "explanation": "Đáp án B đúng vì node trong singly linked list gồm data và next. A sai vì node không cần nằm liên tiếp. C sai vì truy cập theo chỉ số là O(n). D chỉ đúng với circular linked list.",
+    "category": "Set 2 - Linked List, Stack and Queue"
+  },
+  {
+    "id": 2,
+    "question": "What does head = NULL usually mean in a linked list?",
+    "options": [
+      "The list is full",
+      "The list is empty",
+      "The list has one node",
+      "The list is circular"
+    ],
+    "answer": 1,
+    "explanation": "Đáp án B đúng vì head không trỏ tới node nào nghĩa là danh sách rỗng. A không liên quan. C cần head trỏ đến một node. D cần node cuối trỏ lại đầu.",
+    "category": "Set 2 - Linked List, Stack and Queue"
+  },
+  {
+    "id": 3,
+    "question": "Which operation is expensive in a singly linked list if we do not have a tail pointer?",
+    "options": [
+      "Insert at the head",
+      "Access the first node",
+      "Insert at the end",
+      "Check whether head is NULL"
+    ],
+    "answer": 2,
+    "explanation": "Đáp án C đúng vì muốn chèn cuối phải duyệt đến node cuối nếu không có tail. Chèn đầu và kiểm tra head thường O(1).",
+    "category": "Set 2 - Linked List, Stack and Queue"
+  },
+  {
+    "id": 4,
+    "question": "In a circularly linked list, what does the last node point to?",
+    "options": [
+      "NULL",
+      "The first node",
+      "Itself only if the list has many nodes",
+      "A random memory address"
+    ],
+    "answer": 1,
+    "explanation": "Đáp án B đúng vì đặc trưng của circular linked list là node cuối trỏ lại node đầu. A là linked list thường. C chỉ đúng khi danh sách có một node. D sai vì trỏ ngẫu nhiên gây lỗi.",
+    "category": "Set 2 - Linked List, Stack and Queue"
+  },
+  {
+    "id": 5,
+    "question": "What is the main advantage of a doubly linked list over a singly linked list?",
+    "options": [
+      "It uses less memory",
+      "It allows traversal in both directions",
+      "It cannot be empty",
+      "It removes all need for pointers"
+    ],
+    "answer": 1,
+    "explanation": "Đáp án B đúng vì doubly linked list có link trái/phải nên duyệt tiến và lùi. A sai vì dùng thêm con trỏ nên tốn bộ nhớ hơn. C, D sai.",
+    "category": "Set 2 - Linked List, Stack and Queue"
+  },
+  {
+    "id": 6,
+    "question": "Which data structure follows LIFO?",
+    "options": [
+      "Queue",
+      "Stack",
+      "Graph",
+      "Hash table"
+    ],
+    "answer": 1,
+    "explanation": "Đáp án B đúng vì stack hoạt động Last-In-First-Out. Queue là FIFO, graph và hash table không mô tả theo LIFO.",
+    "category": "Set 2 - Linked List, Stack and Queue"
+  },
+  {
+    "id": 7,
+    "question": "Which operation adds an element to the top of a stack?",
+    "options": [
+      "enqueue",
+      "dequeue",
+      "push",
+      "visit"
+    ],
+    "answer": 2,
+    "explanation": "Đáp án C đúng vì push thêm phần tử vào stack. enqueue/dequeue là thao tác của queue. visit thường dùng trong duyệt cây/đồ thị.",
+    "category": "Set 2 - Linked List, Stack and Queue"
+  },
+  {
+    "id": 8,
+    "question": "If a stack contains [A, B, C] from bottom to top, what is popped first?",
+    "options": [
+      "A",
+      "B",
+      "C",
+      "All elements at once"
+    ],
+    "answer": 2,
+    "explanation": "Đáp án C đúng vì C nằm trên cùng và stack là LIFO. A vào sớm nhất nên ra sau cùng. B không phải top.",
+    "category": "Set 2 - Linked List, Stack and Queue"
+  },
+  {
+    "id": 9,
+    "question": "In array implementation of stack, top = -1 usually means what?",
+    "options": [
+      "The stack is full",
+      "The stack is empty",
+      "The stack has one element",
+      "The stack has MAX elements"
+    ],
+    "answer": 1,
+    "explanation": "Đáp án B đúng vì top = -1 biểu diễn chưa có phần tử nào. Stack đầy thường là top = MAX - 1.",
+    "category": "Set 2 - Linked List, Stack and Queue"
+  },
+  {
+    "id": 10,
+    "question": "Which data structure follows FIFO?",
+    "options": [
+      "Stack",
+      "Queue",
+      "BST",
+      "Heap"
+    ],
+    "answer": 1,
+    "explanation": "Đáp án B đúng vì queue hoạt động First-In-First-Out. Stack là LIFO. BST và heap có quy tắc riêng khác.",
+    "category": "Set 2 - Linked List, Stack and Queue"
+  },
+  {
+    "id": 11,
+    "question": "Which operation removes an element from the front of a queue?",
+    "options": [
+      "push",
+      "pop",
+      "enqueue",
+      "dequeue"
+    ],
+    "answer": 3,
+    "explanation": "Đáp án D đúng vì dequeue/delete lấy phần tử ở front. enqueue thêm vào rear. push/pop là của stack.",
+    "category": "Set 2 - Linked List, Stack and Queue"
+  },
+  {
+    "id": 12,
+    "question": "In a queue, where are new elements inserted?",
+    "options": [
+      "front",
+      "rear",
+      "middle only",
+      "random position"
+    ],
+    "answer": 1,
+    "explanation": "Đáp án B đúng vì queue thêm ở rear và xóa ở front. Các đáp án khác sai với định nghĩa FIFO.",
+    "category": "Set 2 - Linked List, Stack and Queue"
+  },
+  {
+    "id": 13,
+    "question": "Which stack application checks whether braces are balanced?",
+    "options": [
+      "Binary search",
+      "Parentheses checker",
+      "Selection sort",
+      "Hashing with chaining"
+    ],
+    "answer": 1,
+    "explanation": "Đáp án B đúng vì stack dùng để lưu dấu mở và pop khi gặp dấu đóng. Binary search, selection sort, hashing không phải ứng dụng trực tiếp để kiểm tra ngoặc.",
+    "category": "Set 2 - Linked List, Stack and Queue"
+  },
+  {
+    "id": 14,
+    "question": "What is the postfix form of the infix expression 5 + 2 * 3?",
+    "options": [
+      "5 2 + 3 *",
+      "5 2 3 * +",
+      "+ 5 * 2 3",
+      "5 * 2 + 3"
+    ],
+    "answer": 1,
+    "explanation": "Đáp án B đúng vì nhân có ưu tiên cao hơn cộng: 2*3 xử lý trước rồi cộng với 5. A tương ứng (5+2)*3. C là prefix. D vẫn gần dạng infix.",
+    "category": "Set 2 - Linked List, Stack and Queue"
+  },
+  {
+    "id": 15,
+    "question": "What is the prefix form of the infix expression 5 * (2 + 3) - 4?",
+    "options": [
+      "- * 5 + 2 3 4",
+      "5 2 3 + * 4 -",
+      "* - 5 + 2 3 4",
+      "+ * 5 2 - 3 4"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì biểu thức gốc là trừ, toán hạng trái là 5*(2+3), toán hạng phải là 4. B là postfix. C và D sai thứ tự toán tử/toán hạng.",
+    "category": "Set 2 - Linked List, Stack and Queue"
+  },
+  {
+    "id": 16,
+    "question": "When evaluating a postfix expression, what should we do when an operand is read?",
+    "options": [
+      "Push it onto the stack",
+      "Pop two operands",
+      "Ignore it",
+      "Clear the stack"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì operand được push vào stack. Khi gặp operator mới pop hai operand, tính toán rồi push kết quả.",
+    "category": "Set 2 - Linked List, Stack and Queue"
+  },
+  {
+    "id": 17,
+    "question": "Evaluate the postfix expression: 2 3 4 + *",
+    "options": [
+      "10",
+      "14",
+      "20",
+      "24"
+    ],
+    "answer": 1,
+    "explanation": "Đáp án B đúng vì 3 4 + = 7, sau đó 2 * 7 = 14. Các đáp án khác do sai thứ tự hoặc sai phép toán.",
+    "category": "Set 2 - Linked List, Stack and Queue"
+  },
+  {
+    "id": 18,
+    "question": "Which expression is balanced?",
+    "options": [
+      "{a{b}c}",
+      "{a{b}c",
+      "a}b{c}",
+      "{{a}"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì mỗi dấu { đều có } tương ứng và stack rỗng khi kết thúc. B và D thiếu dấu đóng. C gặp dấu đóng khi chưa có dấu mở phù hợp.",
+    "category": "Set 2 - Linked List, Stack and Queue"
+  },
+  {
+    "id": 19,
+    "question": "Which operation is generally O(1) for inserting at the head of a singly linked list?",
+    "options": [
+      "Search by value",
+      "Insert first",
+      "Access by index",
+      "Find previous node"
+    ],
+    "answer": 1,
+    "explanation": "Đáp án B đúng vì chỉ cần tạo node mới và cập nhật con trỏ next/head. Search/access/find previous thường cần duyệt O(n).",
+    "category": "Set 2 - Linked List, Stack and Queue"
+  },
+  {
+    "id": 20,
+    "question": "Which statement about linked lists and arrays is correct?",
+    "options": [
+      "Arrays have O(1) index access, linked lists usually have O(n) index access",
+      "Linked lists always use less memory than arrays",
+      "Arrays never waste memory",
+      "Linked lists require contiguous memory"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì mảng truy cập trực tiếp theo chỉ số, linked list phải đi từ head. B sai vì linked list tốn thêm con trỏ. C sai khi cấp phát dư. D sai vì linked list không cần liên tiếp.",
+    "category": "Set 2 - Linked List, Stack and Queue"
+  },
+  {
+    "id": 21,
+    "question": "Which pointer usually identifies the first node of a linked list?",
+    "options": [
+      "head",
+      "rear",
+      "middle",
+      "hash"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì head trỏ đến node đầu tiên. rear thường dùng cho queue, hash là hàm/bảng băm.",
+    "category": "Set 2 - Linked List, Stack and Queue"
+  },
+  {
+    "id": 22,
+    "question": "In a singly linked list, what does p = p->next do?",
+    "options": [
+      "Move to the next node",
+      "Delete the whole list",
+      "Sort the list",
+      "Create a stack"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì next là con trỏ sang node tiếp theo. Các đáp án khác không đúng thao tác.",
+    "category": "Set 2 - Linked List, Stack and Queue"
+  },
+  {
+    "id": 23,
+    "question": "What should the last node of a normal singly linked list point to?",
+    "options": [
+      "NULL",
+      "head always",
+      "itself always",
+      "front"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì linked list thường kết thúc bằng NULL. Trỏ về head là circular linked list.",
+    "category": "Set 2 - Linked List, Stack and Queue"
+  },
+  {
+    "id": 24,
+    "question": "When deleting a node after p, why do we need to keep a temporary pointer?",
+    "options": [
+      "To free the removed node after relinking",
+      "To sort the list",
+      "To run binary search",
+      "To change all data fields"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì cần giữ địa chỉ node bị xóa để free/delete sau khi nối lại liên kết. Các đáp án khác không liên quan.",
+    "category": "Set 2 - Linked List, Stack and Queue"
+  },
+  {
+    "id": 25,
+    "question": "What is the main disadvantage of linked lists compared with arrays?",
+    "options": [
+      "O(n) random access",
+      "Fixed size only",
+      "Cannot insert in middle",
+      "Always require sorting"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì muốn lấy phần tử thứ i phải duyệt từ head. Fixed size là nhược điểm của mảng, không phải linked list.",
+    "category": "Set 2 - Linked List, Stack and Queue"
+  },
+  {
+    "id": 26,
+    "question": "Which situation is suitable for linked lists?",
+    "options": [
+      "Frequent middle insertions/deletions",
+      "Heavy random access by index",
+      "Fixed tiny array only",
+      "No pointer allowed"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì linked list chèn/xóa giữa hiệu quả khi đã có vị trí node. Random access lại không phù hợp.",
+    "category": "Set 2 - Linked List, Stack and Queue"
+  },
+  {
+    "id": 27,
+    "question": "What is a node in a linked list?",
+    "options": [
+      "A unit containing data and link(s)",
+      "A compiler only",
+      "A CPU register only",
+      "An input keyword"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì node chứa dữ liệu và con trỏ liên kết. Các đáp án còn lại không phải node danh sách.",
+    "category": "Set 2 - Linked List, Stack and Queue"
+  },
+  {
+    "id": 28,
+    "question": "What does invertList usually do?",
+    "options": [
+      "Reverse the linked list",
+      "Delete all nodes",
+      "Convert to array only",
+      "Sort using heap"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì invertList đảo chiều các liên kết. Nó không nhất thiết xóa, chuyển mảng hay heap sort.",
+    "category": "Set 2 - Linked List, Stack and Queue"
+  },
+  {
+    "id": 29,
+    "question": "In a doubly linked list, which links usually exist?",
+    "options": [
+      "left and right links",
+      "only one next link",
+      "only hash link",
+      "only parent link"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì doubly linked list có link trái/phải hoặc prev/next. Singly linked list chỉ có next.",
+    "category": "Set 2 - Linked List, Stack and Queue"
+  },
+  {
+    "id": 30,
+    "question": "What is the top of a stack?",
+    "options": [
+      "The end where insertion and deletion occur",
+      "The middle of queue",
+      "The smallest BST node",
+      "The hash index"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì stack thêm/xóa tại top. Các đáp án khác thuộc cấu trúc khác.",
+    "category": "Set 2 - Linked List, Stack and Queue"
+  },
+  {
+    "id": 31,
+    "question": "What is stack underflow?",
+    "options": [
+      "Popping from an empty stack",
+      "Pushing into an empty stack",
+      "Sorting a stack",
+      "Using too many queues"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì underflow xảy ra khi pop/top trên stack rỗng. Push vào stack rỗng là bình thường.",
+    "category": "Set 2 - Linked List, Stack and Queue"
+  },
+  {
+    "id": 32,
+    "question": "What is stack overflow in array stack?",
+    "options": [
+      "Pushing when top == MAX - 1",
+      "Popping when stack has elements",
+      "Checking isEmpty",
+      "Using queue front"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì stack mảng đầy khi top ở MAX-1, push tiếp gây overflow. Các đáp án khác không phải overflow.",
+    "category": "Set 2 - Linked List, Stack and Queue"
+  },
+  {
+    "id": 33,
+    "question": "Which stack representation can grow dynamically if memory is available?",
+    "options": [
+      "Linked representation",
+      "Fixed array only",
+      "Constant variable",
+      "Adjacency matrix"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì stack bằng linked list cấp phát node động. Mảng cố định bị giới hạn MAX.",
+    "category": "Set 2 - Linked List, Stack and Queue"
+  },
+  {
+    "id": 34,
+    "question": "Which operation returns the top element without removing it?",
+    "options": [
+      "top/peek",
+      "pop",
+      "enqueue",
+      "dequeue"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì top hoặc peek xem phần tử trên cùng mà không xóa. pop có xóa. enqueue/dequeue thuộc queue.",
+    "category": "Set 2 - Linked List, Stack and Queue"
+  },
+  {
+    "id": 35,
+    "question": "Which structure is used by compilers to support recursion?",
+    "options": [
+      "Stack",
+      "Queue",
+      "Hash table only",
+      "Heap sort"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì mỗi lời gọi hàm tạo activation record được push vào call stack. Queue/hash/heap sort không mô phỏng trực tiếp recursion.",
+    "category": "Set 2 - Linked List, Stack and Queue"
+  },
+  {
+    "id": 36,
+    "question": "Which queue pointer indicates where deletion happens?",
+    "options": [
+      "front",
+      "rear",
+      "top",
+      "root"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì queue xóa ở front. rear là nơi thêm. top thuộc stack, root thuộc tree.",
+    "category": "Set 2 - Linked List, Stack and Queue"
+  },
+  {
+    "id": 37,
+    "question": "Which queue pointer indicates where insertion happens?",
+    "options": [
+      "rear",
+      "front",
+      "top",
+      "left child"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì queue thêm ở rear và xóa ở front.",
+    "category": "Set 2 - Linked List, Stack and Queue"
+  },
+  {
+    "id": 38,
+    "question": "What is queue underflow?",
+    "options": [
+      "Deleting from an empty queue",
+      "Adding to a non-empty queue",
+      "Traversing a tree",
+      "Hash collision"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì delete/dequeue khi queue rỗng gây underflow. Các đáp án khác không phải lỗi queue rỗng.",
+    "category": "Set 2 - Linked List, Stack and Queue"
+  },
+  {
+    "id": 39,
+    "question": "What is a circular queue used for in array implementation?",
+    "options": [
+      "Reuse empty positions at the beginning of the array",
+      "Make the queue always sorted",
+      "Remove FIFO rule",
+      "Replace stack"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì circular queue dùng modulo để quay vòng, tận dụng vị trí trống phía đầu mảng.",
+    "category": "Set 2 - Linked List, Stack and Queue"
+  },
+  {
+    "id": 40,
+    "question": "In a circular queue, which operator is commonly used to wrap around?",
+    "options": [
+      "%",
+      "*",
+      "& only",
+      "-> only"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì phép modulo giúp chỉ số quay về đầu khi vượt kích thước mảng.",
+    "category": "Set 2 - Linked List, Stack and Queue"
+  },
+  {
+    "id": 41,
+    "question": "Which application is suitable for a queue?",
+    "options": [
+      "Job scheduling",
+      "Postfix evaluation only",
+      "Recursive call stack only",
+      "Infix operator storage only"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì queue FIFO phù hợp hàng đợi công việc. Các đáp án khác thường dùng stack.",
+    "category": "Set 2 - Linked List, Stack and Queue"
+  },
+  {
+    "id": 42,
+    "question": "Which application is suitable for a stack?",
+    "options": [
+      "Expression conversion",
+      "Job queue only",
+      "BFS queue only",
+      "Hash table load factor"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì stack dùng trong chuyển đổi infix-postfix/prefix và đánh giá biểu thức. Job queue/BFS dùng queue.",
+    "category": "Set 2 - Linked List, Stack and Queue"
+  },
+  {
+    "id": 43,
+    "question": "What happens when a ')' is read in infix to postfix conversion?",
+    "options": [
+      "Pop operators until '(' is found",
+      "Push ')' forever",
+      "Delete all operands",
+      "Start binary search"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì gặp dấu đóng ngoặc thì lấy toán tử trong stack ra đến dấu mở ngoặc. Các đáp án khác sai thuật toán.",
+    "category": "Set 2 - Linked List, Stack and Queue"
+  },
+  {
+    "id": 44,
+    "question": "In postfix evaluation, when an operator is read, what happens?",
+    "options": [
+      "Pop two operands, apply operator, push result",
+      "Push operator as a number",
+      "Clear all operands",
+      "Sort the stack"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì postfix dùng stack: operator lấy hai toán hạng gần nhất, tính rồi push kết quả.",
+    "category": "Set 2 - Linked List, Stack and Queue"
+  },
+  {
+    "id": 45,
+    "question": "What is the postfix form of A + B * C - D?",
+    "options": [
+      "A B C * + D -",
+      "A B + C * D -",
+      "- + A * B C D",
+      "A + B C * - D"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì B*C trước, rồi A + kết quả, cuối cùng trừ D. Các đáp án khác sai thứ tự hoặc là prefix/infix.",
+    "category": "Set 2 - Linked List, Stack and Queue"
+  },
+  {
+    "id": 46,
+    "question": "What is the infix form of postfix A B + C *?",
+    "options": [
+      "(A + B) * C",
+      "A + (B * C)",
+      "A * B + C",
+      "A B C + *"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì A B + tạo (A+B), sau đó nhân C. B tương ứng postfix A B C * +.",
+    "category": "Set 2 - Linked List, Stack and Queue"
+  },
+  {
+    "id": 47,
+    "question": "Which expression has no ambiguity of operator precedence?",
+    "options": [
+      "Postfix expression",
+      "Normal infix expression only",
+      "C++ comment",
+      "Array declaration"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì postfix/prefix không cần ngoặc hay ưu tiên toán tử để parse. Infix cần xét precedence.",
+    "category": "Set 2 - Linked List, Stack and Queue"
+  },
+  {
+    "id": 48,
+    "question": "What does isEmpty() usually check?",
+    "options": [
+      "Whether a data structure has no elements",
+      "Whether an array is sorted",
+      "Whether a graph is complete",
+      "Whether a key collides"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì isEmpty kiểm tra rỗng. Các đáp án khác là kiểm tra khác.",
+    "category": "Set 2 - Linked List, Stack and Queue"
+  },
+  {
+    "id": 49,
+    "question": "Which operation inserts after a given node p in a linked list?",
+    "options": [
+      "insertAfter(p, e)",
+      "pop()",
+      "dequeue()",
+      "binarySearch()"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì insertAfter chèn node sau p. Các hàm còn lại thuộc stack/queue/search.",
+    "category": "Set 2 - Linked List, Stack and Queue"
+  },
+  {
+    "id": 50,
+    "question": "Why is a linked stack push usually O(1)?",
+    "options": [
+      "It inserts at the head/top only",
+      "It searches the whole list",
+      "It sorts all elements",
+      "It builds a heap"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì chỉ tạo node mới và cập nhật top. Không cần duyệt toàn bộ danh sách.",
+    "category": "Set 2 - Linked List, Stack and Queue"
+  }
+]

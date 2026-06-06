@@ -16,62 +16,6 @@ class QuizUI {
       displayName: 'Lập Trình JavaScript',
       category: 'IT / Code',
       description: '5 câu hỏi kỹ thuật ES6+'
-    },
-    {
-      file: 'quiz/lý thuyết/chapter1-algorithm-analysis.json',
-      name: 'Phân tích thuật toán',
-      displayName: 'Chương 1: Phân Tích Thuật Toán',
-      category: 'Cấu trúc dữ liệu',
-      description: '40 câu hỏi'
-    },
-    {
-      file: 'quiz/lý thuyết/chapter2-stack-queue.json',
-      name: 'Stack và Queue',
-      displayName: 'Chương 2: Stack & Queue',
-      category: 'Cấu trúc dữ liệu',
-      description: '40 câu hỏi'
-    },
-    {
-      file: 'quiz/lý thuyết/chapter3-search-sort.json',
-      name: 'Tìm kiếm và sắp xếp',
-      displayName: 'Chương 3: Search & Sort',
-      category: 'Cấu trúc dữ liệu',
-      description: '40 câu hỏi'
-    },
-    {
-      file: 'quiz/lý thuyết/chapter4-tree.json',
-      name: 'Cây',
-      displayName: 'Chương 4: Tree',
-      category: 'Cấu trúc dữ liệu',
-      description: '40 câu hỏi'
-    },
-    {
-      file: 'quiz/lý thuyết/chapter5-heap.json',
-      name: 'Heap',
-      displayName: 'Chương 5: Heap',
-      category: 'Cấu trúc dữ liệu',
-      description: '40 câu hỏi'
-    },
-    {
-      file: 'quiz/lý thuyết/chapter6-graph.json',
-      name: 'Đồ thị',
-      displayName: 'Chương 6: Graph',
-      category: 'Cấu trúc dữ liệu',
-      description: '40 câu hỏi'
-    },
-    {
-      file: 'quiz/lý thuyết/chapter7-hashing.json',
-      name: 'Hashing',
-      displayName: 'Chương 7: Hashing',
-      category: 'Cấu trúc dữ liệu',
-      description: '40 câu hỏi'
-    },
-    {
-      file: 'quiz/lý thuyết/extra-binarySearchTree.json',
-      name: 'Binary Search Tree',
-      displayName: 'Bổ sung: Binary Search Tree',
-      category: 'Cấu trúc dữ liệu',
-      description: '40 câu hỏi'
     }
   ];
 
@@ -79,6 +23,8 @@ class QuizUI {
     this.currentQuizData = null;
     this.currentQuizName = 'Bộ đề trắc nghiệm';
     this.quizEngine = null;
+    this.availablePresets = this.mergePresets(QuizUI.DEFAULT_PRESETS, window.QUIZ_MANIFEST || []);
+    this.catalogSignature = JSON.stringify(this.availablePresets);
     
     // Cache DOM Elements
     this.screens = {
@@ -91,6 +37,7 @@ class QuizUI {
     this.initEventListeners();
     this.renderHistory();
     this.renderPresetGrid();
+    this.initQuizCatalog();
 
     // Check for saved ongoing quiz progress
     setTimeout(() => this.checkForActiveQuiz(), 100);
@@ -101,6 +48,57 @@ class QuizUI {
     if (className) element.className = className;
     element.textContent = text ?? '';
     return element;
+  }
+
+  mergePresets(...groups) {
+    const presetsByFile = new Map();
+    groups.flat().forEach(preset => presetsByFile.set(preset.file, preset));
+    return Array.from(presetsByFile.values());
+  }
+
+  initQuizCatalog() {
+    const refreshButton = document.getElementById('refresh-quizzes-btn');
+    refreshButton?.addEventListener('click', () => this.refreshQuizCatalog(true));
+
+    if (window.location.protocol === 'file:') {
+      this.updateCatalogStatus('Danh mục đóng gói. Chạy server local để tự động nhận đề mới.');
+      return;
+    }
+
+    this.updateCatalogStatus('Tự động kiểm tra đề mới mỗi 3 giây.');
+    this.refreshQuizCatalog(false);
+    this.catalogPoller = window.setInterval(() => this.refreshQuizCatalog(false), 3000);
+  }
+
+  async refreshQuizCatalog(showFeedback = false) {
+    try {
+      const response = await fetch(`data/quiz-manifest.json?t=${Date.now()}`, { cache: 'no-store' });
+      if (!response.ok) throw new Error('Không đọc được danh mục bộ đề.');
+
+      const manifest = await response.json();
+      const nextPresets = this.mergePresets(QuizUI.DEFAULT_PRESETS, manifest);
+      const nextSignature = JSON.stringify(nextPresets);
+      const changed = nextSignature !== this.catalogSignature;
+
+      if (changed) {
+        this.availablePresets = nextPresets;
+        this.catalogSignature = nextSignature;
+        this.renderPresetGrid();
+      }
+
+      this.updateCatalogStatus(`${this.availablePresets.length} bộ đề có sẵn · tự động cập nhật mỗi 3 giây.`);
+      if (showFeedback) {
+        this.showToast(changed ? 'Đã cập nhật danh sách bộ đề.' : 'Danh sách bộ đề đã là mới nhất.', 'success');
+      }
+    } catch (error) {
+      this.updateCatalogStatus('Không thể tự cập nhật. Hãy chạy node scripts/dev-server.js.');
+      if (showFeedback) this.showToast(error.message, 'error');
+    }
+  }
+
+  updateCatalogStatus(message) {
+    const status = document.getElementById('catalog-status');
+    if (status) status.textContent = message;
   }
 
   validateQuizData(data) {
@@ -1597,7 +1595,7 @@ class QuizUI {
     const customQuizzes = QuizStorage.getCustomQuizzes();
 
     // Render default presets
-    QuizUI.DEFAULT_PRESETS.forEach(preset => {
+    this.availablePresets.forEach(preset => {
       const card = document.createElement('button');
       card.className = 'preset-card';
       card.type = 'button';
@@ -1657,7 +1655,7 @@ class QuizUI {
    */
   loadQuizByName(quizName) {
     // 1. Check default presets
-    const preset = QuizUI.DEFAULT_PRESETS.find(item => {
+    const preset = this.availablePresets.find(item => {
       const names = [item.name, item.displayName].map(name => name.trim().toLowerCase());
       return names.includes(quizName.trim().toLowerCase());
     });

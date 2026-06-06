@@ -1,0 +1,149 @@
+window.QUIZ_MANIFEST = [
+  {
+    "file": "quiz/ thực hành/chapter1-algorithm-analysis.json",
+    "name": "Chương 1: Algorithm Analysis · Thực hành",
+    "displayName": "Chương 1: Algorithm Analysis · Thực hành",
+    "category": "Thực hành",
+    "description": "40 câu hỏi"
+  },
+  {
+    "file": "quiz/ thực hành/chapter2-stack-queue-linkedlist.json",
+    "name": "Chương 2: Stack Queue Linkedlist · Thực hành",
+    "displayName": "Chương 2: Stack Queue Linkedlist · Thực hành",
+    "category": "Thực hành",
+    "description": "40 câu hỏi"
+  },
+  {
+    "file": "quiz/ thực hành/chapter3-search-sort.json",
+    "name": "Chương 3: Search Sort · Thực hành",
+    "displayName": "Chương 3: Search Sort · Thực hành",
+    "category": "Thực hành",
+    "description": "40 câu hỏi"
+  },
+  {
+    "file": "quiz/dsa_quiz_5_sets_50_questions_each/dsa_quiz_set_1_50_questions.json",
+    "name": "C++ Review and Algorithm Analysis · DSA · 50 câu",
+    "displayName": "C++ Review and Algorithm Analysis · DSA · 50 câu",
+    "category": "DSA · 50 câu",
+    "description": "50 câu hỏi"
+  },
+  {
+    "file": "quiz/dsa_quiz_5_sets_50_questions_each/dsa_quiz_set_2_50_questions.json",
+    "name": "Linked List, Stack and Queue · DSA · 50 câu",
+    "displayName": "Linked List, Stack and Queue · DSA · 50 câu",
+    "category": "DSA · 50 câu",
+    "description": "50 câu hỏi"
+  },
+  {
+    "file": "quiz/dsa_quiz_5_sets_50_questions_each/dsa_quiz_set_3_50_questions.json",
+    "name": "Searching and Sorting · DSA · 50 câu",
+    "displayName": "Searching and Sorting · DSA · 50 câu",
+    "category": "DSA · 50 câu",
+    "description": "50 câu hỏi"
+  },
+  {
+    "file": "quiz/dsa_quiz_5_sets_50_questions_each/dsa_quiz_set_4_50_questions.json",
+    "name": "Trees, BST and Heap · DSA · 50 câu",
+    "displayName": "Trees, BST and Heap · DSA · 50 câu",
+    "category": "DSA · 50 câu",
+    "description": "50 câu hỏi"
+  },
+  {
+    "file": "quiz/dsa_quiz_5_sets_50_questions_each/dsa_quiz_set_5_50_questions.json",
+    "name": "Graphs and Hashing · DSA · 50 câu",
+    "displayName": "Graphs and Hashing · DSA · 50 câu",
+    "category": "DSA · 50 câu",
+    "description": "50 câu hỏi"
+  },
+  {
+    "file": "quiz/dsa_quiz_5_sets_separated/dsa_quiz_set_1.json",
+    "name": "C++ Review and Algorithm Analysis · DSA · 20 câu",
+    "displayName": "C++ Review and Algorithm Analysis · DSA · 20 câu",
+    "category": "DSA · 20 câu",
+    "description": "20 câu hỏi"
+  },
+  {
+    "file": "quiz/dsa_quiz_5_sets_separated/dsa_quiz_set_2.json",
+    "name": "Linked List, Stack and Queue · DSA · 20 câu",
+    "displayName": "Linked List, Stack and Queue · DSA · 20 câu",
+    "category": "DSA · 20 câu",
+    "description": "20 câu hỏi"
+  },
+  {
+    "file": "quiz/dsa_quiz_5_sets_separated/dsa_quiz_set_3.json",
+    "name": "Searching and Sorting · DSA · 20 câu",
+    "displayName": "Searching and Sorting · DSA · 20 câu",
+    "category": "DSA · 20 câu",
+    "description": "20 câu hỏi"
+  },
+  {
+    "file": "quiz/dsa_quiz_5_sets_separated/dsa_quiz_set_4.json",
+    "name": "Trees, BST and Heap · DSA · 20 câu",
+    "displayName": "Trees, BST and Heap · DSA · 20 câu",
+    "category": "DSA · 20 câu",
+    "description": "20 câu hỏi"
+  },
+  {
+    "file": "quiz/dsa_quiz_5_sets_separated/dsa_quiz_set_5.json",
+    "name": "Graphs and Hashing · DSA · 20 câu",
+    "displayName": "Graphs and Hashing · DSA · 20 câu",
+    "category": "DSA · 20 câu",
+    "description": "20 câu hỏi"
+  },
+  {
+    "file": "quiz/lý thuyết/chapter1-algorithm-analysis.json",
+    "name": "Chương 1: Algorithm Analysis · Lý thuyết",
+    "displayName": "Chương 1: Algorithm Analysis · Lý thuyết",
+    "category": "Lý thuyết",
+    "description": "40 câu hỏi"
+  },
+  {
+    "file": "quiz/lý thuyết/chapter2-stack-queue.json",
+    "name": "Chương 2: Stack Queue · Lý thuyết",
+    "displayName": "Chương 2: Stack Queue · Lý thuyết",
+    "category": "Lý thuyết",
+    "description": "40 câu hỏi"
+  },
+  {
+    "file": "quiz/lý thuyết/chapter3-search-sort.json",
+    "name": "Chương 3: Search Sort · Lý thuyết",
+    "displayName": "Chương 3: Search Sort · Lý thuyết",
+    "category": "Lý thuyết",
+    "description": "40 câu hỏi"
+  },
+  {
+    "file": "quiz/lý thuyết/chapter4-tree.json",
+    "name": "Chương 4: Tree · Lý thuyết",
+    "displayName": "Chương 4: Tree · Lý thuyết",
+    "category": "Lý thuyết",
+    "description": "40 câu hỏi"
+  },
+  {
+    "file": "quiz/lý thuyết/chapter5-heap.json",
+    "name": "Chương 5: Heap · Lý thuyết",
+    "displayName": "Chương 5: Heap · Lý thuyết",
+    "category": "Lý thuyết",
+    "description": "40 câu hỏi"
+  },
+  {
+    "file": "quiz/lý thuyết/chapter6-graph.json",
+    "name": "Chương 6: Graph · Lý thuyết",
+    "displayName": "Chương 6: Graph · Lý thuyết",
+    "category": "Lý thuyết",
+    "description": "40 câu hỏi"
+  },
+  {
+    "file": "quiz/lý thuyết/chapter7-hashing.json",
+    "name": "Chương 7: Hashing · Lý thuyết",
+    "displayName": "Chương 7: Hashing · Lý thuyết",
+    "category": "Lý thuyết",
+    "description": "40 câu hỏi"
+  },
+  {
+    "file": "quiz/lý thuyết/extra-binarySearchTree.json",
+    "name": "Extra BinarySearchTree · Lý thuyết",
+    "displayName": "Extra BinarySearchTree · Lý thuyết",
+    "category": "Lý thuyết",
+    "description": "40 câu hỏi"
+  }
+];

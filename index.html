@@ -86,12 +86,16 @@
 
           <!-- Presets and Template Download -->
           <div class="card preset-quizzes">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+            <div class="preset-section-header">
               <h3 style="margin-bottom: 0;">Bộ đề gần đây</h3>
-              <a href="data/template.json" download="quiz_template.json" class="btn btn-secondary btn-sm" style="font-size:0.75rem;">
-                📥 Tải File JSON Mẫu
-              </a>
+              <div class="preset-section-actions">
+                <button class="btn btn-secondary btn-sm" id="refresh-quizzes-btn" type="button">Cập nhật bộ đề</button>
+                <a href="data/template.json" download="quiz_template.json" class="btn btn-secondary btn-sm" style="font-size:0.75rem;">
+                  Tải file JSON mẫu
+                </a>
+              </div>
             </div>
+            <p class="catalog-status" id="catalog-status" aria-live="polite"></p>
             <p style="margin-bottom: 1rem; font-size: 0.9rem;">Không có file sẵn? Hãy chọn một đề ôn tập mẫu hoặc tải file JSON mẫu về máy để điền thông tin đề thi của bạn.</p>
             
             <div class="preset-grid" id="preset-grid">
@@ -495,6 +499,7 @@
   <!-- App scripts -->
   <script src="js/storage.js"></script>
   <script src="js/quiz.js"></script>
+  <script src="js/quiz-manifest.js"></script>
   <script src="js/ui.js"></script>
   <script src="js/app.js"></script>
 </body>

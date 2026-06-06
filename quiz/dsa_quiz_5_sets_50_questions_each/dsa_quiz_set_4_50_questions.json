@@ -1,0 +1,652 @@
+[
+  {
+    "id": 1,
+    "question": "What is the root of a tree?",
+    "options": [
+      "A node with no parent",
+      "A node with no children",
+      "Any leaf node",
+      "The rightmost node"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì root là node đặc biệt không có parent. Node không có con là leaf. Rightmost không nhất thiết là root.",
+    "category": "Set 4 - Trees, BST and Heap"
+  },
+  {
+    "id": 2,
+    "question": "What is a leaf node?",
+    "options": [
+      "A node with no parent",
+      "A node with no children",
+      "A node with two children",
+      "The first node inserted only"
+    ],
+    "answer": 1,
+    "explanation": "Đáp án B đúng vì leaf là node không có con. A là root. C là node bậc 2. D không đúng trong mọi cây.",
+    "category": "Set 4 - Trees, BST and Heap"
+  },
+  {
+    "id": 3,
+    "question": "In a binary tree, each node has at most how many children?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "n"
+    ],
+    "answer": 1,
+    "explanation": "Đáp án B đúng vì binary tree cho mỗi node tối đa hai con: left và right. Các đáp án khác sai định nghĩa.",
+    "category": "Set 4 - Trees, BST and Heap"
+  },
+  {
+    "id": 4,
+    "question": "Which traversal order is LVR?",
+    "options": [
+      "Preorder",
+      "Inorder",
+      "Postorder",
+      "Level order"
+    ],
+    "answer": 1,
+    "explanation": "Đáp án B đúng vì inorder là Left - Visit - Right. Preorder là VLR, postorder là LRV, level order duyệt theo tầng.",
+    "category": "Set 4 - Trees, BST and Heap"
+  },
+  {
+    "id": 5,
+    "question": "Which traversal order is VLR?",
+    "options": [
+      "Inorder",
+      "Preorder",
+      "Postorder",
+      "Level order"
+    ],
+    "answer": 1,
+    "explanation": "Đáp án B đúng vì preorder thăm node trước rồi trái, phải. Các đáp án khác có thứ tự khác.",
+    "category": "Set 4 - Trees, BST and Heap"
+  },
+  {
+    "id": 6,
+    "question": "Which data structure is commonly used for level-order traversal?",
+    "options": [
+      "Stack",
+      "Queue",
+      "Hash table",
+      "Pointer only"
+    ],
+    "answer": 1,
+    "explanation": "Đáp án B đúng vì level-order/BFS dùng queue để duyệt theo tầng. Stack thường dùng DFS hoặc iterative inorder.",
+    "category": "Set 4 - Trees, BST and Heap"
+  },
+  {
+    "id": 7,
+    "question": "Which data structure can simulate recursive inorder traversal iteratively?",
+    "options": [
+      "Stack",
+      "Queue",
+      "Hash table",
+      "Heap only"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì stack mô phỏng call stack của đệ quy. Queue dùng level-order. Hash table/heap không phù hợp trực tiếp.",
+    "category": "Set 4 - Trees, BST and Heap"
+  },
+  {
+    "id": 8,
+    "question": "What property must a Binary Search Tree satisfy?",
+    "options": [
+      "Left subtree keys are smaller and right subtree keys are larger than the root",
+      "All nodes must have exactly two children",
+      "The tree must be complete",
+      "The root must be the smallest key"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì BST có khóa bên trái nhỏ hơn root và bên phải lớn hơn root, áp dụng đệ quy cho các subtree. B, C, D không bắt buộc.",
+    "category": "Set 4 - Trees, BST and Heap"
+  },
+  {
+    "id": 9,
+    "question": "In a BST, where should key 25 be inserted if the current node is 30?",
+    "options": [
+      "To the right subtree",
+      "To the left subtree",
+      "As the parent of 30",
+      "It cannot be inserted"
+    ],
+    "answer": 1,
+    "explanation": "Đáp án B đúng vì 25 < 30 nên đi/chèn vào cây con trái. A chỉ khi lớn hơn 30. C không đúng quy tắc chèn. D sai nếu key chưa tồn tại.",
+    "category": "Set 4 - Trees, BST and Heap"
+  },
+  {
+    "id": 10,
+    "question": "What is the inorder traversal result of a BST with unique keys?",
+    "options": [
+      "Random order",
+      "Descending order always",
+      "Ascending order",
+      "Level order"
+    ],
+    "answer": 2,
+    "explanation": "Đáp án C đúng vì inorder của BST duyệt trái-root-phải nên cho dãy khóa tăng dần. Không phải random hay level order.",
+    "category": "Set 4 - Trees, BST and Heap"
+  },
+  {
+    "id": 11,
+    "question": "Insert 50, 30, 70, 20 into an empty BST. Which node is the left child of 30?",
+    "options": [
+      "20",
+      "50",
+      "70",
+      "NULL"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì 20 < 50 đi trái đến 30, rồi 20 < 30 nên là con trái của 30. 50 là root, 70 là con phải root.",
+    "category": "Set 4 - Trees, BST and Heap"
+  },
+  {
+    "id": 12,
+    "question": "For a complete binary tree represented from index 1, what is the left child index of node i?",
+    "options": [
+      "i/2",
+      "2i",
+      "2i + 1",
+      "i + 1"
+    ],
+    "answer": 1,
+    "explanation": "Đáp án B đúng với mảng đánh số từ 1: left child của i là 2i, right child là 2i+1, parent là i/2.",
+    "category": "Set 4 - Trees, BST and Heap"
+  },
+  {
+    "id": 13,
+    "question": "What is a max heap?",
+    "options": [
+      "A complete binary tree where every parent key is no smaller than its children",
+      "A binary tree where the smallest key is at root",
+      "A linked list sorted descending",
+      "A graph with maximum edges"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì max heap là complete binary tree và parent >= children. B là min-heap ý ngược. C, D không phải heap.",
+    "category": "Set 4 - Trees, BST and Heap"
+  },
+  {
+    "id": 14,
+    "question": "In a max heap, where is the maximum element?",
+    "options": [
+      "At the last leaf",
+      "At the root",
+      "At the leftmost leaf",
+      "At index 0 only"
+    ],
+    "answer": 1,
+    "explanation": "Đáp án B đúng vì trong max heap, root là phần tử lớn nhất. Các vị trí lá không đảm bảo lớn nhất.",
+    "category": "Set 4 - Trees, BST and Heap"
+  },
+  {
+    "id": 15,
+    "question": "When inserting into a max heap, where is the new element first placed?",
+    "options": [
+      "At the root",
+      "At the last position, then moved up if needed",
+      "At a random position",
+      "Always as left child of root"
+    ],
+    "answer": 1,
+    "explanation": "Đáp án B đúng vì heap phải giữ tính complete nên thêm ở cuối, sau đó so sánh với parent để đẩy lên. A, C, D sai quy trình.",
+    "category": "Set 4 - Trees, BST and Heap"
+  },
+  {
+    "id": 16,
+    "question": "What is the time complexity of inserting into a heap?",
+    "options": [
+      "O(1)",
+      "O(log n)",
+      "O(n)",
+      "O(n^2)"
+    ],
+    "answer": 1,
+    "explanation": "Đáp án B đúng vì phần tử có thể đi lên theo chiều cao của heap, chiều cao là O(log n).",
+    "category": "Set 4 - Trees, BST and Heap"
+  },
+  {
+    "id": 17,
+    "question": "When deleting the max from a max heap, what is the first main step after removing the root?",
+    "options": [
+      "Replace root with the last element",
+      "Sort the whole array",
+      "Delete all leaves",
+      "Convert it to a graph"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì sau khi lấy root, đưa phần tử cuối lên root rồi adjust xuống để khôi phục heap. Các đáp án khác không đúng.",
+    "category": "Set 4 - Trees, BST and Heap"
+  },
+  {
+    "id": 18,
+    "question": "What is the time complexity of heap sort?",
+    "options": [
+      "O(n)",
+      "O(n log n)",
+      "O(n^2)",
+      "O(log n)"
+    ],
+    "answer": 1,
+    "explanation": "Đáp án B đúng vì heap sort xây heap rồi lặp n lần delete/adjust O(log n), tổng O(n log n).",
+    "category": "Set 4 - Trees, BST and Heap"
+  },
+  {
+    "id": 19,
+    "question": "Which structure is heap based on?",
+    "options": [
+      "Complete binary tree",
+      "Circular linked list only",
+      "Directed acyclic graph only",
+      "Unsorted array only"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì heap là ứng dụng của complete binary tree và thường biểu diễn bằng mảng. Các đáp án còn lại không phải cơ sở định nghĩa heap.",
+    "category": "Set 4 - Trees, BST and Heap"
+  },
+  {
+    "id": 20,
+    "question": "Given max heap [20, 15, 5, 14, 10, 2], what will be the parent index of the node at index 6 if indexing starts at 1?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "answer": 2,
+    "explanation": "Đáp án C đúng vì parent của node i là i/2 lấy phần nguyên, 6/2 = 3. Đây là quy tắc biểu diễn heap bằng mảng từ chỉ số 1.",
+    "category": "Set 4 - Trees, BST and Heap"
+  },
+  {
+    "id": 21,
+    "question": "What is the degree of a node in a tree?",
+    "options": [
+      "The number of subtrees/children of that node",
+      "The number of all nodes in the tree",
+      "The height of the whole tree only",
+      "The array index"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì degree của node là số cây con/con của node đó. Các đáp án khác không đúng định nghĩa.",
+    "category": "Set 4 - Trees, BST and Heap"
+  },
+  {
+    "id": 22,
+    "question": "How is the level of a child usually related to its parent?",
+    "options": [
+      "child level = parent level + 1",
+      "child level = parent level - 1",
+      "child level = 0 always",
+      "child level = number of leaves"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì level của node con bằng level của parent cộng 1. Các đáp án khác sai.",
+    "category": "Set 4 - Trees, BST and Heap"
+  },
+  {
+    "id": 23,
+    "question": "What is the height/depth of a tree in the lecture definition?",
+    "options": [
+      "Maximum level of any node",
+      "Minimum key value",
+      "Number of siblings only",
+      "Hash value"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì height/depth là level lớn nhất trong cây. Các đáp án khác không liên quan.",
+    "category": "Set 4 - Trees, BST and Heap"
+  },
+  {
+    "id": 24,
+    "question": "Which representation converts a general tree into a binary-tree-like form?",
+    "options": [
+      "Left child-right sibling representation",
+      "Hash table representation",
+      "Circular queue only",
+      "Selection sort representation"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì leftChild/rightSibling biểu diễn cây tổng quát bằng hai con trỏ. Các đáp án khác không phù hợp.",
+    "category": "Set 4 - Trees, BST and Heap"
+  },
+  {
+    "id": 25,
+    "question": "In left child-right sibling representation, rightSibling points where?",
+    "options": [
+      "To the next sibling",
+      "To the parent",
+      "To the root always",
+      "To a hash bucket"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì rightSibling nối các node cùng cấp từ trái sang phải. leftChild mới trỏ xuống con đầu.",
+    "category": "Set 4 - Trees, BST and Heap"
+  },
+  {
+    "id": 26,
+    "question": "What is a full binary tree of depth k?",
+    "options": [
+      "A binary tree with 2^k - 1 nodes",
+      "A tree with k nodes",
+      "A graph with k edges",
+      "A linked list of length k"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng theo định nghĩa slide: full binary tree depth k có 2^k - 1 node. Các đáp án khác sai.",
+    "category": "Set 4 - Trees, BST and Heap"
+  },
+  {
+    "id": 27,
+    "question": "What is a complete binary tree?",
+    "options": [
+      "Nodes correspond to positions 1..n in a full binary tree",
+      "Every node has exactly one child",
+      "It is always a BST",
+      "It has no leaves"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì complete binary tree được lấp từ trái sang phải theo thứ tự vị trí. Không nhất thiết là BST.",
+    "category": "Set 4 - Trees, BST and Heap"
+  },
+  {
+    "id": 28,
+    "question": "For a complete binary tree array indexed from 1, what is parent(i)?",
+    "options": [
+      "i/2",
+      "2i",
+      "2i+1",
+      "i-1 always"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì parent của node i là floor(i/2). 2i và 2i+1 là con trái/phải.",
+    "category": "Set 4 - Trees, BST and Heap"
+  },
+  {
+    "id": 29,
+    "question": "For a complete binary tree array indexed from 1, what is right-child(i)?",
+    "options": [
+      "2i",
+      "2i+1",
+      "i/2",
+      "i+2"
+    ],
+    "answer": 1,
+    "explanation": "Đáp án B đúng vì right child là 2i+1. Left child là 2i, parent là i/2.",
+    "category": "Set 4 - Trees, BST and Heap"
+  },
+  {
+    "id": 30,
+    "question": "Why is array representation ideal for complete binary trees?",
+    "options": [
+      "It wastes no space for complete trees",
+      "It always sorts keys",
+      "It removes all leaves",
+      "It avoids indexes"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì complete tree lấp đầy theo thứ tự nên mảng không bị lỗ. Với cây lệch có thể lãng phí nhiều.",
+    "category": "Set 4 - Trees, BST and Heap"
+  },
+  {
+    "id": 31,
+    "question": "Which traversal is Left-Right-Visit?",
+    "options": [
+      "Postorder",
+      "Preorder",
+      "Inorder",
+      "Level order"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì postorder = LRV. Inorder = LVR, preorder = VLR.",
+    "category": "Set 4 - Trees, BST and Heap"
+  },
+  {
+    "id": 32,
+    "question": "What is copied when testing equality of binary trees?",
+    "options": [
+      "Topology and data must match",
+      "Only root address",
+      "Only number of leaves",
+      "Only height"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì hai cây tương đương khi cấu trúc và dữ liệu giống nhau. Chỉ root/height/số lá không đủ.",
+    "category": "Set 4 - Trees, BST and Heap"
+  },
+  {
+    "id": 33,
+    "question": "Which function is natural for counting nodes in a binary tree?",
+    "options": [
+      "Recursive traversal",
+      "Hash folding",
+      "Linear probing",
+      "Selection sorting"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì có thể đệ quy đếm node trái + phải + root. Các đáp án khác không phù hợp.",
+    "category": "Set 4 - Trees, BST and Heap"
+  },
+  {
+    "id": 34,
+    "question": "In BST search, what happens if x < current node key?",
+    "options": [
+      "Move to left subtree",
+      "Move to right subtree",
+      "Return current node",
+      "Delete root"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì key nhỏ hơn current thì theo quy tắc BST nằm ở cây con trái.",
+    "category": "Set 4 - Trees, BST and Heap"
+  },
+  {
+    "id": 35,
+    "question": "In BST search, what happens if x > current node key?",
+    "options": [
+      "Move to right subtree",
+      "Move to left subtree",
+      "Stop and return NULL immediately always",
+      "Perform BFS"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì key lớn hơn current thì đi sang cây con phải. Chỉ return NULL khi đi đến node rỗng.",
+    "category": "Set 4 - Trees, BST and Heap"
+  },
+  {
+    "id": 36,
+    "question": "What does BST search return if the tree pointer becomes NULL?",
+    "options": [
+      "Not found",
+      "Found at root",
+      "The maximum key",
+      "The minimum key"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì đi đến NULL nghĩa là không có key cần tìm trong BST.",
+    "category": "Set 4 - Trees, BST and Heap"
+  },
+  {
+    "id": 37,
+    "question": "What is the worst-case height of an unbalanced BST with n nodes?",
+    "options": [
+      "O(n)",
+      "O(log n)",
+      "O(1)",
+      "O(n log n)"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì BST lệch như linked list có chiều cao n. Balanced tree mới khoảng log n.",
+    "category": "Set 4 - Trees, BST and Heap"
+  },
+  {
+    "id": 38,
+    "question": "What is the average/search complexity of a reasonably balanced BST?",
+    "options": [
+      "O(log n)",
+      "O(n^2)",
+      "O(1) always",
+      "O(2^n)"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì nếu cây cân bằng, mỗi bước loại một nửa hướng tìm kiếm tương tự log n. Không phải O(1) luôn.",
+    "category": "Set 4 - Trees, BST and Heap"
+  },
+  {
+    "id": 39,
+    "question": "What is a min heap?",
+    "options": [
+      "A complete binary tree where each parent is no greater than its children",
+      "A tree with maximum at root",
+      "A linked list sorted ascending",
+      "A graph traversal"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì min heap có parent <= children và root nhỏ nhất. Max heap là ngược lại.",
+    "category": "Set 4 - Trees, BST and Heap"
+  },
+  {
+    "id": 40,
+    "question": "In max heap array indexed from 1, where is the root?",
+    "options": [
+      "A[1]",
+      "A[0] always",
+      "A[n]",
+      "A[2]"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng theo slide dùng A[1..n], root là A[1]. Nếu dùng index 0 thì quy tắc khác.",
+    "category": "Set 4 - Trees, BST and Heap"
+  },
+  {
+    "id": 41,
+    "question": "What is the height of a heap with n nodes?",
+    "options": [
+      "O(log n)",
+      "O(n)",
+      "O(1) always",
+      "O(n^2)"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì heap là complete binary tree nên chiều cao log n.",
+    "category": "Set 4 - Trees, BST and Heap"
+  },
+  {
+    "id": 42,
+    "question": "What is percolate up used for?",
+    "options": [
+      "Heap insertion",
+      "Heap delete max only",
+      "DFS",
+      "Binary search"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì khi chèn heap, phần tử mới đi lên nếu lớn hơn parent trong max heap.",
+    "category": "Set 4 - Trees, BST and Heap"
+  },
+  {
+    "id": 43,
+    "question": "What is percolate down used for?",
+    "options": [
+      "Restoring heap after deleting root",
+      "Adding to stack",
+      "Checking graph connectivity only",
+      "Comparing strings"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì sau khi đưa phần tử cuối lên root, cần đẩy xuống để khôi phục heap.",
+    "category": "Set 4 - Trees, BST and Heap"
+  },
+  {
+    "id": 44,
+    "question": "During deleteMaxHeap, which child is usually chosen for comparison?",
+    "options": [
+      "The larger child",
+      "The smaller child always",
+      "No child",
+      "Random child"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì max heap cần đưa child lớn hơn lên để đảm bảo parent >= cả hai con.",
+    "category": "Set 4 - Trees, BST and Heap"
+  },
+  {
+    "id": 45,
+    "question": "What is the first phase of heap sort?",
+    "options": [
+      "Build a max heap",
+      "Run binary search",
+      "Build adjacency matrix",
+      "Convert to postfix"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì heap sort bắt đầu bằng xây max heap từ mảng.",
+    "category": "Set 4 - Trees, BST and Heap"
+  },
+  {
+    "id": 46,
+    "question": "After swapping A[1] and A[n] in heap sort, what is true about A[n]?",
+    "options": [
+      "It is in its final sorted position",
+      "It must be searched by DFS",
+      "It becomes root again",
+      "It is deleted from memory"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì A[1] là max, swap xuống cuối thì phần tử cuối đã đúng vị trí trong sắp xếp tăng dần.",
+    "category": "Set 4 - Trees, BST and Heap"
+  },
+  {
+    "id": 47,
+    "question": "Which nodes need adjust when building a heap bottom-up?",
+    "options": [
+      "Non-leaf nodes from n/2 down to 1",
+      "Only leaves",
+      "Only index n",
+      "Only index 0"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì các leaf đã là heap, chỉ cần adjust các node không lá từ dưới lên.",
+    "category": "Set 4 - Trees, BST and Heap"
+  },
+  {
+    "id": 48,
+    "question": "Is heap sort stable by default?",
+    "options": [
+      "No",
+      "Yes always",
+      "Only for strings",
+      "Only for linked lists"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì heap sort thông thường không giữ thứ tự tương đối của key bằng nhau. Nó có thể đổi xa.",
+    "category": "Set 4 - Trees, BST and Heap"
+  },
+  {
+    "id": 49,
+    "question": "Which is an application/name associated with heap?",
+    "options": [
+      "Priority queue",
+      "Hash table",
+      "Adjacency list",
+      "Circular linked list"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì heap thường dùng để cài priority queue. Các đáp án khác là cấu trúc khác.",
+    "category": "Set 4 - Trees, BST and Heap"
+  },
+  {
+    "id": 50,
+    "question": "Given max heap [30, 20, 10], insert 25. What should happen?",
+    "options": [
+      "25 is placed then moved above 20",
+      "25 becomes right child of 10 and stops",
+      "30 is deleted",
+      "The heap becomes sorted array immediately"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì chèn cuối ở vị trí con của 20, 25 > 20 nên đổi lên; 25 < 30 nên dừng.",
+    "category": "Set 4 - Trees, BST and Heap"
+  }
+]

@@ -1,0 +1,262 @@
+[
+  {
+    "id": 1,
+    "question": "A graph G is commonly defined as which pair?",
+    "options": [
+      "G = (V, E)",
+      "G = (L, R)",
+      "G = (Root, Leaf)",
+      "G = (Key, Value)"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì graph gồm tập đỉnh V và tập cạnh E. Các cặp còn lại thuộc khái niệm khác hoặc không chuẩn.",
+    "category": "Set 5 - Graphs and Hashing"
+  },
+  {
+    "id": 2,
+    "question": "In an undirected graph, how are edges (u, v) and (v, u) treated?",
+    "options": [
+      "They are different edges",
+      "They represent the same edge",
+      "They are invalid",
+      "They must have different weights"
+    ],
+    "answer": 1,
+    "explanation": "Đáp án B đúng vì đồ thị vô hướng không phân biệt chiều cạnh. Trong đồ thị có hướng, <u,v> và <v,u> mới khác nhau.",
+    "category": "Set 5 - Graphs and Hashing"
+  },
+  {
+    "id": 3,
+    "question": "What is a complete graph?",
+    "options": [
+      "A graph with no edges",
+      "A graph with the maximum number of edges",
+      "A graph that is always directed",
+      "A graph with exactly one vertex"
+    ],
+    "answer": 1,
+    "explanation": "Đáp án B đúng vì complete graph có số cạnh tối đa giữa các đỉnh. A, C, D không đúng định nghĩa.",
+    "category": "Set 5 - Graphs and Hashing"
+  },
+  {
+    "id": 4,
+    "question": "For an undirected complete graph with n vertices, what is the maximum number of edges?",
+    "options": [
+      "n",
+      "n - 1",
+      "n(n - 1)/2",
+      "n(n - 1)"
+    ],
+    "answer": 2,
+    "explanation": "Đáp án C đúng vì mỗi cặp đỉnh tạo một cạnh và không xét thứ tự, nên là tổ hợp chập 2 của n. D là cho đồ thị có hướng không self-loop.",
+    "category": "Set 5 - Graphs and Hashing"
+  },
+  {
+    "id": 5,
+    "question": "For a directed graph with n vertices and no self-loops, what is the maximum number of edges?",
+    "options": [
+      "n(n - 1)",
+      "n(n - 1)/2",
+      "n - 1",
+      "2n"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì mỗi cặp có thể có hai chiều riêng biệt, tổng n(n-1). B là vô hướng. C là cây. D không phải công thức chuẩn.",
+    "category": "Set 5 - Graphs and Hashing"
+  },
+  {
+    "id": 6,
+    "question": "What does an adjacency matrix A[i][j] = 1 usually mean?",
+    "options": [
+      "There is an edge from vertex i to vertex j",
+      "Vertex i is deleted",
+      "The graph is empty",
+      "i and j must be equal"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì ma trận kề đánh dấu có cạnh giữa i và j. Với vô hướng ma trận đối xứng. Các đáp án còn lại sai.",
+    "category": "Set 5 - Graphs and Hashing"
+  },
+  {
+    "id": 7,
+    "question": "Which representation is usually better for quickly checking whether an edge exists between two vertices?",
+    "options": [
+      "Adjacency matrix",
+      "Adjacency list",
+      "Stack only",
+      "Queue only"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì adjacency matrix kiểm tra A[i][j] trực tiếp O(1). Adjacency list thường phải duyệt danh sách kề.",
+    "category": "Set 5 - Graphs and Hashing"
+  },
+  {
+    "id": 8,
+    "question": "In an undirected graph, what is true about the adjacency matrix?",
+    "options": [
+      "It is symmetric",
+      "It is always diagonal",
+      "It contains only negative values",
+      "It must be empty"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì nếu có cạnh (u,v) thì cũng có (v,u), nên A[u][v] = A[v][u]. Các đáp án khác sai.",
+    "category": "Set 5 - Graphs and Hashing"
+  },
+  {
+    "id": 9,
+    "question": "Which traversal searches as deeply as possible before backtracking?",
+    "options": [
+      "BFS",
+      "DFS",
+      "Binary search",
+      "Hashing"
+    ],
+    "answer": 1,
+    "explanation": "Đáp án B đúng vì DFS đi sâu theo nhánh rồi backtrack. BFS đi theo tầng. Binary search và hashing không phải duyệt đồ thị.",
+    "category": "Set 5 - Graphs and Hashing"
+  },
+  {
+    "id": 10,
+    "question": "Which traversal uses a FIFO queue?",
+    "options": [
+      "DFS",
+      "BFS",
+      "Inorder only",
+      "Heap sort"
+    ],
+    "answer": 1,
+    "explanation": "Đáp án B đúng vì BFS dùng queue để lấy đỉnh vào trước ra trước, duyệt theo chiều rộng. DFS thường dùng recursion/stack.",
+    "category": "Set 5 - Graphs and Hashing"
+  },
+  {
+    "id": 11,
+    "question": "What is the time complexity of DFS using adjacency lists?",
+    "options": [
+      "O(1)",
+      "O(n + e)",
+      "O(n^2) always",
+      "O(log n)"
+    ],
+    "answer": 1,
+    "explanation": "Đáp án B đúng vì DFS duyệt mỗi đỉnh và cạnh trong adjacency list, tổng O(n+e). Với ma trận kề thường O(n^2).",
+    "category": "Set 5 - Graphs and Hashing"
+  },
+  {
+    "id": 12,
+    "question": "What is a connected graph in the undirected case?",
+    "options": [
+      "Every pair of vertices has a path between them",
+      "It has no vertices",
+      "It has exactly one edge",
+      "It is always complete"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì liên thông nghĩa là giữa mọi cặp đỉnh đều tồn tại đường đi. Complete graph chắc chắn liên thông nhưng connected không cần complete.",
+    "category": "Set 5 - Graphs and Hashing"
+  },
+  {
+    "id": 13,
+    "question": "What is a tree in graph terminology?",
+    "options": [
+      "A connected acyclic graph",
+      "A complete directed graph",
+      "A graph with all possible edges",
+      "A graph with no vertices"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì cây là đồ thị vô hướng liên thông và không chu trình. Các đáp án khác sai.",
+    "category": "Set 5 - Graphs and Hashing"
+  },
+  {
+    "id": 14,
+    "question": "What is hashing mainly used for?",
+    "options": [
+      "Mapping keys to table positions for fast access",
+      "Traversing a graph by levels",
+      "Sorting by repeated swaps",
+      "Building a binary expression tree only"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì hash function chuyển key thành index/bucket trong hash table để insert/find/remove nhanh trung bình. Các đáp án khác thuộc thuật toán khác.",
+    "category": "Set 5 - Graphs and Hashing"
+  },
+  {
+    "id": 15,
+    "question": "What is a collision in hashing?",
+    "options": [
+      "Two different keys map to the same hash value",
+      "A stack becomes empty",
+      "A graph has no cycle",
+      "A binary search fails"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì collision xảy ra khi k1 và k2 khác nhau nhưng hash(k1)=hash(k2). Các đáp án khác không liên quan hashing.",
+    "category": "Set 5 - Graphs and Hashing"
+  },
+  {
+    "id": 16,
+    "question": "Using division method h(k) = k % 10, what is h(42)?",
+    "options": [
+      "0",
+      "2",
+      "4",
+      "42"
+    ],
+    "answer": 1,
+    "explanation": "Đáp án B đúng vì 42 chia 10 dư 2. Các đáp án khác sai phép chia lấy dư.",
+    "category": "Set 5 - Graphs and Hashing"
+  },
+  {
+    "id": 17,
+    "question": "Which collision resolution method stores a linked list at each table position?",
+    "options": [
+      "Linear probing",
+      "Quadratic probing",
+      "Separate chaining",
+      "Binary search"
+    ],
+    "answer": 2,
+    "explanation": "Đáp án C đúng vì separate chaining dùng danh sách liên kết tại bucket để chứa các key va chạm. Linear/quadratic probing là open addressing. Binary search không xử lý collision.",
+    "category": "Set 5 - Graphs and Hashing"
+  },
+  {
+    "id": 18,
+    "question": "In linear probing, what is the probing formula usually used?",
+    "options": [
+      "f_i(k) = (f(k) + i) % b",
+      "f_i(k) = (f(k) * i) % b only",
+      "f_i(k) = i / k",
+      "f_i(k) = k - b"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì linear probing thử các ô kế tiếp theo i với wraparound. Các công thức còn lại không phải linear probing chuẩn.",
+    "category": "Set 5 - Graphs and Hashing"
+  },
+  {
+    "id": 19,
+    "question": "What does load factor n/k represent in a hash table?",
+    "options": [
+      "Number of elements divided by number of buckets",
+      "Number of buckets divided by number of edges",
+      "Height of a heap",
+      "Depth of a tree"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì load factor là số phần tử cần lưu chia cho số bucket. Giá trị nhỏ và phân bố đều giúp thao tác gần O(1).",
+    "category": "Set 5 - Graphs and Hashing"
+  },
+  {
+    "id": 20,
+    "question": "When is a hash table especially good?",
+    "options": [
+      "When there are many searches in a reasonably stable table",
+      "When we must traverse all elements in sorted order often",
+      "When all keys intentionally map to one bucket",
+      "When recursion is required"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì hash table mạnh ở tìm kiếm nhanh khi bảng tương đối ổn định. B không phù hợp vì hash không giữ thứ tự. C là hàm hash xấu. D không liên quan.",
+    "category": "Set 5 - Graphs and Hashing"
+  }
+]

@@ -1,0 +1,262 @@
+[
+  {
+    "id": 1,
+    "question": "Which statement best describes an algorithm?",
+    "options": [
+      "A data type used only in C++",
+      "A sequence of instructions used to solve a problem",
+      "A compiler optimization technique",
+      "A memory address stored in a pointer"
+    ],
+    "answer": 1,
+    "explanation": "Đáp án B đúng vì thuật toán là một dãy bước/chỉ dẫn để giải quyết một bài toán. A sai vì data type không phải thuật toán. C sai vì tối ưu compiler chỉ là kỹ thuật của trình biên dịch. D sai vì đó là khái niệm con trỏ.",
+    "category": "Set 1 - C++ Review and Algorithm Analysis"
+  },
+  {
+    "id": 2,
+    "question": "In algorithm analysis, what are the two main resources usually considered?",
+    "options": [
+      "CPU brand and monitor size",
+      "Computing time and memory space",
+      "Keyboard input and screen output",
+      "Compiler name and file name"
+    ],
+    "answer": 1,
+    "explanation": "Đáp án B đúng vì khi đánh giá thuật toán ta thường xét thời gian chạy và bộ nhớ sử dụng. Các đáp án còn lại không phải tài nguyên cốt lõi để phân tích độ hiệu quả thuật toán.",
+    "category": "Set 1 - C++ Review and Algorithm Analysis"
+  },
+  {
+    "id": 3,
+    "question": "What is the Big-O of a single loop that runs from 0 to n - 1?",
+    "options": [
+      "O(1)",
+      "O(log n)",
+      "O(n)",
+      "O(n^2)"
+    ],
+    "answer": 2,
+    "explanation": "Đáp án C đúng vì vòng lặp chạy n lần nên thời gian tăng tuyến tính theo n. A sai vì không phải hằng số. B sai vì không chia đôi dữ liệu. D sai vì không có vòng lặp lồng nhau.",
+    "category": "Set 1 - C++ Review and Algorithm Analysis"
+  },
+  {
+    "id": 4,
+    "question": "What is the Big-O of two nested loops where both loops run n times?",
+    "options": [
+      "O(n)",
+      "O(n log n)",
+      "O(n^2)",
+      "O(2^n)"
+    ],
+    "answer": 2,
+    "explanation": "Đáp án C đúng vì mỗi lần của vòng ngoài có n lần vòng trong, tổng là n*n. A và B nhỏ hơn thực tế. D là mũ, thường gặp ở một số bài đệ quy/brute force chứ không phải hai vòng lặp n lần.",
+    "category": "Set 1 - C++ Review and Algorithm Analysis"
+  },
+  {
+    "id": 5,
+    "question": "Which growth rate is the fastest for large n?",
+    "options": [
+      "O(log n)",
+      "O(n)",
+      "O(n log n)",
+      "O(n^2)"
+    ],
+    "answer": 3,
+    "explanation": "Đáp án D đúng vì n^2 tăng nhanh hơn log n, n và n log n khi n lớn. Các đáp án còn lại có tốc độ tăng chậm hơn.",
+    "category": "Set 1 - C++ Review and Algorithm Analysis"
+  },
+  {
+    "id": 6,
+    "question": "If T(n) = 7n^2 + 10n + 3, what is its Big-O?",
+    "options": [
+      "O(1)",
+      "O(n)",
+      "O(n^2)",
+      "O(n^3)"
+    ],
+    "answer": 2,
+    "explanation": "Đáp án C đúng vì Big-O bỏ hệ số và các hạng tử bậc thấp, giữ bậc cao nhất là n^2. A, B sai vì nhỏ hơn tốc độ tăng thật; D đúng theo upper bound rộng nhưng không phải đáp án tốt nhất.",
+    "category": "Set 1 - C++ Review and Algorithm Analysis"
+  },
+  {
+    "id": 7,
+    "question": "What does the operator '&' do in C/C++ when used before a variable name?",
+    "options": [
+      "It dereferences a pointer",
+      "It returns the address of a variable",
+      "It deletes dynamic memory",
+      "It compares two variables"
+    ],
+    "answer": 1,
+    "explanation": "Đáp án B đúng vì & lấy địa chỉ của biến. A là vai trò của toán tử * khi dereference. C dùng delete/free. D là toán tử so sánh như ==.",
+    "category": "Set 1 - C++ Review and Algorithm Analysis"
+  },
+  {
+    "id": 8,
+    "question": "What does '*ptr' mean when ptr is a pointer?",
+    "options": [
+      "The address of ptr",
+      "The value stored at the address ptr points to",
+      "The size of ptr",
+      "The name of ptr"
+    ],
+    "answer": 1,
+    "explanation": "Đáp án B đúng vì *ptr truy cập giá trị tại vùng nhớ mà con trỏ trỏ tới. A sai vì địa chỉ của ptr là &ptr. C và D không liên quan.",
+    "category": "Set 1 - C++ Review and Algorithm Analysis"
+  },
+  {
+    "id": 9,
+    "question": "Which statement correctly releases a dynamic array allocated by new int[n] in C++?",
+    "options": [
+      "delete arr;",
+      "delete[] arr;",
+      "free[] arr;",
+      "remove arr;"
+    ],
+    "answer": 1,
+    "explanation": "Đáp án B đúng vì mảng cấp phát bằng new[] phải giải phóng bằng delete[]. A chỉ dùng cho một biến đơn. C sai cú pháp trong C++. D không phải lệnh giải phóng bộ nhớ.",
+    "category": "Set 1 - C++ Review and Algorithm Analysis"
+  },
+  {
+    "id": 10,
+    "question": "In a recursive function, which part prevents infinite recursion?",
+    "options": [
+      "Pointer variable",
+      "Base case",
+      "Array index",
+      "Compiler flag"
+    ],
+    "answer": 1,
+    "explanation": "Đáp án B đúng vì base case là điều kiện dừng. Nếu không có điều kiện dừng, hàm có thể gọi chính nó mãi dẫn đến stack overflow. Các đáp án còn lại không đảm bảo dừng đệ quy.",
+    "category": "Set 1 - C++ Review and Algorithm Analysis"
+  },
+  {
+    "id": 11,
+    "question": "What is the output of factorial(5) if factorial(n) returns n * factorial(n-1) and factorial(1) returns 1?",
+    "options": [
+      "5",
+      "15",
+      "24",
+      "120"
+    ],
+    "answer": 3,
+    "explanation": "Đáp án D đúng vì 5! = 5*4*3*2*1 = 120. A chỉ là n, B là tổng 1..5, C là 4!.",
+    "category": "Set 1 - C++ Review and Algorithm Analysis"
+  },
+  {
+    "id": 12,
+    "question": "Which C++ syntax accesses the field 'age' of a struct variable student s?",
+    "options": [
+      "s->age",
+      "s.age",
+      "s::age",
+      "*s.age"
+    ],
+    "answer": 1,
+    "explanation": "Đáp án B đúng vì biến struct thường dùng dấu chấm để truy cập member. A dùng khi s là con trỏ. C dùng cho phạm vi class/namespace. D sai cú pháp/ý nghĩa.",
+    "category": "Set 1 - C++ Review and Algorithm Analysis"
+  },
+  {
+    "id": 13,
+    "question": "Which C++ syntax accesses the field 'age' through a pointer Student* p?",
+    "options": [
+      "p.age",
+      "p->age",
+      "&p.age",
+      "p::age"
+    ],
+    "answer": 1,
+    "explanation": "Đáp án B đúng vì con trỏ đến struct/class dùng toán tử ->. A sai vì p là con trỏ. C và D không đúng để truy cập member qua pointer.",
+    "category": "Set 1 - C++ Review and Algorithm Analysis"
+  },
+  {
+    "id": 14,
+    "question": "Why is passing a large struct by const reference often preferred?",
+    "options": [
+      "It copies the whole struct many times",
+      "It allows read-only access without expensive copying",
+      "It always changes the original struct",
+      "It disables function calls"
+    ],
+    "answer": 1,
+    "explanation": "Đáp án B đúng vì const reference tránh copy dữ liệu lớn và không cho hàm sửa nội dung. A sai vì ngược lại. C sai vì const không cho sửa. D không liên quan.",
+    "category": "Set 1 - C++ Review and Algorithm Analysis"
+  },
+  {
+    "id": 15,
+    "question": "Which case usually represents the maximum running time of an algorithm?",
+    "options": [
+      "Best case",
+      "Worst case",
+      "Average case",
+      "Empty case"
+    ],
+    "answer": 1,
+    "explanation": "Đáp án B đúng vì worst case xét trường hợp xấu nhất, thường là thời gian chạy lớn nhất. Best case là nhỏ nhất, average là trung bình, empty case không phải khái niệm chuẩn trong phân tích.",
+    "category": "Set 1 - C++ Review and Algorithm Analysis"
+  },
+  {
+    "id": 16,
+    "question": "What is the Big-O of binary search on a sorted array?",
+    "options": [
+      "O(1)",
+      "O(log n)",
+      "O(n)",
+      "O(n^2)"
+    ],
+    "answer": 1,
+    "explanation": "Đáp án B đúng vì mỗi bước binary search loại bỏ khoảng một nửa phần tử. A chỉ đúng nếu gặp ngay phần tử giữa ở best case. C là tìm kiếm tuyến tính. D không phù hợp.",
+    "category": "Set 1 - C++ Review and Algorithm Analysis"
+  },
+  {
+    "id": 17,
+    "question": "Which condition is required for binary search?",
+    "options": [
+      "The array must be sorted",
+      "The array must contain only positive numbers",
+      "The array must have no duplicate values",
+      "The array must be stored as a linked list"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì binary search dựa vào thứ tự để quyết định tìm bên trái hay phải. B không bắt buộc. C không bắt buộc nếu chỉ cần tìm một vị trí. D sai vì binary search cần truy cập giữa nhanh, mảng phù hợp hơn linked list.",
+    "category": "Set 1 - C++ Review and Algorithm Analysis"
+  },
+  {
+    "id": 18,
+    "question": "Given the code: for(i=0;i<n;i++) for(j=0;j<n*n;j++) x++; What is the Big-O?",
+    "options": [
+      "O(n)",
+      "O(n^2)",
+      "O(n^3)",
+      "O(log n)"
+    ],
+    "answer": 2,
+    "explanation": "Đáp án C đúng vì vòng ngoài n lần, vòng trong n^2 lần, tổng n*n^2 = n^3. Các đáp án còn lại đánh giá thấp hoặc không đúng dạng tăng trưởng.",
+    "category": "Set 1 - C++ Review and Algorithm Analysis"
+  },
+  {
+    "id": 19,
+    "question": "Which statement about an algorithm's correctness is true?",
+    "options": [
+      "It is correct if it compiles",
+      "It is correct if it halts with correct output for every valid input",
+      "It is correct if it uses less memory",
+      "It is correct if it is written in C++"
+    ],
+    "answer": 1,
+    "explanation": "Đáp án B đúng vì correctness yêu cầu với mọi input hợp lệ, thuật toán dừng và cho output đúng. Biên dịch được chưa chắc đúng logic. Bộ nhớ ít chỉ là hiệu quả. Ngôn ngữ không quyết định đúng sai.",
+    "category": "Set 1 - C++ Review and Algorithm Analysis"
+  },
+  {
+    "id": 20,
+    "question": "What is a pointer?",
+    "options": [
+      "A variable that stores another variable's address",
+      "A variable that stores only characters",
+      "A function that sorts an array",
+      "A special loop condition"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì pointer lưu địa chỉ. B, C, D là các khái niệm khác, không mô tả con trỏ.",
+    "category": "Set 1 - C++ Review and Algorithm Analysis"
+  }
+]
