@@ -1,0 +1,523 @@
+
+[
+  {
+    "id": 1,
+    "question": "According to fundamental computer science principles, what equation accurately describes a complete software program?",
+    "options": [
+      "Program = Data structures + Algorithms",
+      "Program = Input + Output",
+      "Program = Hardware + Software",
+      "Program = Arrays + Loops"
+    ],
+    "answer": 0,
+    "explanation": "Đây là phương trình kinh điển của Niklaus Wirth. Một chương trình phần mềm luôn được cấu thành từ hai yếu tố: Cấu trúc dữ liệu (cách tổ chức, lưu trữ thông tin) và Thuật toán (các bước logic để xử lý lượng thông tin đó).",
+    "category": "Algorithm Analysis"
+  },
+  {
+    "id": 2,
+    "question": "What are the two primary metrics used to evaluate the efficiency of a correct algorithm?",
+    "options": [
+      "Lines of code and Compilation time",
+      "Computing time and Memory space",
+      "Internet speed and CPU clock speed",
+      "Readability and Modularity"
+    ],
+    "answer": 1,
+    "explanation": "Hiệu suất của một thuật toán luôn được đánh giá qua hai lăng kính: Thời gian tính toán (Time complexity - chạy nhanh hay chậm) và Không gian bộ nhớ (Space complexity - ngốn bao nhiêu RAM khi thực thi).",
+    "category": "Algorithm Analysis"
+  },
+  {
+    "id": 3,
+    "question": "What explicitly defines the 'Correctness' of an algorithm?",
+    "options": [
+      "It compiles without syntax errors",
+      "It runs in strictly O(1) time",
+      "For every valid input instance, it successfully halts and produces the strictly correct output",
+      "It uses the minimum amount of memory possible"
+    ],
+    "answer": 2,
+    "explanation": "Tính đúng đắn (Correctness) yêu cầu thuật toán không chỉ cho ra kết quả chính xác, mà còn bắt buộc phải dừng lại (halt) sau một số bước hữu hạn đối với mọi trường hợp dữ liệu đầu vào hợp lệ.",
+    "category": "Algorithm Analysis"
+  },
+  {
+    "id": 4,
+    "question": "Why is it logically necessary to mathematically analyze algorithms rather than just measuring their physical execution time on a computer?",
+    "options": [
+      "To bypass compiler errors",
+      "Because mathematical analysis evaluates the algorithm's pure efficiency independently of specific hardware, CPU speeds, and compiler optimizations",
+      "Because compilers cannot measure time accurately",
+      "To prevent software crashes"
+    ],
+    "answer": 1,
+    "explanation": "Việc bấm giờ chạy thực tế bị phụ thuộc vào cấu hình máy mạnh hay yếu, ngôn ngữ lập trình, và hệ điều hành. Phân tích toán học (như dùng Big O) cung cấp một thước đo độc lập và khách quan để so sánh bản chất sự hiệu quả của các thuật toán với nhau.",
+    "category": "Algorithm Analysis"
+  },
+  {
+    "id": 5,
+    "question": "When analyzing algorithms, what is typically the most crucial variable that directly dictates the growth of running time?",
+    "options": [
+      "The length of the variable names",
+      "The input size (number of items to be processed)",
+      "The specific programming language used",
+      "The hard drive capacity"
+    ],
+    "answer": 1,
+    "explanation": "Kích thước đầu vào (Input size - thường ký hiệu là n) là yếu tố quyết định. Ví dụ, sắp xếp 10 phần tử và sắp xếp 1 triệu phần tử sẽ cho thấy sự chênh lệch khủng khiếp về thời gian. Hàm độ phức tạp luôn được biểu diễn dưới dạng T(n).",
+    "category": "Estimating Running Time"
+  },
+  {
+    "id": 6,
+    "question": "What is the general mathematical rule for estimating the time complexity of two sequentially consecutive blocks of code?",
+    "options": [
+      "Multiply their running times together",
+      "Subtract the smaller running time from the larger one",
+      "Just add the running times of the consecutive statements together",
+      "Take the average of their running times"
+    ],
+    "answer": 2,
+    "explanation": "Đối với các khối mã chạy nối tiếp nhau (tuần tự), tổng thời gian thực thi đơn giản là phép cộng thời gian của từng khối lại. Khối nào có độ phức tạp (bậc) cao hơn sẽ chi phối toàn bộ phương trình khi n tiến tới vô cực.",
+    "category": "Estimating Running Time"
+  },
+  {
+    "id": 7,
+    "question": "How do you systematically estimate the worst-case running time of a simple 'if-else' conditional statement?",
+    "options": [
+      "It is always O(1)",
+      "Add the time of the test condition to the combined times of BOTH the 'if' branch and the 'else' branch",
+      "Add the time of the test condition to the running time of the LARGER (slower) of the two branches",
+      "Ignore the test condition and take the smaller branch"
+    ],
+    "answer": 2,
+    "explanation": "Trong phân tích Worst-case, ta luôn giả định luồng thực thi sẽ rẽ vào nhánh tốn nhiều thời gian nhất. Do đó, chi phí của if-else bằng chi phí đánh giá điều kiện cộng với chi phí của nhánh nặng nề nhất (max(branch1, branch2)).",
+    "category": "Estimating Running Time"
+  },
+  {
+    "id": 8,
+    "question": "If an algorithm executes a single basic loop exactly 'n' times, and the body of the loop takes constant time O(1), what is the total time complexity?",
+    "options": [
+      "O(1)",
+      "O(n)",
+      "O(n^2)",
+      "O(log n)"
+    ],
+    "answer": 1,
+    "explanation": "Vòng lặp chạy n lần, mỗi lần thực hiện lượng công việc không đổi c. Tổng thời gian là c * n. Bỏ qua hằng số c, độ phức tạp chạy theo tuyến tính, tức là O(n).",
+    "category": "Estimating Running Time"
+  },
+  {
+    "id": 9,
+    "question": "If an algorithm structurally executes a loop 'n' times, and inside that loop, another nested loop also executes 'n' times, what is the resulting growth rate?",
+    "options": [
+      "O(n)",
+      "O(n log n)",
+      "O(n^2)",
+      "O(2^n)"
+    ],
+    "answer": 2,
+    "explanation": "Vòng lặp lồng nhau tuân theo quy tắc nhân. Vòng ngoài chạy n lần, ứng với mỗi lần đó vòng trong lại chạy n lần. Tổng số phép toán là n * n = n^2, tạo ra độ phức tạp bình phương O(n^2).",
+    "category": "Estimating Running Time"
+  },
+  {
+    "id": 10,
+    "question": "What is the specialized 'Growth Rate Name' given to an algorithm with a time complexity of O(N log N)?",
+    "options": [
+      "Quadratic",
+      "Exponential",
+      "Log-linear",
+      "Logarithmic"
+    ],
+    "answer": 2,
+    "explanation": "O(N log N) là sự kết hợp bằng phép nhân giữa Linear (N) và Logarithmic (log N). Giới khoa học máy tính định danh nó là Log-linear. Đây là giới hạn tốc độ phổ biến nhất của các thuật toán sắp xếp tối ưu như Merge Sort và Quick Sort.",
+    "category": "Algorithm Growth Rates"
+  },
+  {
+    "id": 11,
+    "question": "Which of the following mathematical growth rates scales the fastest and is considered strictly 'impractical' for large inputs?",
+    "options": [
+      "O(N)",
+      "O(N^3)",
+      "O(N log N)",
+      "O(2^N)"
+    ],
+    "answer": 3,
+    "explanation": "Hàm mũ O(2^N) tăng trưởng với tốc độ khủng khiếp. Khi N tăng lên dù chỉ một chút, số lượng phép toán đã nhân đôi. Đối với dữ liệu lớn, thời gian chạy có thể lên tới hàng triệu năm, khiến nó trở nên hoàn toàn phi thực tế (impractical).",
+    "category": "Algorithm Growth Rates"
+  },
+  {
+    "id": 12,
+    "question": "What specifically does the formal Big O notation f(n) = O(g(n)) mathematically guarantee?",
+    "options": [
+      "g(n) is the exact precise time f(n) will take",
+      "f(n) will grow strictly faster than g(n)",
+      "There exist positive constants 'c' and 'n0' such that f(n) <= c * g(n) for all n >= n0",
+      "f(n) is always greater than or equal to g(n)"
+    ],
+    "answer": 2,
+    "explanation": "Định nghĩa toán học của Big O: g(n) đóng vai trò là một 'trần nhà' (Upper bound). Từ một quy mô dữ liệu n0 nhất định trở đi, đồ thị của f(n) sẽ vĩnh viễn nằm bên dưới hoặc chạm vào đồ thị của c*g(n).",
+    "category": "Algorithm Growth Rates"
+  },
+  {
+    "id": 13,
+    "question": "If an algorithm requires a calculated time completely proportional to T(n) = 7n^2 + 10n + 3, what is its asymptotic Big O classification?",
+    "options": [
+      "O(n^3)",
+      "O(n^2)",
+      "O(7n^2)",
+      "O(n)"
+    ],
+    "answer": 1,
+    "explanation": "Quy tắc của Big O là: (1) Loại bỏ tất cả các hạng tử bậc thấp (10n và 3) vì khi n cực lớn, chúng không đáng kể. (2) Vứt bỏ hằng số nhân (số 7) vì phân tích tiệm cận chỉ quan tâm đến hình dáng đường cong. Kết quả tinh gọn nhất là O(n^2).",
+    "category": "Algorithm Growth Rates"
+  },
+  {
+    "id": 14,
+    "question": "Why are base numbers completely omitted when writing logarithmic complexities like O(log_2 n) or O(log_10 n) generally as O(log n)?",
+    "options": [
+      "Because compilers cannot calculate logs",
+      "Because changing the logarithm base merely multiplies the function by a constant factor, which Big O inherently ignores",
+      "Because log base 2 is the only mathematically valid log",
+      "Because O(log n) means natural log (ln)"
+    ],
+    "answer": 1,
+    "explanation": "Theo tính chất toán học, chuyển đổi cơ số logarit từ a sang b chỉ là phép nhân với một hằng số (log_a n = log_b n / log_b a). Vì Big O bỏ qua các hằng số nhân, nên việc ghi rõ cơ số là không cần thiết; chúng đều tương đương nhau về mặt tiệm cận.",
+    "category": "Algorithm Growth Rates"
+  },
+  {
+    "id": 15,
+    "question": "Based on Big O addition rules, what is the tightly simplified result of O(f(n)) + O(g(n))?",
+    "options": [
+      "O(f(n) * g(n))",
+      "O(f(n) / g(n))",
+      "max(O(f(n)), O(g(n)))",
+      "O((f(n) + g(n)) / 2)"
+    ],
+    "answer": 2,
+    "explanation": "Khi hai hàm số được cộng với nhau, hàm nào có tốc độ tăng trưởng bùng nổ hơn (bậc cao hơn) sẽ hoàn toàn nuốt chửng và làm lu mờ hàm kia khi n tiến ra vô cực. Do đó ta chỉ giữ lại thành phần lớn nhất: max(O(f(n)), O(g(n))).",
+    "category": "Algorithm Growth Rates"
+  },
+  {
+    "id": 16,
+    "question": "What is the heavily simplified Big O notation for the expression T(n) = log n + n?",
+    "options": [
+      "O(log n)",
+      "O(n)",
+      "O(n log n)",
+      "O(1)"
+    ],
+    "answer": 1,
+    "explanation": "Áp dụng quy tắc cộng: Tốc độ tăng trưởng của hàm tuyến tính (n) luôn nhanh hơn và lớn hơn rất nhiều so với hàm logarit (log n). Do đó, 'n' sẽ chi phối phương trình, rút gọn lại thành O(n).",
+    "category": "Algorithm Growth Rates"
+  },
+  {
+    "id": 17,
+    "question": "Which specific asymptotic notation is used to represent the strict 'Lower Bound' of an algorithm's growth rate?",
+    "options": [
+      "Big O (O)",
+      "Big Theta (Θ)",
+      "Big Omega (Ω)",
+      "Small o"
+    ],
+    "answer": 2,
+    "explanation": "Nếu Big O là trần nhà, thì Big Omega (Ω) là 'sàn nhà' (Lower bound). Nó đảm bảo rằng thời gian chạy của thuật toán sẽ không bao giờ nhanh hơn mức c*g(n) này trong trường hợp tồi tệ nhất.",
+    "category": "Algorithm Growth Rates"
+  },
+  {
+    "id": 18,
+    "question": "Under what exact condition is an algorithm mathematically classified as f(n) = Θ(g(n)) (Big Theta)?",
+    "options": [
+      "Only when f(n) is exactly equal to g(n) without any constants",
+      "If and only if f(n) = O(g(n)) AND f(n) = Ω(g(n))",
+      "When the algorithm contains strictly no nested loops",
+      "When the algorithm takes O(1) time"
+    ],
+    "answer": 1,
+    "explanation": "Big Theta (Θ) là sự kẹp chặt hoàn hảo (Tight bound). Khi và chỉ khi hàm f(n) bị kẹp giữa cả trần nhà (Big O) và sàn nhà (Big Omega) bởi cùng một hàm g(n) (với các hằng số khác nhau), ta nói tốc độ tăng trưởng của chúng là tương đương nhau.",
+    "category": "Algorithm Growth Rates"
+  },
+  {
+    "id": 19,
+    "question": "In algorithm evaluation, what explicitly defines the 'Worst-Case' behavior?",
+    "options": [
+      "The mathematical minimum amount of time an algorithm requires to solve a problem",
+      "The average time taken over thousands of randomly generated test cases",
+      "The absolute maximum amount of time an algorithm requires to solve a problem of size n, establishing an upper limit",
+      "The time it takes when the input array is completely empty"
+    ],
+    "answer": 2,
+    "explanation": "Trường hợp tồi tệ nhất (Worst-case) giả định những dữ liệu đầu vào oái oăm nhất nhằm ép thuật toán phải thực hiện số bước tối đa. Đây là thước đo an toàn nhất để đảm bảo hệ thống không bao giờ vượt quá thời gian cam kết.",
+    "category": "Worst-Case, Best-Case, Average-Case"
+  },
+  {
+    "id": 20,
+    "question": "Why is 'Average-Case' analysis generally considered significantly much harder to definitively calculate than 'Worst-Case' analysis?",
+    "options": [
+      "Because averages mathematically don't exist for arrays",
+      "Because it strictly requires knowing the exact probability distributions of all possible input configurations of size n, which is often completely unknown",
+      "Because computers calculate maximums faster than averages",
+      "Because worst-case only happens once"
+    ],
+    "answer": 1,
+    "explanation": "Để tính Average-case, nhà toán học không chỉ phải liệt kê mọi kịch bản dữ liệu có thể xảy ra, mà còn phải biết chính xác xác suất (probability) xuất hiện của từng kịch bản đó trong thực tế. Điều này cực kỳ phức tạp và thường bất khả thi.",
+    "category": "Worst-Case, Best-Case, Average-Case"
+  },
+  {
+    "id": 21,
+    "question": "If you perform a simple Sequential Search for an item mathematically NOT present in an array of 'n' elements, what is the time complexity?",
+    "options": [
+      "O(1)",
+      "O(log n)",
+      "O(n)",
+      "O(n^2)"
+    ],
+    "answer": 2,
+    "explanation": "Tìm kiếm tuần tự ngây thơ phải kiểm tra từng phần tử một. Nếu giá trị không tồn tại, nó bắt buộc phải cày qua đủ n phần tử từ đầu đến cuối mảng mới đưa ra được kết luận, tiêu tốn O(n) thời gian.",
+    "category": "Worst-Case, Best-Case, Average-Case"
+  },
+  {
+    "id": 22,
+    "question": "Assuming a target item exists inside an array with equal probability at any position, what is the Average-Case number of comparisons for Sequential Search?",
+    "options": [
+      "n",
+      "(n + 1) / 2",
+      "log n",
+      "n / 4"
+    ],
+    "answer": 1,
+    "explanation": "Trung bình cộng của một cấp số cộng: Nếu tìm thấy ở vị trí số 1 tốn 1 bước, vị trí n tốn n bước. Tổng số bước là (1+2+...+n). Chia đều cho n kịch bản, ta được kỳ vọng toán học là (n+1)/2 phép so sánh.",
+    "category": "Worst-Case, Best-Case, Average-Case"
+  },
+  {
+    "id": 23,
+    "question": "What is the absolute fundamental mathematical prerequisite for utilizing a Binary Search algorithm?",
+    "options": [
+      "The input list must be strictly composed of integers only",
+      "The input list must be physically sorted beforehand",
+      "The input size 'n' must be a perfect power of 2",
+      "The array must not contain zero"
+    ],
+    "answer": 1,
+    "explanation": "Binary Search phụ thuộc vào logic 'chặt nửa mảng'. Nó so sánh với điểm giữa để phán đoán mục tiêu nằm ở nửa bên phải hay nửa bên trái. Sự suy luận này hoàn toàn vô nghĩa nếu mảng lộn xộn và chưa được sắp xếp (sorted).",
+    "category": "Worst-Case, Best-Case, Average-Case"
+  },
+  {
+    "id": 24,
+    "question": "In a standard Binary Search over 'n' elements, geometrically what happens to the search space size after the very first comparison loop?",
+    "options": [
+      "It mathematically reduces to precisely n-1 elements",
+      "It reduces to the square root of n",
+      "It is cut exactly in half (n/2)",
+      "It resets to zero"
+    ],
+    "answer": 2,
+    "explanation": "Sức mạnh của Binary Search nằm ở nhát cắt. Bằng cách so sánh với phần tử ở chính giữa (mid), nó lập tức loại bỏ đi toàn bộ một nửa mảng không chứa mục tiêu, thu hẹp không gian tìm kiếm xuống chỉ còn n/2 phần tử.",
+    "category": "Worst-Case, Best-Case, Average-Case"
+  },
+  {
+    "id": 25,
+    "question": "What is the absolute mathematical Worst-Case number of iterations required by Binary Search on an array of size 'n'?",
+    "options": [
+      "n iterations",
+      "n/2 iterations",
+      "log_2(n) iterations",
+      "1 iteration"
+    ],
+    "answer": 2,
+    "explanation": "Thuật toán liên tục chia đôi kích thước (n/2, n/4, n/8...). Vòng lặp dừng lại khi không gian bị băm nát chỉ còn 1 phần tử. Giải phương trình n/(2^k) = 1, ta tìm được số lần lặp k tối đa chính là logarit cơ số 2 của n (log_2(n)).",
+    "category": "Worst-Case, Best-Case, Average-Case"
+  },
+  {
+    "id": 26,
+    "question": "At roughly what generalized Time Complexity degree is an algorithm generally considered computationally 'impractical' for substantial real-world data?",
+    "options": [
+      "More than O(1)",
+      "More than O(n log n)",
+      "More than O(n^3)",
+      "More than O(log n)"
+    ],
+    "answer": 2,
+    "explanation": "Tài liệu khẳng định một thuật toán trở nên phi thực tế (impractical) khi độ phức tạp của nó vượt quá O(n^3) - tức là các thuật toán từ bậc 4 trở lên, hoặc hàm mũ O(2^n). Lúc này, thời gian chạy sẽ bùng nổ vượt ngoài khả năng chờ đợi của con người ngay cả với dữ liệu nhỏ.",
+    "category": "Algorithm Growth Rates"
+  },
+  {
+    "id": 27,
+    "question": "If you analyze a nested structure where the outer loop is `for(j=0; j<n; j++)` and the internal loop is `for(k=0; k<n*n; k++)`, what is the precise Big O?",
+    "options": [
+      "O(n^2)",
+      "O(n^3)",
+      "O(n^4)",
+      "O(n log n)"
+    ],
+    "answer": 1,
+    "explanation": "Sử dụng quy tắc nhân của vòng lặp: Vòng ngoài chạy n lần. Vòng trong chạy n^2 lần. Nhân lại với nhau, tổng số lần thực thi các lệnh bên trong cùng sẽ là n * (n^2) = n^3. Suy ra O(n^3).",
+    "category": "Estimating Running Time"
+  },
+  {
+    "id": 28,
+    "question": "What is the derived time complexity of the nested structure `for(j=0; j<n; j++)` containing `for(k=0; k<j*j; k++)`?",
+    "options": [
+      "O(n^2)",
+      "O(n^3)",
+      "O(n^4)",
+      "O(n!)"
+    ],
+    "answer": 1,
+    "explanation": "Vòng lặp ngoài duyệt j từ 0 đến n. Vòng lặp trong chạy j^2 lần. Tổng số phép toán là chuỗi tổng các bình phương: 1^2 + 2^2 + ... + n^2. Công thức toán học của chuỗi này xấp xỉ n^3 / 3. Bỏ hằng số, độ phức tạp tiệm cận là O(n^3).",
+    "category": "Estimating Running Time"
+  },
+  {
+    "id": 29,
+    "question": "When defining the function call `T_1(n) = O(f(n))` and `T_2(n) = O(g(n))`, what is the algorithmic rule for their product `T_1(n) * T_2(n)`?",
+    "options": [
+      "O(f(n) + g(n))",
+      "O(f(n) * g(n))",
+      "max(O(f(n)), O(g(n)))",
+      "O(f(n) ^ g(n))"
+    ],
+    "answer": 1,
+    "explanation": "Giống hệt như quy tắc nhân đa thức, khi hai khối mã được đặt lồng vào nhau hoặc nhân hệ số thời gian với nhau, độ phức tạp tổng thể đơn giản là tích của hai hàm độ phức tạp tương ứng: O(f(n) * g(n)).",
+    "category": "Algorithm Growth Rates"
+  },
+  {
+    "id": 30,
+    "question": "In a pure 'Best-Case' scenario, how many iterations does the Binary Search algorithm perform?",
+    "options": [
+      "Exactly 1 iteration",
+      "log_2(n) iterations",
+      "n iterations",
+      "Zero iterations"
+    ],
+    "answer": 0,
+    "explanation": "Trường hợp cực kỳ may mắn (Best-case) của Binary Search là khi giá trị cần tìm nằm chễm chệ ngay tại vị trí chính giữa (mid) của mảng ngay trong lần kiểm tra đầu tiên. Thuật toán kết thúc lập tức chỉ sau 1 vòng lặp duy nhất O(1).",
+    "category": "Worst-Case, Best-Case, Average-Case"
+  },
+  {
+    "id": 31,
+    "question": "How practically intensive is an O(log_2 n) algorithm on a giant input size of n = 1,048,576?",
+    "options": [
+      "It takes exactly 1,048,576 operations",
+      "It requires roughly 1,000 operations",
+      "It resolves in approximately 20 operations",
+      "It takes an exponential amount of time"
+    ],
+    "answer": 2,
+    "explanation": "Đây là phép màu của hàm logarit. Vì 2^20 = 1,048,576, nên log_2(1,048,576) = 20. Thay vì phải duyệt qua hơn 1 triệu phần tử, một thuật toán O(log n) như Binary Search chỉ cần chẻ đôi mảng không quá 20 lần là tóm được mục tiêu.",
+    "category": "Worst-Case, Best-Case, Average-Case"
+  },
+  {
+    "id": 32,
+    "question": "If evaluating a recursive factorial function `fact(n)` structurally based on the recurrence C(n) = C(n-1) + 1, what is the evaluated O notation?",
+    "options": [
+      "O(1)",
+      "O(n)",
+      "O(n^2)",
+      "O(n!)"
+    ],
+    "answer": 1,
+    "explanation": "Mỗi lần đệ quy fact(n) gọi fact(n-1), nó tốn 1 phép toán hằng số (cộng 1). Để chạm đến đáy fact(1), nó phải bóc tách n lần gọi hàm nối tiếp nhau. Tổng số phép toán cộng dồn lại là n, đem tới độ phức tạp O(n).",
+    "category": "Estimating Running Time"
+  },
+  {
+    "id": 33,
+    "question": "If you sum the mathematical sequence 1 + 2 + 3 + ... + N conceptually derived from a nested loop, what Big O bound is assigned?",
+    "options": [
+      "O(N)",
+      "O(N log N)",
+      "O(N^2)",
+      "O(N^3)"
+    ],
+    "answer": 2,
+    "explanation": "Đây là cấp số cộng cơ bản, tổng của nó bằng N*(N+1)/2. Khi khai triển, ta có (N^2)/2 + N/2. Bỏ qua hằng số chia 2 và hạng tử bậc thấp N/2, kết quả cuối cùng phản ánh sự gia tăng theo hình parabol: O(N^2).",
+    "category": "Algorithm Growth Rates"
+  },
+  {
+    "id": 34,
+    "question": "If Algorithm X fundamentally demands `5 * n^2` time units, and Algorithm Y fundamentally demands `7 * n` time units, which statement accurately reflects scaling?",
+    "options": [
+      "Algorithm X is always faster for all possible numbers",
+      "Algorithm Y scales mathematically much better for heavily large inputs of 'n'",
+      "They perform completely identically",
+      "Algorithm X is linear while Y is quadratic"
+    ],
+    "answer": 1,
+    "explanation": "Thuật toán Y (O(n)) là tuyến tính, trong khi X (O(n^2)) là bình phương. Mặc dù hệ số của Y lớn hơn (7 > 5) khiến nó có thể chậm hơn ở những giá trị n cực nhỏ, nhưng khi n tiến đến mức khổng lồ, O(n) luôn luôn bỏ xa O(n^2) về sự ưu việt và khả năng mở rộng (scaling).",
+    "category": "Algorithm Growth Rates"
+  },
+  {
+    "id": 35,
+    "question": "What precisely does constant time complexity O(1) mathematically assert about an algorithm?",
+    "options": [
+      "It mathematically executes in exactly 1 second",
+      "It requires exactly one physical line of code",
+      "Its required execution time is inherently constant and completely independent of the problem's size 'n'",
+      "It processes exactly 1 kilobyte of data"
+    ],
+    "answer": 2,
+    "explanation": "O(1) không có nghĩa là thuật toán chỉ tốn 1 phép toán, mà nó có nghĩa là thời gian chạy hoàn toàn 'bất biến' (không bị thay đổi). Dù bạn nạp vào 10 hay 1 tỷ dữ liệu, nó cũng chỉ mất một khoảng thời gian cố định như nhau để hoàn thành.",
+    "category": "Algorithm Growth Rates"
+  },
+  {
+    "id": 36,
+    "question": "In Big O notation simplification, how is a complex polynomial equation like `T(n) = n^2 / 2 - 3n` mathematically reduced?",
+    "options": [
+      "O(n)",
+      "O(-3n)",
+      "O(n^2)",
+      "O(n^2 / 2)"
+    ],
+    "answer": 2,
+    "explanation": "Quá trình tinh giản Big O cực kỳ tàn nhẫn: Loại bỏ ngay lập tức hạng tử bậc thấp hơn (-3n), và gọt bỏ luôn hệ số nhân/chia hằng số (1/2). Thứ duy nhất thống trị phương trình này là bản chất bậc hai của nó: O(n^2).",
+    "category": "Algorithm Growth Rates"
+  },
+  {
+    "id": 37,
+    "question": "When defining the parameters of the generic 'Selection Problem' given an unorganized list of N numbers, what exactly is the user tasked to determine?",
+    "options": [
+      "The strictly minimum value",
+      "The kth largest element, where k <= N",
+      "The exact sum of all elements linearly",
+      "The median value only"
+    ],
+    "answer": 1,
+    "explanation": "Bài toán Lựa chọn (Selection Problem) kinh điển đặt ra yêu cầu: Cho một mảng lộn xộn, hãy tìm ra phần tử lớn thứ 'k' trong mảng đó (với điều kiện k không vượt quá tổng số phần tử N).",
+    "category": "Algorithm Analysis"
+  },
+  {
+    "id": 38,
+    "question": "Why is merely writing a functionally 'working program' considered academically 'not good enough' in software engineering without further analysis?",
+    "options": [
+      "Because it might be in the wrong language",
+      "Because compilers reject working programs",
+      "Because without algorithmic efficiency analysis, the program may critically fail or run unacceptably slow when later subjected to a massive real-world data set",
+      "Because working programs inherently have bugs"
+    ],
+    "answer": 2,
+    "explanation": "Một mã code chạy đúng với 10 phần tử kiểm thử không có nghĩa là nó tốt. Nếu thuật toán tồi (như O(N^3)), khi triển khai thực tế với hàng triệu khách hàng, phần mềm sẽ tê liệt hoàn toàn. Phân tích thuật toán giúp dự đoán và né tránh thảm họa này từ sớm.",
+    "category": "Algorithm Analysis"
+  },
+  {
+    "id": 39,
+    "question": "What heavily dictates the resulting O notation of evaluating consecutive distinct code blocks within a function?",
+    "options": [
+      "The most complex, slowest mathematical block uniquely dominates the final Big O limit",
+      "All blocks are multiplied perfectly",
+      "The physically first block evaluates the Big O",
+      "Consecutive blocks cancel out linearly"
+    ],
+    "answer": 0,
+    "explanation": "Theo quy tắc cộng max(O(f), O(g)), trong một chuỗi các khối lệnh tuần tự, khối lệnh nào nặng nề nhất (mang bậc cao nhất) sẽ là 'kẻ chiến thắng' và áp đặt độ phức tạp Big O của nó lên toàn bộ hàm đó.",
+    "category": "Estimating Running Time"
+  },
+  {
+    "id": 40,
+    "question": "Which of the following explicitly proves why algorithm evaluation is performed independently of computer processing power?",
+    "options": [
+      "Hardware speed naturally makes an inefficient algorithm asymptotically scale perfectly",
+      "A fast CPU running a quadratic O(n^2) algorithm will eventually be hopelessly outpaced by an ancient slow CPU running an elegant linear O(n) algorithm as 'n' grows towards infinity",
+      "CPUs randomly guess array items",
+      "Operating systems halt fast algorithms automatically"
+    ],
+    "answer": 1,
+    "explanation": "Đây là chân lý của Khoa học máy tính: Cấu hình phần cứng tối tân chỉ cứu được bạn ở số lượng dữ liệu nhỏ. Khi quy mô n tiến ra vô cực, sức mạnh của một thuật toán thông minh O(n) sẽ luôn đè bẹp thuật toán yếu kém O(n^2), bất kể chênh lệch tốc độ CPU vật lý.",
+    "category": "Algorithm Analysis"
+  }
+]

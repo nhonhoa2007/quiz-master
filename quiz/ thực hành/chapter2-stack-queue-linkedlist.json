@@ -1,0 +1,523 @@
+
+[
+  {
+    "id": 1,
+    "question": "When contrasting Linked Lists and Arrays regarding random element access, what is the primary computational difference?",
+    "options": [
+      "Linked lists provide O(1) random access, while arrays require O(N) time",
+      "Both arrays and linked lists require O(N) time for random access",
+      "Arrays provide O(1) access time using an index, whereas linked lists require O(N) time to traverse from the head node",
+      "Linked lists use a hash function to achieve O(1) access, unlike arrays"
+    ],
+    "answer": 2,
+    "explanation": "Mảng lưu trữ dữ liệu liên tục trong bộ nhớ, do đó có thể truy xuất ngẫu nhiên bất kỳ phần tử nào ngay lập tức (O(1)) thông qua chỉ số (index). Ngược lại, các node trong danh sách liên kết nằm rải rác, bắt buộc thuật toán phải duyệt tuần tự từ node đầu tiên (head) qua từng con trỏ 'next' để đến được vị trí mong muốn, tiêu tốn thời gian O(N).",
+    "category": "Linked List Basics"
+  },
+  {
+    "id": 2,
+    "question": "In a standard Singly Linked List, what does the link (next pointer) of the absolutely final (last) node specifically point to?",
+    "options": [
+      "The head node of the list",
+      "A mathematically random memory address",
+      "NULL",
+      "The node immediately preceding it"
+    ],
+    "answer": 2,
+    "explanation": "Đặc điểm nhận dạng của node cuối cùng (last node) trong một danh sách liên kết đơn tuyến tính là con trỏ 'next' của nó trỏ vào khoảng không (NULL). Điều này đóng vai trò như một lính canh, báo hiệu cho các vòng lặp duyệt danh sách biết rằng chúng đã chạm đến điểm kết thúc.",
+    "category": "Singly Linked Lists"
+  },
+  {
+    "id": 3,
+    "question": "When structurally inserting a new node (pointed to by 'temp') immediately AFTER a specific existing node (pointed to by 'p') in a singly linked list, which sequence of pointer assignments is correct?",
+    "options": [
+      "p->next = temp; temp->next = p->next;",
+      "temp->next = p->next; p->next = temp;",
+      "p->next = temp; temp->next = NULL;",
+      "temp->next = p; p->next = temp->next;"
+    ],
+    "answer": 1,
+    "explanation": "Quy tắc chèn an toàn: Phải 'nắm' lấy phần đuôi trước khi 'buông' tay. Node mới (temp) phải vươn tay (temp->next) nắm lấy node phía sau của p (p->next). Sau khi kết nối xong, node p mới được phép cắt liên kết cũ và trỏ sang node mới (p->next = temp). Nếu làm ngược lại, bạn sẽ làm đứt xích và mất toàn bộ dữ liệu phía sau.",
+    "category": "Singly Linked Lists"
+  },
+  {
+    "id": 4,
+    "question": "To structurally delete the node that immediately follows node 'p' in a singly linked list, which pointer operation effectively bypasses it?",
+    "options": [
+      "p->next = p;",
+      "p->next = NULL;",
+      "p = p->next->next;",
+      "p->next = p->next->next;"
+    ],
+    "answer": 3,
+    "explanation": "Để xóa node nằm ngay sau p, ta cần bẻ cong con trỏ của p để nó nhảy vọt qua node bị xóa, và trỏ thẳng vào node cháu (p->next->next). Sau thao tác này, node ở giữa sẽ bị văng ra khỏi chuỗi liên kết và có thể được giải phóng bộ nhớ một cách an toàn.",
+    "category": "Singly Linked Lists"
+  },
+  {
+    "id": 5,
+    "question": "When executing the classic algorithm to geometrically 'Invert' (reverse) a singly linked list iteratively, how many scanning pointers are fundamentally required to accomplish this without losing data?",
+    "options": [
+      "Exactly 1 pointer",
+      "Exactly 2 pointers",
+      "Exactly 3 pointers (lead, middle, trail)",
+      "An array of pointers equal to the list size"
+    ],
+    "answer": 2,
+    "explanation": "Việc đảo chiều con trỏ trong danh sách liên kết đơn rất nguy hiểm vì dễ làm đứt xích. Thuật toán kinh điển sử dụng đội hình 3 con trỏ: 'lead' đi trước để dò đường và không làm mất phần còn lại của danh sách, 'middle' trỏ vào node hiện tại cần bẻ khóa, và 'trail' đi ngay sau để 'middle' quay ngược mũi tên trỏ vào nó.",
+    "category": "Singly Linked Lists"
+  },
+  {
+    "id": 6,
+    "question": "What explicitly distinguishes a 'Circularly Linked List' from a standard Singly Linked List?",
+    "options": [
+      "It requires three distinct pointers per node",
+      "The link field of the physically last node actively points back to the first node (head) in the list",
+      "It mathematically guarantees perfectly sorted elements",
+      "It uses arrays instead of pointers"
+    ],
+    "answer": 1,
+    "explanation": "Đúng như tên gọi, Danh sách liên kết vòng (Circularly Linked List) không có điểm kết thúc chết (NULL). Thay vào đó, con trỏ 'next' của node cuối cùng được bẻ cong để móc ngược trở lại node đầu tiên (head), tạo thành một vòng tuần hoàn vô tận.",
+    "category": "Circularly Linked List"
+  },
+  {
+    "id": 7,
+    "question": "Structurally, what three required fields make up a single node within a traditional Doubly Linked List?",
+    "options": [
+      "Data, index, and hash value",
+      "Left link (llink), Data (item), and Right link (rlink)",
+      "Head, Tail, and Size",
+      "Next, Previous, and Random"
+    ],
+    "answer": 1,
+    "explanation": "Danh sách liên kết kép (Doubly Linked List) trang bị cho mỗi node hai đôi cánh. Ngoài trường dữ liệu (item), nó sở hữu con trỏ trái (llink) để nhìn về quá khứ (node trước đó) và con trỏ phải (rlink) để hướng tới tương lai (node kế tiếp).",
+    "category": "Doubly Linked Lists"
+  },
+  {
+    "id": 8,
+    "question": "What is the primary algorithmic motivation for upgrading a singly linked list to a Doubly Linked List?",
+    "options": [
+      "To save RAM memory capacity",
+      "To completely prevent memory leaks",
+      "To overcome the expensive O(N) cost of operations like 'removeAfter' or 'insertLast' by allowing backward traversal and immediate access to previous nodes",
+      "To strictly enable array index notation"
+    ],
+    "answer": 2,
+    "explanation": "Trong danh sách đơn, bạn chỉ có thể đi tiến. Nếu đang đứng ở cuối và muốn xóa một node phía trước, bạn bắt buộc phải duyệt lại từ đầu (tốn O(N)). Danh sách kép giải quyết triệt để điểm yếu này vì con trỏ llink cho phép lùi lại phía sau ngay lập tức, tiết kiệm đáng kể thời gian thao tác cục bộ.",
+    "category": "Doubly Linked Lists"
+  },
+  {
+    "id": 9,
+    "question": "In an empty 'Doubly Linked Circular List' equipped with a standard head node, where do the head node's left and right links initially point?",
+    "options": [
+      "Both point securely to NULL",
+      "Both structurally point back to the head node itself",
+      "The left points to NULL, the right points to the head node",
+      "The right points to NULL, the left points to the head node"
+    ],
+    "answer": 1,
+    "explanation": "Khi danh sách vòng kép chỉ có duy nhất một node lính canh (head node) và không chứa dữ liệu thực, cấu trúc vòng lặp bắt buộc con trỏ trái và con trỏ phải của head node phải tự móc nối vào chính bản thân nó. Điều này tạo sự nhất quán cho thuật toán chèn/xóa sau này.",
+    "category": "Doubly Linked Lists"
+  },
+  {
+    "id": 10,
+    "question": "Under what specific condition would you mathematically choose to use a Linked List over a standard contiguous Array?",
+    "options": [
+      "When the system strictly requires the fastest possible random access (index jumping)",
+      "When the final number of elements to be stored cannot be accurately predicted at compile time, and heavy insertions/deletions in the middle are anticipated",
+      "When compiling specifically in C++ instead of C",
+      "When strictly handling only constant string characters"
+    ],
+    "answer": 1,
+    "explanation": "Mảng yêu cầu cấp phát bộ nhớ liền khối cố định ngay từ đầu. Nếu dữ liệu phình to bất ngờ, mảng sẽ sụp đổ. Danh sách liên kết tỏa sáng khi hệ thống cần tính co giãn linh hoạt (thêm/xóa liên tục ở giữa danh sách) và kích thước dữ liệu biến động không lường trước được.",
+    "category": "Linked List Basics"
+  },
+  {
+    "id": 11,
+    "question": "When structurally mapping a mathematical polynomial (e.g., $3x^{14} + 2x^8 + 1$) into a singly linked list, what precise fields must each node structurally contain?",
+    "options": [
+      "Constant, Variable, and Power",
+      "Base, Height, and Next pointer",
+      "Coefficient (coef), Exponent (expon), and a pointer to the next term (link)",
+      "Left string, Right string, and Data"
+    ],
+    "answer": 2,
+    "explanation": "Ứng dụng biểu diễn Đa thức yêu cầu mỗi số hạng phải được ghi nhận rõ ràng. Do đó, một node đa thức tiêu chuẩn chứa hệ số (coefficient), số mũ (exponent), kèm theo một con trỏ (link) để nối tới số hạng có số mũ thấp hơn tiếp theo.",
+    "category": "Applications of Linked Lists"
+  },
+  {
+    "id": 12,
+    "question": "When executing the 'Polynomial Addition' algorithm, what specific action is taken if the exponent of the current term in polynomial 'a' (a->expon) is strictly LESS THAN the exponent in polynomial 'b' (b->expon)?",
+    "options": [
+      "The terms' coefficients are multiplied",
+      "A duplicate of 'b's term is created and attached to the result list, and the pointer for 'b' is aggressively advanced",
+      "A duplicate of 'a's term is attached, and pointer 'a' is advanced",
+      "Both terms are deleted unconditionally"
+    ],
+    "answer": 1,
+    "explanation": "Thuật toán cộng đa thức duyệt từ mũ cao xuống thấp. Nếu mũ của nhánh b đang lớn hơn nhánh a, điều đó có nghĩa là số hạng của b hiện đang nắm giữ 'quyền ưu tiên' cao nhất. Thuật toán sẽ chép nguyên xi số hạng của b đưa vào đa thức kết quả, rồi đẩy con trỏ b nhích lên một bước.",
+    "category": "Applications of Linked Lists"
+  },
+  {
+    "id": 13,
+    "question": "In Discrete Mathematics, a relation over a set 'S' is classified as an 'Equivalence Relation' only if it simultaneously satisfies which three absolute properties?",
+    "options": [
+      "Linear, Logarithmic, and Exponential",
+      "Symmetric, Reflexive, and Transitive",
+      "Associative, Distributive, and Commutative",
+      "Positive, Negative, and Neutral"
+    ],
+    "answer": 1,
+    "explanation": "Theo định nghĩa toán học, Quan hệ Tương đương (Equivalence relation) phải thỏa mãn ba chân kiềng: Phản xạ (x=x), Đối xứng (nếu x=y thì y=x), và Bắc cầu (nếu x=y và y=z thì x=z). Trong tin học, nó được biểu diễn cực kỳ hiệu quả bằng đồ thị danh sách kề.",
+    "category": "Applications of Linked Lists"
+  },
+  {
+    "id": 14,
+    "question": "In an optimized Linked Representation of a 'Sparse Matrix', how are the columns and rows structurally connected?",
+    "options": [
+      "Using an array of boolean flags",
+      "Each column and each row is represented as an independent Circularly Linked List with a dedicated Head Node",
+      "They are not connected at all, existing as separate arrays",
+      "They strictly use a binary search tree structure"
+    ],
+    "answer": 1,
+    "explanation": "Ma trận thưa (Sparse Matrix) chứa đầy số 0. Để không lãng phí dung lượng, người ta dùng một lưới các danh sách liên kết vòng. Mỗi hàng và mỗi cột đều sở hữu một Head Node (lính canh) riêng. Các phần tử khác 0 sẽ có 2 con trỏ: một móc vào chuỗi của hàng, một móc vào chuỗi của cột.",
+    "category": "Applications of Linked Lists"
+  },
+  {
+    "id": 15,
+    "question": "What overarching behavioral principle strictly governs a 'Stack' data structure?",
+    "options": [
+      "First-In-First-Out (FIFO)",
+      "First-In-Last-Out (FILO)",
+      "Last-In-First-Out (LIFO)",
+      "Random-In-Random-Out (RIRO)"
+    ],
+    "answer": 2,
+    "explanation": "Ngăn xếp (Stack) hoạt động y hệt một chồng đĩa. Chiếc đĩa nào được đặt vào sau cùng (nằm trên cùng) sẽ luôn là chiếc đĩa đầu tiên bị rút ra. Nguyên lý này gọi là LIFO (Vào Sau Ra Trước).",
+    "category": "Stacks"
+  },
+  {
+    "id": 16,
+    "question": "In a standard Array representation of a Stack, what initial numerical value represents an entirely 'Empty' stack?",
+    "options": [
+      "top = 0",
+      "top = 1",
+      "top = MAX",
+      "top = -1"
+    ],
+    "answer": 3,
+    "explanation": "Trong mảng C/C++, chỉ số phần tử bắt đầu từ 0. Do đó, để biểu diễn trạng thái không chứa bất kỳ phần tử nào (chưa chạm tới vạch xuất phát 0), con trỏ 'top' mặc định được khởi tạo với giá trị toán học là -1.",
+    "category": "Stacks"
+  },
+  {
+    "id": 17,
+    "question": "In an Array-based Stack of capacity 'MAX', what boundary condition explicitly indicates that the stack is full?",
+    "options": [
+      "top == 0",
+      "top == MAX",
+      "top == MAX - 1",
+      "top == 100"
+    ],
+    "answer": 2,
+    "explanation": "Vì mảng bắt đầu từ 0, ô nhớ cuối cùng có thể lưu trữ dữ liệu sẽ mang chỉ số MAX - 1. Khi con trỏ 'top' tiến đến bằng đúng giá trị MAX - 1, ngăn xếp không còn dư bất kỳ ô trống nào, báo hiệu tình trạng tràn (Stack Full).",
+    "category": "Stacks"
+  },
+  {
+    "id": 18,
+    "question": "When invoking the basic `push(element x)` function on an Array-based Stack, which precise line of code executes the addition securely?",
+    "options": [
+      "stack[top++] = x;",
+      "stack[++top] = x;",
+      "stack[top] = x;",
+      "stack[--top] = x;"
+    ],
+    "answer": 1,
+    "explanation": "Lệnh `stack[++top] = x;` thực hiện hai thao tác kết hợp: đầu tiên nó tăng con trỏ top lên 1 nấc để trỏ vào ô trống tiếp theo (tiền tố ++), sau đó nó mới nhét dữ liệu x vào ổ ghi mới đó. Nếu dùng `top++`, nó sẽ ghi đè lên dữ liệu cũ rồi mới tăng, dẫn đến lỗi hỏng dữ liệu.",
+    "category": "Stacks"
+  },
+  {
+    "id": 19,
+    "question": "When structurally implementing a Stack using a Linked List, at which physical end do the Push and Pop operations systematically occur?",
+    "options": [
+      "Push at the rear, Pop at the front",
+      "Push at the front, Pop at the rear",
+      "Both operations exclusively happen at the same end (the 'front' or 'head' pointer simulating the 'top')",
+      "Push randomly in the middle, Pop from the head"
+    ],
+    "answer": 2,
+    "explanation": "Danh sách liên kết đơn có điểm yếu là thao tác ở cuối chuỗi rất chậm (phải duyệt qua toàn bộ). Để đảm bảo tốc độ O(1) thần tốc của Stack, cả hai thao tác nhét vào (Push) và rút ra (Pop) đều được ép thực hiện tại cùng một đầu: vị trí head (đầu danh sách), được coi như đỉnh (top) của ngăn xếp.",
+    "category": "Stacks"
+  },
+  {
+    "id": 20,
+    "question": "Which of the following is a universally recognized algorithmic application for a Stack data structure?",
+    "options": [
+      "Printer spooling and Operating System IO Buffers",
+      "Job scheduling in multiprocessor environments",
+      "Matching balanced parentheses and evaluating Postfix algebraic expressions",
+      "Converting hexadecimal numbers directly to binary"
+    ],
+    "answer": 2,
+    "explanation": "Tính năng lưu vết LIFO khiến Ngăn xếp (Stack) trở thành công cụ chuyên dụng để phân tích cú pháp. Nó được dùng để kiểm tra tính hợp lệ của các cặp dấu ngoặc đóng/mở trong lập trình, chuyển đổi biểu thức trung tố (Infix) sang hậu tố (Postfix) và tính toán biểu thức hậu tố đó.",
+    "category": "Stacks"
+  },
+  {
+    "id": 21,
+    "question": "Why is 'Postfix' (or Prefix) mathematical notation fundamentally easier for computer machines to parse than 'Infix' notation?",
+    "options": [
+      "Because Postfix only uses positive numbers",
+      "Because Postfix aggressively evaluates all parentheses first",
+      "Because Postfix notation strictly places operators after operands, entirely eliminating the confusing need for operator precedence rules and parentheses",
+      "Because Postfix limits the length of an equation"
+    ],
+    "answer": 2,
+    "explanation": "Biểu thức Infix (ví dụ 5 + 2 * 3) gây khó khăn cho máy tính vì nó phải nhớ quy tắc 'nhân chia trước, cộng trừ sau' và ưu tiên dấu ngoặc. Trong hậu tố Postfix (5 2 3 * +), mọi toán tử xuất hiện theo đúng trình tự thực thi tuyệt đối. Máy tính chỉ cần dùng một Stack và xử lý trơn tru từ trái qua phải mà không cần lo về thứ tự ưu tiên.",
+    "category": "Stacks"
+  },
+  {
+    "id": 22,
+    "question": "If evaluating the Postfix expression `2 3 4 + *` using a Stack, what will perfectly be the final mathematical result?",
+    "options": [
+      "24",
+      "14",
+      "20",
+      "9"
+    ],
+    "answer": 1,
+    "explanation": "Máy tính đẩy 2, 3, 4 vào Stack. Gặp dấu +, nó bốc 4 và 3 ra cộng lại thành 7, nhét 7 lại vào Stack. Stack lúc này còn. Gặp dấu *, nó bốc 7 và 2 ra nhân lại thành 14. Kết quả cuối cùng còn lại là 14.",
+    "category": "Stacks"
+  },
+  {
+    "id": 23,
+    "question": "During the algorithmic conversion from an 'Infix' expression to a 'Postfix' expression using a Stack, what precisely happens when an OPERAND (like 'a' or 'b') is encountered?",
+    "options": [
+      "It is violently pushed into the Stack",
+      "It is entirely ignored and deleted",
+      "It is mathematically multiplied by the top of the stack",
+      "It is instantly appended to the end of the output Postfix expression string"
+    ],
+    "answer": 3,
+    "explanation": "Trong thuật toán chuyển đổi, toán hạng (các chữ số hoặc biến A, B, C...) hoàn toàn vô tội. Ngay khi được đọc, chúng lập tức được xuất thẳng ra chuỗi kết quả (Postfix string). Ngăn xếp (Stack) chỉ được dùng như một kho tạm giam để giam giữ và đảo trật tự các toán tử (+, -, *, /) và dấu ngoặc.",
+    "category": "Stacks"
+  },
+  {
+    "id": 24,
+    "question": "What is the profound mechanical relationship strictly between Stacks and Recursion in computer systems?",
+    "options": [
+      "They have absolutely no relationship",
+      "Compilers actively use system memory Stacks to track variables, return addresses, and generate 'Activation Records' during deep recursive function calls",
+      "Recursion completely replaces hardware stacks with queues",
+      "Stacks randomly optimize recursive loops into while-loops"
+    ],
+    "answer": 1,
+    "explanation": "Đệ quy là hành động một hàm tự gọi lại chính nó. Để không bị 'quên' trạng thái biến khi gọi hàm con, hệ điều hành âm thầm sử dụng một Ngăn xếp hệ thống (Call Stack). Mỗi lần gọi hàm, một gói dữ liệu (Activation Record) chứa mọi thông tin của hàm đó được nhét vào Stack. Khi hàm con kết thúc, hệ thống Pop Stack để lôi hàm cha ra chạy tiếp.",
+    "category": "Stacks"
+  },
+  {
+    "id": 25,
+    "question": "What overarching behavioral principle strictly governs a 'Queue' data structure?",
+    "options": [
+      "First-In-First-Out (FIFO)",
+      "Last-In-First-Out (LIFO)",
+      "First-In-Last-Out (FILO)",
+      "Smallest-In-First-Out (SIFO)"
+    ],
+    "answer": 0,
+    "explanation": "Hàng đợi (Queue) mô phỏng chính xác việc xếp hàng mua vé ngoài đời thực. Ai đến trước được phục vụ trước. Nguyên lý này được gọi tắt là FIFO (Vào Trước Ra Trước).",
+    "category": "Queues"
+  },
+  {
+    "id": 26,
+    "question": "In a standard queue implementation, at which physical locations are the elements added and deleted?",
+    "options": [
+      "Elements are added at the 'front', and deleted from the 'rear'",
+      "Elements are added at the 'rear', and deleted from the 'front'",
+      "Both are aggressively added and deleted at the 'front'",
+      "Both are aggressively added and deleted at the 'rear'"
+    ],
+    "answer": 1,
+    "explanation": "Để đảm bảo thứ tự công bằng của FIFO, Hàng đợi phải phân định rõ hai đầu: đầu đuôi (rear) là cửa vào để đón nhận các phần tử mới đến xếp hàng, còn đầu trước (front) là cửa ra, nơi các phần tử cũ nhất được lấy ra xử lý.",
+    "category": "Queues"
+  },
+  {
+    "id": 27,
+    "question": "What significant problem inevitably arises when heavily using a naive linear Array to implement a Queue?",
+    "options": [
+      "Memory corruption dynamically occurs",
+      "The array physically resizes backwards",
+      "The front and rear pointers continuously increment but never decrement, eventually forcing the queue to 'fall off' the right end of the array even if there is empty space at the beginning",
+      "The front pointer mathematically jumps the rear pointer"
+    ],
+    "answer": 2,
+    "explanation": "Trong mảng tuyến tính, mỗi lần thêm hay xóa, con trỏ rear và front chỉ có một đường là tịnh tiến lên phía trước. Theo thời gian, toàn bộ hàng đợi bị trôi dạt về phía vách phải của mảng và đụng tường (tràn), bất chấp việc phía đầu mảng (bên trái) đã bị rút rỗng hoàn toàn.",
+    "category": "Queues"
+  },
+  {
+    "id": 28,
+    "question": "How is the pointer drift problem of a linear Array Queue optimally solved structurally?",
+    "options": [
+      "By mathematically reversing the array constantly",
+      "By forcefully using a hash function",
+      "By structurally using a Circular Array approach where pointers mathematically wrap around back to index 0 using the modulus operator",
+      "By converting it completely into a stack"
+    ],
+    "answer": 2,
+    "explanation": "Để tái sử dụng các ô nhớ trống ở đầu mảng, người ta uốn cong mảng thành Hàng đợi vòng (Circular Array Queue). Khi con trỏ chạy tới ô cuối cùng, thuật toán dùng phép chia lấy dư (Modulus: `(rear + 1) % MAX`) để nó tự động nhảy vòng ngược trở về vạch xuất phát số 0.",
+    "category": "Queues"
+  },
+  {
+    "id": 29,
+    "question": "In a Circular Array Queue representation, what mathematical boundary condition explicitly signals that the queue is entirely EMPTY?",
+    "options": [
+      "front == -1",
+      "rear == MAX",
+      "front == rear",
+      "front == (rear + 1) % MAX"
+    ],
+    "answer": 2,
+    "explanation": "Trong cấu trúc thiết kế của Hàng đợi vòng, con trỏ 'front' thường được quy định chạy ngay phía trước phần tử thực tế đầu tiên một ô. Khi không có ai trong hàng đợi, con trỏ 'rear' không có dữ liệu để quản lý nên nó sẽ tụt lùi và trùng khớp với con trỏ 'front'. Do đó `front == rear` là tín hiệu rỗng.",
+    "category": "Queues"
+  },
+  {
+    "id": 30,
+    "question": "In a Circular Array Queue of size 'MAX', why is it inherently restricted to store a maximum of strictly 'MAX - 1' elements instead of the full 'MAX'?",
+    "options": [
+      "Because compilers forbid full arrays",
+      "Because the 0th index mathematically cannot be used securely",
+      "Because if the queue completely filled all MAX slots, the condition `front == rear` would happen, making it computationally impossible to distinguish a Full queue from an Empty queue",
+      "Because exactly one slot is reserved strictly for a hash pointer"
+    ],
+    "answer": 2,
+    "explanation": "Đây là nhược điểm đánh đổi của Hàng đợi vòng. Nếu ta cố nhồi nhét cho đầy ních toàn bộ MAX ô nhớ, con trỏ rear sẽ chạy bọc lót vòng qua và đuổi kịp con trỏ front (`front == rear`). Khốn nỗi, đây lại chính là biểu thức báo hiệu Queue Rỗng. Để tránh nhầm lẫn tai hại này, hệ thống phải ép buộc hy sinh bỏ trống 1 ô nhớ duy nhất.",
+    "category": "Queues"
+  },
+  {
+    "id": 31,
+    "question": "When structurally implementing a Queue extensively using a Singly Linked List, which two tracking pointers are algorithmically mandatory for maintaining fast O(1) performance?",
+    "options": [
+      "Top and Bottom pointers exclusively",
+      "Head and Middle pointers exclusively",
+      "Front (START) pointer to track the head for O(1) deletions, and a Rear pointer to track the tail for O(1) insertions",
+      "Right link and Left link pointers recursively"
+    ],
+    "answer": 2,
+    "explanation": "Trong danh sách liên kết đơn, việc xóa ở đầu (head) mất O(1) vì có sẵn con trỏ START (đóng vai trò là Front). Tuy nhiên, việc chèn ở đuôi sẽ mất O(N) do phải dò từ đầu đến cuối. Để triệt tiêu khuyết điểm này, thuật toán duy trì thêm một con trỏ Rear, neo sẵn ở cuối danh sách để chèn thần tốc O(1).",
+    "category": "Queues"
+  },
+  {
+    "id": 32,
+    "question": "When executing `addQ` to push an element into a Linked List Queue, if the queue is completely empty beforehand, what structural assignments accurately occur?",
+    "options": [
+      "Only the Rear pointer points to the new node",
+      "The Stack overflows inherently",
+      "Both the Front pointer and the Rear pointer are explicitly updated to simultaneously point to the newly created single node",
+      "The Front pointer is set mathematically to NULL"
+    ],
+    "answer": 2,
+    "explanation": "Khởi đầu rỗng, cả front và rear đều là NULL. Khi có một vị khách đầu tiên bước vào hàng (node duy nhất), khách hàng này vừa là người đứng đầu (front) vừa là người đứng cuối (rear). Thuật toán phải gán cả hai con trỏ front và rear cùng trỏ vào node này.",
+    "category": "Queues"
+  },
+  {
+    "id": 33,
+    "question": "Which of the following computational scenarios is classically considered an ideal Application of Queues?",
+    "options": [
+      "Inverting strings mathematically",
+      "Deep recursive function nesting heavily",
+      "Transferring data asynchronously between disjoint processes (like I/O system buffers), and OS CPU Job Scheduling",
+      "Building robust binary search trees dynamically"
+    ],
+    "answer": 2,
+    "explanation": "Tính công bằng của Queue (đến trước phục vụ trước) được ứng dụng mạnh mẽ trong điều phối tài nguyên hệ điều hành. Ví dụ: Các lệnh in tài liệu được đưa vào một Print Queue Buffer. Máy in sẽ lôi lần lượt tài liệu ở đầu hàng ra in. Lập lịch cho CPU (Job Scheduling) cũng vận hành theo trật tự tương tự.",
+    "category": "Queues"
+  },
+  {
+    "id": 34,
+    "question": "To automatically recognize if a string is perfectly a 'Palindrome' (reads the exact same forwards and backwards) non-recursively, what dual data structures are utilized simultaneously?",
+    "options": [
+      "Two separate Arrays exclusively",
+      "A Hash Table deeply and a Binary Tree",
+      "A Stack (to reverse the order) aggressively combined with a Queue (to preserve original order) for comparative popping",
+      "A Doubly Linked List natively and a Set"
+    ],
+    "answer": 2,
+    "explanation": "Để kiểm tra chuỗi đối xứng (Palindrome, ví dụ 'rotator'), ta đọc từng chữ cái và nhét đồng thời vào cả Stack và Queue. Khi rút ra, Stack sẽ nhả chữ từ dưới lên trên (đảo ngược), còn Queue sẽ nhả chữ từ trên xuống dưới (giữ nguyên). Bằng cách so sánh từng cặp chữ cái nôn ra từ hai cấu trúc này, ta kết luận được tính đối xứng.",
+    "category": "Queues"
+  },
+  {
+    "id": 35,
+    "question": "What makes the Array representation of Queues computationally inferior to the Linked representation when dealing with highly variable data loads?",
+    "options": [
+      "Arrays actively delete pointers mechanically",
+      "The Fixed Size inherently prevents the enqueue operation from adding an item if the array becomes completely full, unlike dynamic Linked Lists which theoretically have no size limit",
+      "Arrays cannot conceptually use a circular structure",
+      "Arrays inherently randomize the input sequence blindly"
+    ],
+    "answer": 1,
+    "explanation": "Mảng (bao gồm cả mảng vòng) mắc kẹt trong chiếc áo chật hẹp của một dung lượng tĩnh cấp phát trước (ví dụ MAX=100). Bất cứ khi nào 100 chỗ bị lấp đầy, nó sẽ báo lỗi tràn và từ chối cung cấp dịch vụ. Danh sách liên kết là hệ thống xin bộ nhớ động theo thời gian thực (malloc/new) nên không bao giờ bị giới hạn, trừ khi sập RAM toàn bộ máy tính.",
+    "category": "Queues"
+  },
+  {
+    "id": 36,
+    "question": "In a Doubly Linked Circular List containing 'n' elements strictly with a head node, exactly how many memory pointer fields currently physically exist within the entire structure?",
+    "options": [
+      "Exactly n pointers securely",
+      "n - 1 pointers structurally",
+      "2 * (n + 1) distinct pointers mathematically",
+      "n^2 pointers functionally"
+    ],
+    "answer": 2,
+    "explanation": "Một node trong danh sách kép có 2 trường con trỏ vật lý (llink và rlink). Danh sách có n phần tử cộng thêm 1 node lính canh (head node), tổng cộng là n + 1 node. Nhân với 2 con trỏ mỗi node, ta có cấu trúc rườm rà lên tới 2(n + 1) con trỏ, gây tốn kém tài nguyên bộ nhớ.",
+    "category": "Doubly Linked Lists"
+  },
+  {
+    "id": 37,
+    "question": "During the extraction macro `element deleteQ(queue_pointer *front)` in a Linked List Queue, what specific programmatic error halts the system entirely?",
+    "options": [
+      "Memory Overflow natively",
+      "Duplicate keys found explicitly",
+      "Calling deletion exactly when `IS_EMPTY(*front)` actively evaluates to true",
+      "Hash collision detected heavily"
+    ],
+    "answer": 2,
+    "explanation": "Xóa phần tử (Dequeue) trong một cấu trúc rỗng (front == NULL) là hành vi truy xuất vùng nhớ bất hợp pháp. Lỗi này (Queue Underflow) sẽ khiến hàm bắt buộc phải văng ra thông báo lỗi và ép dừng toàn bộ luồng chương trình bằng lệnh `exit(1)` để tránh sụp đổ hệ thống.",
+    "category": "Queues"
+  },
+  {
+    "id": 38,
+    "question": "If transforming a recursive programming algorithm iteratively, which Data Structure is scientifically the definitive replacement tool utilized by software engineers?",
+    "options": [
+      "Circular Queues inherently",
+      "Stacks functionally",
+      "Sparse Matrices exclusively",
+      "Doubly Linked Lists mechanically"
+    ],
+    "answer": 1,
+    "explanation": "Như đã phân tích, đệ quy hoạt động dựa trên cơ sở Ngăn xếp hệ thống (Call Stack). Do đó, để 'khử đệ quy' (biến đệ quy thành vòng lặp while/for) nhằm tiết kiệm dung lượng RAM hệ thống, lập trình viên buộc phải tự tạo và thao tác tay trên một cấu trúc Ngăn xếp (Stack) nội bộ ảo.",
+    "category": "Stacks"
+  },
+  {
+    "id": 39,
+    "question": "In the standard `push(stack_pointer *top, element x)` algorithmic implementation for a Linked Stack, where precisely does the dynamically allocated node `t` natively point its internal `t->link`?",
+    "options": [
+      "To NULL explicitly",
+      "To the current Bottom of the Stack exclusively",
+      "To the exact old `*top` mathematical node of the Stack recursively",
+      "To an array index fundamentally"
+    ],
+    "answer": 2,
+    "explanation": "Thao tác Push trên ngăn xếp liên kết là chèn một phần tử vào ngay đầu danh sách. Node mới (`t`) được tạo ra sẽ quăng dây xích (`t->link`) níu chặt lấy node đang làm Đỉnh hiện tại của ngăn xếp (`*top`). Kéo theo đó, con trỏ Đỉnh của hệ thống sẽ nhảy lên đầu node `t` để nhường ngôi vị cao nhất.",
+    "category": "Stacks"
+  },
+  {
+    "id": 40,
+    "question": "What happens algorithmically inside a Singly Linked List if you intensely apply the `free(tmp)` deletion command on a node without proactively connecting the preceding node to the subsequent node first?",
+    "options": [
+      "The list instantly reverses recursively",
+      "The node transforms into a root node cleanly",
+      "The strict pointer chain is violently fractured forever, losing all subsequent elements drastically into unrecoverable memory leaks",
+      "The list securely converts into a circular structure dynamically"
+    ],
+    "answer": 2,
+    "explanation": "Xóa một node ở giữa mà không bẻ con trỏ của node đằng trước vắt qua node đằng sau là lỗi sơ đẳng chết người trong lập trình (Dangling Pointers / Memory Leak). Nếu node trung gian bốc hơi, kết nối bị chặt đứt lìa, và mọi dữ liệu ở nửa sau danh sách sẽ trôi dạt vô định trong RAM, không có bất kỳ con trỏ nào móc vào được nữa.",
+    "category": "Singly Linked Lists"
+  }
+]

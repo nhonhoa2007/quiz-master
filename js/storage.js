@@ -64,10 +64,10 @@ class QuizStorage {
 
   /**
    * Get the saved theme setting.
-   * @returns {string} 'light' or 'dark' (default 'dark' for premium aesthetics)
+   * @returns {string} 'light' or 'dark'
    */
   static getTheme() {
-    return localStorage.getItem(this.THEME_KEY) || 'dark';
+    return localStorage.getItem(this.THEME_KEY) || 'light';
   }
 
   /**

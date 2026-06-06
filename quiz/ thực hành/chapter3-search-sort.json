@@ -1,0 +1,523 @@
+
+[
+  {
+    "id": 1,
+    "question": "If implementing the Sentinel Sequential Search in C++ using a `std::vector<int> list`, why must we ensure the vector's capacity is at least `n + 1` before searching?",
+    "options": [
+      "To store the mathematical sum of the array",
+      "Because C++ vectors automatically sort elements when resized",
+      "Because the algorithm requires appending the 'searchNum' at the exact index 'n' to act as a sentinel, which would cause an out-of-bounds error if the capacity is only 'n'",
+      "To prevent memory leaks during vector destruction"
+    ],
+    "answer": 2,
+    "explanation": "Thuật toán tìm kiếm tuần tự dùng lính canh (Sentinel) yêu cầu gán `list[n].key = searchNum` ngay trước vòng lặp. Trong C++, nếu mảng (hoặc vector) chỉ được cấp phát chính xác `n` phần tử (từ 0 đến n-1), việc truy xuất và gán giá trị tại chỉ số `n` sẽ gây lỗi tràn bộ nhớ (Out-of-bounds). Do đó, phải luôn chừa sẵn 1 ô trống ở cuối.",
+    "category": "Sequential Search (C++)"
+  },
+  {
+    "id": 2,
+    "question": "In a C++ implementation of Sentinel Sequential Search, what does the expression `return ((i < n) ? i : -1);` evaluate to if the element is NOT found?",
+    "options": [
+      "It returns n",
+      "It returns 0",
+      "It returns -1",
+      "It throws a C++ exception"
+    ],
+    "answer": 2,
+    "explanation": "Toán tử 3 ngôi (Ternary operator) trong C++ sẽ kiểm tra điều kiện `i < n`. Nếu phần tử không tồn tại trong mảng gốc, vòng lặp sẽ chạy đến tận vị trí `n` (nơi đặt lính canh) mới dừng lại. Lúc này điều kiện `i < n` là Sai (False), nên biểu thức sẽ trả về `-1`, báo hiệu tìm kiếm thất bại.",
+    "category": "Sequential Search (C++)"
+  },
+  {
+    "id": 3,
+    "question": "What is the average number of comparisons mathematically required for a Successful Sequential Search in an array of size 'n'?",
+    "options": [
+      "n",
+      "O(log n)",
+      "(n + 1) / 2",
+      "n^2"
+    ],
+    "answer": 2,
+    "explanation": "Nếu phần tử chắc chắn có trong mảng, tổng số phép so sánh của tất cả các trường hợp là tổng của cấp số cộng từ 1 đến n. Trung bình cộng của chúng được tính bằng công thức `(n + 1) / 2`.",
+    "category": "Sequential Search (C++)"
+  },
+  {
+    "id": 4,
+    "question": "Before passing a `std::vector<int>` to a Binary Search function in C++, what algorithm from the `<algorithm>` library MUST optimally be run on it first if the data is raw?",
+    "options": [
+      "std::reverse",
+      "std::sort",
+      "std::max_element",
+      "std::accumulate"
+    ],
+    "answer": 1,
+    "explanation": "Tiền đề bắt buộc của Tìm kiếm nhị phân (Binary Search) là mảng đầu vào phải được sắp xếp theo thứ tự (Sorted list). Nếu dữ liệu còn thô (raw), bạn bắt buộc phải gọi hàm `std::sort` của C++ trước, nếu không logic chia đôi mảng sẽ hoàn toàn sai lệch.",
+    "category": "Binary Search (C++)"
+  },
+  {
+    "id": 5,
+    "question": "In a robust C++ Binary Search implementation, why is the loop condition strictly `while (left <= right)` instead of `while (left < right)`?",
+    "options": [
+      "Because C++ arrays are 0-indexed",
+      "To prevent infinite loops",
+      "Because when the search space narrows down to a single element (left == right), that final element must still be checked against the target",
+      "To handle negative numbers properly"
+    ],
+    "answer": 2,
+    "explanation": "Dấu bằng (`<=`) rất quan trọng. Khi không gian tìm kiếm bị thu hẹp tối đa chỉ còn 1 phần tử (lúc này con trỏ `left` và `right` chập làm một), vòng lặp vẫn phải được thực thi thêm 1 lần cuối cùng để đối chiếu phần tử duy nhất đó với `searchNum`.",
+    "category": "Binary Search (C++)"
+  },
+  {
+    "id": 6,
+    "question": "If `list[middle]` is strictly LESS THAN `searchNum` during a Binary Search, how are the boundaries correctly updated in C++?",
+    "options": [
+      "right = middle - 1;",
+      "left = middle + 1;",
+      "right = middle;",
+      "left = middle;"
+    ],
+    "answer": 1,
+    "explanation": "Nếu giá trị ở giữa nhỏ hơn giá trị cần tìm, nghĩa là mục tiêu nằm ở nửa bên phải của mảng. Do đó, ta phải loại bỏ nửa bên trái bằng cách kéo giới hạn trái (`left`) vượt qua `middle` một bậc (`left = middle + 1`).",
+    "category": "Binary Search (C++)"
+  },
+  {
+    "id": 7,
+    "question": "What is the theoretical maximum number of comparisons Binary Search makes on a sorted array of 1,048,576 elements?",
+    "options": [
+      "1,048,576",
+      "524,288",
+      "20",
+      "30"
+    ],
+    "answer": 2,
+    "explanation": "Độ phức tạp của Binary Search là $O(\\log_2 n)$. Với $n = 1,048,576$, số phép chia đôi tối đa để mảng chỉ còn 1 phần tử là $\\log_2(1,048,576) = 20$. Đây là sức mạnh của thuật toán này so với tìm kiếm tuần tự.",
+    "category": "Binary Search (C++)"
+  },
+  {
+    "id": 8,
+    "question": "When solving the 'List Verification' problem in C++ (checking if list A appears in list B), what is the optimal Time Complexity if we use `std::sort` on both lists first?",
+    "options": [
+      "O(m * n)",
+      "O(m log m + n log n + m + n)",
+      "O(m + n)",
+      "O(1)"
+    ],
+    "answer": 1,
+    "explanation": "Thay vì lồng 2 vòng lặp tốn $O(m \\times n)$, giải pháp tối ưu là sắp xếp danh sách 1 tốn $O(m \\log m)$, sắp xếp danh sách 2 tốn $O(n \\log n)$, sau đó dùng 2 con trỏ duyệt song song qua 2 mảng đã sắp xếp tốn $O(m + n)$. Tổng chi phí thời gian là $O(m \\log m + n \\log n + m + n)$.",
+    "category": "Sorting Theory"
+  },
+  {
+    "id": 9,
+    "question": "In C++, a sorting algorithm is mathematically defined as 'Stable' if:",
+    "options": [
+      "It never throws a std::bad_alloc exception",
+      "It runs in exactly O(N log N) time consistently",
+      "Records with duplicate keys perfectly retain their original relative order after sorting",
+      "It completely ignores duplicate keys"
+    ],
+    "answer": 2,
+    "explanation": "Một thuật toán sắp xếp được gọi là 'Ổn định' (Stable) nếu với 2 phần tử có cùng giá trị khóa, phần tử nào đứng trước trong mảng gốc sẽ vẫn tiếp tục đứng trước phần tử kia trong mảng kết quả sau khi đã sắp xếp xong.",
+    "category": "Sorting Theory"
+  },
+  {
+    "id": 10,
+    "question": "What clearly distinguishes an 'External Sorting' algorithm in C++ software architecture?",
+    "options": [
+      "It uses #include <algorithm>",
+      "It executes on a remote web server",
+      "It is forced to store intermediate mathematical results on secondary storage (hard disks) because the dataset is too massive to fit into main RAM",
+      "It strictly sorts strings instead of integers"
+    ],
+    "answer": 2,
+    "explanation": "Sắp xếp ngoại (External Sort) được sử dụng khi dữ liệu lớn đến mức không thể nạp toàn bộ vào bộ nhớ chính (RAM) cùng một lúc. Thuật toán phải chia nhỏ dữ liệu, sắp xếp từng phần trong RAM rồi ghi tạm (intermediate results) ra đĩa cứng (hard disks) để trộn lại sau.",
+    "category": "Sorting Theory"
+  },
+  {
+    "id": 11,
+    "question": "In the standard C++ loop for Insertion Sort `for (int i = 1; i < n; i++)`, why does the index `i` start at 1 instead of 0?",
+    "options": [
+      "Because the 0th element acts as a sentinel",
+      "Because array indices logically start at 1 in C++",
+      "Because the single element at index 0 is trivially considered already sorted, forming the initial sorted sub-array",
+      "To prevent division by zero errors"
+    ],
+    "answer": 2,
+    "explanation": "Insertion Sort duy trì một danh sách con đã sắp xếp ở đầu mảng. Khởi đầu, phần tử duy nhất ở vị trí 0 nghiễm nhiên tự nó đã có thứ tự. Do đó, vòng lặp bắt đầu từ `i = 1` để lấy phần tử thứ hai chèn vào danh sách con chứa phần tử thứ nhất đó.",
+    "category": "Insertion Sort (C++)"
+  },
+  {
+    "id": 12,
+    "question": "In the inner `for` loop of Insertion Sort `for (j = i-1; j >= 0 && next_key < list[j]; j--)`, what physical action takes place when the condition is true?",
+    "options": [
+      "The elements are completely deleted",
+      "The element `list[j]` is shifted exactly one position to the right (`list[j+1] = list[j]`) to make a hole for the incoming key",
+      "The loop breaks immediately",
+      "The elements are swapped using `std::swap`"
+    ],
+    "answer": 1,
+    "explanation": "Chừng nào phần tử đang quét `list[j]` còn lớn hơn phần tử cần chèn `next_key`, thuật toán sẽ dịch chuyển `list[j]` sang phải một ô (`list[j+1] = list[j]`). Hành động này tạo ra một 'khe hở' trượt dần về bên trái cho đến khi tìm được chỗ cắm chốt hợp lý.",
+    "category": "Insertion Sort (C++)"
+  },
+  {
+    "id": 13,
+    "question": "According to the computational analysis of Insertion Sort, what happens mathematically if an element is NOT Left-Out-Of-Order (non-LOO)?",
+    "options": [
+      "It causes O(n) shifts",
+      "It induces exactly 1 comparison and 0 structural shifts",
+      "It crashes the C++ program",
+      "It is recursively removed"
+    ],
+    "answer": 1,
+    "explanation": "Phần tử không vi phạm trật tự trái (non-LOO) nghĩa là nó vốn đã lớn hơn phần tử đứng ngay trước nó. Khi vòng lặp trong bắt đầu, nó thực hiện đúng 1 phép so sánh, thấy điều kiện sai nên ngắt vòng lặp ngay lập tức, không có bất kỳ sự dịch chuyển mảng nào xảy ra.",
+    "category": "Insertion Sort (C++)"
+  },
+  {
+    "id": 14,
+    "question": "How does 'List Insertion Sort' theoretically improve upon standard Array Insertion Sort in C++?",
+    "options": [
+      "It completely changes the time complexity to O(n log n)",
+      "It uses `std::vector` instead of raw arrays",
+      "By utilizing Linked Lists, it perfectly bypasses the heavy cost of physically moving array elements, relying only on pointer adjustments",
+      "It uses binary search trees"
+    ],
+    "answer": 2,
+    "explanation": "Dịch chuyển dữ liệu trong mảng rất tốn kém thời gian CPU. List Insertion Sort chuyển cấu trúc lưu trữ sang Danh sách liên kết (Linked List), nơi việc chèn một phần tử vào giữa chỉ đòi hỏi việc bẻ gãy và nối lại 2 con trỏ (pointer adjustments), loại bỏ hoàn toàn chi phí dời mảng.",
+    "category": "Insertion Sort (C++)"
+  },
+  {
+    "id": 15,
+    "question": "In the optimized `selectionSort` function in C++, why do we track the `min` index rather than calling `std::swap(list[i], list[j])` continuously inside the inner loop?",
+    "options": [
+      "Because `std::swap` throws exceptions often",
+      "Because executing memory swaps inside the inner loop is extremely slow; tracking the `min` index allows executing exactly ONE swap per outer loop iteration",
+      "Because it mathematically reduces comparisons to O(log n)",
+      "Because compilers forbid swapping inside loops"
+    ],
+    "answer": 1,
+    "explanation": "Thao tác tráo đổi (swap) tốn tới 3 lệnh gán bộ nhớ, rất tốn kém. Phiên bản tối ưu của Selection Sort chỉ dùng một biến nguyên `min` để ghi nhớ chỉ mục của số nhỏ nhất. Sau khi vòng lặp trong kết thúc, nó mới gọi lệnh hoán đổi đúng 1 lần duy nhất ở ngoài cùng.",
+    "category": "Selection Sort (C++)"
+  },
+  {
+    "id": 16,
+    "question": "In Selection Sort, what is structurally guaranteed about the sub-array `A` to `A[i-1]` exactly at the start of step `i`?",
+    "options": [
+      "They are the largest elements",
+      "They are completely unsorted",
+      "They are the absolute smallest 'i' elements of the entire array, permanently fixed in their perfectly sorted final positions",
+      "They are sorted in descending order"
+    ],
+    "answer": 2,
+    "explanation": "Khác với Insertion Sort (dãy con chỉ có thứ tự tương đối), thuật toán Selection Sort bốc chính xác phần tử nhỏ nhất đặt vào vị trí 0, phần tử nhỏ thứ nhì đặt vào vị trí 1. Do đó, dãy con ở các bước trước là những viên gạch đã được chốt hạ vĩnh viễn, đúng vị trí tuyệt đối.",
+    "category": "Selection Sort (C++)"
+  },
+  {
+    "id": 17,
+    "question": "What is the universal theoretical Time Complexity for a standard Selection Sort, regardless of whether the initial array is sorted or perfectly reversed?",
+    "options": [
+      "O(n)",
+      "O(n log n)",
+      "O(1)",
+      "O(n^2)"
+    ],
+    "answer": 3,
+    "explanation": "Selection Sort là một thuật toán 'mù'. Cho dù mảng đã được sắp xếp sẵn, vòng lặp trong của nó vẫn phải duyệt qua toàn bộ các phần tử còn lại để chắc chắn rằng không có số nào nhỏ hơn số hiện tại. Tổng số phép so sánh luôn luôn là $n(n-1)/2$, mang tới độ phức tạp $O(n^2)$ trong mọi trường hợp.",
+    "category": "Selection Sort (C++)"
+  },
+  {
+    "id": 18,
+    "question": "In the provided Bubble Sort C code logic `for(j=n-1; j>i; j--)`, what physical phenomenon explicitly occurs during one inner loop iteration?",
+    "options": [
+      "The exact median element is found",
+      "Pairs of elements are pushed aggressively to the right",
+      "Adjacent out-of-order elements are swapped, causing the strictly SMALLEST remaining element to 'bubble up' to index 'i'",
+      "The array is mathematically split in half"
+    ],
+    "answer": 2,
+    "explanation": "Đoạn code trong slide thiết kế vòng lặp chạy ngược từ cuối mảng (`j = n-1`) lùi về vị trí `i`. Khi so sánh 2 phần tử kề nhau, phần tử nhỏ hơn sẽ liên tục bị đẩy lùi về phía trước (swap), tạo ra hiệu ứng 'nổi bọt' đem số nhỏ nhất trồi lên bề mặt tại vị trí `i`.",
+    "category": "Bubble Sort (C++)"
+  },
+  {
+    "id": 19,
+    "question": "Which advanced algorithmic design paradigm does the Quick Sort algorithm fundamentally implement in C++?",
+    "options": [
+      "Dynamic Programming Paradigm",
+      "Greedy Paradigm",
+      "Divide and Conquer Paradigm",
+      "Backtracking Paradigm"
+    ],
+    "answer": 2,
+    "explanation": "Quick Sort là một minh chứng kinh điển của tư tưởng 'Chia để trị' (Divide and Conquer). Nó chọn một trục (pivot), chia mảng lớn thành hai mảng con (một bên nhỏ hơn pivot, một bên lớn hơn), sau đó dùng đệ quy để trị riêng từng mảng con đó.",
+    "category": "Quick Sort (C++)"
+  },
+  {
+    "id": 20,
+    "question": "In the `quickSort` C code snippet provided in the slides, how is the structural 'Pivot' element exclusively chosen?",
+    "options": [
+      "The mathematically calculated median of the array",
+      "The physical last element: `list[right].key`",
+      "The physical first element of the current partition: `list[left].key`",
+      "A completely random array index"
+    ],
+    "answer": 2,
+    "explanation": "Quan sát trực tiếp mã nguồn trong slide: `pivot = list[left].key;`. Thuật toán trong bài giảng luôn luôn mặc định bốc phần tử đứng ở đầu cùng bên trái của mảng (hoặc phân đoạn hiện tại) để làm giá trị trục (pivot).",
+    "category": "Quick Sort (C++)"
+  },
+  {
+    "id": 21,
+    "question": "During the C++ Quick Sort partition `do i++; while (list[i].key < pivot);`, exactly why does the left pointer 'i' freeze and stop advancing?",
+    "options": [
+      "When it perfectly finds a target zero",
+      "When it hits the array boundary unconditionally",
+      "When it discovers an element that is strictly GREATER THAN OR EQUAL to the pivot, indicating an element placed on the wrong side",
+      "When `i` becomes equal to `j`"
+    ],
+    "answer": 2,
+    "explanation": "Nhiệm vụ của con trỏ `i` là duyệt tìm những kẻ 'lạc loài' lớn hơn trục (pivot) đang nằm sai chỗ ở nửa bên trái mảng. Vòng lặp `while (< pivot)` sẽ gãy và dừng lại ngay khi nó gặp một phần tử lớn hơn hoặc bằng pivot, đánh dấu mục tiêu để chuẩn bị tráo đổi.",
+    "category": "Quick Sort (C++)"
+  },
+  {
+    "id": 22,
+    "question": "What is the precise condition in Quick Sort that validates the execution of `std::swap(list[i], list[j])`?",
+    "options": [
+      "if (i == j)",
+      "if (i > j)",
+      "if (list[i] == list[j])",
+      "if (i < j)"
+    ],
+    "answer": 3,
+    "explanation": "Lệnh tráo đổi hai phần tử lỗi (do con trỏ `i` và `j` bắt được) chỉ hợp lệ nếu hai con trỏ này chưa đi đâm xuyên qua nhau (`i < j`). Nếu `i >= j`, nghĩa là hai cánh quân đã gặp nhau ở giữa, quá trình chia mảng đã hoàn tất, không được phép tráo đổi nữa.",
+    "category": "Quick Sort (C++)"
+  },
+  {
+    "id": 23,
+    "question": "At the very end of the partition `do-while` loop in Quick Sort, what critical macro instruction `SWAP(list[left], list[j], temp)` functionally achieves?",
+    "options": [
+      "It deletes the pivot completely",
+      "It forces the pivot out of the array",
+      "It mathematically moves the Pivot from its starting position (`left`) into its absolute, permanent sorted location at index `j`",
+      "It reverses the entire array"
+    ],
+    "answer": 2,
+    "explanation": "Sau khi quá trình quét kết thúc, con trỏ `j` sẽ dừng lại đúng ngay vị trí của phần tử cuối cùng thuộc nhóm nhỏ hơn pivot. Lệnh Swap lúc này bốc Pivot (đang nằm ở `left`) tráo với phần tử ở `j`. Pivot chính thức an tọa tại vị trí chuẩn xác vĩnh viễn của nó trong mảng.",
+    "category": "Quick Sort (C++)"
+  },
+  {
+    "id": 24,
+    "question": "In what specific structural scenario does the Quick Sort algorithm severely degrade into a Worst-Case Time Complexity of O(n^2)?",
+    "options": [
+      "When the array is entirely composed of mathematically random numbers",
+      "When the chosen pivot inherently fails to divide the array evenly in every recursive step (e.g., the array is already completely sorted, and the first element is always picked as the pivot)",
+      "When the array size is a prime number",
+      "When the array uses floating-point values"
+    ],
+    "answer": 1,
+    "explanation": "Nếu mảng đã được sắp xếp sẵn mà ta vẫn mù quáng chọn phần tử đầu tiên làm pivot, thì mảng sẽ không bị chia làm đôi. Thay vào đó, một bên rỗng, bên kia chứa n-1 phần tử. Sự chia cắt tồi tệ này khiến thuật toán suy thoái thành đệ quy lồng nhau N tầng, mang tới giới hạn thảm họa $O(n^2)$.",
+    "category": "Quick Sort (C++)"
+  },
+  {
+    "id": 25,
+    "question": "In C++ recursive operations, why does Quick Sort possess a Worst-Case Space Complexity of O(n)?",
+    "options": [
+      "Because it natively allocates an entire secondary `std::vector` to hold data",
+      "Because it mathematically stores variables in a massive external hash table",
+      "Due to the heavy recursive Activation Records pushed onto the OS Call Stack when the partition drastically degenerates into 'n' nested recursive calls",
+      "Because it reads data from the hard drive"
+    ],
+    "answer": 2,
+    "explanation": "Quick Sort không cấp phát mảng phụ, nhưng nó bị đánh thuế ở bộ nhớ Ngăn xếp hệ thống (Call Stack). Ở trường hợp tồi tệ nhất ($O(n^2)$), nó gọi đệ quy lồng vào nhau liên tục N tầng. Mỗi tầng đệ quy đều tốn dung lượng lưu trữ trạng thái hàm trên Stack, tiêu tốn $O(n)$ không gian bộ nhớ.",
+    "category": "Quick Sort (C++)"
+  },
+  {
+    "id": 26,
+    "question": "Unlike Quick Sort, Merge Sort guarantees a Time Complexity of O(n log n) across Best, Average, and Worst cases. Why?",
+    "options": [
+      "Because it skips duplicate elements automatically",
+      "Because its divide phase mathematically always cuts the array perfectly in half blindly based on the middle index, avoiding partition degeneration",
+      "Because it doesn't use recursion",
+      "Because it randomly picks elements"
+    ],
+    "answer": 1,
+    "explanation": "Khác với phong độ phập phù phụ thuộc dữ liệu của Quick Sort, Merge Sort nhắm thẳng vào mốc chỉ mục: nó luôn lấy điểm giữa (`mid`) để chặt phăng mảng ra làm hai nửa mảng con hoàn toàn bằng nhau. Mọi trường hợp dữ liệu đều không thể bẻ cong cơ chế này, giữ nguyên vận tốc $O(n \\log n)$ vững chãi.",
+    "category": "Merge Sort (C++)"
+  },
+  {
+    "id": 27,
+    "question": "In a C++ implementation of Merge Sort, what major computational disadvantage structurally sets it apart from Quick Sort?",
+    "options": [
+      "It requires exactly O(N) additional Space Complexity because merging two sorted arrays securely requires a fully allocated temporary secondary array",
+      "It cannot sort negative integers",
+      "It scrambles the stability of the array",
+      "It takes O(N^2) time to merge the lists"
+    ],
+    "answer": 0,
+    "explanation": "Điểm trừ lớn nhất khiến Merge Sort mất điểm trước Quick Sort là lòng tham bộ nhớ. Để hợp nhất (merge) hai danh sách, nó bắt buộc phải xin cấp phát một mảng tạm (Temp array / extra array) to bằng đúng mảng gốc để chứa đồ, ăn gian $O(n)$ Space Complexity.",
+    "category": "Merge Sort (C++)"
+  },
+  {
+    "id": 28,
+    "question": "In the `merge` function of Merge Sort, the logic `if (list[i].key <= list[j].key)` explicitly favors the left list element when keys are equal. What vital property does this preserve?",
+    "options": [
+      "Memory efficiency",
+      "Mathematical Sorting Stability",
+      "Algorithmic Randomness",
+      "C++ Exception Safety"
+    ],
+    "answer": 1,
+    "explanation": "Đây là cốt lõi tạo nên tính Ổn định (Stable) của Merge Sort. Khi hai phần tử ở hai danh sách bằng nhau, dấu `=` trong thuật toán chỉ định ưu tiên bốc phần tử nằm ở danh sách bên trái (phần tử xuất hiện trước trong mảng gốc) vào mảng phụ trước. Nhờ vậy, trật tự cũ được bảo vệ.",
+    "category": "Merge Sort (C++)"
+  },
+  {
+    "id": 29,
+    "question": "How does the 'Iterative' (Bottom-up) version of Merge Sort fundamentally behave compared to the Recursive version in C++?",
+    "options": [
+      "It uses exactly three nested while-loops without arrays",
+      "It avoids OS Stack overhead by completely bypassing recursion, starting by structurally merging adjacent pairs of size 1, then size 2, size 4, multiplying until sorted",
+      "It dynamically switches to Quick Sort for sub-arrays under length 10",
+      "It forcefully uses a C++ `std::stack` to fake recursion"
+    ],
+    "answer": 1,
+    "explanation": "Phiên bản khử đệ quy (Iterative) hoạt động theo kiểu xây gạch từ móng (Bottom-up). Nó xem mỗi phần tử đơn lẻ là một mảng đã sắp xếp, sau đó tiến hành gộp từng cặp độ dài 1 thành 2, rồi gộp cặp 2 thành 4, nhân đôi liên tục kích thước khối cho đến khi nuốt trọn mảng gốc. Cách này triệt tiêu hoàn toàn chi phí Call Stack của đệ quy.",
+    "category": "Merge Sort (C++)"
+  },
+  {
+    "id": 30,
+    "question": "In the `merge` code snippet, what strictly happens if the `while (i <= m && j <= n)` comparison loop finishes because the left sub-list completely runs out of elements (`i > m`)?",
+    "options": [
+      "The program terminates with an error",
+      "The remaining unsorted elements in the right sub-list `list[j...n]` are systematically copied sequentially into the end of the temp array",
+      "The entire right sub-list is discarded",
+      "The elements are mathematically summed"
+    ],
+    "answer": 1,
+    "explanation": "Quá trình đọ sức kết thúc ngay khi một bên cạn kiệt phần tử. Đoạn code `if (i > m)` xác nhận danh sách trái đã cạn. Khối lệnh `for (t=j; t<=n; t++)` theo sau sẽ làm nhiệm vụ hốt trọn vẹn phần đuôi còn dư của danh sách phải và chép nối tiếp thẳng vào mảng kết quả `sorted[]`.",
+    "category": "Merge Sort (C++)"
+  },
+  {
+    "id": 31,
+    "question": "Mathematically, what is the exact Time Complexity physically required just to merge two already sorted sub-lists containing a combined total of 'n' elements?",
+    "options": [
+      "O(1)",
+      "O(log n)",
+      "O(n)",
+      "O(n^2)"
+    ],
+    "answer": 2,
+    "explanation": "Thao tác trộn (merge) chỉ đòi hỏi các con trỏ duyệt một tiến trình một chiều duy nhất qua mọi phần tử của cả hai danh sách con. Mỗi phần tử chỉ được đem ra so sánh và chép vào mảng tạm đúng một lần duy nhất. Tổng số phép toán tỷ lệ thuận trực tiếp với tổng số phần tử, tức là $O(n)$.",
+    "category": "Merge Sort (C++)"
+  },
+  {
+    "id": 32,
+    "question": "Which of the following natively describes the algorithmic behavior of C++ `std::sort` as typically implemented by modern compilers (Introsort)?",
+    "options": [
+      "It is purely a basic Bubble Sort",
+      "It uses an unstable combination of Quick Sort (for speed), switching to Heap Sort (to prevent O(n^2) worst-case), and Insertion Sort (for tiny sub-arrays)",
+      "It is mathematically a strict Merge Sort",
+      "It uses recursive Selection Sort"
+    ],
+    "answer": 1,
+    "explanation": "Tuy tài liệu gốc không trực tiếp nhắc đến Introsort, nhưng C++ `std::sort` hiện đại thường dùng nó. Bằng cách hiểu điểm yếu $O(n^2)$ của Quick Sort, C++ sẽ dùng Quick Sort ban đầu, nhưng nếu phát hiện đệ quy lún quá sâu, nó lập tức bẻ lái sang Heap Sort để duy trì $O(n \\log n)$, và dùng Insertion Sort cho các mảnh mảng rất nhỏ (do tốc độ vi mô cao).",
+    "category": "C++ Sorting Knowledge"
+  },
+  {
+    "id": 33,
+    "question": "If we rigorously analyze the basic `selectionSort` versus the optimized `selectionSort'` in C++, what is fundamentally the difference in the number of memory write operations (swaps) per outer loop iteration?",
+    "options": [
+      "The basic executes zero swaps, the optimized executes exactly N swaps",
+      "The basic executes multiple aggressive swaps per pass, whereas the optimized executes a mathematically strict MAXIMUM of exactly ONE swap per pass",
+      "They both execute exactly the same amount of memory swaps unconditionally",
+      "The optimized uses extra memory arrays to avoid swapping"
+    ],
+    "answer": 1,
+    "explanation": "Sự nâng cấp rõ ràng nhất là: bản ngây thơ (basic) chèn lệnh swap trực tiếp vào bên trong vòng lặp so sánh `if`, gây ra sự hoán đổi dữ liệu vật lý liên tục. Bản nâng cấp (optimized `selectionSort'`) mang lệnh swap ra khỏi vòng lặp trong, chỉ bảo lưu con trỏ `min`, qua đó khống chế số lượng swap tối đa chỉ là 1 lần cho mỗi bước lặp ngoài.",
+    "category": "Selection Sort (C++)"
+  },
+  {
+    "id": 34,
+    "question": "What explicitly causes standard Quick Sort to be technically classified as an 'Unstable' sorting algorithm in C++ data structures?",
+    "options": [
+      "It frequently throws memory pointer exceptions",
+      "The long-distance jumping swaps executed across the pivot boundary easily leap over identical keys, violently scrambling their original relative chronological order",
+      "It fundamentally uses a random number generator that breaks stability completely",
+      "It randomly deletes duplicated keys from memory arrays"
+    ],
+    "answer": 1,
+    "explanation": "Trong pha phân mảnh (partition), Quick Sort dùng lệnh `SWAP(list[i], list[j])` để ném các phần tử từ đầu này sang tít đầu kia của mảng một cách thô bạo. Sự hoán vị tầm xa nhảy vọt này rất dễ dàng bứng một phần tử vượt mặt một phần tử khác có cùng giá trị, phá vỡ hoàn toàn trật tự gốc, khiến nó bị gán nhãn Không ổn định (Unstable).",
+    "category": "Quick Sort (C++)"
+  },
+  {
+    "id": 35,
+    "question": "When defining the `mSort(list, left, right)` recursive function in C++, what specific condition gracefully halts the infinite recursion loops (Base Case)?",
+    "options": [
+      "if (list[left] == list[right])",
+      "if (left == 0)",
+      "if (right > left)",
+      "if (mid == 0)"
+    ],
+    "answer": 2,
+    "explanation": "Đoạn code trong slide chỉ định hàm đệ quy chỉ được phép tách mảng và đi tiếp nếu khối lệnh nằm trong rào cản `if (right > left)`. Khi mảng bị chẻ nhỏ đến mức chỉ còn 1 phần tử (lúc này `left == right`), điều kiện gãy, vòng đệ quy sẽ tự động chạm đáy (Base Case) và bắt đầu lùi lại (return) để tiến hành gộp mảng.",
+    "category": "Merge Sort (C++)"
+  },
+  {
+    "id": 36,
+    "question": "Which specific C++ standard library data structure is logically analogous to the operational behavior used entirely by the Quick Sort implementation?",
+    "options": [
+      "std::queue",
+      "std::stack",
+      "std::map",
+      "std::unordered_set"
+    ],
+    "answer": 1,
+    "explanation": "Mặc dù Quick Sort dùng đệ quy ngầm định thay vì gọi cấu trúc cụ thể, nhưng bản chất của đệ quy là nó đẩy các lời gọi hàm phân mảnh vào Ngăn xếp hệ thống (Call Stack). Do đó, `std::stack` chính là người anh em mô phỏng chính xác nhất quy trình lưu trữ trạng thái xử lý LIFO (Vào sau ra trước) của thuật toán này.",
+    "category": "Quick Sort (C++)"
+  },
+  {
+    "id": 37,
+    "question": "In the context of the C++ code for Recursive Merge Sort, what formula computes the `mid` index properly avoiding potential integer overflow for massive array bounds?",
+    "options": [
+      "mid = (left + right) / 2;",
+      "mid = left + (right - left) / 2;",
+      "mid = left * right / 2;",
+      "mid = right - left / 2;"
+    ],
+    "answer": 1,
+    "explanation": "Mặc dù slide ghi `mid = (left + right) / 2`, nhưng trong thực tế lập trình C++ nâng cao, nếu mảng khổng lồ khiến `left + right` vượt quá giới hạn của kiểu `int` (khoảng 2.1 tỷ), máy tính sẽ bị tràn số (overflow) và sinh ra số âm. Cách viết chuẩn xác chống tràn trong C++ luôn là `left + (right - left) / 2`.",
+    "category": "Merge Sort (C++)"
+  },
+  {
+    "id": 38,
+    "question": "During the final logic phase of the C++ `merge` function, a loop `for (i = 0; i < num_elements; i++) list[right] = temp[right]; right--;` occurs. What is its exact structural purpose?",
+    "options": [
+      "It deletes the temporary array from RAM",
+      "It fundamentally sorts the newly merged items in descending order aggressively",
+      "It mechanically copies the completely merged and sorted sequence from the temporary RAM buffer `temp` back into the original structural `list` array",
+      "It zeroes out the remaining array values"
+    ],
+    "answer": 2,
+    "explanation": "Hàm merge phải thao tác các phép so sánh trên một không gian trung lập (mảng `temp`). Sau khi đã cất công nhặt các số từ nhỏ đến lớn xếp đầy vào mảng `temp` này, thuật toán phải dùng một vòng lặp phụ để hốt toàn bộ thành quả đó chép đè ngược trở lại vào mảng gốc `list`, chính thức cập nhật mảng gốc.",
+    "category": "Merge Sort (C++)"
+  },
+  {
+    "id": 39,
+    "question": "If you analyze the standard execution of a C++ Insertion Sort mathematically, exactly how many logical 'passes' (outer loops) does it definitively complete on an array of size 'n'?",
+    "options": [
+      "Exactly n passes unconditionally",
+      "Exactly n - 1 passes logically",
+      "Exactly log(n) passes strictly",
+      "Exactly n/2 passes"
+    ],
+    "answer": 1,
+    "explanation": "Như tài liệu ghi nhận: 'n-1 steps in the insertion sorting algorithm'. Phần tử đầu tiên (vị trí 0) nghiễm nhiên đã nằm gọn trong khu vực sắp xếp. Thuật toán chỉ cần duyệt và xử lý chèn $n-1$ phần tử còn lại (từ vị trí 1 đến $n-1$) là đủ để hoàn thành toàn bộ mảng.",
+    "category": "Insertion Sort (C++)"
+  },
+  {
+    "id": 40,
+    "question": "Which of these sorting algorithms mathematically operates as an 'Internal Sorting' method in C++ memory management?",
+    "options": [
+      "An algorithm storing values aggressively to an SQL server directly",
+      "An algorithm manipulating data exclusively confined within the main CPU RAM completely continuously",
+      "An algorithm offloading arrays strictly to secondary external Hard Disk buffer files during swapping",
+      "An algorithm pushing files over a TCP network"
+    ],
+    "answer": 1,
+    "explanation": "Theo định nghĩa lý thuyết về sắp xếp, Sắp xếp nội (Internal Sort) ám chỉ các thuật toán chỉ thao tác trên một tập dữ liệu nhỏ gọn có thể chứa vừa vặn toàn bộ 100% bên trong bộ nhớ chính của máy tính (RAM) mà không cần phải đẩy dữ liệu thừa ra các thiết bị lưu trữ thứ cấp (hard disks).",
+    "category": "Sorting Theory"
+  }
+]

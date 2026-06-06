@@ -18,56 +18,56 @@ class QuizUI {
       description: '5 câu hỏi kỹ thuật ES6+'
     },
     {
-      file: 'quiz/chapter1-algorithm-analysis.json',
+      file: 'quiz/lý thuyết/chapter1-algorithm-analysis.json',
       name: 'Phân tích thuật toán',
       displayName: 'Chương 1: Phân Tích Thuật Toán',
       category: 'Cấu trúc dữ liệu',
       description: '40 câu hỏi'
     },
     {
-      file: 'quiz/chapter2-stack-queue.json',
+      file: 'quiz/lý thuyết/chapter2-stack-queue.json',
       name: 'Stack và Queue',
       displayName: 'Chương 2: Stack & Queue',
       category: 'Cấu trúc dữ liệu',
       description: '40 câu hỏi'
     },
     {
-      file: 'quiz/chapter3-search-sort.json',
+      file: 'quiz/lý thuyết/chapter3-search-sort.json',
       name: 'Tìm kiếm và sắp xếp',
       displayName: 'Chương 3: Search & Sort',
       category: 'Cấu trúc dữ liệu',
       description: '40 câu hỏi'
     },
     {
-      file: 'quiz/chapter4-tree.json',
+      file: 'quiz/lý thuyết/chapter4-tree.json',
       name: 'Cây',
       displayName: 'Chương 4: Tree',
       category: 'Cấu trúc dữ liệu',
       description: '40 câu hỏi'
     },
     {
-      file: 'quiz/chapter5-heap.json',
+      file: 'quiz/lý thuyết/chapter5-heap.json',
       name: 'Heap',
       displayName: 'Chương 5: Heap',
       category: 'Cấu trúc dữ liệu',
       description: '40 câu hỏi'
     },
     {
-      file: 'quiz/chapter6-graph.json',
+      file: 'quiz/lý thuyết/chapter6-graph.json',
       name: 'Đồ thị',
       displayName: 'Chương 6: Graph',
       category: 'Cấu trúc dữ liệu',
       description: '40 câu hỏi'
     },
     {
-      file: 'quiz/chapter7-hashing.json',
+      file: 'quiz/lý thuyết/chapter7-hashing.json',
       name: 'Hashing',
       displayName: 'Chương 7: Hashing',
       category: 'Cấu trúc dữ liệu',
       description: '40 câu hỏi'
     },
     {
-      file: 'quiz/extra-binarySearchTree.json',
+      file: 'quiz/lý thuyết/extra-binarySearchTree.json',
       name: 'Binary Search Tree',
       displayName: 'Bổ sung: Binary Search Tree',
       category: 'Cấu trúc dữ liệu',
@@ -247,6 +247,21 @@ class QuizUI {
       document.documentElement.setAttribute('data-theme', newTheme);
       QuizStorage.setTheme(newTheme);
       this.showToast(`Đã chuyển sang giao diện ${newTheme === 'dark' ? 'Tối' : 'Sáng'}.`, 'info');
+    });
+
+    document.querySelectorAll('.nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        this.showScreen('landing');
+        document.querySelectorAll('.nav-link').forEach(item => item.classList.remove('active'));
+        link.classList.add('active');
+
+        const target = link.dataset.target;
+        if (target === 'exams') {
+          document.querySelector('.preset-quizzes')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        } else if (target === 'history') {
+          document.querySelector('.history-panel')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
     });
 
     // 2. Drag & Drop File Upload
