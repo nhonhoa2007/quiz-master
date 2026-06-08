@@ -145,5 +145,33 @@
     "displayName": "Extra BinarySearchTree · Lý thuyết",
     "category": "Lý thuyết",
     "description": "40 câu hỏi"
+  },
+  {
+    "file": "quiz/test/graph-hash.json",
+    "name": "Graph Hash · Test",
+    "displayName": "Graph Hash · Test",
+    "category": "Test",
+    "description": "90 câu hỏi"
+  },
+  {
+    "file": "quiz/test/test1.json",
+    "name": "Test 1 · C/C++ Review",
+    "displayName": "Test 1 · C/C++ Review",
+    "category": "Test",
+    "description": "90 câu hỏi"
+  },
+  {
+    "file": "quiz/test/test2.json",
+    "name": "Test 2 · C/C++ Review",
+    "displayName": "Test 2 · C/C++ Review",
+    "category": "Test",
+    "description": "90 câu hỏi"
+  },
+  {
+    "file": "quiz/test/test3.json",
+    "name": "Test 3 · C/C++ Review",
+    "displayName": "Test 3 · C/C++ Review",
+    "category": "Test",
+    "description": "90 câu hỏi"
   }
 ]

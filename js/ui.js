@@ -1324,6 +1324,7 @@ class QuizUI {
     list.innerHTML = '';
     
     const history = QuizStorage.getHistory();
+    this.updateDashboardStats(history);
     const landingChartDiv = document.getElementById('landing-chart-container');
     
     if (history.length === 0) {
@@ -1648,6 +1649,24 @@ class QuizUI {
       card.append(content, deleteBtn);
       presetGrid.appendChild(card);
     });
+
+    this.updateDashboardStats();
+  }
+
+  updateDashboardStats(history = QuizStorage.getHistory()) {
+    const customQuizzes = QuizStorage.getCustomQuizzes();
+    const quizCount = this.availablePresets.length + customQuizzes.length;
+    const averageAccuracy = history.length
+      ? Math.round(history.reduce((sum, item) => sum + Number(item.accuracy || 0), 0) / history.length)
+      : 0;
+
+    const quizCountElement = document.getElementById('dashboard-quiz-count');
+    const accuracyElement = document.getElementById('dashboard-accuracy');
+    const attemptCountElement = document.getElementById('dashboard-attempt-count');
+
+    if (quizCountElement) quizCountElement.textContent = quizCount;
+    if (accuracyElement) accuracyElement.textContent = `${averageAccuracy}%`;
+    if (attemptCountElement) attemptCountElement.textContent = history.length;
   }
 
   /**

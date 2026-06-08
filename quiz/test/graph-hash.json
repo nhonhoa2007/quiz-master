@@ -1,0 +1,1172 @@
+[
+  {
+    "id": "T3_01",
+    "question": "What is the maximum number of edges possible in an undirected complete graph with 'n' vertices?",
+    "options": [
+      "n^2",
+      "n * (n - 1)",
+      "n * (n - 1) / 2",
+      "2^n"
+    ],
+    "answer": 2,
+    "explanation": "Đồ thị vô hướng hoàn chỉnh kết nối mọi đỉnh với nhau. Do mỗi đỉnh nối với n-1 đỉnh còn lại và đường đi vô hướng tính 2 chiều giống nhau (tránh đếm trùng), công thức số cạnh tối đa là n*(n-1)/2.",
+    "category": "Graphs"
+  },
+  {
+    "id": "T3_02",
+    "question": "What is the absolute maximum number of edges in a directed complete graph with 'n' vertices?",
+    "options": [
+      "n * (n - 1) / 2",
+      "n * (n - 1)",
+      "n^2",
+      "n!"
+    ],
+    "answer": 1,
+    "explanation": "Trong đồ thị có hướng (digraph), mỗi đỉnh có thể phóng đường đi một chiều đến n-1 đỉnh còn lại. Tổng số cạnh sẽ là n nhân với (n-1).",
+    "category": "Graphs"
+  },
+  {
+    "id": "T3_03",
+    "question": "In graph terminology, how is a 'Simple Path' strictly defined?",
+    "options": [
+      "A path that visits every node exactly once",
+      "A path in which all vertices except possibly the first and last are distinct",
+      "A path that has no weighted edges",
+      "A path that only moves forward"
+    ],
+    "answer": 1,
+    "explanation": "Đường đi đơn (Simple Path) là đường đi mà tất cả các đỉnh trên đó đều phân biệt (không lặp lại), ngoại trừ đỉnh đầu và đỉnh cuối có thể trùng nhau tạo thành vòng khép kín.",
+    "category": "Graphs"
+  },
+  {
+    "id": "T3_04",
+    "question": "What specifically defines a 'Cycle' in a graph?",
+    "options": [
+      "Any path with more than 3 nodes",
+      "A graph with no leaves",
+      "A simple path where the first and last vertices are the exact same",
+      "A path connecting two disjoint trees"
+    ],
+    "answer": 2,
+    "explanation": "Chu trình (Cycle) là một đường đi đơn mà điểm khởi đầu và điểm kết thúc trùng khớp hoàn toàn với nhau.",
+    "category": "Graphs"
+  },
+  {
+    "id": "T3_05",
+    "question": "Which statement correctly describes an 'Acyclic graph'?",
+    "options": [
+      "A graph where all edges have the same weight",
+      "A graph completely devoid of any cycles",
+      "A graph that uses circular linked lists",
+      "A graph where every node connects to every other node"
+    ],
+    "answer": 1,
+    "explanation": "Đồ thị vô chu trình (Acyclic graph) là hệ thống tuyệt đối không chứa bất kỳ một chu trình (vòng lặp) nào.",
+    "category": "Graphs"
+  },
+  {
+    "id": "T3_06",
+    "question": "When is an undirected graph formally considered 'Connected'?",
+    "options": [
+      "If every vertex has a degree of at least 2",
+      "If there is a valid path between any pair of vertices u and v",
+      "If there are no weighted edges",
+      "If it contains a cycle"
+    ],
+    "answer": 1,
+    "explanation": "Đồ thị vô hướng được gọi là liên thông (Connected) nếu luôn tồn tại ít nhất một đường đi kết nối thông thương giữa bất kỳ cặp đỉnh u và v nào.",
+    "category": "Graphs"
+  },
+  {
+    "id": "T3_07",
+    "question": "What is a 'Connected Component' in an undirected graph?",
+    "options": [
+      "A node with a degree of zero",
+      "A single isolated edge",
+      "A maximal connected subgraph",
+      "An array of vertices"
+    ],
+    "answer": 2,
+    "explanation": "Thành phần liên thông (Connected component) là một đồ thị con cực đại (maximal connected subgraph) tự liên thông nội bộ bên trong đồ thị gốc.",
+    "category": "Graphs"
+  },
+  {
+    "id": "T3_08",
+    "question": "How is a 'Tree' structurally defined in the context of graph properties?",
+    "options": [
+      "A graph with maximum edges",
+      "A completely disconnected graph",
+      "A directed complete graph",
+      "A connected acyclic graph"
+    ],
+    "answer": 3,
+    "explanation": "Cây (Tree) bản chất là một đồ thị vừa đảm bảo tính liên thông (connected) vừa tuyệt đối không có chu trình (acyclic).",
+    "category": "Graphs"
+  },
+  {
+    "id": "T3_09",
+    "question": "In a directed graph, what makes two vertices u and v 'Strongly Connected'?",
+    "options": [
+      "They share the same data value",
+      "There is a path from u to v, AND a path from v to u",
+      "They have the exact same in-degree",
+      "They are connected by an undirected edge"
+    ],
+    "answer": 1,
+    "explanation": "Hai đỉnh liên thông mạnh (Strongly Connected) nếu có đường đi một chiều từ u đến v, và cũng có đường đi một chiều quay ngược lại từ v về u.",
+    "category": "Graphs"
+  },
+  {
+    "id": "T3_10",
+    "question": "What does the 'Degree' of a vertex mean in an undirected graph?",
+    "options": [
+      "The number of edges incident to that vertex",
+      "The distance from the root",
+      "The value stored in the vertex",
+      "The number of paths traversing through it"
+    ],
+    "answer": 0,
+    "explanation": "Bậc (Degree) của một đỉnh là số lượng các cạnh nối trực tiếp (incident) với đỉnh đó.",
+    "category": "Graphs"
+  },
+  {
+    "id": "T3_11",
+    "question": "According to graph theory, what is the sum of the degrees of all vertices in an undirected graph?",
+    "options": [
+      "The total number of edges",
+      "Twice the total number of edges (2|E|)",
+      "The total number of vertices squared",
+      "Zero"
+    ],
+    "answer": 1,
+    "explanation": "Tổng bậc của tất cả các đỉnh luôn bằng 2 lần số lượng cạnh, vì mỗi cạnh có 2 đầu mút và đóng góp 1 bậc cho mỗi đỉnh mà nó nối tới.",
+    "category": "Graphs"
+  },
+  {
+    "id": "T3_12",
+    "question": "What is a 'Network' in specific graph terminology?",
+    "options": [
+      "A graph with weighted edges",
+      "A graph used for routing web traffic",
+      "A graph implemented with queues",
+      "An acyclic graph"
+    ],
+    "answer": 0,
+    "explanation": "Mạng (Network) là thuật ngữ dùng để chỉ một đồ thị mà các cạnh của nó được gán các giá trị trọng số (weighted edges), đại diện cho chi phí, khoảng cách...",
+    "category": "Graphs"
+  },
+  {
+    "id": "T3_13",
+    "question": "In an Adjacency Matrix A of a graph with n vertices, what does A(i, j) = 1 represent?",
+    "options": [
+      "Vertex i and vertex j have the same value",
+      "Vertex i and j are disconnected",
+      "There is an edge directly connecting vertex i and vertex j",
+      "Vertex i is the parent of vertex j"
+    ],
+    "answer": 2,
+    "explanation": "Ma trận kề gán giá trị 1 tại tọa độ A(i, j) nếu tồn tại một cạnh nối trực tiếp giữa đỉnh i và đỉnh j.",
+    "category": "Graphs"
+  },
+  {
+    "id": "T3_14",
+    "question": "What is a mandatory mathematical property of the Adjacency Matrix for an UNDIRECTED graph?",
+    "options": [
+      "All entries are 0",
+      "It is always symmetrical along its main diagonal",
+      "The diagonal is entirely 1s",
+      "It contains negative values"
+    ],
+    "answer": 1,
+    "explanation": "Do đồ thị vô hướng có tính chất 2 chiều (cạnh nối i,j cũng là cạnh nối j,i), ma trận kề của nó luôn đối xứng hoàn hảo qua đường chéo chính.",
+    "category": "Graphs"
+  },
+  {
+    "id": "T3_15",
+    "question": "How do you calculate the 'out-degree' of a vertex v_i directly from the Adjacency Matrix of a directed graph?",
+    "options": [
+      "By calculating the sum of the i-th column",
+      "By calculating the sum of the i-th row",
+      "By multiplying row i by column i",
+      "By checking the diagonal element"
+    ],
+    "answer": 1,
+    "explanation": "Trong ma trận kề của đồ thị có hướng, hàng i chứa các mũi tên bắn ra từ v_i. Do đó tổng các giá trị trên hàng i chính là bậc ra (out-degree).",
+    "category": "Graphs"
+  },
+  {
+    "id": "T3_16",
+    "question": "How do you calculate the 'in-degree' of a vertex v_i from the Adjacency Matrix of a directed graph?",
+    "options": [
+      "By calculating the sum of the i-th column",
+      "By calculating the sum of the i-th row",
+      "By looking at the transpose of the matrix",
+      "By subtracting the out-degree from the total edges"
+    ],
+    "answer": 0,
+    "explanation": "Cột i của ma trận kề chứa các mũi tên đâm vào v_i. Tổng các giá trị trên cột i biểu diễn bậc vào (in-degree) của đỉnh đó.",
+    "category": "Graphs"
+  },
+  {
+    "id": "T3_17",
+    "question": "In an Adjacency List representation of an UNDIRECTED graph with n vertices and e edges, how many total list nodes are mathematically required?",
+    "options": [
+      "e list nodes",
+      "2e list nodes",
+      "n^2 list nodes",
+      "e^2 list nodes"
+    ],
+    "answer": 1,
+    "explanation": "Vì mỗi cạnh vô hướng nối u và v được biểu diễn 2 lần (một lần trong danh sách của u và một lần trong danh sách của v), tổng số node danh sách cần dùng là 2e (không tính n head nodes).",
+    "category": "Graphs"
+  },
+  {
+    "id": "T3_18",
+    "question": "Depth First Search (DFS) behaves most similarly to which standard tree traversal method?",
+    "options": [
+      "Level Order Traversal",
+      "Postorder Traversal",
+      "Preorder Traversal",
+      "Inorder Traversal"
+    ],
+    "answer": 2,
+    "explanation": "DFS đánh dấu thăm đỉnh hiện tại, rồi đâm sâu xuống duyệt đệ quy các láng giềng. Cách hoạt động 'Gốc - nhánh' này giống y hệt duyệt Tiền tố (Preorder).",
+    "category": "Graphs"
+  },
+  {
+    "id": "T3_19",
+    "question": "Breadth First Search (BFS) behaves most similarly to which standard tree traversal method?",
+    "options": [
+      "Level Order Traversal",
+      "Inorder Traversal",
+      "Preorder Traversal",
+      "Postorder Traversal"
+    ],
+    "answer": 0,
+    "explanation": "BFS duyệt đồ thị loang dần theo từng lớp/tầng (tiers) tỏa ra từ đỉnh gốc, y hệt như kỹ thuật duyệt theo mức (Level Order) trên Cây.",
+    "category": "Graphs"
+  },
+  {
+    "id": "T3_20",
+    "question": "Which data structure is strictly required to implement Breadth First Search (BFS) iteratively?",
+    "options": [
+      "Stack",
+      "Binary Search Tree",
+      "Queue",
+      "Hash Map"
+    ],
+    "answer": 2,
+    "explanation": "BFS loang sóng cần sự ưu tiên xử lý tuần tự. Hàng đợi (Queue - FIFO) là bắt buộc để quản lý các láng giềng theo đúng thứ tự 'phát hiện trước, duyệt trước'.",
+    "category": "Graphs"
+  },
+  {
+    "id": "T3_21",
+    "question": "What is the theoretical Time Complexity of Depth First Search (DFS) when the graph is optimally implemented using Adjacency Lists?",
+    "options": [
+      "O(n^2)",
+      "O(n + e)",
+      "O(log n)",
+      "O(n * e)"
+    ],
+    "answer": 1,
+    "explanation": "Với danh sách kề, DFS lướt rất thanh thoát vì nó chỉ duyệt qua các đỉnh (n) và số cạnh thực sự tồn tại (e). Thời gian vận hành là O(n + e).",
+    "category": "Graphs"
+  },
+  {
+    "id": "T3_22",
+    "question": "What happens to the Time Complexity of DFS or BFS if the graph is implemented using an Adjacency Matrix instead of lists?",
+    "options": [
+      "It becomes O(1)",
+      "It degrades to O(n^2)",
+      "It remains O(n + e)",
+      "It runs out of memory"
+    ],
+    "answer": 1,
+    "explanation": "Với ma trận kề, để tìm láng giềng của một đỉnh, thuật toán phải quét mù qua toàn bộ n phần tử trên hàng đó. Khi quét cho n đỉnh, thời gian suy thoái thành O(n^2).",
+    "category": "Graphs"
+  },
+  {
+    "id": "T3_23",
+    "question": "In the BFS algorithm, what immediately happens to the unvisited neighbors of a vertex when that vertex is deleted (dequeued) from the queue?",
+    "options": [
+      "They are deleted from the graph",
+      "They are skipped",
+      "They are pushed to a stack",
+      "They are marked as visited and pushed into the queue"
+    ],
+    "answer": 3,
+    "explanation": "Khi một đỉnh được bứt khỏi Queue để xử lý, tất cả các láng giềng chưa được thăm của nó sẽ được thu gom, đánh dấu (visited), và xếp hàng vào Queue để chờ duyệt ở các bước sau.",
+    "category": "Graphs"
+  },
+  {
+    "id": "T3_24",
+    "question": "In the DFS recursive algorithm, what action explicitly prevents the algorithm from falling into an infinite loop (cycle)?",
+    "options": [
+      "Limiting recursion depth to 10",
+      "Using a hash map for edges",
+      "Setting a 'visited' flag for the vertex to TRUE before traversing its neighbors",
+      "Deleting edges after traversal"
+    ],
+    "answer": 2,
+    "explanation": "Để tránh việc chạy vòng tròn vô tận trong chu trình, DFS luôn set một mảng cờ `visited[v] = TRUE` để phong tỏa các đỉnh đã đi qua, ngăn đệ quy quay lại lối cũ.",
+    "category": "Graphs"
+  },
+  {
+    "id": "T3_25",
+    "question": "Which graph representation is most memory-efficient for a 'Sparse Graph' (a graph with a large number of vertices but very few edges)?",
+    "options": [
+      "Adjacency Matrix",
+      "Adjacency Lists",
+      "2D Array",
+      "Complete Graph"
+    ],
+    "answer": 1,
+    "explanation": "Với đồ thị thưa (sparse graph), Danh sách kề (Adjacency List) cực kỳ tiết kiệm bộ nhớ vì nó chỉ lưu các kết nối có thật, không lãng phí n^2 ô nhớ để lưu số 0 như Ma trận kề.",
+    "category": "Graphs"
+  },
+  {
+    "id": "T3_26",
+    "question": "What does the 'Load Factor' heavily represent in the context of a Hash Table?",
+    "options": [
+      "The CPU clock speed consumed",
+      "The ratio of the number of actually stored elements to the total number of buckets available",
+      "The maximum string length allowed",
+      "The number of collisions"
+    ],
+    "answer": 1,
+    "explanation": "Hệ số tải (Load Factor = n/k) là tỷ lệ giữa lượng bản ghi thực tế đang cư trú chia cho sức chứa (số bucket) của bảng băm, đo lường mức độ 'chật chội' của bảng.",
+    "category": "Hashing"
+  },
+  {
+    "id": "T3_27",
+    "question": "In a Hash Table architecture, what is the primary computational role of the 'Hash Function'?",
+    "options": [
+      "To encrypt data safely",
+      "To transform the identifier (key) into an address/index in the hash table array",
+      "To sort the incoming data",
+      "To allocate memory dynamically"
+    ],
+    "answer": 1,
+    "explanation": "Cỗ máy Hàm băm (Hash Function) có nhiệm vụ duy nhất là nhào nặn Khóa (key) thành một con số nguyên đóng vai trò làm địa chỉ (index) để chui vào mảng.",
+    "category": "Hashing"
+  },
+  {
+    "id": "T3_28",
+    "question": "What mathematically constitutes a 'Collision' in a Hash Table?",
+    "options": [
+      "When the hash table is deleted",
+      "When the hard drive is full",
+      "When two identical keys are entered by user",
+      "When two different keys are mapped into the exact same bucket address by the hash function"
+    ],
+    "answer": 3,
+    "explanation": "Xung đột (Collision) xảy ra khi hàm băm rủi ro xử lý hai Khóa đầu vào khác nhau nhưng lại cho ra cùng một địa chỉ index trùng lặp ở đầu ra.",
+    "category": "Hashing"
+  },
+  {
+    "id": "T3_29",
+    "question": "What are 'Synonyms' in the vocabulary of hashing?",
+    "options": [
+      "Keys that have the exact same string value",
+      "Keys that have the same home bucket (hash to the same value)",
+      "Hash tables that are copies of each other",
+      "Pointers to the same memory"
+    ],
+    "answer": 1,
+    "explanation": "Các khóa khác nhau nhưng lại bị băm vào cùng một địa chỉ (gây đụng độ) được giới chuyên môn gọi là các từ đồng nghĩa (synonyms).",
+    "category": "Hashing"
+  },
+  {
+    "id": "T3_30",
+    "question": "What physically constitutes an 'Overflow' in hashing?",
+    "options": [
+      "Memory leak caused by malloc",
+      "When the program crashes",
+      "When there is no space left in the home bucket for a new colliding pair to be inserted",
+      "When a value is too large for an integer"
+    ],
+    "answer": 2,
+    "explanation": "Tràn (Overflow) xảy ra khi một ô bucket đã bị lấp đầy hoàn toàn các khe cắm (slots) và không còn chỗ trống để chứa thêm các bản ghi bị đụng độ.",
+    "category": "Hashing"
+  },
+  {
+    "id": "T3_31",
+    "question": "In the Division Method for hashing (f(k) = k % b), what is the strongly recommended mathematical property for the table size 'b'?",
+    "options": [
+      "It must be a power of 2",
+      "It should be an even number",
+      "It should be a prime number",
+      "It must be 100"
+    ],
+    "answer": 2,
+    "explanation": "Chọn kích thước bảng b là một số nguyên tố (prime number) giúp các khóa được băm và phân bổ đều đặn hơn, bẻ gãy các quy luật gom cụm (clustering) dữ liệu.",
+    "category": "Hashing"
+  },
+  {
+    "id": "T3_32",
+    "question": "Why is it a universally bad idea to use b = 2^p for the hash table size in the Division Method?",
+    "options": [
+      "It requires floating-point math",
+      "Because the hash function result will depend strictly only on the p lowest-order bits of the key, ignoring the rest",
+      "It creates negative indexes",
+      "Because power of 2 is too small"
+    ],
+    "answer": 1,
+    "explanation": "Khi chia lấy dư cho 2^p, máy tính chỉ đơn giản cắt lấy p bit cuối cùng của khóa. Mọi bit ở phần đầu bị vứt bỏ, làm hàm băm mất đi tính bao quát toàn vẹn khóa.",
+    "category": "Hashing"
+  },
+  {
+    "id": "T3_33",
+    "question": "Which hash method squares the entire key value and extracts a specific number of bits strictly from the middle of the result?",
+    "options": [
+      "Division method",
+      "Digit analysis method",
+      "Mid-square method",
+      "Truncation method"
+    ],
+    "answer": 2,
+    "explanation": "Đúng như tên gọi, phương pháp Bình phương lấy Giữa (Mid-square method) bình phương khóa lên rồi trích xuất các bit ở khúc bụng (mid) để làm địa chỉ.",
+    "category": "Hashing"
+  },
+  {
+    "id": "T3_34",
+    "question": "In the Folding Method, what is the crucial operational difference between 'Shift-folding' and 'Folding and reverse'?",
+    "options": [
+      "Shift-folding uses multiplication",
+      "Folding and reverse requires reversing the digits of alternating parts before adding them together",
+      "Shift-folding deletes the last part",
+      "Folding and reverse is only for strings"
+    ],
+    "answer": 1,
+    "explanation": "Cả hai đều chặt khóa ra nhiều khúc. Tuy nhiên, 'Folding and reverse' thì lật ngược (đảo đầu đuôi) các chữ số của các khúc xen kẽ (gấp zigzag) trước khi đem cộng tổng lại.",
+    "category": "Hashing"
+  },
+  {
+    "id": "T3_35",
+    "question": "Which hashing method heavily extracts specific digits from known keys and manipulates them (e.g., circular shifting or swapping) to form an index?",
+    "options": [
+      "Division method",
+      "Digit analysis method",
+      "Mid-square method",
+      "Separate chaining"
+    ],
+    "answer": 1,
+    "explanation": "Phương pháp Phân tích chữ số (Digit analysis) thường được dùng khi ta đã biết trước mọi khóa đầu vào. Thuật toán trích xuất các chữ số cụ thể rồi xào trộn chúng (dịch vòng, tráo đổi).",
+    "category": "Hashing"
+  },
+  {
+    "id": "T3_36",
+    "question": "What is the typical hashing algorithm approach for pointer-based character strings (such as names or words)?",
+    "options": [
+      "Converting them to binary trees",
+      "Adding the ASCII values of each character together and taking the modulus with respect to the table size",
+      "Taking only the first letter",
+      "Counting the string length"
+    ],
+    "answer": 1,
+    "explanation": "Hàm băm chuỗi (Fold_String_Hash) cộng dồn mã ASCII của tất cả các ký tự trong chuỗi, sau đó dùng phép chia lấy dư (modulo) để nắn nó vừa vặn vào mảng.",
+    "category": "Hashing"
+  },
+  {
+    "id": "T3_37",
+    "question": "Which collision resolution strategy probes alternative cells sequentially (with wraparound) until an empty cell is physically found?",
+    "options": [
+      "Double hashing",
+      "Rehashing",
+      "Linear Probing",
+      "Quadratic Probing"
+    ],
+    "answer": 2,
+    "explanation": "Thăm dò Tuyến tính (Linear Probing) sửa đụng độ bằng cách bước tuần tự gõ cửa từng ô một (i=1, 2, 3...) sang phải để dò tìm khe hở.",
+    "category": "Hashing"
+  },
+  {
+    "id": "T3_38",
+    "question": "What is a major performance disadvantage of the Linear Probing technique?",
+    "options": [
+      "It requires multiple arrays",
+      "It crashes on negative numbers",
+      "Keys tend to cluster together massively, increasing the worst-case search time to Theta(n)",
+      "It cannot handle integers"
+    ],
+    "answer": 2,
+    "explanation": "Linear Probing mắc bệnh 'gom cụm' (clustering). Các phần tử có xu hướng bám dính vào nhau thành các dải dài không có khe hở, khiến việc tìm kiếm suy thoái thành O(n).",
+    "category": "Hashing"
+  },
+  {
+    "id": "T3_39",
+    "question": "How does 'Quadratic Probing' mathematically differ from Linear Probing?",
+    "options": [
+      "It uses a quadratic function of i (like i^2) as the probing increment instead of a linear step",
+      "It squares the table size",
+      "It uses two hash tables",
+      "It takes the square root of the key"
+    ],
+    "answer": 0,
+    "explanation": "Thay vì bước đi 1 ô, Thăm dò Bậc hai (Quadratic Probing) nhảy vọt bằng hàm số mũ bậc hai (i^2), giúp dàn trải dữ liệu nhanh chóng và chống clustering.",
+    "category": "Hashing"
+  },
+  {
+    "id": "T3_40",
+    "question": "Which collision resolution strategy actively applies a SECOND distinct hash function to calculate the probing increment?",
+    "options": [
+      "Separate Chaining",
+      "Linear Probing",
+      "Double hashing",
+      "Mid-square"
+    ],
+    "answer": 2,
+    "explanation": "Băm kép (Double Hashing) sử dụng thêm một hàm băm phụ (f2) để quyết định bước nhảy của các khóa bị đụng, tạo ra lộ trình phân tán dữ liệu rất đa dạng.",
+    "category": "Hashing"
+  },
+  {
+    "id": "T3_41",
+    "question": "What specific event triggers the 'Rehashing' process in a static hash table?",
+    "options": [
+      "When a single deletion occurs",
+      "When the table becomes completely full or excessively clustered, slowing down operations",
+      "When the user inputs a string",
+      "When the computer sleeps"
+    ],
+    "answer": 1,
+    "explanation": "Băm lại (Rehashing) là cuộc 'đại phẫu' được kích hoạt khi bảng băm cũ đã đầy ngập hoặc bị đụng độ quá đà, làm mất khả năng truy xuất O(1).",
+    "category": "Hashing"
+  },
+  {
+    "id": "T3_42",
+    "question": "In the Rehashing process, what must strictly be done with the existing data entries?",
+    "options": [
+      "They are deleted permanently",
+      "They are copied to a backup file",
+      "They are transferred to a new, DOUBLE-sized table by completely recomputing their hash positions",
+      "They are left in the old table"
+    ],
+    "answer": 2,
+    "explanation": "Khi Rehashing, hệ thống sinh ra bảng mới to gấp đôi. Thuật toán không thể bế nguyên tọa độ cũ sang, mà phải nạp khóa vào hàm băm để tính toán lại địa chỉ mới (recomputing) dựa trên table size mới.",
+    "category": "Hashing"
+  },
+  {
+    "id": "T3_43",
+    "question": "Which collision resolution strategy entirely changes the hash table array into an array of HEAD POINTERS linked to external Linked Lists?",
+    "options": [
+      "Linear Probing",
+      "Separate Chaining",
+      "Double hashing",
+      "Random Probing"
+    ],
+    "answer": 1,
+    "explanation": "Móc nối rời (Separate Chaining) biến mỗi ô trên bảng băm thành một Node chứa danh sách liên kết. Các khóa đụng độ sẽ được đính kèm thành chuỗi kéo dài bên ngoài mảng.",
+    "category": "Hashing"
+  },
+  {
+    "id": "T3_44",
+    "question": "What is a major mechanical advantage of Separate Chaining over Open Addressing?",
+    "options": [
+      "It requires no extra memory",
+      "It never uses pointers",
+      "Deletion is extremely easy, and the array size is not a strict hard limitation",
+      "It sorts data automatically"
+    ],
+    "answer": 2,
+    "explanation": "Vì dùng danh sách liên kết động, Separate Chaining không bao giờ gặp lỗi 'Tràn mảng', và việc xóa phần tử chỉ đơn giản là ngắt liên kết node mà không để lại lỗ hổng ảnh hưởng thuật toán.",
+    "category": "Hashing"
+  },
+  {
+    "id": "T3_45",
+    "question": "What describes the absolute worst-case scenario for a Hash Table utilizing Separate Chaining?",
+    "options": [
+      "The program runs out of disk space",
+      "The load factor drops to zero",
+      "All keys catastrophically hash to the exact same bucket, degrading search time to O(n) as it becomes a single linked list",
+      "The hash table automatically doubles"
+    ],
+    "answer": 2,
+    "explanation": "Nếu hàm băm tồi tệ, tất cả các khóa sẽ chui hết vào 1 bucket duy nhất. Bảng băm lúc này sụp đổ trở thành một danh sách liên kết tuyến tính dài ngoằng, suy thoái vận tốc truy xuất về O(n).",
+    "category": "Hashing"
+  },
+  {
+    "id": "T3_46",
+    "question": "Why is 'Dynamic Hashing' (also called Extendible Hashing) primarily utilized in databases?",
+    "options": [
+      "To encrypt table columns",
+      "To allow the hash table size to grow and shrink dynamically as data volume heavily fluctuates, minimizing expensive disk page accesses",
+      "To prevent unauthorized access",
+      "To translate SQL queries"
+    ],
+    "answer": 1,
+    "explanation": "Băm động (Dynamic Hashing) giải quyết bài toán Database khổng lồ bằng cách tự động xẻ đôi/gộp các trang đĩa (pages) ngay trong lúc vận hành, duy trì hiệu năng không gian tối đa.",
+    "category": "Hashing"
+  },
+  {
+    "id": "T3_47",
+    "question": "In Dynamic Hashing, what is the exact formula used to calculate 'Space Utilization'?",
+    "options": [
+      "n * m * p",
+      "m / (n * p)",
+      "n / (m * p)",
+      "p / n"
+    ],
+    "answer": 2,
+    "explanation": "Hiệu suất sử dụng không gian được đánh giá bằng công thức: tổng số bản ghi thực tế (n) chia cho tổng sức chứa [số trang (m) nhân với lượng bản ghi mỗi trang (p)].",
+    "category": "Hashing"
+  },
+  {
+    "id": "T3_48",
+    "question": "In dynamic hashing database terminology, what is a 'bucket' frequently referred to as?",
+    "options": [
+      "A sector",
+      "A Page",
+      "A cluster",
+      "A cylinder"
+    ],
+    "answer": 1,
+    "explanation": "Trong cấu trúc lưu trữ cơ sở dữ liệu lớn, các bucket của băm động thường được tổ chức dưới dạng các Trang đĩa (Pages) vật lý.",
+    "category": "Hashing"
+  },
+  {
+    "id": "T3_49",
+    "question": "When using a brute-force Unsorted Sequential Array to implement a table, what is the time complexity to FIND a specific element?",
+    "options": [
+      "O(1)",
+      "O(log n)",
+      "O(n)",
+      "O(n^2)"
+    ],
+    "answer": 2,
+    "explanation": "Với mảng lộn xộn, không có lối tắt nào ngoài việc duyệt mù tuần tự từ đầu đến đuôi mảng để tìm dữ liệu, dẫn đến chi phí thời gian O(n).",
+    "category": "Hashing"
+  },
+  {
+    "id": "T3_50",
+    "question": "When using a SORTED Sequential Array to implement a dictionary, what is the optimized time complexity to FIND an element?",
+    "options": [
+      "O(n)",
+      "O(log n)",
+      "O(1)",
+      "O(n log n)"
+    ],
+    "answer": 1,
+    "explanation": "Nếu mảng đã được giữ ngăn nắp, hệ thống có thể kích hoạt thuật toán Tìm kiếm Nhị phân (Binary Search) để chặt đôi không gian dò tìm, đạt tốc độ O(log n).",
+    "category": "Hashing"
+  },
+  {
+    "id": "T3_51",
+    "question": "What is the theoretical time complexity of the INSERT operation in an Unsorted Sequential Array?",
+    "options": [
+      "O(n)",
+      "O(log n)",
+      "O(1)",
+      "O(n^2)"
+    ],
+    "answer": 2,
+    "explanation": "Do không cần bận tâm đến thứ tự, thao tác chèn chỉ đơn giản là ném thẳng bản ghi mới vào khoảng trống cuối cùng của mảng, vận tốc chớp nhoáng O(1).",
+    "category": "Hashing"
+  },
+  {
+    "id": "T3_52",
+    "question": "Why is a Hash Table generally preferred over a Binary Search Tree (BST) for implementing a dictionary when traversal order is NOT needed?",
+    "options": [
+      "Because hashing uses less RAM",
+      "Because hashing provides average O(1) access time for find/insert/remove, whereas a BST only provides O(log n)",
+      "Because BSTs crash easily",
+      "Because hashing sorts data natively"
+    ],
+    "answer": 1,
+    "explanation": "Sức mạnh tuyệt đối của Băm là vận tốc hằng số O(1). Nó đánh bại hoàn toàn tốc độ O(log n) của cây BST, với điều kiện ứng dụng không đòi hỏi in dữ liệu theo trật tự.",
+    "category": "Hashing"
+  },
+  {
+    "id": "T3_53",
+    "question": "Under what specific data processing circumstance is a Hash Table a remarkably POOR choice?",
+    "options": [
+      "When searching is the most frequent operation",
+      "When memory is abundant",
+      "When there is a frequent need for sequential table traversals or native sorting of data",
+      "When keys are integers"
+    ],
+    "answer": 2,
+    "explanation": "Hàm băm đập vỡ và rải rác dữ liệu ngẫu nhiên (scattered) khắp mảng. Nó hoàn toàn bất lực và vô dụng nếu bài toán yêu cầu in bảng theo thứ tự tăng/giảm dần.",
+    "category": "Hashing"
+  },
+  {
+    "id": "T3_54",
+    "question": "In the provided C code for Linear Probing insertion, what specific string condition inside the while loop checks for a duplicate entry?",
+    "options": [
+      "ht[i].key == item.key",
+      "!strcmp(ht[i].key, item.key)",
+      "strlen(ht[i].key) == 0",
+      "hash_value == 0"
+    ],
+    "answer": 1,
+    "explanation": "Hàm strcmp so sánh 2 chuỗi ký tự. Nếu chúng y hệt nhau, strcmp trả về 0. Toán tử phủ định `!0` thành True, kích hoạt báo lỗi trùng lặp (Duplicate entry).",
+    "category": "Hashing"
+  },
+  {
+    "id": "T3_55",
+    "question": "In the Separate Chaining insertion algorithm, where EXACTLY is a newly collided key physically added within the linked list bucket?",
+    "options": [
+      "At the very end of the list",
+      "In the middle of the list",
+      "At the very beginning of the linked list (acting as the new head)",
+      "It randomly replaces a node"
+    ],
+    "answer": 2,
+    "explanation": "Đoạn mã thiết kế: `new_cell->next = L->next; L->next = new_cell;`. Nó chèn ngay phần tử đụng độ vào đầu danh sách để đảm bảo tốc độ chèn luôn ở mức O(1) thay vì phải duyệt tìm đuôi.",
+    "category": "Hashing"
+  },
+  {
+    "id": "T3_56",
+    "question": "What is the primary role of the 'visited' array in graph traversal algorithms?",
+    "options": [
+      "To store the edge weights",
+      "To track the shortest path distance",
+      "To mark which vertices have already been processed to prevent infinite loops (cycles)",
+      "To sort the vertices alphabetically"
+    ],
+    "answer": 2,
+    "explanation": "Mảng cờ `visited` là la bàn của thuật toán. Nó đánh dấu TRUE cho các đỉnh đã đi qua, ngăn thuật toán quay đầu bơi lại vào vòng xoáy vô tận của các chu trình.",
+    "category": "Graphs"
+  },
+  {
+    "id": "T3_57",
+    "question": "In the DFS Time Complexity expression O(n+e) for Adjacency Lists, what does 'e' explicitly denote?",
+    "options": [
+      "The mathematical constant Euler's number",
+      "The number of empty nodes",
+      "The total number of edges in the graph",
+      "The length of the longest path"
+    ],
+    "answer": 2,
+    "explanation": "Trong phân tích thuật toán đồ thị, n là số lượng Đỉnh (Nodes/Vertices), và e là số lượng Cạnh (Edges) thực tế tồn tại.",
+    "category": "Graphs"
+  },
+  {
+    "id": "T3_58",
+    "question": "The sum of all in-degrees and out-degrees of ALL vertices in a DIRECTED graph strictly equals what value?",
+    "options": [
+      "The number of vertices n",
+      "The number of edges e",
+      "Twice the number of edges (2|E|)",
+      "Zero"
+    ],
+    "answer": 2,
+    "explanation": "Mỗi một mũi tên có hướng sinh ra 1 bậc xuất (out) ở đầu đi, và 1 bậc nhập (in) ở đầu đến. Cộng gộp toàn bộ hệ thống, tổng bậc sẽ gấp đôi số mũi tên (2|E|).",
+    "category": "Graphs"
+  },
+  {
+    "id": "T3_59",
+    "question": "If you apply BFS on an unweighted graph, what powerful spatial guarantee does it naturally provide?",
+    "options": [
+      "It sorts the nodes by value",
+      "It always finds the Shortest Path (fewest edges) from the start node to the target node",
+      "It detects all memory leaks",
+      "It creates a binary search tree"
+    ],
+    "answer": 1,
+    "explanation": "Nhờ tính chất loang cạn theo từng vòng sóng ly tâm, hễ BFS đụng được đỉnh mục tiêu thì đó chắc chắn là đường đi ngắn nhất (chứa ít cạnh nhất).",
+    "category": "Graphs"
+  },
+  {
+    "id": "T3_60",
+    "question": "In a Hash Table, why is 'Truncation' (simply cutting off parts of the key) considered a mathematically weak hash function?",
+    "options": [
+      "Because computers cannot perform substrings efficiently",
+      "Because it deliberately ignores potentially unique information in the key, leading to massive unnatural collisions",
+      "Because it causes buffer overflows",
+      "Because it only works on numbers"
+    ],
+    "answer": 1,
+    "explanation": "Cắt xén (Truncation) vứt sọt rác một nửa dữ liệu nhận dạng. Nếu một bầy khóa chỉ khác biệt nhau ở phần bị cắt bỏ, chúng sẽ đâm sầm vào nhau gây đụng độ thảm họa.",
+    "category": "Hashing"
+  },
+  {
+    "id": "T3_61",
+    "question": "What arithmetic operation does the 'modulus' operator (%) perform in the Division Hash Method?",
+    "options": [
+      "It multiplies the key by the table size",
+      "It computes the integer division quotient",
+      "It computes the remainder of the division of the key by the table size",
+      "It returns a random index"
+    ],
+    "answer": 2,
+    "explanation": "Toán tử % tính toán phần dư thừa lại sau khi chia. Số dư này có tính chất tuyệt vời là luôn bị giam lỏng gọn gàng trong phạm vi từ 0 đến (b-1), ăn khớp với index mảng băm.",
+    "category": "Hashing"
+  },
+  {
+    "id": "T3_62",
+    "question": "If a hash function uses `key % 10` as its logic, what physical part of a decimal key directly dictates the hash value?",
+    "options": [
+      "The first digit",
+      "The middle digit",
+      "The sum of all digits",
+      "The last (least significant) digit"
+    ],
+    "answer": 3,
+    "explanation": "Bất kỳ số thập phân nào khi đem chia lấy phần dư cho 10 cũng sẽ nôn ra chính xác chữ số hàng đơn vị (chữ số cuối cùng) của nó.",
+    "category": "Hashing"
+  },
+  {
+    "id": "T3_63",
+    "question": "In the source code context of Separate Chaining, what does the condition `hash_table[i] == NULL` signify?",
+    "options": [
+      "The hash table is corrupted",
+      "The bucket 'i' is currently completely empty and has no linked list attached to it yet",
+      "The program needs to rehash",
+      "The memory is full"
+    ],
+    "answer": 1,
+    "explanation": "Các ô trong mảng Separate Chaining bản chất là con trỏ Head. Nếu nó mang giá trị NULL, nghĩa là ô này còn tân trang, chưa có bất kỳ phần tử nào bị băm vào đây.",
+    "category": "Hashing"
+  },
+  {
+    "id": "T3_64",
+    "question": "How does Separate Chaining elegantly bypass the 'Table is Full' fatal error that haunts Linear Probing?",
+    "options": [
+      "By storing data on the hard drive",
+      "By deleting old data automatically",
+      "It never encounters it, because linked lists can grow dynamically using malloc() endlessly as long as RAM is available",
+      "By using larger arrays"
+    ],
+    "answer": 2,
+    "explanation": "Thay vì bị nhốt trong mảng tĩnh như Linear Probing, Separate Chaining cơi nới không gian bằng cấp phát động linked list. Bảng không bao giờ 'đầy' giới hạn vật lý.",
+    "category": "Hashing"
+  },
+  {
+    "id": "T3_65",
+    "question": "When evaluating the Space Complexity of an Adjacency Matrix representing a directed graph with 'n' vertices, what is the exact formula?",
+    "options": [
+      "n * e",
+      "n + e",
+      "n^2",
+      "e^2"
+    ],
+    "answer": 2,
+    "explanation": "Ma trận kề xây dựng một khung lưới n x n để bắt vệt mọi cặp đỉnh. Do đó, kích thước bộ nhớ nó nuốt chửng luôn luôn là n^2, bất chấp đồ thị đó có cạnh hay không.",
+    "category": "Graphs"
+  },
+  {
+    "id": "T3_66",
+    "question": "In a directed graph, if an edge arrow points from 'u' to 'v' (<u, v>), what is the formal relational terminology?",
+    "options": [
+      "u is strongly connected to v",
+      "u is adjacent TO v, and v is adjacent FROM u",
+      "v is the parent of u",
+      "They are symmetrically adjacent"
+    ],
+    "answer": 1,
+    "explanation": "Trong đồ thị có hướng, đường đi <u, v> ám chỉ u kề TỚI (adjacent to) v, và ngược lại v được kề TỪ (adjacent from) u.",
+    "category": "Graphs"
+  },
+  {
+    "id": "T3_67",
+    "question": "What is the crucial defining difference between a 'Connected' Graph and a 'Strongly Connected' Graph?",
+    "options": [
+      "Connected applies only to trees, Strongly Connected applies to networks",
+      "Connected graphs have weighted edges",
+      "Connected applies to undirected paths; Strongly Connected applies to directed graphs, strictly requiring valid TWO-WAY paths for every pair",
+      "They are synonymous"
+    ],
+    "answer": 2,
+    "explanation": "Đồ thị Liên thông (Connected) ám chỉ đường đi vô hướng thông thường. Còn Liên thông MẠNH là chuẩn mực khắt khe của đồ thị có hướng: bất kỳ 2 điểm nào cũng phải 'đi đi về về' được bằng các mũi tên một chiều.",
+    "category": "Graphs"
+  },
+  {
+    "id": "T3_68",
+    "question": "If an undirected graph has exactly 'n' vertices, what is the absolute MINIMUM number of edges required to make it a fully Connected Graph?",
+    "options": [
+      "n edges",
+      "n - 1 edges",
+      "n / 2 edges",
+      "n^2 edges"
+    ],
+    "answer": 1,
+    "explanation": "Đồ thị liên thông có cấu trúc tối giản và mỏng manh nhất chính là một Cây (Tree). Để móc nối n đỉnh thành một khối thống nhất không đứt gãy, nó cần chính xác n - 1 cạnh.",
+    "category": "Graphs"
+  },
+  {
+    "id": "T3_69",
+    "question": "In the hashing Mid-Square method, if the original key is 4567 and the algorithm requires a 2-digit index (range 0-99), what is the calculated index?",
+    "options": [
+      "67",
+      "45",
+      "57",
+      "20"
+    ],
+    "answer": 2,
+    "explanation": "Thuật toán bình phương 4567 lên thành 20857489, sau đó chích xuất lấy 2 chữ số nằm lọt ở giữa bụng (mid) là 57 để làm địa chỉ mảng.",
+    "category": "Hashing"
+  },
+  {
+    "id": "T3_70",
+    "question": "What does the term 'Clustering' specifically describe in the context of Open Addressing collision resolution?",
+    "options": [
+      "Grouping data by alphabetical order",
+      "A negative phenomenon where hashed keys lump closely together in contiguous array slots, forcing subsequent insertions to probe extremely long distances",
+      "A technique to save memory",
+      "A database table join"
+    ],
+    "answer": 1,
+    "explanation": "Gom cụm (Clustering) là thảm họa của Linear Probing khi các phần tử bám cục vào nhau thành một dải dài bít bùng. Nó bẻ gãy khả năng O(1) vì chìa khóa mới phải lết rất xa mới tìm thấy khe hở.",
+    "category": "Hashing"
+  },
+  {
+    "id": "T3_71",
+    "question": "When operating Hash Tables, what mathematical factors heavily guarantee the coveted O(1) performance?",
+    "options": [
+      "Using a very small array",
+      "Only hashing integer keys",
+      "Maintaining a suitably low load factor combined with a uniform, randomized hash function",
+      "Implementing it in C++"
+    ],
+    "answer": 2,
+    "explanation": "Phép thuật O(1) của bảng băm chỉ ứng nghiệm khi bảng còn nhiều khoảng trống (load factor thấp) và Hàm băm phân tán dữ liệu rải đều đặn như ném phi tiêu ngẫu nhiên.",
+    "category": "Hashing"
+  },
+  {
+    "id": "T3_72",
+    "question": "What is the primary defining difference between a generic 'Path' and a 'Simple Path' in graph theory?",
+    "options": [
+      "A Path is directed, a Simple Path is undirected",
+      "A Path can randomly revisit vertices, but a Simple Path is strictly forbidden from revisiting any vertices (except start/end)",
+      "A Simple Path has no edges",
+      "A Path has weighted edges"
+    ],
+    "answer": 1,
+    "explanation": "Đường đi đơn (Simple path) cấm tiệt việc lặp lại/đi qua một đỉnh quá 1 lần (để tránh tạo vòng rườm rà), ngoại trừ việc khép vòng tại đỉnh xuất phát.",
+    "category": "Graphs"
+  },
+  {
+    "id": "T3_73",
+    "question": "In a recursive Graph DFS implementation, how does the system organically handle a vertex that has absolutely NO unvisited neighbors left?",
+    "options": [
+      "It throws an exception",
+      "It deletes the vertex from the graph",
+      "The function simply finishes and returns, organically backtracking to the previous vertex in the call stack",
+      "It randomly jumps to a new node"
+    ],
+    "answer": 2,
+    "explanation": "Khi một đỉnh đâm vào ngõ cụt (tất cả các láng giềng đều đã bị đánh dấu), hàm đệ quy của nó sẽ cạn lệnh và kết thúc (return), mô phỏng hoàn hảo thao tác quay lui (backtrack) về ngã ba trước đó.",
+    "category": "Graphs"
+  },
+  {
+    "id": "T3_74",
+    "question": "How does BFS mathematically guarantee finding the Shortest Path in an unweighted graph?",
+    "options": [
+      "By sorting the edges by weight",
+      "By using a heuristic function",
+      "By exhaustively exploring all neighbors at distance 'k' before ever moving to neighbors at distance 'k+1'",
+      "By trying all possible paths recursively"
+    ],
+    "answer": 2,
+    "explanation": "BFS duyệt cạn không gian theo từng vòng sóng đồng tâm. Nó quét sạch mọi điểm cách 1 bước, rồi mới quét cách 2 bước. Nên hễ nó đụng mục tiêu, đó chắc chắn là lộ trình ngắn nhất.",
+    "category": "Graphs"
+  },
+  {
+    "id": "T3_75",
+    "question": "By simply looking at an Adjacency Matrix, how can you quickly verify if the graph is UNDIRECTED?",
+    "options": [
+      "It has no zeros",
+      "It is perfectly symmetrical along its main diagonal (A[i][j] == A[j][i])",
+      "The sum of all rows equals n",
+      "It contains negative numbers"
+    ],
+    "answer": 1,
+    "explanation": "Do tính chất đường 2 chiều, nếu có cạnh nối i và j thì giá trị A[i][j] luôn bằng A[j][i]. Điều này biến ma trận kề vô hướng thành một ma trận phản chiếu đối xứng hoàn hảo.",
+    "category": "Graphs"
+  },
+  {
+    "id": "T3_76",
+    "question": "In the Digit Analysis Hash Method, why might the algorithm apply 'circular shifting' or 'reversing' to the extracted digits?",
+    "options": [
+      "To compress the data size",
+      "To encrypt passwords securely",
+      "To randomize and thoroughly mix the digits, breaking patterns and ensuring a more uniform spread across the buckets",
+      "To sort the strings"
+    ],
+    "answer": 2,
+    "explanation": "Việc xào bài các chữ số (dịch vòng, đảo ngược đầu đuôi) giúp phá vỡ các quy luật phân bố tiềm ẩn trong tập khóa đầu vào, dập tắt nguy cơ gom cụm đụng độ.",
+    "category": "Hashing"
+  },
+  {
+    "id": "T3_77",
+    "question": "In advanced Dynamic Hashing architecture, why are 'Directories' sometimes utilized?",
+    "options": [
+      "To store user passwords",
+      "To act as pointers to data buckets (pages), allowing the table to expand by simply copying directory pointers rather than physically moving massive data blocks",
+      "To format the hard drive",
+      "To sort the SQL tables"
+    ],
+    "answer": 1,
+    "explanation": "Sử dụng Thư mục (Directories) giúp việc xẻ đôi/gộp các trang đĩa (pages) diễn ra chớp nhoáng vì hệ thống chỉ cần cấu hình lại các con trỏ điều hướng thư mục thay vì hì hục bê vác toàn bộ Data vật lý.",
+    "category": "Hashing"
+  },
+  {
+    "id": "T3_78",
+    "question": "If an algorithm runs in O(n+e) time using adjacency lists, how does it effectively perform on a 'Dense Graph' (where e approaches n^2)?",
+    "options": [
+      "The performance remains O(n)",
+      "It achieves O(1) speed",
+      "The performance heavily degrades, approaching O(n^2)",
+      "It crashes due to overflow"
+    ],
+    "answer": 2,
+    "explanation": "Đồ thị dày đặc (Dense graph) là mạng lưới chằng chịt có số cạnh e xấp xỉ n^2. Lúc này, phương trình O(n+e) sẽ bị nuốt chửng và chi phối hoàn toàn bởi O(n^2).",
+    "category": "Graphs"
+  },
+  {
+    "id": "T3_79",
+    "question": "What is a highly practical, real-world application of the Breadth First Search (BFS) algorithm?",
+    "options": [
+      "Encrypting web traffic",
+      "Compressing video files",
+      "Finding the shortest path in unweighted networks or mapping all connected components",
+      "Sorting database columns"
+    ],
+    "answer": 2,
+    "explanation": "Với khả năng loang sóng ưu việt, BFS sinh ra để thống trị các bài toán tìm đường đi ngắn nhất (shortest path) như định tuyến GPS, hoặc quét bản đồ thành phần liên thông.",
+    "category": "Graphs"
+  },
+  {
+    "id": "T3_80",
+    "question": "In an Adjacency List representing a DIRECTED graph, what exactly does the linked list for vertex 'v' contain?",
+    "options": [
+      "All vertices in the graph",
+      "Only the vertices that have edges pointing TO 'v' (in-edges)",
+      "Only the vertices that 'v' has edges originating FROM it pointing to them (out-edges)",
+      "Edges with weights over 10"
+    ],
+    "answer": 2,
+    "explanation": "Trong đồ thị có hướng, danh sách kề của đỉnh v chỉ nắm giữ các đỉnh đích mà v chủ động bắn mũi tên tới (các đường đi một chiều xuất phát từ v).",
+    "category": "Graphs"
+  },
+  {
+    "id": "T3_81",
+    "question": "How many total times is a single edge represented in the entire Adjacency List structure of an UNDIRECTED graph?",
+    "options": [
+      "Once",
+      "Exactly twice",
+      "n times",
+      "It is not represented"
+    ],
+    "answer": 1,
+    "explanation": "Cạnh vô hướng nối đỉnh A và B sẽ xuất hiện 1 lần trong chuỗi danh sách của A, và lặp lại 1 lần nữa trong chuỗi danh sách của B.",
+    "category": "Graphs"
+  },
+  {
+    "id": "T3_82",
+    "question": "What is the mathematical probability P(X=i) for an ideally uniform and random hash function spreading over 'b' buckets?",
+    "options": [
+      "0",
+      "1",
+      "1 / b",
+      "b^2"
+    ],
+    "answer": 2,
+    "explanation": "Hàm băm lý tưởng (Uniform hash function) phân bổ xác suất rớt trúng vào bất kỳ bucket nào là hoàn toàn bình đẳng với nhau, bằng 1 chia cho tổng số bucket (b).",
+    "category": "Hashing"
+  },
+  {
+    "id": "T3_83",
+    "question": "What is the primary reason the 'Folding Hash Function' performs much better for long strings than simple Truncation?",
+    "options": [
+      "It deletes vowels",
+      "Because ALL characters/bits of the string contribute to calculating the final hash address",
+      "Because it returns a random number",
+      "Because it sorts the string first"
+    ],
+    "answer": 1,
+    "explanation": "Khác với Truncation cắt bỏ vô tội vạ, kỹ thuật Gấp khóa (Folding) lấy tổng của TẤT CẢ các ký tự. Nên dù chuỗi chỉ thay đổi 1 ký tự bé tí, kết quả băm cũng sẽ nảy sang số khác.",
+    "category": "Hashing"
+  },
+  {
+    "id": "T3_84",
+    "question": "In Open Addressing algorithms, when an element is marked as 'deleted' by setting its slot to NULL, what dangerous issue arises?",
+    "options": [
+      "A memory leak destroys the OS",
+      "The 'find' function might prematurely stop probing upon hitting the NULL slot, falsely reporting that a valid element further down doesn't exist",
+      "The hash table explodes",
+      "The element resurrects"
+    ],
+    "answer": 1,
+    "explanation": "Nếu xóa bằng cách set về NULL, quá trình thăm dò (Probing) sẽ bị gãy nhịp. Thuật toán tìm kiếm đâm trúng ổ gà NULL sẽ tưởng bảng đã hết, bỏ lọt các phần tử hợp lệ nằm tít phía sau.",
+    "category": "Hashing"
+  },
+  {
+    "id": "T3_85",
+    "question": "What is the Time Complexity to construct a complete Adjacency Matrix from a raw input list of 'e' edges and 'n' vertices?",
+    "options": [
+      "O(n + e)",
+      "O(n^2 + e)",
+      "O(log n)",
+      "O(1)"
+    ],
+    "answer": 1,
+    "explanation": "Cỗ máy tính toán trước hết phải khởi tạo n^2 ô trống mảng 2D về số 0 tốn O(n^2). Sau đó nó duyệt qua e cạnh gán tọa độ bằng 1 tốn O(e). Gom lại là O(n^2 + e).",
+    "category": "Graphs"
+  },
+  {
+    "id": "T3_86",
+    "question": "What is the Time Complexity to construct an Adjacency List from a raw input list of 'e' edges and 'n' vertices?",
+    "options": [
+      "O(n^2 + e)",
+      "O(n + e)",
+      "O(n * e)",
+      "O(log n)"
+    ],
+    "answer": 1,
+    "explanation": "Hệ thống chỉ cần khởi tạo n node Head để quản lý mảng tốn O(n), sau đó nạp e cạnh cắm nối vào các linked list tốn O(e). Tổng cực kỳ thanh thoát O(n + e).",
+    "category": "Graphs"
+  },
+  {
+    "id": "T3_87",
+    "question": "In the Linear Probing deletion example, why must the algorithm explicitly 'Search the cluster for a pair to fill the vacated bucket'?",
+    "options": [
+      "To sort the table",
+      "To free RAM",
+      "To prevent breaking the continuous chain of probed elements, which would act as a wall and cause subsequent valid searches to fail",
+      "To encrypt data"
+    ],
+    "answer": 2,
+    "explanation": "Xóa một phần tử trong dải Linear Probing để lại khoảng trống đứt đoạn. Phải lôi phần tử thích hợp phía sau lên lấp đầy khoảng trống đó để duy trì mạch dò tìm liên tục.",
+    "category": "Hashing"
+  },
+  {
+    "id": "T3_88",
+    "question": "What physically defines a 'Leaf' node in a generic Graph structure (when conceptualizing a tree as a connected acyclic graph)?",
+    "options": [
+      "A vertex with a degree of zero",
+      "A vertex with a degree of exactly 1",
+      "The root node",
+      "A vertex with maximum edges"
+    ],
+    "answer": 1,
+    "explanation": "Trong cấu trúc đồ thị vô hướng đóng vai trò là một Cây, đỉnh lá (leaf) là điểm tận cùng, do đó nó chỉ kết nối ngược lại với đúng 1 đỉnh cha duy nhất (sở hữu bậc = 1).",
+    "category": "Graphs"
+  },
+  {
+    "id": "T3_89",
+    "question": "Which Hash mapping method is specifically optimized and used when the entire set of keys is perfectly known in advance?",
+    "options": [
+      "Digit analysis method",
+      "Mid-square method",
+      "Division method",
+      "Linear Probing"
+    ],
+    "answer": 0,
+    "explanation": "Vì tập khóa đã được phơi bày 100%, lập trình viên có thể dùng Phân tích chữ số (Digit analysis) để tính toán tần suất, qua đó chọn ra các chữ số xào bài hoàn hảo nhất chống đụng độ.",
+    "category": "Hashing"
+  },
+  {
+    "id": "T3_90",
+    "question": "What is an 'Entry' fundamentally defined as in Hashing theory?",
+    "options": [
+      "The memory address of the table",
+      "A completely empty bucket",
+      "A pairing that consists of the Key and its associated Data payload",
+      "The collision counter"
+    ],
+    "answer": 2,
+    "explanation": "Một mục nhập (Entry) trong bảng băm là một gói dữ liệu hoàn chỉnh, bao gồm chiếc Chìa khóa (Key) định danh đi kèm với túi Dữ liệu (Value/Data payload) mà nó lưu trữ.",
+    "category": "Hashing"
+  }
+]

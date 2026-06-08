@@ -1,0 +1,1173 @@
+
+[
+  {
+    "id": 1,
+    "question": "In C/C++, what is the primary purpose of a 'struct'?",
+    "options": [
+      "To execute mathematical functions",
+      "To allocate dynamic memory automatically",
+      "To group multiple variables together under a single data type",
+      "To create a recursive loop"
+    ],
+    "answer": 2,
+    "explanation": "Cấu trúc (struct) trong C/C++ là một công cụ cho phép gộp nhiều biến lại với nhau dưới một kiểu dữ liệu duy nhất.",
+    "category": "C/C++ Review"
+  },
+  {
+    "id": 2,
+    "question": "How do you access a member of a structure through a pointer variable in C/C++?",
+    "options": [
+      "Using the dot (.) operator",
+      "Using the structure pointer operator (->)",
+      "Using the ampersand (&) operator",
+      "Using the plus (+) operator"
+    ],
+    "answer": 1,
+    "explanation": "Để truy cập phần tử qua con trỏ, ta dùng toán tử (->) nhằm thay thế cặp dấu ngoặc đơn () và dấu chấm, giúp cú pháp rõ ràng hơn.",
+    "category": "C/C++ Review"
+  },
+  {
+    "id": 3,
+    "question": "Which operator is used to allocate dynamic memory in C++?",
+    "options": [
+      "malloc()",
+      "free()",
+      "new",
+      "delete"
+    ],
+    "answer": 2,
+    "explanation": "C++ sử dụng toán tử 'new' để cấp phát bộ nhớ động khi chương trình đang chạy và trả về địa chỉ của vùng nhớ đó.",
+    "category": "C/C++ Review"
+  },
+  {
+    "id": 4,
+    "question": "In the C language, what function is used to release dynamically allocated memory?",
+    "options": [
+      "delete",
+      "free()",
+      "remove()",
+      "clear()"
+    ],
+    "answer": 1,
+    "explanation": "Hàm free() trong ngôn ngữ C được dùng để giải phóng không gian bộ nhớ đã được cấp phát bởi các lệnh như malloc(), calloc() hoặc realloc().",
+    "category": "C/C++ Review"
+  },
+  {
+    "id": 5,
+    "question": "What is an essential component of any recursive function to prevent infinite loops?",
+    "options": [
+      "A dynamic memory allocation",
+      "A nested structure",
+      "A base case (or stopping case)",
+      "A pointer dereference"
+    ],
+    "answer": 2,
+    "explanation": "Một hàm đệ quy luôn phải có trường hợp dừng (base case/stopping case) để giải quyết trực tiếp vấn đề đơn giản nhất và ngắt chuỗi đệ quy, tránh lặp vô tận.",
+    "category": "C/C++ Review"
+  },
+  {
+    "id": 6,
+    "question": "In the Fibonacci sequence recursion, what are the standard base cases?",
+    "options": [
+      "n <= 0 and n == 1",
+      "n == 2 and n == 3",
+      "n == 0 only",
+      "n == -1"
+    ],
+    "answer": 0,
+    "explanation": "Đối với bài toán tính số Fibonacci đệ quy, trường hợp dừng (base cases) tiêu chuẩn là n <= 0 (trả về 0) và n == 1 (trả về 1).",
+    "category": "C/C++ Review"
+  },
+  {
+    "id": 7,
+    "question": "In the Towers of Hanoi problem, what is the primary restriction when moving discs?",
+    "options": [
+      "Two discs can be moved at once",
+      "A disc cannot be placed on top of a smaller disc",
+      "Pegs cannot be used temporarily",
+      "All discs must be moved simultaneously"
+    ],
+    "answer": 1,
+    "explanation": "Luật của trò chơi Tháp Hà Nội quy định rằng mỗi lần chỉ được di chuyển một đĩa và tuyệt đối không được đặt đĩa lớn lên trên đĩa nhỏ.",
+    "category": "C/C++ Review"
+  },
+  {
+    "id": 8,
+    "question": "What is the algorithmic definition of a Program?",
+    "options": [
+      "Program = Input + Output",
+      "Program = Data structures + Algorithms",
+      "Program = Hardware + Software",
+      "Program = Arrays + Pointers"
+    ],
+    "answer": 1,
+    "explanation": "Trong khoa học máy tính, một chương trình phần mềm được định nghĩa chính thức theo phương trình: Chương trình = Cấu trúc dữ liệu + Thuật toán.",
+    "category": "Algorithm Analysis"
+  },
+  {
+    "id": 9,
+    "question": "Which of the following notations provides an upper bound for an algorithm's growth rate?",
+    "options": [
+      "Big Omega",
+      "Big Theta",
+      "Big O",
+      "Little o"
+    ],
+    "answer": 2,
+    "explanation": "Ký hiệu Big O (f(n) = O(g(n))) chỉ ra rằng g(n) là giới hạn trên (upper bound) cho tốc độ tăng trưởng của thuật toán.",
+    "category": "Algorithm Analysis"
+  },
+  {
+    "id": 10,
+    "question": "If an algorithm contains a nested loop where both the outer and inner loops iterate 'n' times, what is the time complexity?",
+    "options": [
+      "O(n)",
+      "O(n log n)",
+      "O(n^2)",
+      "O(2^n)"
+    ],
+    "answer": 2,
+    "explanation": "Thời gian chạy của lệnh trong vòng lặp lồng nhau được tính bằng cách nhân kích thước của tất cả các vòng lặp; do đó, n nhân n tạo ra độ phức tạp O(n^2).",
+    "category": "Algorithm Analysis"
+  },
+  {
+    "id": 11,
+    "question": "What does Big Omega (Ω) signify in algorithm analysis?",
+    "options": [
+      "The tightest possible bound",
+      "The lower bound",
+      "The upper bound",
+      "The average case"
+    ],
+    "answer": 1,
+    "explanation": "Big Omega (Ω) cung cấp giới hạn dưới (lower bound), có nghĩa là hàm số sẽ tăng trưởng không chậm hơn g(n) khi n tiến tới vô cực.",
+    "category": "Algorithm Analysis"
+  },
+  {
+    "id": 12,
+    "question": "Which growth rate is considered completely impractical for large problem sizes?",
+    "options": [
+      "O(n)",
+      "O(n log n)",
+      "O(n^2)",
+      "O(2^n)"
+    ],
+    "answer": 3,
+    "explanation": "Hàm mũ O(2^n) tăng trưởng quá nhanh khi kích thước bài toán lớn, khiến nó trở nên hoàn toàn phi thực tế (impractical) để áp dụng trong thực tiễn.",
+    "category": "Algorithm Analysis"
+  },
+  {
+    "id": 13,
+    "question": "What defines the 'Worst-Case' behavior of an algorithm?",
+    "options": [
+      "The minimum time required",
+      "The average time across all possible inputs",
+      "The maximum amount of time required to solve a problem of size n",
+      "The time taken when the input is perfectly sorted"
+    ],
+    "answer": 2,
+    "explanation": "Trường hợp xấu nhất (Worst-Case) tính toán lượng thời gian tối đa mà thuật toán cần để giải quyết một bài toán có kích thước n, qua đó thiết lập một giới hạn trên an toàn.",
+    "category": "Algorithm Analysis"
+  },
+  {
+    "id": 14,
+    "question": "When computing time complexity, what is the Big O of the expression T(n) = 7n^2 + 10n + 3?",
+    "options": [
+      "O(n)",
+      "O(n^2)",
+      "O(7n^2)",
+      "O(n^3)"
+    ],
+    "answer": 1,
+    "explanation": "Theo quy tắc của Big O, ta bỏ qua tất cả các hạng tử bậc thấp và hệ số hằng. Đa thức bậc 2 này sẽ được tinh gọn hoàn toàn thành O(n^2).",
+    "category": "Algorithm Analysis"
+  },
+  {
+    "id": 15,
+    "question": "What is the primary disadvantage of using a Linked List compared to an Array?",
+    "options": [
+      "Linked lists have fixed sizes",
+      "Linked lists require O(N) access time for random elements",
+      "Linked lists require continuous memory blocks",
+      "Linked lists cannot insert elements efficiently"
+    ],
+    "answer": 1,
+    "explanation": "Trong khi mảng có tốc độ truy xuất ngẫu nhiên cực nhanh O(1), danh sách liên kết lại mắc nhược điểm lớn là tốn thời gian O(N) vì bắt buộc phải duyệt qua các node tuần tự.",
+    "category": "Linked Lists"
+  },
+  {
+    "id": 16,
+    "question": "What is the structural characteristic of a Circularly Linked List?",
+    "options": [
+      "It has a left and right pointer",
+      "The link field of the last node points back to the first node",
+      "It requires a 2D array",
+      "It guarantees O(1) random access"
+    ],
+    "answer": 1,
+    "explanation": "Trong danh sách liên kết vòng (Circularly Linked List), trường con trỏ (link field) của node cuối cùng được bẻ cong để trỏ ngược lại node đầu tiên thay vì trỏ vào khoảng không NULL.",
+    "category": "Linked Lists"
+  },
+  {
+    "id": 17,
+    "question": "Which three fields define a node in a Doubly Linked List?",
+    "options": [
+      "Data, Header, Tail",
+      "Coefficient, Exponent, Link",
+      "Left link, Data item, Right link",
+      "Value, Row, Column"
+    ],
+    "answer": 2,
+    "explanation": "Một node trong danh sách liên kết kép (Doubly Linked List) sở hữu ít nhất ba trường: con trỏ trái (llink), trường dữ liệu (item) và con trỏ phải (rlink).",
+    "category": "Linked Lists"
+  },
+  {
+    "id": 18,
+    "question": "When representing a sparse matrix with linked lists, what structure is heavily utilized?",
+    "options": [
+      "A binary search tree",
+      "A single singly linked list",
+      "Circularly linked lists with head nodes for each row and column",
+      "A simple array of pointers"
+    ],
+    "answer": 2,
+    "explanation": "Mỗi cột và mỗi hàng của một ma trận thưa được biểu diễn tối ưu bằng một danh sách liên kết vòng, có trang bị các node head (lính canh) chuyên dụng để tiết kiệm không gian nhớ.",
+    "category": "Linked Lists"
+  },
+  {
+    "id": 19,
+    "question": "In the Polynomial Addition algorithm using linked lists, what happens if the current term in polynomial 'a' has a smaller exponent than polynomial 'b'?",
+    "options": [
+      "The coefficients are multiplied",
+      "A duplicate of 'b's term is attached to the result, and pointer 'b' advances",
+      "The terms are deleted",
+      "Both pointers advance"
+    ],
+    "answer": 1,
+    "explanation": "Nếu a->expon < b->expon, thuật toán sẽ tạo ra một bản sao của số hạng thuộc nhánh 'b', gắn số hạng đó vào chuỗi kết quả và đẩy con trỏ 'b' tiến lên một bước.",
+    "category": "Linked Lists"
+  },
+  {
+    "id": 20,
+    "question": "In C, what occurs if you dynamically allocate memory for a new node but the system is out of RAM?",
+    "options": [
+      "The program deletes old nodes",
+      "The compiler crashes",
+      "malloc returns NULL (IS_FULL(temp) is true)",
+      "The computer reboots"
+    ],
+    "answer": 2,
+    "explanation": "Nếu bộ nhớ bị đầy trong quá trình cấp phát, hàm malloc() sẽ trả về NULL, khiến hàm IS_FULL(temp) trả về giá trị True. Chương trình sẽ in ra thông báo lỗi và thoát.",
+    "category": "Linked Lists"
+  },
+  {
+    "id": 21,
+    "question": "How many pointers are traditionally required to invert a singly linked list iteratively?",
+    "options": [
+      "1 pointer",
+      "2 pointers",
+      "3 pointers (lead, middle, trail)",
+      "An array of pointers"
+    ],
+    "answer": 2,
+    "explanation": "Để đảo chiều một danh sách liên kết, thuật toán sử dụng ba con trỏ (lead, middle và trail) nhằm thay đổi hướng móc xích an toàn mà không làm mất liên kết với phần còn lại của chuỗi.",
+    "category": "Linked Lists"
+  },
+  {
+    "id": 22,
+    "question": "What operational principle does a Stack strictly follow?",
+    "options": [
+      "FIFO (First-In-First-Out)",
+      "LIFO (Last-In-First-Out)",
+      "Random Access",
+      "Binary Search"
+    ],
+    "answer": 1,
+    "explanation": "Ngăn xếp (Stack) là một cấu trúc dữ liệu tuyến tính tuân thủ nghiêm ngặt nguyên lý LIFO (Last-In-First-Out - Vào sau ra trước).",
+    "category": "Stacks & Queues"
+  },
+  {
+    "id": 23,
+    "question": "In an Array representation of a Stack, what is the typical initial value for the 'top' variable to indicate an empty stack?",
+    "options": [
+      "top = 0",
+      "top = 1",
+      "top = MAX",
+      "top = -1"
+    ],
+    "answer": 3,
+    "explanation": "Khởi đầu, biến top được thiết lập bằng -1 để biểu thị ngăn xếp rỗng. Khi mảng chứa đầy dữ liệu, biến top sẽ chạm ngưỡng MAX-1.",
+    "category": "Stacks & Queues"
+  },
+  {
+    "id": 24,
+    "question": "What is a major advantage of using Postfix expression over Infix expression in computing?",
+    "options": [
+      "Postfix uses fewer operators",
+      "Postfix is easier for humans to read",
+      "Postfix completely removes the need for parentheses and operator precedence rules",
+      "Postfix evaluates right-to-left"
+    ],
+    "answer": 2,
+    "explanation": "Ưu điểm lớn nhất của biểu thức hậu tố (Postfix) là nó loại bỏ hoàn toàn sự rắc rối về quy tắc ưu tiên toán tử và dấu ngoặc, cho phép máy tính tính toán trơn tru bằng Ngăn xếp.",
+    "category": "Stacks & Queues"
+  },
+  {
+    "id": 25,
+    "question": "How do operating system compilers typically implement recursive method calls?",
+    "options": [
+      "Using a Queue",
+      "Using a Linked List",
+      "Using a Hash Table",
+      "Using the System Call Stack"
+    ],
+    "answer": 3,
+    "explanation": "Trong quá trình thực thi, mỗi lời gọi đệ quy tạo ra một 'bản ghi kích hoạt' (activation record) và đẩy nó vào Ngăn xếp hệ thống. Đó là lý do đệ quy sâu có thể gây tràn Stack (Stack Overflow).",
+    "category": "Stacks & Queues"
+  },
+  {
+    "id": 26,
+    "question": "What operational principle does a Queue strictly follow?",
+    "options": [
+      "LIFO",
+      "FIFO",
+      "FILO",
+      "LILO"
+    ],
+    "answer": 1,
+    "explanation": "Hàng đợi (Queue) hoạt động theo nguyên tắc First-In, First-Out (FIFO - Vào trước ra trước).",
+    "category": "Stacks & Queues"
+  },
+  {
+    "id": 27,
+    "question": "What specific problem arises in a naive linear array implementation of a Queue?",
+    "options": [
+      "It requires a hash function",
+      "The pointers drift to the right, causing a false 'full' condition even if there is empty space at the front",
+      "It uses O(N^2) memory",
+      "Elements are automatically sorted"
+    ],
+    "answer": 1,
+    "explanation": "Trong mảng tuyến tính, hai con trỏ front và rear chỉ tịnh tiến lên phía trước. Điều này khiến cấu trúc bị trôi lùi về cuối mảng, báo lỗi 'đầy' vô lý ngay cả khi phía đầu mảng vẫn còn trống.",
+    "category": "Stacks & Queues"
+  },
+  {
+    "id": 28,
+    "question": "How is the pointer drift problem in Queues optimally solved?",
+    "options": [
+      "By using a Circular Array structure with modulo arithmetic",
+      "By replacing it with a Stack",
+      "By constantly shifting elements to the left",
+      "By using a double hash"
+    ],
+    "answer": 0,
+    "explanation": "Sử dụng Hàng đợi vòng (Circular Array) kết hợp với phép chia lấy dư (modulo) giúp con trỏ nhảy ngược trở lại vạch xuất phát, giải quyết triệt để lỗi trôi dạt.",
+    "category": "Stacks & Queues"
+  },
+  {
+    "id": 29,
+    "question": "To recognize if a string is a palindrome without recursion, which data structures are concurrently used?",
+    "options": [
+      "Two arrays",
+      "A Stack and a Queue",
+      "A Hash Table and a BST",
+      "Two Stacks"
+    ],
+    "answer": 1,
+    "explanation": "Stack sẽ đảo ngược thứ tự các ký tự, trong khi Queue giữ nguyên thứ tự ban đầu. Việc kết hợp đối chiếu hai cấu trúc này giúp nhận diện chuỗi đối xứng (palindrome) một cách hoàn hảo.",
+    "category": "Stacks & Queues"
+  },
+  {
+    "id": 30,
+    "question": "In a Linked Queue, where do insertion and deletion occur to maintain O(1) efficiency?",
+    "options": [
+      "Both at the front",
+      "Both at the rear",
+      "Insert at the rear, delete from the front",
+      "Insert at the front, delete from the rear"
+    ],
+    "answer": 2,
+    "explanation": "Thao tác thêm (enqueue) được thực hiện thần tốc tại con trỏ đuôi (rear), và thao tác xóa (dequeue) diễn ra tại con trỏ đầu (front/START) của hàng đợi liên kết.",
+    "category": "Stacks & Queues"
+  },
+  {
+    "id": 31,
+    "question": "In the implementation of Sequential Search, what is the purpose of adding a 'Sentinel' at the end of the array?",
+    "options": [
+      "To prevent memory leaks",
+      "To automatically sort the array",
+      "To ensure the search loop eventually terminates, bypassing the need for a boundary check in every iteration",
+      "To count the number of elements"
+    ],
+    "answer": 2,
+    "explanation": "Việc đặt 'Lính canh' (list[n].key = searchNum) ở cuối mảng báo hiệu điểm dừng chắc chắn, giúp vòng lặp bỏ qua việc kiểm tra điều kiện tràn giới hạn `i < n` ở mỗi bước, tối ưu hóa tốc độ vi mô.",
+    "category": "Searching & Sorting"
+  },
+  {
+    "id": 32,
+    "question": "What is the absolute mathematical prerequisite for performing a Binary Search?",
+    "options": [
+      "The input array must contain only integers",
+      "The input array must be perfectly sorted",
+      "The array size must be a power of 2",
+      "The array must be empty"
+    ],
+    "answer": 1,
+    "explanation": "Thuật toán tìm kiếm nhị phân chia đôi không gian dựa trên cơ sở so sánh lớn/nhỏ, do đó điều kiện bắt buộc là mảng đầu vào phải được sắp xếp trước (sorted list).",
+    "category": "Searching & Sorting"
+  },
+  {
+    "id": 33,
+    "question": "If 'searchNum' is less than the middle element during Binary Search, how is the boundary updated?",
+    "options": [
+      "left = middle + 1",
+      "right = middle - 1",
+      "right = middle",
+      "left = right"
+    ],
+    "answer": 1,
+    "explanation": "Nếu giá trị mục tiêu nhỏ hơn giá trị ở giữa mảng, thuật toán sẽ bỏ qua nửa bên phải và tiếp tục khoanh vùng nửa bên trái bằng cách kéo biên `right` về vị trí `middle - 1`.",
+    "category": "Searching & Sorting"
+  },
+  {
+    "id": 34,
+    "question": "What characterizes an 'External Sorting' algorithm?",
+    "options": [
+      "It uses external web APIs",
+      "It is written in Python",
+      "It is used when the dataset is too massive to fit into main RAM, storing intermediate results on secondary storage",
+      "It sorts arrays in reverse order"
+    ],
+    "answer": 2,
+    "explanation": "Sắp xếp ngoại (External Sort) được triển khai khi tập dữ liệu quá khổng lồ không thể chứa vừa RAM. Thuật toán bắt buộc phải lưu tạm kết quả tính toán trung gian ra đĩa cứng.",
+    "category": "Searching & Sorting"
+  },
+  {
+    "id": 35,
+    "question": "In Insertion Sort, what happens to elements if the current key is smaller than them?",
+    "options": [
+      "They are deleted",
+      "They are moved to the right by one position to make a gap for the key",
+      "They are swapped randomly",
+      "They are pushed to a stack"
+    ],
+    "answer": 1,
+    "explanation": "Các phần tử có giá trị lớn hơn khóa hiện tại sẽ bị đẩy lùi sang phải một vị trí (list[j+1] = list[j]) nhằm dọn ra một 'khe hở' để chèn khóa vào đúng chỗ.",
+    "category": "Searching & Sorting"
+  },
+  {
+    "id": 36,
+    "question": "What is the primary optimization that List Insertion Sort provides over Array Insertion Sort?",
+    "options": [
+      "It changes time complexity to O(log n)",
+      "It avoids physical shifting of elements by merely adjusting pointers",
+      "It uses binary trees",
+      "It sorts instantly"
+    ],
+    "answer": 1,
+    "explanation": "Việc sử dụng Cấu trúc Danh sách liên kết thay thế Mảng giúp loại bỏ hoàn toàn chi phí dịch chuyển bộ nhớ vật lý cồng kềnh; thuật toán chỉ cần điều chỉnh các đường dẫn con trỏ.",
+    "category": "Searching & Sorting"
+  },
+  {
+    "id": 37,
+    "question": "In the Quick Sort algorithm, what is the role of the 'Pivot'?",
+    "options": [
+      "It is the element deleted from the array",
+      "It acts as a median to divide the array into elements smaller than it and elements greater than it",
+      "It tracks the length of the array",
+      "It acts as a sentinel"
+    ],
+    "answer": 1,
+    "explanation": "Quick Sort chỉ định một phần tử chốt (pivot) đóng vai trò chia cắt bản đồ. Nó phân mảnh mảng thành hai phe: phe có giá trị nhỏ hơn chốt và phe có giá trị lớn hơn chốt.",
+    "category": "Searching & Sorting"
+  },
+  {
+    "id": 38,
+    "question": "What is the Worst-Case Time Complexity of the Quick Sort algorithm?",
+    "options": [
+      "O(n)",
+      "O(log n)",
+      "O(n log n)",
+      "O(n^2)"
+    ],
+    "answer": 3,
+    "explanation": "Quick Sort sụp đổ và suy thoái thành độ phức tạp tồi tệ O(n^2) trong trường hợp mảng không được chia đều (ví dụ mảng đã sắp xếp từ trước nhưng vẫn chọn chốt đầu tiên).",
+    "category": "Searching & Sorting"
+  },
+  {
+    "id": 39,
+    "question": "Which sorting algorithm fundamentally guarantees O(n log n) Time Complexity across Best, Average, and Worst cases?",
+    "options": [
+      "Quick Sort",
+      "Selection Sort",
+      "Merge Sort",
+      "Bubble Sort"
+    ],
+    "answer": 2,
+    "explanation": "Thuật toán Merge Sort dựa trên cơ chế 'Chia để trị' nghiêm ngặt, luôn chẻ chính xác mảng làm đôi. Nhờ đó nó duy trì sức mạnh O(n log n) hoàn hảo qua mọi trường hợp dữ liệu,.",
+    "category": "Searching & Sorting"
+  },
+  {
+    "id": 40,
+    "question": "What is the primary operational disadvantage of Merge Sort compared to Quick Sort?",
+    "options": [
+      "It requires exactly O(N) extra Space Complexity to merge sub-lists",
+      "It is slower in the worst case",
+      "It cannot handle integers",
+      "It is highly unstable"
+    ],
+    "answer": 0,
+    "explanation": "Khuyết điểm cực lớn của Merge Sort là nó 'ăn gian' bộ nhớ. Để gộp hai nửa mảng một cách an toàn, nó buộc phải xin cấp phát một mảng tạm (temp array) có kích thước O(n).",
+    "category": "Searching & Sorting"
+  },
+  {
+    "id": 41,
+    "question": "By formal definition, how is the 'Degree' of a node in a tree defined?",
+    "options": [
+      "The length of the path from the root",
+      "The number of its sibling nodes",
+      "The number of sub-trees (children) it has",
+      "The height of its sub-tree"
+    ],
+    "answer": 2,
+    "explanation": "Trong lý thuyết Đồ thị và Cây, 'Bậc' (Degree) của một node được định nghĩa toán học là số lượng các cây con (hoặc số node con trực tiếp) mà nó sở hữu.",
+    "category": "Trees & Forests"
+  },
+  {
+    "id": 42,
+    "question": "What differentiates a strict 'Binary Tree' from a general generic Tree?",
+    "options": [
+      "It has circular links",
+      "It formally distinguishes between a 'left sub-tree' and a 'right sub-tree', and limits children to two",
+      "It only holds binary numbers",
+      "It has no root"
+    ],
+    "answer": 1,
+    "explanation": "Cây nhị phân không chỉ giới hạn số lượng con tối đa là 2, mà còn phải có sự phân biệt rõ ràng đâu là 'cây con bên trái' và đâu là 'cây con bên phải', khác với cây vô hướng thông thường.",
+    "category": "Trees & Forests"
+  },
+  {
+    "id": 43,
+    "question": "According to Lemma 1, what is the maximum number of nodes possible at level 'i' of a binary tree?",
+    "options": [
+      "2^i",
+      "2^(i-1)",
+      "2^i - 1",
+      "i^2"
+    ],
+    "answer": 1,
+    "explanation": "Theo Bổ đề 1 (Lemma 1), tại bất kỳ tầng 'i' nào của cây nhị phân, sức chứa tối đa của nó về mặt số lượng node là 2^(i-1).",
+    "category": "Trees & Forests"
+  },
+  {
+    "id": 44,
+    "question": "What is the total maximum number of nodes in a binary tree of depth 'k'?",
+    "options": [
+      "2^k",
+      "2^k - 1",
+      "2^(k-1)",
+      "k^2"
+    ],
+    "answer": 1,
+    "explanation": "Bằng cách lấy tổng cấp số nhân của sức chứa các tầng từ 1 đến k, tổng số node lớn nhất mà cây nhị phân có thể đạt tới được chứng minh bằng công thức 2^k - 1.",
+    "category": "Trees & Forests"
+  },
+  {
+    "id": 45,
+    "question": "In a Full Binary Tree of depth k, how many nodes does it strictly possess?",
+    "options": [
+      "k nodes",
+      "exactly 2^k - 1 nodes",
+      "2^(k-1) nodes",
+      "It varies"
+    ],
+    "answer": 1,
+    "explanation": "Một cây nhị phân Đầy đủ (Full Binary Tree) là cây lấp kín mọi chỗ trống trên mọi tầng, do đó nó chắc chắn phải mang trên mình giới hạn tuyệt đối là 2^k - 1 node.",
+    "category": "Trees & Forests"
+  },
+  {
+    "id": 46,
+    "question": "In the Array Representation of a complete binary tree, if a node is at index 'i', where is its left child located?",
+    "options": [
+      "i + 1",
+      "i / 2",
+      "2i",
+      "2i + 1"
+    ],
+    "answer": 2,
+    "explanation": "Dựa vào quy tắc thiết kế mảng cho Cây, node con bên trái của bất kỳ node 'i' nào sẽ luôn nằm ở tọa độ nhân đôi: '2i'.",
+    "category": "Trees & Forests"
+  },
+  {
+    "id": 47,
+    "question": "In the Array Representation, how do you mathematically find the parent of a node at index 'i'?",
+    "options": [
+      "i - 1",
+      "i / 2 (integer division)",
+      "2i",
+      "i % 2"
+    ],
+    "answer": 1,
+    "explanation": "Để truy xuất ngược lên node cha từ node con có tọa độ i, máy tính thực hiện phép chia lấy phần nguyên i / 2.",
+    "category": "Trees & Forests"
+  },
+  {
+    "id": 48,
+    "question": "Which sequence correctly represents an 'Inorder Traversal'?",
+    "options": [
+      "Left, Node, Right (LVR)",
+      "Node, Left, Right (VLR)",
+      "Left, Right, Node (LRV)",
+      "Right, Left, Node"
+    ],
+    "answer": 0,
+    "explanation": "Kỹ thuật Duyệt Trung tố (Inorder Traversal) yêu cầu đi sâu hết cỡ sang nhánh Trái, quay lên thăm Gốc, rồi cuối cùng mới rẽ sang nhánh Phải (LVR).",
+    "category": "Trees & Forests"
+  },
+  {
+    "id": 49,
+    "question": "Which data structure is strictly required to implement a 'Level Order Traversal'?",
+    "options": [
+      "Stack",
+      "Queue",
+      "Hash Map",
+      "Priority Queue"
+    ],
+    "answer": 1,
+    "explanation": "Duyệt theo mức (Level Order Traversal) xử lý cây theo từng tầng từ trái sang phải. Hàng đợi (Queue - FIFO) là công cụ bắt buộc để quản lý hàng lối ưu tiên theo độ nông sâu.",
+    "category": "Trees & Forests"
+  },
+  {
+    "id": 50,
+    "question": "How is a 'Forest' defined in graph theory?",
+    "options": [
+      "A tree with circular links",
+      "An ordered set of n >= 0 disjoint trees",
+      "A completely unbalanced tree",
+      "A completely filled binary tree"
+    ],
+    "answer": 1,
+    "explanation": "Rừng (Forest) được định nghĩa là một tập hợp có thứ tự bao gồm n (n >= 0) các cây con hoàn toàn rời rạc (disjoint trees).",
+    "category": "Trees & Forests"
+  },
+  {
+    "id": 51,
+    "question": "What is the defining rule for elements in a Binary Search Tree (BST)?",
+    "options": [
+      "All left children must be strictly larger than the root",
+      "All children must be identical",
+      "Keys in the left sub-tree are smaller than the root, and keys in the right sub-tree are larger",
+      "It must be completely balanced"
+    ],
+    "answer": 2,
+    "explanation": "Định luật thép của Cây tìm kiếm nhị phân (BST): Bất kỳ giá trị nào ở nhánh trái phải nhỏ hơn gốc, và giá trị nhánh phải phải lớn hơn gốc.",
+    "category": "Binary Search Trees"
+  },
+  {
+    "id": 52,
+    "question": "In an iterative BST search loop, what indicates that the target element was NOT found?",
+    "options": [
+      "The program crashes",
+      "The pointer reaches a node with value 0",
+      "The traversal pointer 'p' becomes NULL",
+      "The loop iterates exactly n times"
+    ],
+    "answer": 2,
+    "explanation": "Nếu con trỏ duyệt rớt khỏi mép của các node lá và biến thành NULL, điều đó chứng tỏ quá trình tìm kiếm thất bại và giá trị khóa không tồn tại trên cây.",
+    "category": "Binary Search Trees"
+  },
+  {
+    "id": 53,
+    "question": "How do you mechanically find the MINIMUM element in a BST?",
+    "options": [
+      "Trace the right child pointers to the end",
+      "Check the root node",
+      "Trace the left child pointers continuously until reaching a node with a NULL left child",
+      "Do a level order traversal"
+    ],
+    "answer": 2,
+    "explanation": "Do nguyên lý 'nhỏ hơn ở bên trái', phần tử có giá trị cực tiểu luôn trôi dạt về biên giới tận cùng phía bên trái của cây.",
+    "category": "Binary Search Trees"
+  },
+  {
+    "id": 54,
+    "question": "Where does a newly inserted node always attach itself in a standard BST?",
+    "options": [
+      "It replaces the root",
+      "It attaches as a new leaf node exactly where the search path terminated into NULL",
+      "It replaces the rightmost node",
+      "It shifts the entire tree up"
+    ],
+    "answer": 1,
+    "explanation": "Thuật toán chèn đóng vai trò như một cỗ máy dò tìm; nó sẽ trượt dài qua các nhánh đến khi đụng phải khoảng trống NULL, và cắm phần tử mới vào đó dưới dạng một node lá.",
+    "category": "Binary Search Trees"
+  },
+  {
+    "id": 55,
+    "question": "When deleting a BST node that has exactly ONE child, what bypass operation happens?",
+    "options": [
+      "The node is swapped with the root",
+      "The node's parent is directly linked to the node's single child sub-tree",
+      "The child is deleted",
+      "The tree is erased"
+    ],
+    "answer": 1,
+    "explanation": "Trong trường hợp node bị xóa chỉ có 1 con, ta bắt cầu nhánh con đó nối thẳng trực tiếp lên node cha, hoàn toàn bỏ qua sự tồn tại của node bị xóa.",
+    "category": "Binary Search Trees"
+  },
+  {
+    "id": 56,
+    "question": "When deleting a BST node with TWO children, what element is frequently chosen to replace it?",
+    "options": [
+      "The root node",
+      "Any leaf node",
+      "The largest element in its left sub-tree OR the smallest element in its right sub-tree",
+      "Its right child directly"
+    ],
+    "answer": 2,
+    "explanation": "Để bảo toàn cấu trúc BST, một node 2 con bị xóa phải được lấp đầy bằng một kẻ kế nhiệm sát vế nhất: phần tử lớn nhất nhánh trái (predecessor) hoặc phần tử nhỏ nhất nhánh phải (successor).",
+    "category": "Binary Search Trees"
+  },
+  {
+    "id": 57,
+    "question": "Which traversal algorithm applied to a valid BST will guarantee a perfectly sorted ascending output?",
+    "options": [
+      "Preorder Traversal",
+      "Level Order Traversal",
+      "Inorder Traversal",
+      "Postorder Traversal"
+    ],
+    "answer": 2,
+    "explanation": "Bằng cách ưu tiên thăm nhánh trái nhỏ nhất rồi đến gốc và nhánh phải lớn (Left-Root-Right), phương pháp duyệt Trung tố (Inorder) tạo ra một chuỗi in được sắp xếp tăng dần hoàn hảo,.",
+    "category": "Binary Search Trees"
+  },
+  {
+    "id": 58,
+    "question": "In recursive node counting functions for BSTs, what does returning '1' usually represent?",
+    "options": [
+      "The height",
+      "The current existing node itself",
+      "The index",
+      "An error"
+    ],
+    "answer": 1,
+    "explanation": "Số '1' biểu thị việc xác nhận sự tồn tại của bản thân node đang được xét. Hàm đệ quy cộng dồn '1' cùng với số node ở 2 nhánh con: 1 + count(left) + count(right).",
+    "category": "Binary Search Trees"
+  },
+  {
+    "id": 59,
+    "question": "What boolean condition identifies a leaf node in a BST counting exercise?",
+    "options": [
+      "left == NULL && right == NULL",
+      "data == 0",
+      "left != NULL && right != NULL",
+      "data % 2 == 0"
+    ],
+    "answer": 0,
+    "explanation": "Node lá là điểm cụt không mang theo hậu duệ nào. Do đó, cả hai con trỏ trái và phải của nó đều phải thỏa mãn điều kiện chỉ vào rỗng (NULL).",
+    "category": "Binary Search Trees"
+  },
+  {
+    "id": 60,
+    "question": "To properly delete an entire BST and avoid memory leaks, which traversal strategy must be used?",
+    "options": [
+      "Preorder",
+      "Postorder (delete children before deleting the parent)",
+      "Inorder",
+      "Level Order"
+    ],
+    "answer": 1,
+    "explanation": "Hàm make_empty() buộc phải dùng đệ quy duyệt Hậu tố (Postorder) để phá hủy triệt để từng nhánh con trái/phải trước khi dùng lệnh free(T) để hủy node cha, tránh trôi dạt bộ nhớ (memory leaks).",
+    "category": "Binary Search Trees"
+  },
+  {
+    "id": 61,
+    "question": "What is the defining rule of a 'Max Heap'?",
+    "options": [
+      "It must be an unbalanced tree",
+      "The key value in each node is no smaller than the key values in its children",
+      "The key value in the root is the absolute minimum",
+      "Duplicate keys are strictly forbidden"
+    ],
+    "answer": 1,
+    "explanation": "Cây Max Heap duy trì một trật tự sức mạnh tuyệt đối: Giá trị khóa (key) của một node cha không bao giờ được phép nhỏ hơn giá trị của các node con dưới quyền nó.",
+    "category": "Heaps"
+  },
+  {
+    "id": 62,
+    "question": "In a 1-indexed Array representation of a Heap, where is the ultimate root node located?",
+    "options": [
+      "A",
+      "A[n]",
+      "A",
+      "A[n/2]"
+    ],
+    "answer": 2,
+    "explanation": "Trong cấu trúc mảng Heap được đánh số từ chỉ số 1 (1-indexed array), vị trí A vĩnh viễn là ngai vàng dành cho node gốc (root) lớn nhất của hệ thống,.",
+    "category": "Heaps"
+  },
+  {
+    "id": 63,
+    "question": "When inserting a new element into a Max Heap, where is it initially placed before adjusting?",
+    "options": [
+      "At the root",
+      "At the very last available entry of the complete tree array",
+      "In the middle",
+      "At index 0"
+    ],
+    "answer": 1,
+    "explanation": "Thao tác chèn bắt đầu bằng việc đặt phần tử mới vào cuối mảng (last entry). Sau đó, nó tự đánh giá và 'sủi bọt' hoán đổi dần lên trên (up-heap) nếu to hơn cha của nó.",
+    "category": "Heaps"
+  },
+  {
+    "id": 64,
+    "question": "Which element is physically removed when a 'Delete' operation is called on a Max Heap?",
+    "options": [
+      "The smallest element",
+      "The absolutely last leaf element",
+      "The root (the maximum element)",
+      "A randomly selected node"
+    ],
+    "answer": 2,
+    "explanation": "Thao tác xóa (Delete) trong Max Heap mặc định nhắm vào đỉnh cao nhất - tức là chặt đứt và thu hoạch node gốc mang giá trị tối đa.",
+    "category": "Heaps"
+  },
+  {
+    "id": 65,
+    "question": "During a Max Heap deletion, what element is temporarily placed at the root to begin the rebalancing (down-heap) process?",
+    "options": [
+      "A zero",
+      "The minimum value of the heap",
+      "The element originally located at the very last position of the array",
+      "The left child of the root"
+    ],
+    "answer": 2,
+    "explanation": "Sau khi nhổ rễ, Heap vá lỗ hổng bằng cách bốc tạm phần tử nằm tận cùng cuối mảng lên thế chỗ, rồi dần dần rây lọc nó chìm xuống dưới (down-heap) để khôi phục tôn ti trật tự.",
+    "category": "Heaps"
+  },
+  {
+    "id": 66,
+    "question": "What is the theoretical Time Complexity of a standard Heap Sort operation?",
+    "options": [
+      "O(n^2)",
+      "O(n)",
+      "O(n log n)",
+      "O(1)"
+    ],
+    "answer": 2,
+    "explanation": "Mỗi thao tác điều chỉnh Heap (adjust) tốn O(log n). Để sắp xếp toàn bộ, ta thực hiện n lần điều chỉnh, đem lại độ phức tạp lý thuyết bất bại là O(n log n).",
+    "category": "Heaps"
+  },
+  {
+    "id": 67,
+    "question": "Which phase comes first when executing a full Heap Sort algorithm on a random array?",
+    "options": [
+      "Deleting the root recursively",
+      "Building a valid max heap structure from the raw array",
+      "Sorting elements using insertion sort",
+      "Reversing the array"
+    ],
+    "answer": 1,
+    "explanation": "Thuật toán Heap Sort được thi công qua hai công đoạn: Giai đoạn 1 (Phase 1) bắt buộc phải nắn lại mảng thô (raw array) thành một cấu trúc Max Heap hợp chuẩn (build a max heap) trước khi trích xuất.",
+    "category": "Heaps"
+  },
+  {
+    "id": 68,
+    "question": "What is the mathematical height of a heap containing 'n' nodes?",
+    "options": [
+      "n",
+      "log_2(n+1)",
+      "n/2",
+      "n^2"
+    ],
+    "answer": 1,
+    "explanation": "Bởi vì Heap được lấp đầy chặt chẽ như một Cây nhị phân hoàn chỉnh (Complete Binary Tree), chiều cao của nó luôn bị ép nén xuống tối thiểu ở ngưỡng toán học log_2(n+1).",
+    "category": "Heaps"
+  },
+  {
+    "id": 69,
+    "question": "What practical system feature is a Heap exceptionally suited to implement?",
+    "options": [
+      "A LIFO Stack",
+      "A Priority Queue",
+      "A Hash Table",
+      "A Database index"
+    ],
+    "answer": 1,
+    "explanation": "Với khả năng 'nôn ra' tức thời phần tử có quyền lực lớn nhất ngay tại gốc, Cây Heap sinh ra để làm cơ sở hạ tầng cho Hàng đợi ưu tiên (Priority Queue).",
+    "category": "Heaps"
+  },
+  {
+    "id": 70,
+    "question": "In the `adjust` function for heaps, which nodes are skipped because they inherently satisfy the heap property?",
+    "options": [
+      "The root node",
+      "The internal nodes",
+      "The leaf nodes",
+      "The negative nodes"
+    ],
+    "answer": 2,
+    "explanation": "Khi hàm điều chỉnh (adjust) xây dựng Heap, nó bắt đầu rây từ vị trí n/2 (node cha cuối cùng) trở lên trên. Mọi node lá (leaf nodes) bị bỏ qua do bản thân một chiếc lá đứng một mình tự nó đã là một tiểu-heap hoàn chỉnh.",
+    "category": "Heaps"
+  },
+  {
+    "id": 71,
+    "question": "What characterizes an 'Undirected Graph'?",
+    "options": [
+      "Edges have strict directions",
+      "The pair of vertices representing an edge is unordered, meaning (u,v) and (v,u) are the same",
+      "It has no cycles",
+      "It requires a hash map"
+    ],
+    "answer": 1,
+    "explanation": "Đồ thị vô hướng là hệ thống nơi con đường giữa hai đỉnh u và v hoạt động như đường 2 chiều. Cặp tọa độ (u,v) hoàn toàn vô định về hướng, do đó (u,v) và (v,u) là một cạnh duy nhất.",
+    "category": "Graphs"
+  },
+  {
+    "id": 72,
+    "question": "What is the maximum number of edges in a directed complete graph with 'n' vertices?",
+    "options": [
+      "n * (n - 1) / 2",
+      "n * (n - 1)",
+      "n^2",
+      "2^n"
+    ],
+    "answer": 1,
+    "explanation": "Với đồ thị có hướng n đỉnh, mỗi đỉnh có khả năng phóng đường mũi tên đến n-1 đỉnh còn lại. Tổng nhân lên cho phép số cạnh đạt ngưỡng tối đa là n(n-1).",
+    "category": "Graphs"
+  },
+  {
+    "id": 73,
+    "question": "If a graph with 'n' vertices is represented using an Adjacency Matrix, what is the memory dimension required?",
+    "options": [
+      "An n x n 2D array",
+      "A 1D array of size n",
+      "A linked list of size n",
+      "O(log n) space"
+    ],
+    "answer": 0,
+    "explanation": "Phương thức Ma trận kề (Adjacency Matrix) yêu cầu trải phẳng mọi kết nối đồ thị ra một bảng mảng hai chiều có kích cỡ n x n, đánh dấu '1' nếu có cạnh nối.",
+    "category": "Graphs"
+  },
+  {
+    "id": 74,
+    "question": "Depth First Search (DFS) on a graph operates fundamentally similarly to which tree traversal?",
+    "options": [
+      "Level Order Traversal",
+      "Inorder Traversal",
+      "Preorder Traversal",
+      "Postorder Traversal"
+    ],
+    "answer": 2,
+    "explanation": "Chiến thuật của DFS là đào sâu bám rễ, cứ có đường là xông xuống tận cùng trước khi quay lại. Nó đánh dấu node trước, rồi đâm sâu xuống nhánh, y hệt logic của Duyệt Tiền tố (Preorder).",
+    "category": "Graphs"
+  },
+  {
+    "id": 75,
+    "question": "Which data structure is essential for implementing Breadth First Search (BFS) on a graph?",
+    "options": [
+      "Stack",
+      "Queue",
+      "Hash Map",
+      "Binary Tree"
+    ],
+    "answer": 1,
+    "explanation": "Thuật toán BFS loang rễ như vết dầu mỡ theo từng tầng sóng. Để theo dõi các đỉnh kề chưa duyệt theo trật tự công bằng 'loang tới trước, duyệt trước', nó buộc phải cậy nhờ vào Hàng đợi Queue.",
+    "category": "Graphs"
+  },
+  {
+    "id": 76,
+    "question": "What is the primary function of a 'Key' in a Hash Table?",
+    "options": [
+      "To encrypt data",
+      "To uniquely identify an entry so the hash function can compute its storage address",
+      "To sort the table alphabetically",
+      "To act as a pointer to the next element"
+    ],
+    "answer": 1,
+    "explanation": "Khóa (Key) là chuỗi nhận dạng độc nhất. Nó được ném vào cỗ máy Hàm Băm (Hash Function) nhằm nhào nặn và biến đổi thành tọa độ ô nhớ vật lý trong mảng để trỏ tới.",
+    "category": "Hashing"
+  },
+  {
+    "id": 77,
+    "question": "In a Hash Table, what phenomenon is called a 'Collision'?",
+    "options": [
+      "When the table is deleted",
+      "When two identical keys are entered",
+      "When two completely different keys are mathematically hashed into the exact same bucket address",
+      "When the memory is exhausted"
+    ],
+    "answer": 2,
+    "explanation": "Xung đột (Collision) là tai nạn toán học xảy ra khi hàm băm rủi ro xử lý hai Khóa hoàn toàn độc lập (k1 != k2) nhưng lại đúc ra kết quả ánh xạ chui vào cùng một ô nhớ (Hash(k1) == Hash(k2)).",
+    "category": "Hashing"
+  },
+  {
+    "id": 78,
+    "question": "How does 'Linear Probing' resolve a hash collision?",
+    "options": [
+      "It deletes the old entry",
+      "It creates a linked list at the bucket",
+      "It searches sequentially for the very next available free position (bucket) in the array",
+      "It throws an exception"
+    ],
+    "answer": 2,
+    "explanation": "Thăm dò Tuyến tính (Linear Probing) sửa lỗi xung đột bằng cách gõ cửa từng phòng trọ kế tiếp liên tục (f(k)+i) theo vòng lặp cho đến khi tìm được một ngăn trống (bucket).",
+    "category": "Hashing"
+  },
+  {
+    "id": 79,
+    "question": "What is 'Separate Chaining' in collision resolution?",
+    "options": [
+      "Using two separate hash tables",
+      "Using a 2D array matrix",
+      "Instead of probing the array, each array position acts as a Head pointer to a Linked List containing all colliding keys",
+      "Deleting duplicated keys"
+    ],
+    "answer": 2,
+    "explanation": "Thay vì bắt các khóa đi tìm phòng trọ khác, Móc nối rời (Separate Chaining) biến mỗi ô trên mảng thành một Node Head móc nối đến một Danh sách liên kết kéo dài, dung nạp toàn bộ các khóa bị xung đột.",
+    "category": "Hashing"
+  },
+  {
+    "id": 80,
+    "question": "What is the primary motivation for using 'Dynamic Hashing' (Extendible Hashing)?",
+    "options": [
+      "To randomize passwords",
+      "To allow the hash table size to grow and shrink dynamically as the volume of data heavily fluctuates, minimizing page accesses",
+      "To avoid writing hash functions",
+      "To convert numbers to strings"
+    ],
+    "answer": 1,
+    "explanation": "Băm Động (Dynamic Hashing) giải quyết bài toán Database bùng nổ dữ liệu. Nó cấp phép cho bảng Băm co giãn linh hoạt, mở rộng hay thu hẹp kích cỡ ngay trong lúc chạy để tối ưu hiệu năng không gian.",
+    "category": "Hashing"
+  },
+  {
+    "id": 81,
+    "question": "What occurs when the 'Division Method' is used for a hash function?",
+    "options": [
+      "The key is multiplied by a prime number",
+      "The key is divided by the table size, and the remainder (modulus) acts as the index",
+      "The key is split in half",
+      "The key is converted to hex"
+    ],
+    "answer": 1,
+    "explanation": "Phương pháp Chia dùng toán tử chia lấy phần dư (Modulo: k % b). Key bị chia cho kích thước mảng b, số dư thừa lại sẽ quyết định trực tiếp chỉ mục địa chỉ (index) trên bảng.",
+    "category": "Hashing"
+  },
+  {
+    "id": 82,
+    "question": "In the 'Mid-Square' hash method, what algorithmic steps are taken?",
+    "options": [
+      "The key is divided by 2",
+      "The key is squared, and a specific number of bits from the middle of the result are extracted to form the address",
+      "The key is mapped to a square matrix",
+      "The key is folded in half"
+    ],
+    "answer": 1,
+    "explanation": "Phương pháp Bình phương lấy Giữa (Mid-square) sẽ nhân bình phương giá trị Khóa lên một con số khổng lồ, sau đó thuật toán sẽ tàn nhẫn chích xuất lấy một mẩu bit ở phần bụng (mid) làm địa chỉ.",
+    "category": "Hashing"
+  },
+  {
+    "id": 83,
+    "question": "What does a load factor near 1 imply about a Hash Table's efficiency?",
+    "options": [
+      "The table is empty",
+      "Operations will take O(N^2) time",
+      "Assuming a uniform hash function, the table is optimally full, yielding near O(1) complexity for search operations",
+      "The program will crash"
+    ],
+    "answer": 2,
+    "explanation": "Khi hệ số lấp đầy (load factor) gần 1 và Hàm Băm phân chia đều, hệ thống bảng Băm đang ở trạng thái đỉnh cao phong độ, giải quyết truy xuất dữ liệu với vận tốc gần bằng hằng số O(1).",
+    "category": "Hashing"
+  },
+  {
+    "id": 84,
+    "question": "In an undirected graph, what is a 'Connected Component'?",
+    "options": [
+      "A tree with no branches",
+      "A single edge",
+      "A maximal connected subgraph where a path exists between any two vertices",
+      "A vertex with a degree of zero"
+    ],
+    "answer": 2,
+    "explanation": "Thành phần Liên thông là một mạng lưới quần thể cực đại (maximal connected subgraph) bên trong đồ thị, nơi mọi cư dân (đỉnh) trong khu vực đều có thể tìm được ít nhất một đường đi thông thương sang các nhà khác.",
+    "category": "Graphs"
+  },
+  {
+    "id": 85,
+    "question": "What happens to the Time Complexity of Depth First Search (DFS) when the graph is implemented using an Adjacency Matrix instead of an Adjacency List?",
+    "options": [
+      "It becomes O(1)",
+      "It remains O(n+e)",
+      "It degrades from O(n+e) to O(n^2)",
+      "It becomes O(log n)"
+    ],
+    "answer": 2,
+    "explanation": "Cấu trúc Danh sách kề cho phép DFS lướt nhánh rất thanh thoát với O(n+e). Tuy nhiên, khi nhét vào Ma trận kề, BFS phải quét đùn đẩy nguyên cả một rãnh hàng (quét N phần tử cho N đỉnh), ép thuật toán trì trệ và suy thoái thành O(n^2).",
+    "category": "Graphs"
+  },
+  {
+    "id": 86,
+    "question": "In Graph terminology, what specifically describes an 'Acyclic graph'?",
+    "options": [
+      "A graph where every vertex connects to every other vertex",
+      "A graph completely devoid of any cycles (no path starts and ends at the exact same vertex)",
+      "A graph with circular linked lists",
+      "A graph with weighted edges"
+    ],
+    "answer": 1,
+    "explanation": "Đồ thị Vô chu trình (Acyclic Graph) là đồ thị mà thuật toán tuyệt đối không bao giờ được phép đi lặp lại một vòng tròn dậm chân tại chỗ; khởi hành tại đâu thì không thể vòng về lối cũ tạo thành chu trình.",
+    "category": "Graphs"
+  },
+  {
+    "id": 87,
+    "question": "If you perform an Inorder traversal on a general 'Forest', the sequence natively matches which traversal on its converted binary tree?",
+    "options": [
+      "Preorder Traversal",
+      "Postorder Traversal",
+      "Level Order Traversal",
+      "Inorder Traversal"
+    ],
+    "answer": 3,
+    "explanation": "Luật Duyệt Trung tố Rừng quy định thao tác duyệt nhánh trái, in gốc, sau đó duyệt tiếp phần Rừng còn lại. Thao tác này tương hợp kỳ diệu (1:1) thành chuỗi in của kỹ thuật Duyệt Trung tố trên Cây nhị phân đại diện.",
+    "category": "Trees & Forests"
+  },
+  {
+    "id": 88,
+    "question": "In a C++ array-based queue where pointers drift to the right, how do you correctly increment the 'rear' pointer circularly to avoid falling off?",
+    "options": [
+      "rear = rear + 1",
+      "rear = (rear + 1) % MAX",
+      "rear = rear % 2",
+      "rear = rear - 1"
+    ],
+    "answer": 1,
+    "explanation": "Để con trỏ sau (rear) không vượt rào rơi xuống hẻm mảng, Hàng đợi vòng cấu trúc nó bẻ lái thông qua phép Chia Lấy Dư: `rear = (rear + 1) % MAX`, ép bộ đếm tự động reset về vạch đích số 0.",
+    "category": "Stacks & Queues"
+  },
+  {
+    "id": 89,
+    "question": "According to the rules of Big Theta (Θ), an algorithm f(n) = Θ(g(n)) implies what?",
+    "options": [
+      "f(n) is entirely unrelated to g(n)",
+      "f(n) is bounded exclusively above by g(n)",
+      "f(n) is tightly bounded both above (Big O) and below (Big Omega) by g(n)",
+      "f(n) evaluates to zero"
+    ],
+    "answer": 2,
+    "explanation": "Hàm Big Theta (Θ) đại diện cho Cột trói Hoàn Hảo (Tight bound). Nó chỉ hợp lệ khi phương trình của bạn bị giới hạn nghiêm ngặt từ phía trên (Big O) lẫn phía dưới (Big Omega) bởi cùng một đồ thị hàm g(n).",
+    "category": "Algorithm Analysis"
+  },
+  {
+    "id": 90,
+    "question": "What is the main characteristic of the 'Bubble Sort' algorithm?",
+    "options": [
+      "It cuts the array in half",
+      "It uses binary trees",
+      "It repeatedly compares adjacent pairs and swaps them if they are out of order, causing extreme values to 'bubble' to the ends",
+      "It builds a heap matrix"
+    ],
+    "answer": 2,
+    "explanation": "Sắp xếp nổi bọt (Bubble Sort) nhặt từng cặp giá trị liền kề (adjacent pairs) đọ nhau. Các số nhẹ/nặng sẽ được hoán vị dần dà, khiến giá trị nhỏ nhất tự động 'sủi bọt' dâng lên vị trí chỉ định ở phần trên mảng.",
+    "category": "Searching & Sorting"
+  }
+]

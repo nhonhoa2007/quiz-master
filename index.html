@@ -30,8 +30,8 @@
   <header class="app-header">
     <div class="header-container">
       <div class="logo" id="logo-home">
-        <div class="logo-icon">E</div>
-        <span>ExamMaster AI</span>
+        <div class="logo-icon">Q</div>
+        <span>QuizMaster</span>
       </div>
       <nav class="main-nav" aria-label="Điều hướng chính">
         <button class="nav-link active" type="button" data-target="landing">Tổng quan</button>
@@ -39,6 +39,10 @@
         <button class="nav-link" type="button" data-target="history">Tiến độ</button>
       </nav>
       <div class="header-actions">
+        <div class="user-chip" aria-label="Hồ sơ người học">
+          <span class="user-status"></span>
+          <span>Người học</span>
+        </div>
         <button class="theme-toggle" id="theme-toggle-btn" aria-label="Chuyển đổi giao diện Sáng/Tối">
           <!-- Sun Icon (shown in dark mode) -->
           <svg class="sun-icon" viewBox="0 0 24 24">
@@ -59,9 +63,45 @@
     <!-- 1. LANDING SCREEN -->
     <section class="screen-panel active" id="landing-screen">
       <div class="hero-section">
-        <span class="eyebrow">KHÔNG GIAN ÔN TẬP CỦA BẠN</span>
-        <h1>Sẵn sàng cho phiên học tiếp theo?</h1>
-        <p>Tạo bài luyện từ dữ liệu JSON, chọn bộ đề có sẵn và theo dõi kết quả qua từng lần làm bài.</p>
+        <span class="eyebrow">TỔNG QUAN HỌC TẬP</span>
+        <h1>Sẵn sàng cho phiên học <span>tiếp theo?</span></h1>
+        <p>Tạo bài luyện từ dữ liệu JSON, chọn bộ đề có sẵn và theo dõi tiến bộ của bạn qua từng lần làm bài.</p>
+      </div>
+
+      <div class="dashboard-stats" aria-label="Thống kê học tập">
+        <article class="dashboard-stat-card">
+          <div class="dashboard-stat-icon purple">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2Zm2 4v2h8V7H8Zm0 4v2h8v-2H8Zm0 4v2h5v-2H8Z"/></svg>
+          </div>
+          <div>
+            <span class="dashboard-stat-label">Bộ đề hiện có</span>
+            <strong id="dashboard-quiz-count">0</strong>
+          </div>
+        </article>
+        <article class="dashboard-stat-card">
+          <div class="dashboard-stat-icon blue">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2Zm2 13 3-3 2 2 5-6 1.5 1.3-6.4 7.7-2.1-2.1-1.6 1.6L7 16Z"/></svg>
+          </div>
+          <div>
+            <span class="dashboard-stat-label">Độ chính xác</span>
+            <strong id="dashboard-accuracy">0%</strong>
+          </div>
+        </article>
+        <article class="dashboard-stat-card">
+          <div class="dashboard-stat-icon green">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 1 0 20 10 10 0 0 1 0-20Zm-1 5v6l5 3 1-1.7-4-2.3V7h-2Z"/></svg>
+          </div>
+          <div>
+            <span class="dashboard-stat-label">Lượt đã hoàn thành</span>
+            <strong id="dashboard-attempt-count">0</strong>
+          </div>
+        </article>
+      </div>
+
+      <div class="dashboard-tabs" aria-hidden="true">
+        <span class="active">Bắt đầu</span>
+        <span>Bộ đề</span>
+        <span>Tiến độ</span>
       </div>
 
       <div class="grid-landing">
@@ -90,7 +130,7 @@
               <h3 style="margin-bottom: 0;">Bộ đề gần đây</h3>
               <div class="preset-section-actions">
                 <button class="btn btn-secondary btn-sm" id="refresh-quizzes-btn" type="button">Cập nhật bộ đề</button>
-                <a href="data/template.json" download="quiz_template.json" class="btn btn-secondary btn-sm" style="font-size:0.75rem;">
+                <a href="data/template.json" download="quiz_template.json" class="btn btn-secondary btn-sm template-download-btn" style="font-size:0.75rem;">
                   Tải file JSON mẫu
                 </a>
               </div>
@@ -108,7 +148,10 @@
         <!-- Right: History & Stats -->
         <div class="history-panel card">
           <div class="history-header">
-            <h3>Tiến độ học tập</h3>
+            <div>
+              <span class="section-kicker">HOẠT ĐỘNG</span>
+              <h3>Lịch sử gần đây</h3>
+            </div>
             <button class="btn btn-danger btn-sm" id="clear-history-btn" style="padding:0.35rem 0.75rem; font-size:0.8rem">Xóa lịch sử</button>
           </div>
 
