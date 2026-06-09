@@ -1,0 +1,652 @@
+[
+  {
+    "id": 1,
+    "question": "Which notation represents an upper bound of an algorithm's growth rate?",
+    "options": [
+      "Big-O",
+      "Big-Omega",
+      "Theta only",
+      "Modulo"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì Big-O biểu diễn cận trên của tốc độ tăng trưởng. Big-Omega là cận dưới, Theta là cận chặt hai phía, modulo không phải ký hiệu phân tích thuật toán.",
+    "category": "C/C++ Review and Algorithm Analysis"
+  },
+  {
+    "id": 2,
+    "question": "Which notation represents a lower bound of an algorithm's growth rate?",
+    "options": [
+      "Big-O",
+      "Big-Omega",
+      "Stack notation",
+      "Pointer notation"
+    ],
+    "answer": 1,
+    "explanation": "Đáp án B đúng vì Big-Omega biểu diễn cận dưới. Big-O là cận trên. Hai đáp án còn lại không phải ký hiệu tăng trưởng thuật toán.",
+    "category": "C/C++ Review and Algorithm Analysis"
+  },
+  {
+    "id": 3,
+    "question": "Which notation means both upper and lower bound asymptotically?",
+    "options": [
+      "O",
+      "Omega",
+      "Theta",
+      "NULL"
+    ],
+    "answer": 2,
+    "explanation": "Đáp án C đúng vì Theta là cận chặt, nghĩa là cùng bậc tăng trưởng cả trên và dưới. O chỉ cận trên, Omega chỉ cận dưới.",
+    "category": "C/C++ Review and Algorithm Analysis"
+  },
+  {
+    "id": 4,
+    "question": "What is the Big-O of T(n) = 5n + 100?",
+    "options": [
+      "O(1)",
+      "O(n)",
+      "O(n^2)",
+      "O(log n)"
+    ],
+    "answer": 1,
+    "explanation": "Đáp án B đúng vì hạng tử lớn nhất là n, bỏ hệ số 5 và hằng số 100. O(1) nhỏ hơn thực tế, O(n^2) không phải đáp án tốt nhất.",
+    "category": "C/C++ Review and Algorithm Analysis"
+  },
+  {
+    "id": 5,
+    "question": "What is the Big-O of T(n) = 1000?",
+    "options": [
+      "O(1)",
+      "O(n)",
+      "O(n log n)",
+      "O(n^2)"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì thời gian không phụ thuộc n nên là hằng số. Các đáp án còn lại tăng theo n nên không phải dạng tốt nhất.",
+    "category": "C/C++ Review and Algorithm Analysis"
+  },
+  {
+    "id": 6,
+    "question": "Which factor usually matters most in asymptotic analysis?",
+    "options": [
+      "Input size",
+      "Monitor resolution",
+      "Keyboard layout",
+      "File icon"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì phân tích tiệm cận xét thời gian/bộ nhớ theo kích thước input. Các yếu tố còn lại không phải trọng tâm của Big-O.",
+    "category": "C/C++ Review and Algorithm Analysis"
+  },
+  {
+    "id": 7,
+    "question": "Why do we ignore constants in Big-O?",
+    "options": [
+      "Because constants do not affect growth rate for large n",
+      "Because constants are syntax errors",
+      "Because constants cannot be measured",
+      "Because C++ does not support constants"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì khi n rất lớn, hệ số hằng chỉ làm thay đổi tỉ lệ, không đổi bậc tăng trưởng. Các đáp án còn lại sai.",
+    "category": "C/C++ Review and Algorithm Analysis"
+  },
+  {
+    "id": 8,
+    "question": "Which code has O(1) time?",
+    "options": [
+      "x = x + 1;",
+      "for i = 1 to n",
+      "two nested loops n times",
+      "binary search loop"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì phép gán/cộng đơn thực hiện số bước cố định. Các lựa chọn còn lại phụ thuộc n.",
+    "category": "C/C++ Review and Algorithm Analysis"
+  },
+  {
+    "id": 9,
+    "question": "What does malloc return in C?",
+    "options": [
+      "A pointer to allocated memory",
+      "A reference variable",
+      "A sorted array",
+      "A file stream only"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì malloc cấp phát vùng nhớ và trả về con trỏ void*. Các đáp án khác không đúng vai trò malloc.",
+    "category": "C/C++ Review and Algorithm Analysis"
+  },
+  {
+    "id": 10,
+    "question": "Which function releases memory allocated by malloc?",
+    "options": [
+      "delete",
+      "free",
+      "remove",
+      "clear"
+    ],
+    "answer": 1,
+    "explanation": "Đáp án B đúng vì trong C, malloc/calloc/realloc đi với free. delete dùng cho new trong C++. remove/clear không phải giải phóng vùng nhớ malloc.",
+    "category": "C/C++ Review and Algorithm Analysis"
+  },
+  {
+    "id": 11,
+    "question": "Which pointer usually identifies the first node of a linked list?",
+    "options": [
+      "head",
+      "rear",
+      "middle",
+      "hash"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì head trỏ đến node đầu tiên. rear thường dùng cho queue, hash là hàm/bảng băm.",
+    "category": "Linked List, Stack and Queue"
+  },
+  {
+    "id": 12,
+    "question": "In a singly linked list, what does p = p->next do?",
+    "options": [
+      "Move to the next node",
+      "Delete the whole list",
+      "Sort the list",
+      "Create a stack"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì next là con trỏ sang node tiếp theo. Các đáp án khác không đúng thao tác.",
+    "category": "Linked List, Stack and Queue"
+  },
+  {
+    "id": 13,
+    "question": "What should the last node of a normal singly linked list point to?",
+    "options": [
+      "NULL",
+      "head always",
+      "itself always",
+      "front"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì linked list thường kết thúc bằng NULL. Trỏ về head là circular linked list.",
+    "category": "Linked List, Stack and Queue"
+  },
+  {
+    "id": 14,
+    "question": "When deleting a node after p, why do we need to keep a temporary pointer?",
+    "options": [
+      "To free the removed node after relinking",
+      "To sort the list",
+      "To run binary search",
+      "To change all data fields"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì cần giữ địa chỉ node bị xóa để free/delete sau khi nối lại liên kết. Các đáp án khác không liên quan.",
+    "category": "Linked List, Stack and Queue"
+  },
+  {
+    "id": 15,
+    "question": "What is the main disadvantage of linked lists compared with arrays?",
+    "options": [
+      "O(n) random access",
+      "Fixed size only",
+      "Cannot insert in middle",
+      "Always require sorting"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì muốn lấy phần tử thứ i phải duyệt từ head. Fixed size là nhược điểm của mảng, không phải linked list.",
+    "category": "Linked List, Stack and Queue"
+  },
+  {
+    "id": 16,
+    "question": "Which situation is suitable for linked lists?",
+    "options": [
+      "Frequent middle insertions/deletions",
+      "Heavy random access by index",
+      "Fixed tiny array only",
+      "No pointer allowed"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì linked list chèn/xóa giữa hiệu quả khi đã có vị trí node. Random access lại không phù hợp.",
+    "category": "Linked List, Stack and Queue"
+  },
+  {
+    "id": 17,
+    "question": "What is a node in a linked list?",
+    "options": [
+      "A unit containing data and link(s)",
+      "A compiler only",
+      "A CPU register only",
+      "An input keyword"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì node chứa dữ liệu và con trỏ liên kết. Các đáp án còn lại không phải node danh sách.",
+    "category": "Linked List, Stack and Queue"
+  },
+  {
+    "id": 18,
+    "question": "What does invertList usually do?",
+    "options": [
+      "Reverse the linked list",
+      "Delete all nodes",
+      "Convert to array only",
+      "Sort using heap"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì invertList đảo chiều các liên kết. Nó không nhất thiết xóa, chuyển mảng hay heap sort.",
+    "category": "Linked List, Stack and Queue"
+  },
+  {
+    "id": 19,
+    "question": "In a doubly linked list, which links usually exist?",
+    "options": [
+      "left and right links",
+      "only one next link",
+      "only hash link",
+      "only parent link"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì doubly linked list có link trái/phải hoặc prev/next. Singly linked list chỉ có next.",
+    "category": "Linked List, Stack and Queue"
+  },
+  {
+    "id": 20,
+    "question": "What is the top of a stack?",
+    "options": [
+      "The end where insertion and deletion occur",
+      "The middle of queue",
+      "The smallest BST node",
+      "The hash index"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì stack thêm/xóa tại top. Các đáp án khác thuộc cấu trúc khác.",
+    "category": "Linked List, Stack and Queue"
+  },
+  {
+    "id": 21,
+    "question": "What is a sentinel in sequential search used for?",
+    "options": [
+      "To signal the end of the list",
+      "To sort the list",
+      "To choose a pivot",
+      "To build a heap"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì sentinel được đặt để dừng vòng lặp khi không tìm thấy trong phần tử thật. Các đáp án khác không đúng vai trò.",
+    "category": "Searching and Sorting"
+  },
+  {
+    "id": 22,
+    "question": "If sequential search does not find the target in n elements with sentinel, about how many comparisons may occur?",
+    "options": [
+      "n + 1",
+      "log n",
+      "1",
+      "n^2"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng theo slide: unsuccessful search với sentinel có thể là n+1. Các đáp án khác không phù hợp tìm kiếm tuần tự.",
+    "category": "Searching and Sorting"
+  },
+  {
+    "id": 23,
+    "question": "Which algorithm requires sorted input?",
+    "options": [
+      "Binary search",
+      "Sequential search",
+      "Bubble sort",
+      "Selection sort"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì binary search cần dữ liệu đã sắp xếp. Sequential search không cần, bubble/selection là thuật toán sort.",
+    "category": "Searching and Sorting"
+  },
+  {
+    "id": 24,
+    "question": "What is returned by many search functions when the target is not found?",
+    "options": [
+      "-1",
+      "0 always",
+      "n always",
+      "middle"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì nhiều cài đặt trả -1 khi không tìm thấy. 0 có thể là vị trí hợp lệ nên không dùng mặc định.",
+    "category": "Searching and Sorting"
+  },
+  {
+    "id": 25,
+    "question": "In binary search, when searchNum equals list[middle], what should be returned?",
+    "options": [
+      "middle",
+      "left only",
+      "right only",
+      "-1"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì tìm thấy tại vị trí middle. Trả -1 là không tìm thấy.",
+    "category": "Searching and Sorting"
+  },
+  {
+    "id": 26,
+    "question": "What is the main benefit of binary search over sequential search?",
+    "options": [
+      "Fewer comparisons on sorted data",
+      "It works on unsorted data only",
+      "It always uses O(n^2)",
+      "It deletes elements automatically"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì binary search O(log n) nhanh hơn sequential O(n) trên mảng đã sắp xếp.",
+    "category": "Searching and Sorting"
+  },
+  {
+    "id": 27,
+    "question": "What does internal sorting mean?",
+    "options": [
+      "Sorting using only memory",
+      "Sorting using hard disk intermediate results",
+      "Sorting only graphs",
+      "Sorting by hashing"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì internal sort dùng bộ nhớ trong. External sort dùng lưu trữ ngoài như ổ đĩa.",
+    "category": "Searching and Sorting"
+  },
+  {
+    "id": 28,
+    "question": "What does external sorting mean?",
+    "options": [
+      "Sorting that stores intermediate results on hard disks",
+      "Sorting inside CPU registers only",
+      "Sorting without comparisons",
+      "Sorting only one element"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì external sort dùng bộ nhớ ngoài khi dữ liệu lớn. Các đáp án khác sai.",
+    "category": "Searching and Sorting"
+  },
+  {
+    "id": 29,
+    "question": "In insertion sort, what is the sorted part before step i?",
+    "options": [
+      "A[0..i-1]",
+      "A[i..n-1]",
+      "Only A[n]",
+      "No part"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì insertion sort duy trì đoạn đầu A[0..i-1] đã sắp xếp trước khi chèn A[i].",
+    "category": "Searching and Sorting"
+  },
+  {
+    "id": 30,
+    "question": "Why does insertion sort move elements to the right?",
+    "options": [
+      "To create the correct position for A[i]",
+      "To delete duplicates",
+      "To build a graph",
+      "To calculate hash value"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì cần dời các phần tử lớn hơn để chèn phần tử hiện tại vào vị trí đúng.",
+    "category": "Searching and Sorting"
+  },
+  {
+    "id": 31,
+    "question": "What is the degree of a node in a tree?",
+    "options": [
+      "The number of subtrees/children of that node",
+      "The number of all nodes in the tree",
+      "The height of the whole tree only",
+      "The array index"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì degree của node là số cây con/con của node đó. Các đáp án khác không đúng định nghĩa.",
+    "category": "Tree, BST and Heap"
+  },
+  {
+    "id": 32,
+    "question": "How is the level of a child usually related to its parent?",
+    "options": [
+      "child level = parent level + 1",
+      "child level = parent level - 1",
+      "child level = 0 always",
+      "child level = number of leaves"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì level của node con bằng level của parent cộng 1. Các đáp án khác sai.",
+    "category": "Tree, BST and Heap"
+  },
+  {
+    "id": 33,
+    "question": "What is the height/depth of a tree in the lecture definition?",
+    "options": [
+      "Maximum level of any node",
+      "Minimum key value",
+      "Number of siblings only",
+      "Hash value"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì height/depth là level lớn nhất trong cây. Các đáp án khác không liên quan.",
+    "category": "Tree, BST and Heap"
+  },
+  {
+    "id": 34,
+    "question": "Which representation converts a general tree into a binary-tree-like form?",
+    "options": [
+      "Left child-right sibling representation",
+      "Hash table representation",
+      "Circular queue only",
+      "Selection sort representation"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì leftChild/rightSibling biểu diễn cây tổng quát bằng hai con trỏ. Các đáp án khác không phù hợp.",
+    "category": "Tree, BST and Heap"
+  },
+  {
+    "id": 35,
+    "question": "In left child-right sibling representation, rightSibling points where?",
+    "options": [
+      "To the next sibling",
+      "To the parent",
+      "To the root always",
+      "To a hash bucket"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì rightSibling nối các node cùng cấp từ trái sang phải. leftChild mới trỏ xuống con đầu.",
+    "category": "Tree, BST and Heap"
+  },
+  {
+    "id": 36,
+    "question": "What is a full binary tree of depth k?",
+    "options": [
+      "A binary tree with 2^k - 1 nodes",
+      "A tree with k nodes",
+      "A graph with k edges",
+      "A linked list of length k"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng theo định nghĩa slide: full binary tree depth k có 2^k - 1 node. Các đáp án khác sai.",
+    "category": "Tree, BST and Heap"
+  },
+  {
+    "id": 37,
+    "question": "What is a complete binary tree?",
+    "options": [
+      "Nodes correspond to positions 1..n in a full binary tree",
+      "Every node has exactly one child",
+      "It is always a BST",
+      "It has no leaves"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì complete binary tree được lấp từ trái sang phải theo thứ tự vị trí. Không nhất thiết là BST.",
+    "category": "Tree, BST and Heap"
+  },
+  {
+    "id": 38,
+    "question": "For a complete binary tree array indexed from 1, what is parent(i)?",
+    "options": [
+      "i/2",
+      "2i",
+      "2i+1",
+      "i-1 always"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì parent của node i là floor(i/2). 2i và 2i+1 là con trái/phải.",
+    "category": "Tree, BST and Heap"
+  },
+  {
+    "id": 39,
+    "question": "For a complete binary tree array indexed from 1, what is right-child(i)?",
+    "options": [
+      "2i",
+      "2i+1",
+      "i/2",
+      "i+2"
+    ],
+    "answer": 1,
+    "explanation": "Đáp án B đúng vì right child là 2i+1. Left child là 2i, parent là i/2.",
+    "category": "Tree, BST and Heap"
+  },
+  {
+    "id": 40,
+    "question": "Why is array representation ideal for complete binary trees?",
+    "options": [
+      "It wastes no space for complete trees",
+      "It always sorts keys",
+      "It removes all leaves",
+      "It avoids indexes"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì complete tree lấp đầy theo thứ tự nên mảng không bị lỗ. Với cây lệch có thể lãng phí nhiều.",
+    "category": "Tree, BST and Heap"
+  },
+  {
+    "id": 41,
+    "question": "What is a vertex in a graph?",
+    "options": [
+      "A node/object in V",
+      "Only an edge weight",
+      "Only a hash key",
+      "A stack operation"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì vertex là đỉnh thuộc tập V của graph. Các đáp án khác là khái niệm khác.",
+    "category": "Graph and Hashing"
+  },
+  {
+    "id": 42,
+    "question": "What is an edge in a graph?",
+    "options": [
+      "A connection/pair of vertices",
+      "A stack top",
+      "A hash function only",
+      "A sorting key only"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì edge là cạnh, biểu diễn quan hệ giữa hai đỉnh. Các đáp án khác không phải edge.",
+    "category": "Graph and Hashing"
+  },
+  {
+    "id": 43,
+    "question": "In a directed graph, how is an edge represented?",
+    "options": [
+      "Ordered pair <u, v>",
+      "Unordered pair only",
+      "A single vertex",
+      "A queue index"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì cạnh có hướng có thứ tự từ u đến v. Vô hướng mới không xét thứ tự.",
+    "category": "Graph and Hashing"
+  },
+  {
+    "id": 44,
+    "question": "What is an adjacent vertex in an undirected graph?",
+    "options": [
+      "Two vertices connected by an edge",
+      "Two vertices with same label only",
+      "Two keys with same hash",
+      "Two stack elements"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì nếu có cạnh (u,v), u và v kề nhau. Các đáp án khác sai.",
+    "category": "Graph and Hashing"
+  },
+  {
+    "id": 45,
+    "question": "What is the degree of a vertex in an undirected graph?",
+    "options": [
+      "Number of incident edges",
+      "Number of all graph vertices",
+      "Number of hash buckets",
+      "Height of heap"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì degree là số cạnh nối với đỉnh đó. Các đáp án khác không đúng định nghĩa.",
+    "category": "Graph and Hashing"
+  },
+  {
+    "id": 46,
+    "question": "In a directed graph, what is indegree?",
+    "options": [
+      "Number of incoming edges",
+      "Number of outgoing edges",
+      "Number of vertices",
+      "Number of components"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì indegree đếm cạnh đi vào đỉnh. Outdegree mới đếm cạnh đi ra.",
+    "category": "Graph and Hashing"
+  },
+  {
+    "id": 47,
+    "question": "In a directed graph, what is outdegree?",
+    "options": [
+      "Number of outgoing edges",
+      "Number of incoming edges",
+      "Number of all cycles",
+      "Number of buckets"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì outdegree đếm cạnh xuất phát từ đỉnh. Indegree là đi vào.",
+    "category": "Graph and Hashing"
+  },
+  {
+    "id": 48,
+    "question": "What is a path?",
+    "options": [
+      "A sequence of vertices connected by edges",
+      "A random list of keys",
+      "A sorted array only",
+      "A memory address only"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì path là dãy đỉnh sao cho các cặp liên tiếp có cạnh nối. Các đáp án khác sai.",
+    "category": "Graph and Hashing"
+  },
+  {
+    "id": 49,
+    "question": "What is the length of a path?",
+    "options": [
+      "The number of edges on it",
+      "The number of hash collisions",
+      "The value of root key",
+      "The number of queues"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì độ dài đường đi tính theo số cạnh. Không phải số collision hay root.",
+    "category": "Graph and Hashing"
+  },
+  {
+    "id": 50,
+    "question": "What is a cycle?",
+    "options": [
+      "A simple path whose first and last vertices are the same",
+      "A path with no edges only",
+      "A hash collision",
+      "A stack overflow"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì cycle là chu trình, bắt đầu và kết thúc cùng đỉnh. Các đáp án khác không đúng.",
+    "category": "Graph and Hashing"
+  }
+]

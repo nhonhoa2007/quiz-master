@@ -1,0 +1,57 @@
+[
+  {
+    "file": "dsa_quiz_full_topics_set_1.json",
+    "total": 50,
+    "coverage": {
+      "C/C++ Review and Algorithm Analysis": 10,
+      "Linked List, Stack and Queue": 10,
+      "Searching and Sorting": 10,
+      "Tree, BST and Heap": 10,
+      "Graph and Hashing": 10
+    }
+  },
+  {
+    "file": "dsa_quiz_full_topics_set_2.json",
+    "total": 50,
+    "coverage": {
+      "C/C++ Review and Algorithm Analysis": 10,
+      "Linked List, Stack and Queue": 10,
+      "Searching and Sorting": 10,
+      "Tree, BST and Heap": 10,
+      "Graph and Hashing": 10
+    }
+  },
+  {
+    "file": "dsa_quiz_full_topics_set_3.json",
+    "total": 50,
+    "coverage": {
+      "C/C++ Review and Algorithm Analysis": 10,
+      "Linked List, Stack and Queue": 10,
+      "Searching and Sorting": 10,
+      "Tree, BST and Heap": 10,
+      "Graph and Hashing": 10
+    }
+  },
+  {
+    "file": "dsa_quiz_full_topics_set_4.json",
+    "total": 50,
+    "coverage": {
+      "C/C++ Review and Algorithm Analysis": 10,
+      "Linked List, Stack and Queue": 10,
+      "Searching and Sorting": 10,
+      "Tree, BST and Heap": 10,
+      "Graph and Hashing": 10
+    }
+  },
+  {
+    "file": "dsa_quiz_full_topics_set_5.json",
+    "total": 50,
+    "coverage": {
+      "C/C++ Review and Algorithm Analysis": 10,
+      "Linked List, Stack and Queue": 10,
+      "Searching and Sorting": 10,
+      "Tree, BST and Heap": 10,
+      "Graph and Hashing": 10
+    }
+  }
+]

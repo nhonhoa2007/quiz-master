@@ -1365,16 +1365,9 @@ class QuizUI {
 
       const itemDetails = document.createElement('div');
       itemDetails.className = 'history-item-details';
-      itemDetails.style.alignItems = 'center';
-      itemDetails.style.justifyContent = 'space-between';
-      itemDetails.style.display = 'flex';
-      itemDetails.style.width = '100%';
 
       const meta = document.createElement('div');
-      meta.style.display = 'flex';
-      meta.style.gap = '0.5rem';
-      meta.style.flexWrap = 'wrap';
-      meta.style.alignItems = 'center';
+      meta.className = 'history-item-meta';
       meta.append(
         this.createTextElement('span', '', `📅 ${formattedDate}`),
         this.createTextElement('span', '', `⏱️ ${this.formatTime(item.timeSpent)}`)

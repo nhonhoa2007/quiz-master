@@ -1,0 +1,652 @@
+[
+  {
+    "id": 1,
+    "question": "Which statement best describes an algorithm?",
+    "options": [
+      "A data type used only in C++",
+      "A sequence of instructions used to solve a problem",
+      "A compiler optimization technique",
+      "A memory address stored in a pointer"
+    ],
+    "answer": 1,
+    "explanation": "Đáp án B đúng vì thuật toán là một dãy bước/chỉ dẫn để giải quyết một bài toán. A sai vì data type không phải thuật toán. C sai vì tối ưu compiler chỉ là kỹ thuật của trình biên dịch. D sai vì đó là khái niệm con trỏ.",
+    "category": "C/C++ Review and Algorithm Analysis"
+  },
+  {
+    "id": 2,
+    "question": "In algorithm analysis, what are the two main resources usually considered?",
+    "options": [
+      "CPU brand and monitor size",
+      "Computing time and memory space",
+      "Keyboard input and screen output",
+      "Compiler name and file name"
+    ],
+    "answer": 1,
+    "explanation": "Đáp án B đúng vì khi đánh giá thuật toán ta thường xét thời gian chạy và bộ nhớ sử dụng. Các đáp án còn lại không phải tài nguyên cốt lõi để phân tích độ hiệu quả thuật toán.",
+    "category": "C/C++ Review and Algorithm Analysis"
+  },
+  {
+    "id": 3,
+    "question": "What is the Big-O of a single loop that runs from 0 to n - 1?",
+    "options": [
+      "O(1)",
+      "O(log n)",
+      "O(n)",
+      "O(n^2)"
+    ],
+    "answer": 2,
+    "explanation": "Đáp án C đúng vì vòng lặp chạy n lần nên thời gian tăng tuyến tính theo n. A sai vì không phải hằng số. B sai vì không chia đôi dữ liệu. D sai vì không có vòng lặp lồng nhau.",
+    "category": "C/C++ Review and Algorithm Analysis"
+  },
+  {
+    "id": 4,
+    "question": "What is the Big-O of two nested loops where both loops run n times?",
+    "options": [
+      "O(n)",
+      "O(n log n)",
+      "O(n^2)",
+      "O(2^n)"
+    ],
+    "answer": 2,
+    "explanation": "Đáp án C đúng vì mỗi lần của vòng ngoài có n lần vòng trong, tổng là n*n. A và B nhỏ hơn thực tế. D là mũ, thường gặp ở một số bài đệ quy/brute force chứ không phải hai vòng lặp n lần.",
+    "category": "C/C++ Review and Algorithm Analysis"
+  },
+  {
+    "id": 5,
+    "question": "Which growth rate is the fastest for large n?",
+    "options": [
+      "O(log n)",
+      "O(n)",
+      "O(n log n)",
+      "O(n^2)"
+    ],
+    "answer": 3,
+    "explanation": "Đáp án D đúng vì n^2 tăng nhanh hơn log n, n và n log n khi n lớn. Các đáp án còn lại có tốc độ tăng chậm hơn.",
+    "category": "C/C++ Review and Algorithm Analysis"
+  },
+  {
+    "id": 6,
+    "question": "If T(n) = 7n^2 + 10n + 3, what is its Big-O?",
+    "options": [
+      "O(1)",
+      "O(n)",
+      "O(n^2)",
+      "O(n^3)"
+    ],
+    "answer": 2,
+    "explanation": "Đáp án C đúng vì Big-O bỏ hệ số và các hạng tử bậc thấp, giữ bậc cao nhất là n^2. A, B sai vì nhỏ hơn tốc độ tăng thật; D đúng theo upper bound rộng nhưng không phải đáp án tốt nhất.",
+    "category": "C/C++ Review and Algorithm Analysis"
+  },
+  {
+    "id": 7,
+    "question": "What does the operator '&' do in C/C++ when used before a variable name?",
+    "options": [
+      "It dereferences a pointer",
+      "It returns the address of a variable",
+      "It deletes dynamic memory",
+      "It compares two variables"
+    ],
+    "answer": 1,
+    "explanation": "Đáp án B đúng vì & lấy địa chỉ của biến. A là vai trò của toán tử * khi dereference. C dùng delete/free. D là toán tử so sánh như ==.",
+    "category": "C/C++ Review and Algorithm Analysis"
+  },
+  {
+    "id": 8,
+    "question": "What does '*ptr' mean when ptr is a pointer?",
+    "options": [
+      "The address of ptr",
+      "The value stored at the address ptr points to",
+      "The size of ptr",
+      "The name of ptr"
+    ],
+    "answer": 1,
+    "explanation": "Đáp án B đúng vì *ptr truy cập giá trị tại vùng nhớ mà con trỏ trỏ tới. A sai vì địa chỉ của ptr là &ptr. C và D không liên quan.",
+    "category": "C/C++ Review and Algorithm Analysis"
+  },
+  {
+    "id": 9,
+    "question": "Which statement correctly releases a dynamic array allocated by new int[n] in C++?",
+    "options": [
+      "delete arr;",
+      "delete[] arr;",
+      "free[] arr;",
+      "remove arr;"
+    ],
+    "answer": 1,
+    "explanation": "Đáp án B đúng vì mảng cấp phát bằng new[] phải giải phóng bằng delete[]. A chỉ dùng cho một biến đơn. C sai cú pháp trong C++. D không phải lệnh giải phóng bộ nhớ.",
+    "category": "C/C++ Review and Algorithm Analysis"
+  },
+  {
+    "id": 10,
+    "question": "In a recursive function, which part prevents infinite recursion?",
+    "options": [
+      "Pointer variable",
+      "Base case",
+      "Array index",
+      "Compiler flag"
+    ],
+    "answer": 1,
+    "explanation": "Đáp án B đúng vì base case là điều kiện dừng. Nếu không có điều kiện dừng, hàm có thể gọi chính nó mãi dẫn đến stack overflow. Các đáp án còn lại không đảm bảo dừng đệ quy.",
+    "category": "C/C++ Review and Algorithm Analysis"
+  },
+  {
+    "id": 11,
+    "question": "Which statement is true about a singly linked list?",
+    "options": [
+      "All nodes must be contiguous in memory",
+      "Each node usually stores data and a pointer to the next node",
+      "It allows O(1) random access by index",
+      "The last node points to the first node in all cases"
+    ],
+    "answer": 1,
+    "explanation": "Đáp án B đúng vì node trong singly linked list gồm data và next. A sai vì node không cần nằm liên tiếp. C sai vì truy cập theo chỉ số là O(n). D chỉ đúng với circular linked list.",
+    "category": "Linked List, Stack and Queue"
+  },
+  {
+    "id": 12,
+    "question": "What does head = NULL usually mean in a linked list?",
+    "options": [
+      "The list is full",
+      "The list is empty",
+      "The list has one node",
+      "The list is circular"
+    ],
+    "answer": 1,
+    "explanation": "Đáp án B đúng vì head không trỏ tới node nào nghĩa là danh sách rỗng. A không liên quan. C cần head trỏ đến một node. D cần node cuối trỏ lại đầu.",
+    "category": "Linked List, Stack and Queue"
+  },
+  {
+    "id": 13,
+    "question": "Which operation is expensive in a singly linked list if we do not have a tail pointer?",
+    "options": [
+      "Insert at the head",
+      "Access the first node",
+      "Insert at the end",
+      "Check whether head is NULL"
+    ],
+    "answer": 2,
+    "explanation": "Đáp án C đúng vì muốn chèn cuối phải duyệt đến node cuối nếu không có tail. Chèn đầu và kiểm tra head thường O(1).",
+    "category": "Linked List, Stack and Queue"
+  },
+  {
+    "id": 14,
+    "question": "In a circularly linked list, what does the last node point to?",
+    "options": [
+      "NULL",
+      "The first node",
+      "Itself only if the list has many nodes",
+      "A random memory address"
+    ],
+    "answer": 1,
+    "explanation": "Đáp án B đúng vì đặc trưng của circular linked list là node cuối trỏ lại node đầu. A là linked list thường. C chỉ đúng khi danh sách có một node. D sai vì trỏ ngẫu nhiên gây lỗi.",
+    "category": "Linked List, Stack and Queue"
+  },
+  {
+    "id": 15,
+    "question": "What is the main advantage of a doubly linked list over a singly linked list?",
+    "options": [
+      "It uses less memory",
+      "It allows traversal in both directions",
+      "It cannot be empty",
+      "It removes all need for pointers"
+    ],
+    "answer": 1,
+    "explanation": "Đáp án B đúng vì doubly linked list có link trái/phải nên duyệt tiến và lùi. A sai vì dùng thêm con trỏ nên tốn bộ nhớ hơn. C, D sai.",
+    "category": "Linked List, Stack and Queue"
+  },
+  {
+    "id": 16,
+    "question": "Which data structure follows LIFO?",
+    "options": [
+      "Queue",
+      "Stack",
+      "Graph",
+      "Hash table"
+    ],
+    "answer": 1,
+    "explanation": "Đáp án B đúng vì stack hoạt động Last-In-First-Out. Queue là FIFO, graph và hash table không mô tả theo LIFO.",
+    "category": "Linked List, Stack and Queue"
+  },
+  {
+    "id": 17,
+    "question": "Which operation adds an element to the top of a stack?",
+    "options": [
+      "enqueue",
+      "dequeue",
+      "push",
+      "visit"
+    ],
+    "answer": 2,
+    "explanation": "Đáp án C đúng vì push thêm phần tử vào stack. enqueue/dequeue là thao tác của queue. visit thường dùng trong duyệt cây/đồ thị.",
+    "category": "Linked List, Stack and Queue"
+  },
+  {
+    "id": 18,
+    "question": "If a stack contains [A, B, C] from bottom to top, what is popped first?",
+    "options": [
+      "A",
+      "B",
+      "C",
+      "All elements at once"
+    ],
+    "answer": 2,
+    "explanation": "Đáp án C đúng vì C nằm trên cùng và stack là LIFO. A vào sớm nhất nên ra sau cùng. B không phải top.",
+    "category": "Linked List, Stack and Queue"
+  },
+  {
+    "id": 19,
+    "question": "In array implementation of stack, top = -1 usually means what?",
+    "options": [
+      "The stack is full",
+      "The stack is empty",
+      "The stack has one element",
+      "The stack has MAX elements"
+    ],
+    "answer": 1,
+    "explanation": "Đáp án B đúng vì top = -1 biểu diễn chưa có phần tử nào. Stack đầy thường là top = MAX - 1.",
+    "category": "Linked List, Stack and Queue"
+  },
+  {
+    "id": 20,
+    "question": "Which data structure follows FIFO?",
+    "options": [
+      "Stack",
+      "Queue",
+      "BST",
+      "Heap"
+    ],
+    "answer": 1,
+    "explanation": "Đáp án B đúng vì queue hoạt động First-In-First-Out. Stack là LIFO. BST và heap có quy tắc riêng khác.",
+    "category": "Linked List, Stack and Queue"
+  },
+  {
+    "id": 21,
+    "question": "Which search algorithm can be used on an unsorted array without preprocessing?",
+    "options": [
+      "Binary search",
+      "Sequential search",
+      "Heap sort",
+      "Merge sort"
+    ],
+    "answer": 1,
+    "explanation": "Đáp án B đúng vì sequential search duyệt từng phần tử nên không cần mảng đã sắp xếp. Binary search cần sorted array. Heap sort và merge sort là sắp xếp.",
+    "category": "Searching and Sorting"
+  },
+  {
+    "id": 22,
+    "question": "For sequential search, what is the worst-case time complexity?",
+    "options": [
+      "O(1)",
+      "O(log n)",
+      "O(n)",
+      "O(n log n)"
+    ],
+    "answer": 2,
+    "explanation": "Đáp án C đúng vì trường hợp xấu nhất phải kiểm tra hết n phần tử. A chỉ khi tìm thấy ngay đầu. B là binary search. D thường gặp ở một số thuật toán sort.",
+    "category": "Searching and Sorting"
+  },
+  {
+    "id": 23,
+    "question": "For binary search, what happens if searchNum is smaller than list[middle]?",
+    "options": [
+      "Search the right half",
+      "Search the left half",
+      "Stop unsuccessfully immediately",
+      "Sort the array again"
+    ],
+    "answer": 1,
+    "explanation": "Đáp án B đúng vì mảng tăng dần, nếu giá trị cần tìm nhỏ hơn phần tử giữa thì chỉ có thể nằm bên trái. A ngược lại. C sai vì vẫn còn nửa trái. D không cần.",
+    "category": "Searching and Sorting"
+  },
+  {
+    "id": 24,
+    "question": "Which sorting algorithm builds the sorted part by inserting A[i] into A[0..i-1]?",
+    "options": [
+      "Insertion sort",
+      "Selection sort",
+      "Bubble sort",
+      "Quick sort"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì insertion sort chèn phần tử hiện tại vào đoạn đã sắp xếp bên trái. Selection sort chọn phần tử nhỏ nhất còn lại. Bubble sort đổi chỗ cặp kề. Quick sort chia theo pivot.",
+    "category": "Searching and Sorting"
+  },
+  {
+    "id": 25,
+    "question": "What is the worst-case Big-O of insertion sort?",
+    "options": [
+      "O(n)",
+      "O(n log n)",
+      "O(n^2)",
+      "O(log n)"
+    ],
+    "answer": 2,
+    "explanation": "Đáp án C đúng vì trong worst case mỗi phần tử có thể phải so sánh/dịch qua nhiều phần tử trước nó, tổng khoảng n(n-1)/2. O(n) là best case khi gần sorted.",
+    "category": "Searching and Sorting"
+  },
+  {
+    "id": 26,
+    "question": "Which sorting algorithm repeatedly selects the smallest remaining element and places it in its correct position?",
+    "options": [
+      "Insertion sort",
+      "Selection sort",
+      "Merge sort",
+      "Binary search"
+    ],
+    "answer": 1,
+    "explanation": "Đáp án B đúng vì selection sort chọn min trong phần chưa sắp xếp rồi đổi vào vị trí i. Insertion sort chèn, merge sort chia-trộn, binary search không phải sort.",
+    "category": "Searching and Sorting"
+  },
+  {
+    "id": 27,
+    "question": "What is the worst-case Big-O of selection sort?",
+    "options": [
+      "O(n)",
+      "O(log n)",
+      "O(n^2)",
+      "O(2^n)"
+    ],
+    "answer": 2,
+    "explanation": "Đáp án C đúng vì selection sort dùng hai vòng lặp để tìm min, số so sánh xấp xỉ n(n-1)/2. Các đáp án khác không phù hợp.",
+    "category": "Searching and Sorting"
+  },
+  {
+    "id": 28,
+    "question": "Which sorting algorithm compares adjacent elements and swaps them if they are out of order?",
+    "options": [
+      "Bubble sort",
+      "Binary search",
+      "Hashing",
+      "DFS"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì bubble sort dựa vào đổi chỗ các cặp kề sai thứ tự. Các đáp án còn lại không phải thuật toán sắp xếp kiểu này.",
+    "category": "Searching and Sorting"
+  },
+  {
+    "id": 29,
+    "question": "Which of the following is a stable sorting algorithm according to the lecture content?",
+    "options": [
+      "Insertion sort",
+      "Selection sort in all implementations",
+      "Heap sort",
+      "Binary search"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì insertion sort giữ thứ tự tương đối của các khóa bằng nhau nếu cài đặt chuẩn. Selection sort thường không ổn định nếu swap xa. Heap sort không ổn định. Binary search không phải sort.",
+    "category": "Searching and Sorting"
+  },
+  {
+    "id": 30,
+    "question": "What is the key idea of merge sort?",
+    "options": [
+      "Choose the smallest element repeatedly",
+      "Divide the list, sort sublists, and merge them",
+      "Swap adjacent elements many times",
+      "Use a hash function"
+    ],
+    "answer": 1,
+    "explanation": "Đáp án B đúng vì merge sort là thuật toán chia để trị: chia mảng, sắp xếp các phần, rồi trộn. A là selection sort. C là bubble sort. D thuộc hashing.",
+    "category": "Searching and Sorting"
+  },
+  {
+    "id": 31,
+    "question": "What is the root of a tree?",
+    "options": [
+      "A node with no parent",
+      "A node with no children",
+      "Any leaf node",
+      "The rightmost node"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì root là node đặc biệt không có parent. Node không có con là leaf. Rightmost không nhất thiết là root.",
+    "category": "Tree, BST and Heap"
+  },
+  {
+    "id": 32,
+    "question": "What is a leaf node?",
+    "options": [
+      "A node with no parent",
+      "A node with no children",
+      "A node with two children",
+      "The first node inserted only"
+    ],
+    "answer": 1,
+    "explanation": "Đáp án B đúng vì leaf là node không có con. A là root. C là node bậc 2. D không đúng trong mọi cây.",
+    "category": "Tree, BST and Heap"
+  },
+  {
+    "id": 33,
+    "question": "In a binary tree, each node has at most how many children?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "n"
+    ],
+    "answer": 1,
+    "explanation": "Đáp án B đúng vì binary tree cho mỗi node tối đa hai con: left và right. Các đáp án khác sai định nghĩa.",
+    "category": "Tree, BST and Heap"
+  },
+  {
+    "id": 34,
+    "question": "Which traversal order is LVR?",
+    "options": [
+      "Preorder",
+      "Inorder",
+      "Postorder",
+      "Level order"
+    ],
+    "answer": 1,
+    "explanation": "Đáp án B đúng vì inorder là Left - Visit - Right. Preorder là VLR, postorder là LRV, level order duyệt theo tầng.",
+    "category": "Tree, BST and Heap"
+  },
+  {
+    "id": 35,
+    "question": "Which traversal order is VLR?",
+    "options": [
+      "Inorder",
+      "Preorder",
+      "Postorder",
+      "Level order"
+    ],
+    "answer": 1,
+    "explanation": "Đáp án B đúng vì preorder thăm node trước rồi trái, phải. Các đáp án khác có thứ tự khác.",
+    "category": "Tree, BST and Heap"
+  },
+  {
+    "id": 36,
+    "question": "Which data structure is commonly used for level-order traversal?",
+    "options": [
+      "Stack",
+      "Queue",
+      "Hash table",
+      "Pointer only"
+    ],
+    "answer": 1,
+    "explanation": "Đáp án B đúng vì level-order/BFS dùng queue để duyệt theo tầng. Stack thường dùng DFS hoặc iterative inorder.",
+    "category": "Tree, BST and Heap"
+  },
+  {
+    "id": 37,
+    "question": "Which data structure can simulate recursive inorder traversal iteratively?",
+    "options": [
+      "Stack",
+      "Queue",
+      "Hash table",
+      "Heap only"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì stack mô phỏng call stack của đệ quy. Queue dùng level-order. Hash table/heap không phù hợp trực tiếp.",
+    "category": "Tree, BST and Heap"
+  },
+  {
+    "id": 38,
+    "question": "What property must a Binary Search Tree satisfy?",
+    "options": [
+      "Left subtree keys are smaller and right subtree keys are larger than the root",
+      "All nodes must have exactly two children",
+      "The tree must be complete",
+      "The root must be the smallest key"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì BST có khóa bên trái nhỏ hơn root và bên phải lớn hơn root, áp dụng đệ quy cho các subtree. B, C, D không bắt buộc.",
+    "category": "Tree, BST and Heap"
+  },
+  {
+    "id": 39,
+    "question": "In a BST, where should key 25 be inserted if the current node is 30?",
+    "options": [
+      "To the right subtree",
+      "To the left subtree",
+      "As the parent of 30",
+      "It cannot be inserted"
+    ],
+    "answer": 1,
+    "explanation": "Đáp án B đúng vì 25 < 30 nên đi/chèn vào cây con trái. A chỉ khi lớn hơn 30. C không đúng quy tắc chèn. D sai nếu key chưa tồn tại.",
+    "category": "Tree, BST and Heap"
+  },
+  {
+    "id": 40,
+    "question": "What is the inorder traversal result of a BST with unique keys?",
+    "options": [
+      "Random order",
+      "Descending order always",
+      "Ascending order",
+      "Level order"
+    ],
+    "answer": 2,
+    "explanation": "Đáp án C đúng vì inorder của BST duyệt trái-root-phải nên cho dãy khóa tăng dần. Không phải random hay level order.",
+    "category": "Tree, BST and Heap"
+  },
+  {
+    "id": 41,
+    "question": "A graph G is commonly defined as which pair?",
+    "options": [
+      "G = (V, E)",
+      "G = (L, R)",
+      "G = (Root, Leaf)",
+      "G = (Key, Value)"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì graph gồm tập đỉnh V và tập cạnh E. Các cặp còn lại thuộc khái niệm khác hoặc không chuẩn.",
+    "category": "Graph and Hashing"
+  },
+  {
+    "id": 42,
+    "question": "In an undirected graph, how are edges (u, v) and (v, u) treated?",
+    "options": [
+      "They are different edges",
+      "They represent the same edge",
+      "They are invalid",
+      "They must have different weights"
+    ],
+    "answer": 1,
+    "explanation": "Đáp án B đúng vì đồ thị vô hướng không phân biệt chiều cạnh. Trong đồ thị có hướng, <u,v> và <v,u> mới khác nhau.",
+    "category": "Graph and Hashing"
+  },
+  {
+    "id": 43,
+    "question": "What is a complete graph?",
+    "options": [
+      "A graph with no edges",
+      "A graph with the maximum number of edges",
+      "A graph that is always directed",
+      "A graph with exactly one vertex"
+    ],
+    "answer": 1,
+    "explanation": "Đáp án B đúng vì complete graph có số cạnh tối đa giữa các đỉnh. A, C, D không đúng định nghĩa.",
+    "category": "Graph and Hashing"
+  },
+  {
+    "id": 44,
+    "question": "For an undirected complete graph with n vertices, what is the maximum number of edges?",
+    "options": [
+      "n",
+      "n - 1",
+      "n(n - 1)/2",
+      "n(n - 1)"
+    ],
+    "answer": 2,
+    "explanation": "Đáp án C đúng vì mỗi cặp đỉnh tạo một cạnh và không xét thứ tự, nên là tổ hợp chập 2 của n. D là cho đồ thị có hướng không self-loop.",
+    "category": "Graph and Hashing"
+  },
+  {
+    "id": 45,
+    "question": "For a directed graph with n vertices and no self-loops, what is the maximum number of edges?",
+    "options": [
+      "n(n - 1)",
+      "n(n - 1)/2",
+      "n - 1",
+      "2n"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì mỗi cặp có thể có hai chiều riêng biệt, tổng n(n-1). B là vô hướng. C là cây. D không phải công thức chuẩn.",
+    "category": "Graph and Hashing"
+  },
+  {
+    "id": 46,
+    "question": "What does an adjacency matrix A[i][j] = 1 usually mean?",
+    "options": [
+      "There is an edge from vertex i to vertex j",
+      "Vertex i is deleted",
+      "The graph is empty",
+      "i and j must be equal"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì ma trận kề đánh dấu có cạnh giữa i và j. Với vô hướng ma trận đối xứng. Các đáp án còn lại sai.",
+    "category": "Graph and Hashing"
+  },
+  {
+    "id": 47,
+    "question": "Which representation is usually better for quickly checking whether an edge exists between two vertices?",
+    "options": [
+      "Adjacency matrix",
+      "Adjacency list",
+      "Stack only",
+      "Queue only"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì adjacency matrix kiểm tra A[i][j] trực tiếp O(1). Adjacency list thường phải duyệt danh sách kề.",
+    "category": "Graph and Hashing"
+  },
+  {
+    "id": 48,
+    "question": "In an undirected graph, what is true about the adjacency matrix?",
+    "options": [
+      "It is symmetric",
+      "It is always diagonal",
+      "It contains only negative values",
+      "It must be empty"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì nếu có cạnh (u,v) thì cũng có (v,u), nên A[u][v] = A[v][u]. Các đáp án khác sai.",
+    "category": "Graph and Hashing"
+  },
+  {
+    "id": 49,
+    "question": "Which traversal searches as deeply as possible before backtracking?",
+    "options": [
+      "BFS",
+      "DFS",
+      "Binary search",
+      "Hashing"
+    ],
+    "answer": 1,
+    "explanation": "Đáp án B đúng vì DFS đi sâu theo nhánh rồi backtrack. BFS đi theo tầng. Binary search và hashing không phải duyệt đồ thị.",
+    "category": "Graph and Hashing"
+  },
+  {
+    "id": 50,
+    "question": "Which traversal uses a FIFO queue?",
+    "options": [
+      "DFS",
+      "BFS",
+      "Inorder only",
+      "Heap sort"
+    ],
+    "answer": 1,
+    "explanation": "Đáp án B đúng vì BFS dùng queue để lấy đỉnh vào trước ra trước, duyệt theo chiều rộng. DFS thường dùng recursion/stack.",
+    "category": "Graph and Hashing"
+  }
+]

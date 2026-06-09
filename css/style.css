@@ -473,11 +473,15 @@ p {
 .history-item-top {
   display: flex;
   justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.75rem;
+  min-width: 0;
   font-weight: 700;
   font-size: 0.95rem;
 }
 
 .history-item-name {
+  min-width: 0;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -485,6 +489,8 @@ p {
 }
 
 .history-item-score {
+  flex: 0 0 auto;
+  white-space: nowrap;
   color: var(--accent-color);
 }
 .history-item.pass .history-item-score {
@@ -497,8 +503,22 @@ p {
 .history-item-details {
   display: flex;
   justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.75rem;
+  width: 100%;
+  min-width: 0;
   font-size: 0.8rem;
   color: var(--text-secondary);
+}
+
+.history-item-meta {
+  display: flex;
+  flex: 1 1 auto;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem 0.5rem;
+  min-width: 0;
+  line-height: 1.35;
 }
 
 .empty-history {
@@ -1757,6 +1777,7 @@ p {
 }
 
 .retake-history-btn {
+  flex: 0 0 auto;
   background: none;
   border: 1px solid var(--border-color);
   color: var(--accent-color);
@@ -2647,8 +2668,9 @@ body {
 
 .history-list {
   display: grid;
-  max-height: 280px;
+  max-height: 380px;
   grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-auto-rows: minmax(96px, auto);
   gap: 0.65rem;
 }
 
@@ -2658,6 +2680,7 @@ body {
 
 .history-item {
   min-width: 0;
+  min-height: 96px;
   padding: 0.85rem;
   border: 0;
   border-radius: 10px;

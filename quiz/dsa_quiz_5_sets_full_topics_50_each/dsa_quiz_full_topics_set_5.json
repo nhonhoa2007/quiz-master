@@ -1,0 +1,652 @@
+[
+  {
+    "id": 1,
+    "question": "Which case is often used to guarantee performance?",
+    "options": [
+      "Worst-case analysis",
+      "Best-case only",
+      "Random guessing",
+      "Syntax checking"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì worst-case cho biết giới hạn xấu nhất, giúp đảm bảo hiệu năng. Best-case không phản ánh rủi ro.",
+    "category": "C/C++ Review and Algorithm Analysis"
+  },
+  {
+    "id": 2,
+    "question": "What is the recurrence for factorial in the lecture style?",
+    "options": [
+      "C(n)=C(n-1)+1",
+      "C(n)=C(n)+1",
+      "C(n)=2C(n)",
+      "C(n)=n^2"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì mỗi factorial(n) gọi factorial(n-1) thêm một bước chính. Các công thức khác không đúng với factorial tuyến tính.",
+    "category": "C/C++ Review and Algorithm Analysis"
+  },
+  {
+    "id": 3,
+    "question": "If f(n)=2n^2, which is the tightest Big-O among the choices?",
+    "options": [
+      "O(n)",
+      "O(n^2)",
+      "O(n^3)",
+      "O(1)"
+    ],
+    "answer": 1,
+    "explanation": "Đáp án B đúng vì 2n^2 cùng bậc với n^2. O(n^3) là cận trên nhưng không chặt bằng, O(n) và O(1) quá nhỏ.",
+    "category": "C/C++ Review and Algorithm Analysis"
+  },
+  {
+    "id": 4,
+    "question": "What is the Big-O of log10(n)?",
+    "options": [
+      "O(log n)",
+      "O(n)",
+      "O(n^2)",
+      "O(1)"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì đổi cơ số log chỉ nhân với hằng số, Big-O bỏ hằng số. Các đáp án khác không phải bậc log.",
+    "category": "C/C++ Review and Algorithm Analysis"
+  },
+  {
+    "id": 5,
+    "question": "Which code pattern usually gives O(n^2)?",
+    "options": [
+      "One loop n times",
+      "Two nested loops n times each",
+      "A single assignment",
+      "Halving n every step"
+    ],
+    "answer": 1,
+    "explanation": "Đáp án B đúng vì hai vòng lặp lồng nhau n*n tạo n^2 bước. Một vòng là O(n), assignment là O(1), halving là O(log n).",
+    "category": "C/C++ Review and Algorithm Analysis"
+  },
+  {
+    "id": 6,
+    "question": "What should be counted when estimating running time?",
+    "options": [
+      "Significant operations",
+      "Only comments",
+      "Only blank lines",
+      "Only file name length"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì phân tích thuật toán đếm thao tác quan trọng. Comments và dòng trống không chạy.",
+    "category": "C/C++ Review and Algorithm Analysis"
+  },
+  {
+    "id": 7,
+    "question": "What does a pointer to struct use to access members more clearly?",
+    "options": [
+      "->",
+      ".",
+      "::",
+      "%%"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì con trỏ struct dùng -> để truy cập member. Dấu chấm dùng cho biến struct thường.",
+    "category": "C/C++ Review and Algorithm Analysis"
+  },
+  {
+    "id": 8,
+    "question": "Which operation dereferences a pointer p?",
+    "options": [
+      "*p",
+      "&p",
+      "p++ only",
+      "delete p only"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì *p lấy giá trị tại địa chỉ p trỏ đến. &p lấy địa chỉ của biến p.",
+    "category": "C/C++ Review and Algorithm Analysis"
+  },
+  {
+    "id": 9,
+    "question": "Which statement about arrays of structures is true?",
+    "options": [
+      "Each element is a struct and fields are accessed with dot notation",
+      "They cannot store multiple records",
+      "They must be recursive",
+      "They are always hash tables"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì mảng struct chứa nhiều phần tử struct, ví dụ stuList[i].studentID. Các đáp án khác sai.",
+    "category": "C/C++ Review and Algorithm Analysis"
+  },
+  {
+    "id": 10,
+    "question": "What is the main risk of dynamic memory if not released?",
+    "options": [
+      "Memory leak",
+      "Binary search",
+      "Stable sorting",
+      "Graph cycle"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì không delete/free vùng nhớ động gây rò rỉ bộ nhớ. Các đáp án khác không liên quan.",
+    "category": "C/C++ Review and Algorithm Analysis"
+  },
+  {
+    "id": 11,
+    "question": "Which application is suitable for a queue?",
+    "options": [
+      "Job scheduling",
+      "Postfix evaluation only",
+      "Recursive call stack only",
+      "Infix operator storage only"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì queue FIFO phù hợp hàng đợi công việc. Các đáp án khác thường dùng stack.",
+    "category": "Linked List, Stack and Queue"
+  },
+  {
+    "id": 12,
+    "question": "Which application is suitable for a stack?",
+    "options": [
+      "Expression conversion",
+      "Job queue only",
+      "BFS queue only",
+      "Hash table load factor"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì stack dùng trong chuyển đổi infix-postfix/prefix và đánh giá biểu thức. Job queue/BFS dùng queue.",
+    "category": "Linked List, Stack and Queue"
+  },
+  {
+    "id": 13,
+    "question": "What happens when a ')' is read in infix to postfix conversion?",
+    "options": [
+      "Pop operators until '(' is found",
+      "Push ')' forever",
+      "Delete all operands",
+      "Start binary search"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì gặp dấu đóng ngoặc thì lấy toán tử trong stack ra đến dấu mở ngoặc. Các đáp án khác sai thuật toán.",
+    "category": "Linked List, Stack and Queue"
+  },
+  {
+    "id": 14,
+    "question": "In postfix evaluation, when an operator is read, what happens?",
+    "options": [
+      "Pop two operands, apply operator, push result",
+      "Push operator as a number",
+      "Clear all operands",
+      "Sort the stack"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì postfix dùng stack: operator lấy hai toán hạng gần nhất, tính rồi push kết quả.",
+    "category": "Linked List, Stack and Queue"
+  },
+  {
+    "id": 15,
+    "question": "What is the postfix form of A + B * C - D?",
+    "options": [
+      "A B C * + D -",
+      "A B + C * D -",
+      "- + A * B C D",
+      "A + B C * - D"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì B*C trước, rồi A + kết quả, cuối cùng trừ D. Các đáp án khác sai thứ tự hoặc là prefix/infix.",
+    "category": "Linked List, Stack and Queue"
+  },
+  {
+    "id": 16,
+    "question": "What is the infix form of postfix A B + C *?",
+    "options": [
+      "(A + B) * C",
+      "A + (B * C)",
+      "A * B + C",
+      "A B C + *"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì A B + tạo (A+B), sau đó nhân C. B tương ứng postfix A B C * +.",
+    "category": "Linked List, Stack and Queue"
+  },
+  {
+    "id": 17,
+    "question": "Which expression has no ambiguity of operator precedence?",
+    "options": [
+      "Postfix expression",
+      "Normal infix expression only",
+      "C++ comment",
+      "Array declaration"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì postfix/prefix không cần ngoặc hay ưu tiên toán tử để parse. Infix cần xét precedence.",
+    "category": "Linked List, Stack and Queue"
+  },
+  {
+    "id": 18,
+    "question": "What does isEmpty() usually check?",
+    "options": [
+      "Whether a data structure has no elements",
+      "Whether an array is sorted",
+      "Whether a graph is complete",
+      "Whether a key collides"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì isEmpty kiểm tra rỗng. Các đáp án khác là kiểm tra khác.",
+    "category": "Linked List, Stack and Queue"
+  },
+  {
+    "id": 19,
+    "question": "Which operation inserts after a given node p in a linked list?",
+    "options": [
+      "insertAfter(p, e)",
+      "pop()",
+      "dequeue()",
+      "binarySearch()"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì insertAfter chèn node sau p. Các hàm còn lại thuộc stack/queue/search.",
+    "category": "Linked List, Stack and Queue"
+  },
+  {
+    "id": 20,
+    "question": "Why is a linked stack push usually O(1)?",
+    "options": [
+      "It inserts at the head/top only",
+      "It searches the whole list",
+      "It sorts all elements",
+      "It builds a heap"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì chỉ tạo node mới và cập nhật top. Không cần duyệt toàn bộ danh sách.",
+    "category": "Linked List, Stack and Queue"
+  },
+  {
+    "id": 21,
+    "question": "Which sorting algorithms commonly have O(n^2) worst-case in this course?",
+    "options": [
+      "Insertion, selection, bubble",
+      "Merge only",
+      "Binary search only",
+      "BFS and DFS"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì ba thuật toán đơn giản này có worst-case O(n^2). Merge sort thường O(n log n).",
+    "category": "Searching and Sorting"
+  },
+  {
+    "id": 22,
+    "question": "What does 'key' mean in sorting records?",
+    "options": [
+      "The value used to order records",
+      "The memory address only",
+      "The file extension",
+      "The number of loops"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì record được sắp xếp theo key. Các đáp án khác không đúng.",
+    "category": "Searching and Sorting"
+  },
+  {
+    "id": 23,
+    "question": "If two records have equal keys and their original order is preserved, the sort is what?",
+    "options": [
+      "Stable",
+      "External",
+      "Recursive",
+      "Circular"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì đó là định nghĩa stable sort. External liên quan bộ nhớ ngoài.",
+    "category": "Searching and Sorting"
+  },
+  {
+    "id": 24,
+    "question": "Which method can reduce comparisons in insertion sort?",
+    "options": [
+      "Binary insertion sort",
+      "Removing all loops",
+      "Using DFS",
+      "Using a queue only"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì binary insertion sort dùng binary search để tìm vị trí chèn, giảm số so sánh.",
+    "category": "Searching and Sorting"
+  },
+  {
+    "id": 25,
+    "question": "What remains unchanged in binary insertion sort on arrays?",
+    "options": [
+      "Number of movements may still be large",
+      "The array is not sorted",
+      "It becomes O(1)",
+      "It cannot compare keys"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì dù tìm vị trí nhanh hơn, vẫn phải dịch phần tử trong mảng.",
+    "category": "Searching and Sorting"
+  },
+  {
+    "id": 26,
+    "question": "Why is linked-list insertion sort different from array insertion sort?",
+    "options": [
+      "It adjusts pointers instead of shifting many array elements",
+      "It cannot compare elements",
+      "It must use a hash function",
+      "It always becomes binary search"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì linked list không cần dịch cả đoạn mảng, chỉ thay đổi liên kết khi đã tìm vị trí.",
+    "category": "Searching and Sorting"
+  },
+  {
+    "id": 27,
+    "question": "What is list verification?",
+    "options": [
+      "Checking whether all elements of one list appear in another",
+      "Deleting a linked list",
+      "Building a heap",
+      "Checking parentheses only"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì list verification trong slide là xác định phần tử của danh sách này có xuất hiện trong danh sách kia không.",
+    "category": "Searching and Sorting"
+  },
+  {
+    "id": 28,
+    "question": "What is the naive complexity for list verification with lists of sizes m and n?",
+    "options": [
+      "O(mn)",
+      "O(m+n) always without sorting",
+      "O(1)",
+      "O(log n)"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì với mỗi phần tử của list 1 lại tìm trong list 2, có thể là m*n. Các đáp án khác không đúng cho cách naive.",
+    "category": "Searching and Sorting"
+  },
+  {
+    "id": 29,
+    "question": "After sorting both lists, what is the comparison phase complexity?",
+    "options": [
+      "O(m+n)",
+      "O(mn)",
+      "O(2^n)",
+      "O(1) always"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì dùng hai con trỏ đi qua hai danh sách đã sorted, tổng số bước tuyến tính theo m+n.",
+    "category": "Searching and Sorting"
+  },
+  {
+    "id": 30,
+    "question": "Which is better for repeated search in sorted array?",
+    "options": [
+      "Binary search",
+      "Sequential search",
+      "Bubble sort every time",
+      "Random probing"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì dữ liệu đã sorted nên binary search O(log n), tốt hơn sequential search O(n).",
+    "category": "Searching and Sorting"
+  },
+  {
+    "id": 31,
+    "question": "What is the height of a heap with n nodes?",
+    "options": [
+      "O(log n)",
+      "O(n)",
+      "O(1) always",
+      "O(n^2)"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì heap là complete binary tree nên chiều cao log n.",
+    "category": "Tree, BST and Heap"
+  },
+  {
+    "id": 32,
+    "question": "What is percolate up used for?",
+    "options": [
+      "Heap insertion",
+      "Heap delete max only",
+      "DFS",
+      "Binary search"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì khi chèn heap, phần tử mới đi lên nếu lớn hơn parent trong max heap.",
+    "category": "Tree, BST and Heap"
+  },
+  {
+    "id": 33,
+    "question": "What is percolate down used for?",
+    "options": [
+      "Restoring heap after deleting root",
+      "Adding to stack",
+      "Checking graph connectivity only",
+      "Comparing strings"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì sau khi đưa phần tử cuối lên root, cần đẩy xuống để khôi phục heap.",
+    "category": "Tree, BST and Heap"
+  },
+  {
+    "id": 34,
+    "question": "During deleteMaxHeap, which child is usually chosen for comparison?",
+    "options": [
+      "The larger child",
+      "The smaller child always",
+      "No child",
+      "Random child"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì max heap cần đưa child lớn hơn lên để đảm bảo parent >= cả hai con.",
+    "category": "Tree, BST and Heap"
+  },
+  {
+    "id": 35,
+    "question": "What is the first phase of heap sort?",
+    "options": [
+      "Build a max heap",
+      "Run binary search",
+      "Build adjacency matrix",
+      "Convert to postfix"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì heap sort bắt đầu bằng xây max heap từ mảng.",
+    "category": "Tree, BST and Heap"
+  },
+  {
+    "id": 36,
+    "question": "After swapping A[1] and A[n] in heap sort, what is true about A[n]?",
+    "options": [
+      "It is in its final sorted position",
+      "It must be searched by DFS",
+      "It becomes root again",
+      "It is deleted from memory"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì A[1] là max, swap xuống cuối thì phần tử cuối đã đúng vị trí trong sắp xếp tăng dần.",
+    "category": "Tree, BST and Heap"
+  },
+  {
+    "id": 37,
+    "question": "Which nodes need adjust when building a heap bottom-up?",
+    "options": [
+      "Non-leaf nodes from n/2 down to 1",
+      "Only leaves",
+      "Only index n",
+      "Only index 0"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì các leaf đã là heap, chỉ cần adjust các node không lá từ dưới lên.",
+    "category": "Tree, BST and Heap"
+  },
+  {
+    "id": 38,
+    "question": "Is heap sort stable by default?",
+    "options": [
+      "No",
+      "Yes always",
+      "Only for strings",
+      "Only for linked lists"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì heap sort thông thường không giữ thứ tự tương đối của key bằng nhau. Nó có thể đổi xa.",
+    "category": "Tree, BST and Heap"
+  },
+  {
+    "id": 39,
+    "question": "Which is an application/name associated with heap?",
+    "options": [
+      "Priority queue",
+      "Hash table",
+      "Adjacency list",
+      "Circular linked list"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì heap thường dùng để cài priority queue. Các đáp án khác là cấu trúc khác.",
+    "category": "Tree, BST and Heap"
+  },
+  {
+    "id": 40,
+    "question": "Given max heap [30, 20, 10], insert 25. What should happen?",
+    "options": [
+      "25 is placed then moved above 20",
+      "25 becomes right child of 10 and stops",
+      "30 is deleted",
+      "The heap becomes sorted array immediately"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì chèn cuối ở vị trí con của 20, 25 > 20 nên đổi lên; 25 < 30 nên dừng.",
+    "category": "Tree, BST and Heap"
+  },
+  {
+    "id": 41,
+    "question": "What is a hash function?",
+    "options": [
+      "A function that maps a key to an index/address",
+      "A function that traverses a graph",
+      "A function that always sorts arrays",
+      "A function that deletes queues"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì hash function biến key thành chỉ số bucket/table. Các đáp án khác không đúng.",
+    "category": "Graph and Hashing"
+  },
+  {
+    "id": 42,
+    "question": "What is a hash table bucket?",
+    "options": [
+      "A position/group of slots in a hash table",
+      "A tree root only",
+      "A graph edge only",
+      "A stack top only"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì bucket là vị trí hoặc nhóm slot trong hash table để chứa record. Các đáp án khác là khái niệm khác.",
+    "category": "Graph and Hashing"
+  },
+  {
+    "id": 43,
+    "question": "What is the division hash method?",
+    "options": [
+      "h(k)=k mod b",
+      "h(k)=k^2 only with no extraction",
+      "h(k)=k/0",
+      "h(k)=DFS(k)"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì division method dùng phép chia lấy dư với kích thước bảng b. Các đáp án còn lại sai.",
+    "category": "Graph and Hashing"
+  },
+  {
+    "id": 44,
+    "question": "Why is a prime table size often preferred in division hashing?",
+    "options": [
+      "It can help reduce bad patterns/clustering",
+      "It guarantees no collision forever",
+      "It makes table sorted",
+      "It removes keys"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì số nguyên tố thường giúp phân bố tốt hơn với phép mod. Không thể đảm bảo không collision trong mọi trường hợp.",
+    "category": "Graph and Hashing"
+  },
+  {
+    "id": 45,
+    "question": "What is clustering in hashing?",
+    "options": [
+      "Keys grouping together in nearby buckets",
+      "Tree nodes becoming leaves",
+      "Queue becoming empty",
+      "Graph becoming connected"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì clustering làm nhiều key tụ lại, khiến tìm kiếm dài hơn. Các đáp án khác không liên quan.",
+    "category": "Graph and Hashing"
+  },
+  {
+    "id": 46,
+    "question": "What is the worst hash function behavior?",
+    "options": [
+      "Mapping all keys to the same bucket",
+      "Mapping keys uniformly",
+      "Using a prime size",
+      "Returning different addresses for all keys"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì mọi key chung bucket gây collision tối đa. Phân bố đều hoặc khác địa chỉ là tốt.",
+    "category": "Graph and Hashing"
+  },
+  {
+    "id": 47,
+    "question": "What is quadratic probing commonly based on?",
+    "options": [
+      "g(i)=i^2",
+      "g(i)=i",
+      "g(i)=0 always",
+      "g(i)=DFS"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì quadratic probing thường dùng bước nhảy i^2. Linear probing dùng g(i)=i.",
+    "category": "Graph and Hashing"
+  },
+  {
+    "id": 48,
+    "question": "What is double hashing?",
+    "options": [
+      "Using a second hash function to determine probe step",
+      "Hashing the same key then deleting it",
+      "Using two stacks",
+      "Sorting twice"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì double hashing dùng hàm hash thứ hai để tính bước dò. Các đáp án khác sai.",
+    "category": "Graph and Hashing"
+  },
+  {
+    "id": 49,
+    "question": "What is rehashing?",
+    "options": [
+      "Building a new/larger table and reinserting keys",
+      "Deleting all keys permanently",
+      "Doing BFS again",
+      "Turning stack into queue"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì rehash thường tạo bảng mới rồi hash lại các key, thường khi load factor cao. Các đáp án khác không đúng.",
+    "category": "Graph and Hashing"
+  },
+  {
+    "id": 50,
+    "question": "Why does separate chaining tolerate collisions well?",
+    "options": [
+      "Colliding keys are stored in a linked list at the bucket",
+      "It forbids all duplicate hash values",
+      "It sorts every bucket globally",
+      "It uses no memory"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì chaining chứa nhiều key va chạm trong danh sách tại bucket. Nó không loại bỏ collision mà xử lý chúng.",
+    "category": "Graph and Hashing"
+  }
+]

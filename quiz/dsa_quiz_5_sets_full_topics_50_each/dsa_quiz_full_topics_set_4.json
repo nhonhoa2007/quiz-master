@@ -1,0 +1,652 @@
+[
+  {
+    "id": 1,
+    "question": "Which pair is correct in C++ dynamic memory?",
+    "options": [
+      "new/delete",
+      "malloc/delete",
+      "new/free",
+      "scanf/delete"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì C++ dùng new để cấp phát và delete để giải phóng. Trộn malloc với delete hoặc new với free là sai cách.",
+    "category": "C/C++ Review and Algorithm Analysis"
+  },
+  {
+    "id": 2,
+    "question": "Which pair is correct for a dynamic array in C++?",
+    "options": [
+      "new[]/delete[]",
+      "new/delete[] only",
+      "malloc/delete[]",
+      "calloc/delete"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì mảng cấp phát bằng new[] phải giải phóng bằng delete[]. Các cặp còn lại không đúng chuẩn.",
+    "category": "C/C++ Review and Algorithm Analysis"
+  },
+  {
+    "id": 3,
+    "question": "What happens if recursion has no reachable base case?",
+    "options": [
+      "It may cause stack overflow",
+      "It always becomes O(1)",
+      "It automatically stops",
+      "It turns into a queue"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì gọi đệ quy liên tục sẽ làm đầy call stack. Các đáp án khác sai.",
+    "category": "C/C++ Review and Algorithm Analysis"
+  },
+  {
+    "id": 4,
+    "question": "In C++, what does a reference parameter allow?",
+    "options": [
+      "A function can access the original argument",
+      "A function cannot receive values",
+      "A function must return a pointer",
+      "A variable becomes constant automatically"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì tham chiếu cho phép hàm làm việc trực tiếp với biến gốc. Nó không bắt buộc return pointer hay tự động const.",
+    "category": "C/C++ Review and Algorithm Analysis"
+  },
+  {
+    "id": 5,
+    "question": "What is the safest way to pass a large struct if the function only reads it?",
+    "options": [
+      "Pass by const reference",
+      "Pass by value many times",
+      "Pass by non-const reference",
+      "Pass by deleting it"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì const reference vừa tránh copy vừa bảo vệ không sửa dữ liệu. Pass by value tốn bộ nhớ/thời gian, non-const có thể bị sửa.",
+    "category": "C/C++ Review and Algorithm Analysis"
+  },
+  {
+    "id": 6,
+    "question": "Which statement about struct comparison is generally true in basic C/C++?",
+    "options": [
+      "Compare member by member",
+      "Always use ==",
+      "Structs cannot have fields",
+      "Only compare addresses"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì trong nội dung cơ bản, struct thường được so sánh theo từng field. == trực tiếp không phải lúc nào cũng dùng được cho struct C/C++.",
+    "category": "C/C++ Review and Algorithm Analysis"
+  },
+  {
+    "id": 7,
+    "question": "What is a nested structure?",
+    "options": [
+      "A structure containing another structure as a member",
+      "A loop inside a loop only",
+      "A pointer to an integer only",
+      "A sorted array"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì nested struct là struct có member là struct khác. Các đáp án khác là khái niệm khác.",
+    "category": "C/C++ Review and Algorithm Analysis"
+  },
+  {
+    "id": 8,
+    "question": "How do you access city in s.pData.city?",
+    "options": [
+      "Using dot operator multiple times",
+      "Using delete",
+      "Using only *",
+      "Using modulo"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì struct lồng nhau dùng dấu chấm nhiều lần để truy cập member bên trong.",
+    "category": "C/C++ Review and Algorithm Analysis"
+  },
+  {
+    "id": 9,
+    "question": "What does 'program = data structures + algorithms' emphasize?",
+    "options": [
+      "Both data organization and processing steps are important",
+      "Programs do not need input",
+      "Algorithms replace data",
+      "Data structures are only for graphics"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì chương trình cần cách tổ chức dữ liệu và thuật toán xử lý. Các đáp án còn lại hiểu sai ý.",
+    "category": "C/C++ Review and Algorithm Analysis"
+  },
+  {
+    "id": 10,
+    "question": "Which case is fastest for a linear search?",
+    "options": [
+      "Target at first position",
+      "Target absent",
+      "Target at last position",
+      "Array unsorted"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì tìm thấy ngay phần tử đầu thì chỉ cần một lần so sánh. Vắng mặt hoặc ở cuối là trường hợp lâu hơn.",
+    "category": "C/C++ Review and Algorithm Analysis"
+  },
+  {
+    "id": 11,
+    "question": "What is stack underflow?",
+    "options": [
+      "Popping from an empty stack",
+      "Pushing into an empty stack",
+      "Sorting a stack",
+      "Using too many queues"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì underflow xảy ra khi pop/top trên stack rỗng. Push vào stack rỗng là bình thường.",
+    "category": "Linked List, Stack and Queue"
+  },
+  {
+    "id": 12,
+    "question": "What is stack overflow in array stack?",
+    "options": [
+      "Pushing when top == MAX - 1",
+      "Popping when stack has elements",
+      "Checking isEmpty",
+      "Using queue front"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì stack mảng đầy khi top ở MAX-1, push tiếp gây overflow. Các đáp án khác không phải overflow.",
+    "category": "Linked List, Stack and Queue"
+  },
+  {
+    "id": 13,
+    "question": "Which stack representation can grow dynamically if memory is available?",
+    "options": [
+      "Linked representation",
+      "Fixed array only",
+      "Constant variable",
+      "Adjacency matrix"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì stack bằng linked list cấp phát node động. Mảng cố định bị giới hạn MAX.",
+    "category": "Linked List, Stack and Queue"
+  },
+  {
+    "id": 14,
+    "question": "Which operation returns the top element without removing it?",
+    "options": [
+      "top/peek",
+      "pop",
+      "enqueue",
+      "dequeue"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì top hoặc peek xem phần tử trên cùng mà không xóa. pop có xóa. enqueue/dequeue thuộc queue.",
+    "category": "Linked List, Stack and Queue"
+  },
+  {
+    "id": 15,
+    "question": "Which structure is used by compilers to support recursion?",
+    "options": [
+      "Stack",
+      "Queue",
+      "Hash table only",
+      "Heap sort"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì mỗi lời gọi hàm tạo activation record được push vào call stack. Queue/hash/heap sort không mô phỏng trực tiếp recursion.",
+    "category": "Linked List, Stack and Queue"
+  },
+  {
+    "id": 16,
+    "question": "Which queue pointer indicates where deletion happens?",
+    "options": [
+      "front",
+      "rear",
+      "top",
+      "root"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì queue xóa ở front. rear là nơi thêm. top thuộc stack, root thuộc tree.",
+    "category": "Linked List, Stack and Queue"
+  },
+  {
+    "id": 17,
+    "question": "Which queue pointer indicates where insertion happens?",
+    "options": [
+      "rear",
+      "front",
+      "top",
+      "left child"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì queue thêm ở rear và xóa ở front.",
+    "category": "Linked List, Stack and Queue"
+  },
+  {
+    "id": 18,
+    "question": "What is queue underflow?",
+    "options": [
+      "Deleting from an empty queue",
+      "Adding to a non-empty queue",
+      "Traversing a tree",
+      "Hash collision"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì delete/dequeue khi queue rỗng gây underflow. Các đáp án khác không phải lỗi queue rỗng.",
+    "category": "Linked List, Stack and Queue"
+  },
+  {
+    "id": 19,
+    "question": "What is a circular queue used for in array implementation?",
+    "options": [
+      "Reuse empty positions at the beginning of the array",
+      "Make the queue always sorted",
+      "Remove FIFO rule",
+      "Replace stack"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì circular queue dùng modulo để quay vòng, tận dụng vị trí trống phía đầu mảng.",
+    "category": "Linked List, Stack and Queue"
+  },
+  {
+    "id": 20,
+    "question": "In a circular queue, which operator is commonly used to wrap around?",
+    "options": [
+      "%",
+      "*",
+      "& only",
+      "-> only"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì phép modulo giúp chỉ số quay về đầu khi vượt kích thước mảng.",
+    "category": "Linked List, Stack and Queue"
+  },
+  {
+    "id": 21,
+    "question": "Which input is best for insertion sort?",
+    "options": [
+      "Already sorted or nearly sorted",
+      "Completely reversed only",
+      "Random huge graph",
+      "Hash table with collisions"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì insertion sort chạy rất nhanh khi ít phần tử lệch thứ tự. Reversed thường là worst case.",
+    "category": "Searching and Sorting"
+  },
+  {
+    "id": 22,
+    "question": "In selection sort, what is selected during each step?",
+    "options": [
+      "The smallest remaining element",
+      "The middle element always",
+      "A random pivot",
+      "The last inserted key"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì selection sort tìm phần tử nhỏ nhất trong đoạn chưa sắp xếp để đưa vào vị trí hiện tại.",
+    "category": "Searching and Sorting"
+  },
+  {
+    "id": 23,
+    "question": "Does classic selection sort usually make many swaps compared to bubble sort?",
+    "options": [
+      "No, it can make fewer swaps",
+      "Yes, it swaps every adjacent pair always",
+      "It never swaps",
+      "It only uses recursion"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì selection sort chuẩn mỗi vòng thường tối đa một swap. Bubble sort có thể swap nhiều cặp kề.",
+    "category": "Searching and Sorting"
+  },
+  {
+    "id": 24,
+    "question": "What is the main operation of bubble sort?",
+    "options": [
+      "Compare and possibly swap adjacent elements",
+      "Use hash function",
+      "Use DFS",
+      "Use tree rotation"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì bubble sort dựa vào so sánh cặp kề. Các đáp án khác không liên quan.",
+    "category": "Searching and Sorting"
+  },
+  {
+    "id": 25,
+    "question": "What happens after enough passes of bubble sort?",
+    "options": [
+      "The array becomes sorted",
+      "The array becomes a graph",
+      "All values become zero",
+      "The stack overflows necessarily"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì các pass liên tục đưa phần tử về đúng vị trí, cuối cùng mảng được sắp xếp.",
+    "category": "Searching and Sorting"
+  },
+  {
+    "id": 26,
+    "question": "What is divide and conquer?",
+    "options": [
+      "Divide problem into subproblems, solve, combine",
+      "Use only one loop",
+      "Use only a queue",
+      "Avoid all recursion always"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì chia để trị là chia bài toán, giải các phần nhỏ, rồi kết hợp kết quả. Merge sort/quick sort dùng ý tưởng này.",
+    "category": "Searching and Sorting"
+  },
+  {
+    "id": 27,
+    "question": "Which sorting algorithm uses merging of two sorted subarrays?",
+    "options": [
+      "Merge sort",
+      "Selection sort",
+      "Bubble sort",
+      "Sequential search"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì merge sort trộn hai mảng con đã sắp xếp. Các đáp án còn lại không có bước merge chính.",
+    "category": "Searching and Sorting"
+  },
+  {
+    "id": 28,
+    "question": "Which sorting algorithm uses partitioning?",
+    "options": [
+      "Quick sort",
+      "Insertion sort",
+      "Selection sort only",
+      "Sequential search"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì quick sort phân hoạch theo pivot. Các thuật toán còn lại không dùng partition làm ý tưởng chính.",
+    "category": "Searching and Sorting"
+  },
+  {
+    "id": 29,
+    "question": "What is a pivot in quick sort?",
+    "options": [
+      "A chosen element used to partition the array",
+      "The first node of a linked list only",
+      "A queue pointer",
+      "A hash bucket"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì pivot dùng để chia phần nhỏ hơn/lớn hơn. Các đáp án khác không thuộc quick sort.",
+    "category": "Searching and Sorting"
+  },
+  {
+    "id": 30,
+    "question": "What is the average complexity of quick sort?",
+    "options": [
+      "O(n log n)",
+      "O(n^2) always",
+      "O(1)",
+      "O(log n)"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì quick sort trung bình O(n log n). Worst case có thể O(n^2), nhưng không phải luôn luôn.",
+    "category": "Searching and Sorting"
+  },
+  {
+    "id": 31,
+    "question": "Which traversal is Left-Right-Visit?",
+    "options": [
+      "Postorder",
+      "Preorder",
+      "Inorder",
+      "Level order"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì postorder = LRV. Inorder = LVR, preorder = VLR.",
+    "category": "Tree, BST and Heap"
+  },
+  {
+    "id": 32,
+    "question": "What is copied when testing equality of binary trees?",
+    "options": [
+      "Topology and data must match",
+      "Only root address",
+      "Only number of leaves",
+      "Only height"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì hai cây tương đương khi cấu trúc và dữ liệu giống nhau. Chỉ root/height/số lá không đủ.",
+    "category": "Tree, BST and Heap"
+  },
+  {
+    "id": 33,
+    "question": "Which function is natural for counting nodes in a binary tree?",
+    "options": [
+      "Recursive traversal",
+      "Hash folding",
+      "Linear probing",
+      "Selection sorting"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì có thể đệ quy đếm node trái + phải + root. Các đáp án khác không phù hợp.",
+    "category": "Tree, BST and Heap"
+  },
+  {
+    "id": 34,
+    "question": "In BST search, what happens if x < current node key?",
+    "options": [
+      "Move to left subtree",
+      "Move to right subtree",
+      "Return current node",
+      "Delete root"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì key nhỏ hơn current thì theo quy tắc BST nằm ở cây con trái.",
+    "category": "Tree, BST and Heap"
+  },
+  {
+    "id": 35,
+    "question": "In BST search, what happens if x > current node key?",
+    "options": [
+      "Move to right subtree",
+      "Move to left subtree",
+      "Stop and return NULL immediately always",
+      "Perform BFS"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì key lớn hơn current thì đi sang cây con phải. Chỉ return NULL khi đi đến node rỗng.",
+    "category": "Tree, BST and Heap"
+  },
+  {
+    "id": 36,
+    "question": "What does BST search return if the tree pointer becomes NULL?",
+    "options": [
+      "Not found",
+      "Found at root",
+      "The maximum key",
+      "The minimum key"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì đi đến NULL nghĩa là không có key cần tìm trong BST.",
+    "category": "Tree, BST and Heap"
+  },
+  {
+    "id": 37,
+    "question": "What is the worst-case height of an unbalanced BST with n nodes?",
+    "options": [
+      "O(n)",
+      "O(log n)",
+      "O(1)",
+      "O(n log n)"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì BST lệch như linked list có chiều cao n. Balanced tree mới khoảng log n.",
+    "category": "Tree, BST and Heap"
+  },
+  {
+    "id": 38,
+    "question": "What is the average/search complexity of a reasonably balanced BST?",
+    "options": [
+      "O(log n)",
+      "O(n^2)",
+      "O(1) always",
+      "O(2^n)"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì nếu cây cân bằng, mỗi bước loại một nửa hướng tìm kiếm tương tự log n. Không phải O(1) luôn.",
+    "category": "Tree, BST and Heap"
+  },
+  {
+    "id": 39,
+    "question": "What is a min heap?",
+    "options": [
+      "A complete binary tree where each parent is no greater than its children",
+      "A tree with maximum at root",
+      "A linked list sorted ascending",
+      "A graph traversal"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì min heap có parent <= children và root nhỏ nhất. Max heap là ngược lại.",
+    "category": "Tree, BST and Heap"
+  },
+  {
+    "id": 40,
+    "question": "In max heap array indexed from 1, where is the root?",
+    "options": [
+      "A[1]",
+      "A[0] always",
+      "A[n]",
+      "A[2]"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng theo slide dùng A[1..n], root là A[1]. Nếu dùng index 0 thì quy tắc khác.",
+    "category": "Tree, BST and Heap"
+  },
+  {
+    "id": 41,
+    "question": "What is an acyclic graph?",
+    "options": [
+      "A graph with no cycles",
+      "A graph with all edges",
+      "A graph with no vertices",
+      "A hash table"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì acyclic nghĩa là không có chu trình. Complete graph thường có cycle nếu đủ đỉnh.",
+    "category": "Graph and Hashing"
+  },
+  {
+    "id": 42,
+    "question": "What is a connected component?",
+    "options": [
+      "A maximal connected subgraph",
+      "A single hash bucket",
+      "A stack frame",
+      "A sorted partition"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì connected component là thành phần liên thông cực đại. Các đáp án khác không liên quan.",
+    "category": "Graph and Hashing"
+  },
+  {
+    "id": 43,
+    "question": "What is a strongly connected directed graph?",
+    "options": [
+      "Every vertex can reach every other vertex by directed paths",
+      "It has no directed edges",
+      "It is always a tree",
+      "It has one bucket"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì mạnh liên thông yêu cầu có đường đi có hướng giữa mọi cặp đỉnh. Các đáp án khác sai.",
+    "category": "Graph and Hashing"
+  },
+  {
+    "id": 44,
+    "question": "What is a weighted graph/network?",
+    "options": [
+      "A graph whose edges have weights",
+      "A graph with no edges",
+      "A graph with only one vertex",
+      "A stack of numbers"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì network là graph có trọng số cạnh, ví dụ khoảng cách/chi phí. Các đáp án khác sai.",
+    "category": "Graph and Hashing"
+  },
+  {
+    "id": 45,
+    "question": "Which graph representation uses linked lists for each vertex?",
+    "options": [
+      "Adjacency list",
+      "Adjacency matrix",
+      "Heap array",
+      "Postfix expression"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì adjacency list thay mỗi dòng ma trận bằng một linked list các đỉnh kề.",
+    "category": "Graph and Hashing"
+  },
+  {
+    "id": 46,
+    "question": "For an undirected graph with n vertices and e edges, adjacency list has how many list nodes for edges?",
+    "options": [
+      "2e",
+      "e",
+      "n^2",
+      "n/e"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì mỗi cạnh vô hướng xuất hiện trong danh sách kề của cả hai đầu mút, nên có 2e node cạnh.",
+    "category": "Graph and Hashing"
+  },
+  {
+    "id": 47,
+    "question": "When is adjacency matrix memory expensive?",
+    "options": [
+      "For sparse graphs with many vertices",
+      "For one vertex only",
+      "For no matrix",
+      "For stack only"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì ma trận cần n*n ô dù ít cạnh, nên lãng phí với sparse graph.",
+    "category": "Graph and Hashing"
+  },
+  {
+    "id": 48,
+    "question": "What is DFS similar to in tree traversal?",
+    "options": [
+      "Preorder style",
+      "Bubble sort",
+      "Hash probing",
+      "Selection sort"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì DFS thăm đỉnh rồi đi sâu các đỉnh kề, tương tự preorder ở cây.",
+    "category": "Graph and Hashing"
+  },
+  {
+    "id": 49,
+    "question": "What is BFS similar to in tree traversal?",
+    "options": [
+      "Level-order traversal",
+      "Postfix evaluation",
+      "Heap insertion",
+      "Quick sort partition"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì BFS duyệt theo tầng gần giống level-order traversal dùng queue.",
+    "category": "Graph and Hashing"
+  },
+  {
+    "id": 50,
+    "question": "What is the time complexity of DFS using adjacency matrix?",
+    "options": [
+      "O(n^2)",
+      "O(n+e) always",
+      "O(1)",
+      "O(log n)"
+    ],
+    "answer": 0,
+    "explanation": "Đáp án A đúng vì với ma trận kề, thường phải quét n cột cho mỗi đỉnh, tổng O(n^2).",
+    "category": "Graph and Hashing"
+  }
+]
