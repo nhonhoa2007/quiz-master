@@ -35,6 +35,7 @@ class QuizUI {
     };
 
     this.initEventListeners();
+    this.syncNavigationState('landing');
     this.renderHistory();
     this.renderPresetGrid();
     this.initQuizCatalog();
@@ -153,6 +154,8 @@ class QuizUI {
    * Screen navigation
    */
   showScreen(screenName) {
+    this.closeQuestionNavigator();
+
     Object.keys(this.screens).forEach(name => {
       if (name === screenName) {
         this.screens[name].classList.add('active');
@@ -161,8 +164,96 @@ class QuizUI {
         this.screens[name].classList.remove('active');
       }
     });
+
+    document.body.dataset.screen = screenName;
+    if (screenName === 'landing') {
+      this.syncNavigationState('landing');
+    }
+
     // Scroll to top on screen change
     window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  syncNavigationState(target) {
+    document.querySelectorAll('.app-nav-item').forEach(item => {
+      const isActive = item.dataset.target === target;
+      item.classList.toggle('active', isActive);
+      if (isActive) {
+        item.setAttribute('aria-current', 'page');
+      } else {
+        item.removeAttribute('aria-current');
+      }
+    });
+  }
+
+  navigateToLandingSection(target) {
+    this.showScreen('landing');
+    this.syncNavigationState(target);
+
+    const targetElement = target === 'exams'
+      ? document.querySelector('.preset-quizzes')
+      : target === 'history'
+        ? document.querySelector('.history-panel')
+        : document.getElementById('landing-screen');
+
+    window.requestAnimationFrame(() => {
+      targetElement?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  }
+
+  openQuestionNavigator() {
+    if (!window.matchMedia('(max-width: 899px)').matches) return;
+
+    const sidebar = document.getElementById('quiz-sidebar');
+    const backdrop = document.getElementById('sidebar-backdrop');
+    const trigger = document.getElementById('mobile-grid-trigger');
+    this.questionNavigatorReturnFocus = document.activeElement;
+
+    sidebar.classList.add('open');
+    backdrop.classList.add('open');
+    sidebar.setAttribute('aria-hidden', 'false');
+    trigger.setAttribute('aria-expanded', 'true');
+    document.body.classList.add('navigator-open');
+    document.getElementById('sidebar-close-btn')?.focus();
+  }
+
+  closeQuestionNavigator({ restoreFocus = false } = {}) {
+    const sidebar = document.getElementById('quiz-sidebar');
+    const backdrop = document.getElementById('sidebar-backdrop');
+    const trigger = document.getElementById('mobile-grid-trigger');
+    if (!sidebar || !backdrop || !trigger) return;
+
+    const wasOpen = sidebar.classList.contains('open');
+    sidebar.classList.remove('open');
+    backdrop.classList.remove('open');
+    trigger.setAttribute('aria-expanded', 'false');
+    document.body.classList.remove('navigator-open');
+
+    if (window.matchMedia('(max-width: 899px)').matches) {
+      sidebar.setAttribute('aria-hidden', 'true');
+    } else {
+      sidebar.setAttribute('aria-hidden', 'false');
+    }
+
+    if (restoreFocus && wasOpen) {
+      this.questionNavigatorReturnFocus?.focus();
+    }
+  }
+
+  updateQuestionNavigatorMode() {
+    const sidebar = document.getElementById('quiz-sidebar');
+    if (!sidebar) return;
+
+    if (window.matchMedia('(min-width: 900px)').matches) {
+      this.closeQuestionNavigator();
+      sidebar.setAttribute('aria-modal', 'false');
+      sidebar.setAttribute('aria-hidden', 'false');
+    } else {
+      sidebar.setAttribute('aria-modal', 'true');
+      if (!sidebar.classList.contains('open')) {
+        sidebar.setAttribute('aria-hidden', 'true');
+      }
+    }
   }
 
   /**
@@ -247,19 +338,14 @@ class QuizUI {
       this.showToast(`Đã chuyển sang giao diện ${newTheme === 'dark' ? 'Tối' : 'Sáng'}.`, 'info');
     });
 
-    document.querySelectorAll('.nav-link').forEach(link => {
+    document.querySelectorAll('.app-nav-item').forEach(link => {
       link.addEventListener('click', () => {
-        this.showScreen('landing');
-        document.querySelectorAll('.nav-link').forEach(item => item.classList.remove('active'));
-        link.classList.add('active');
-
-        const target = link.dataset.target;
-        if (target === 'exams') {
-          document.querySelector('.preset-quizzes')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        } else if (target === 'history') {
-          document.querySelector('.history-panel')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
+        this.navigateToLandingSection(link.dataset.target);
       });
+    });
+
+    document.getElementById('logo-home')?.addEventListener('click', () => {
+      this.navigateToLandingSection('landing');
     });
 
     // 2. Drag & Drop File Upload
@@ -362,27 +448,25 @@ class QuizUI {
 
     // 6. Sidebar Mobile toggle
     const gridTrigger = document.getElementById('mobile-grid-trigger');
-    const sidebar = document.getElementById('quiz-sidebar');
     const backdrop = document.getElementById('sidebar-backdrop');
-    
-    const closeSidebar = () => {
-      sidebar.classList.remove('open');
-      backdrop.classList.remove('open');
-    };
+    const closeButton = document.getElementById('sidebar-close-btn');
 
     gridTrigger.addEventListener('click', () => {
-      sidebar.classList.add('open');
-      backdrop.classList.add('open');
+      this.openQuestionNavigator();
     });
 
-    backdrop.addEventListener('click', closeSidebar);
+    backdrop.addEventListener('click', () => this.closeQuestionNavigator({ restoreFocus: true }));
+    closeButton.addEventListener('click', () => this.closeQuestionNavigator({ restoreFocus: true }));
     
     // Close sidebar on grid button click for mobile
     document.getElementById('question-grid').addEventListener('click', (e) => {
       if (e.target.classList.contains('grid-btn')) {
-        closeSidebar();
+        this.closeQuestionNavigator({ restoreFocus: true });
       }
     });
+
+    this.updateQuestionNavigatorMode();
+    window.addEventListener('resize', () => this.updateQuestionNavigatorMode());
 
     // 7. Quiz controls
     document.getElementById('quiz-prev-btn').addEventListener('click', () => {
@@ -449,6 +533,11 @@ class QuizUI {
     });
 
     window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && document.getElementById('quiz-sidebar')?.classList.contains('open')) {
+        e.preventDefault();
+        this.closeQuestionNavigator({ restoreFocus: true });
+        return;
+      }
       this.handleKeyboardNavigation(e);
     });
 
