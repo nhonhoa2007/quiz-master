@@ -1,0 +1,652 @@
+[
+  {
+    "id": 1,
+    "question": "Trong một hệ chất điểm, lực tương tác giữa các chất điểm thuộc hệ với nhau được gọi là:",
+    "options": [
+      "Nội lực",
+      "Ngoại lực",
+      "Lực ma sát ngoài",
+      "Lực quán tính"
+    ],
+    "answer": 0,
+    "explanation": "Lực tương tác giữa các vật hoặc các phần tử bên trong hệ chất điểm được gọi là nội lực. Lực do các vật bên ngoài hệ tác dụng lên các phần tử của hệ gọi là ngoại lực.",
+    "category": "Động lực học vật rắn"
+  },
+  {
+    "id": 2,
+    "question": "Tổng vectơ các nội lực và tổng vectơ mômen của các nội lực trong một hệ chất điểm luôn thỏa mãn tính chất nào?",
+    "options": [
+      "Luôn bằng không: Σ F_nội = 0 và Σ M_nội = 0",
+      "Luôn khác không nếu hệ chuyển động có gia tốc",
+      "Chỉ bằng không khi hệ ở trạng thái đứng yên",
+      "Bằng tổng ngoại lực tác dụng lên hệ"
+    ],
+    "answer": 0,
+    "explanation": "Theo định luật III Newton, các nội lực tương tác giữa từng cặp hạt luôn xuất hiện theo từng đôi trực đối (cùng độ lớn, ngược chiều, cùng giá). Do đó tổng vectơ các nội lực triệt tiêu (Σ F_nội = 0) và tổng mômen của chúng đối với bất kỳ điểm nào cũng bằng không (Σ M_nội = 0).",
+    "category": "Động lực học vật rắn"
+  },
+  {
+    "id": 3,
+    "question": "Vị trí vectơ khối tâm r_G của hệ gồm n chất điểm có khối lượng mi và vectơ vị trí ri được định nghĩa là:",
+    "options": [
+      "r_G = (Σ mi.ri) / (Σ mi) = (1/M).Σ mi.ri",
+      "r_G = (Σ ri) / n",
+      "r_G = Σ mi.ri",
+      "r_G = (1/M).Σ mi.vi"
+    ],
+    "answer": 0,
+    "explanation": "Khối tâm G là điểm trung bình có trọng số theo khối lượng của hệ chất điểm: r_G = (Σ mi.ri) / M, với M = Σ mi là tổng khối lượng của hệ.",
+    "category": "Động lực học vật rắn"
+  },
+  {
+    "id": 4,
+    "question": "Toạ độ khối tâm (X_G, Y_G, Z_G) trong hệ tọa độ Descartes Oxyz của hệ chất điểm được tính theo công thức:",
+    "options": [
+      "X_G = (Σ mi.xi)/M; Y_G = (Σ mi.yi)/M; Z_G = (Σ mi.zi)/M",
+      "X_G = Σ xi/n; Y_G = Σ yi/n; Z_G = Σ zi/n",
+      "X_G = M / (Σ mi.xi); Y_G = M / (Σ mi.yi); Z_G = M / (Σ mi.zi)",
+      "X_G = sqrt(Σ xi^2)/M; Y_G = sqrt(Σ yi^2)/M; Z_G = sqrt(Σ zi^2)/M"
+    ],
+    "answer": 0,
+    "explanation": "Chiếu phương trình vectơ r_G lên ba trục tọa độ Ox, Oy, Oz, ta thu được tọa độ khối tâm: X_G = (Σ mi.xi)/M, Y_G = (Σ mi.yi)/M, Z_G = (Σ mi.zi)/M.",
+    "category": "Động lực học vật rắn"
+  },
+  {
+    "id": 5,
+    "question": "Đối với một vật rắn có khối lượng phân bố liên tục với khối lượng riêng ρ và thể tích V, vectơ vị trí khối tâm được xác định bởi tích phân:",
+    "options": [
+      "r_G = (1/M).integral (r dm) = (1/M).integral (r.ρ dV)",
+      "r_G = integral (r dV)",
+      "r_G = (1/V).integral (r dm)",
+      "r_G = (1/M).integral (r^2 dm)"
+    ],
+    "answer": 0,
+    "explanation": "Đối với vật thể liên tục, phép lấy tổng rời rạc chuyển thành phép tích phân trên toàn bộ khối lượng vật: r_G = (1/M)*integral(r dm) = (1/M)*integral(r*ρ dV).",
+    "category": "Động lực học vật rắn"
+  },
+  {
+    "id": 6,
+    "question": "Vận tốc của khối tâm v_G liên hệ với tổng động lượng P của cả hệ theo biểu thức:",
+    "options": [
+      "P = M.v_G (tổng động lượng bằng tổng khối lượng nhân vận tốc khối tâm)",
+      "P = v_G / M",
+      "P = 0.5.M.v_G^2",
+      "P = M / v_G"
+    ],
+    "answer": 0,
+    "explanation": "Đạo hàm r_G theo thời gian: v_G = dr_G/dt = (1/M)*Σ mi*(dri/dt) = (1/M)*Σ mi.vi. Vì tổng động lượng P = Σ mi.vi, ta có hệ thức nền tảng: P = M.v_G.",
+    "category": "Động lực học vật rắn"
+  },
+  {
+    "id": 7,
+    "question": "Định lý chuyển động của khối tâm khẳng định rằng:",
+    "options": [
+      "Khối tâm của hệ chuyển động như một chất điểm có khối lượng bằng tổng khối lượng của hệ chịu tác dụng của tổng ngoại lực: M.a_G = Σ F_ngoại",
+      "Khối tâm luôn đứng yên trong mọi hệ quy chiếu",
+      "Khối tâm luôn chuyển động thẳng đều bất kể có ngoại lực hay không",
+      "Nội lực là nguyên nhân chính làm thay đổi chuyển động của khối tâm"
+    ],
+    "answer": 0,
+    "explanation": "Đạo hàm hai vế của P = M.v_G theo thời gian: dP/dt = M.a_G. Do dP/dt = Σ F_ngoại (tổng nội lực bằng 0), ta có phương trình chuyển động khối tâm: M.a_G = Σ F_ngoại.",
+    "category": "Động lực học vật rắn"
+  },
+  {
+    "id": 8,
+    "question": "Nếu một hệ chất điểm là hệ cô lập (không có ngoại lực hoặc tổng ngoại lực bằng 0), thì khối tâm của hệ sẽ:",
+    "options": [
+      "Chuyển động có gia tốc tăng dần",
+      "Đứng yên hoặc chuyển động thẳng đều với vận tốc không đổi (v_G = const)",
+      "Chuyển động tròn đều quanh gốc tọa độ",
+      "Luôn dịch chuyển về phía hạt có khối lượng lớn nhất"
+    ],
+    "answer": 1,
+    "explanation": "Khi Σ F_ngoại = 0, theo định lý khối tâm: M.a_G = 0 => a_G = 0 => v_G = const. Nghĩa là khối tâm của hệ cô lập giữ nguyên trạng thái đứng yên hoặc chuyển động thẳng đều.",
+    "category": "Động lực học vật rắn"
+  },
+  {
+    "id": 9,
+    "question": "Hai chất điểm có khối lượng m1 = 1 kg và m2 = 3 kg đặt tại hai điểm A và B cách nhau 40 cm. Khối tâm G của hệ nằm trên đoạn AB và cách điểm A một khoảng là:",
+    "options": [
+      "10 cm",
+      "20 cm",
+      "30 cm",
+      "15 cm"
+    ],
+    "answer": 2,
+    "explanation": "Chọn gốc tọa độ tại A (xA = 0, xB = 40 cm). Tọa độ khối tâm x_G = (m1*xA + m2*xB)/(m1 + m2) = (1*0 + 3*40)/(1 + 3) = 120 / 4 = 30 cm. Vậy G cách A một khoảng 30 cm (gần vật nặng m2 hơn).",
+    "category": "Động lực học vật rắn"
+  },
+  {
+    "id": 10,
+    "question": "Một khẩu đại bác khối lượng M đang đứng yên trên mặt đất nhẵn thì bắn ra một quả đạn khối lượng m với vận tốc v theo phương ngang. Vận tốc giật lùi V của súng ngay sau khi bắn là:",
+    "options": [
+      "V = -(m / M).v",
+      "V = (M / m).v",
+      "V = -(M / m).v",
+      "V = -v"
+    ],
+    "answer": 0,
+    "explanation": "Hệ súng và đạn cô lập theo phương ngang. Động lượng trước khi bắn bằng 0. Sau khi bắn: P = M.V + m.v = 0 => V = -(m/M)*v. Dấu trừ thể hiện súng giật lùi ngược chiều chuyển động của viên đạn.",
+    "category": "Động lực học vật rắn"
+  },
+  {
+    "id": 11,
+    "question": "Một người khối lượng 60 kg đang đứng yên trên một chiếc xe khối lượng 140 kg trên mặt sàn không ma sát. Khi người đó bước đi về phía trước với vận tốc 2 m/s so với sàn, xe sẽ:",
+    "options": [
+      "Lùi về phía sau với vận tốc khoảng 0,86 m/s",
+      "Tiến về phía trước với vận tốc 2 m/s",
+      "Đứng yên tại chỗ",
+      "Lùi về phía sau với vận tốc 2 m/s"
+    ],
+    "answer": 0,
+    "explanation": "Hệ người và xe cô lập theo phương ngang: m1.v1 + m2.v2 = 0 => v2 = -(m1/m2)*v1 = -(60*2)/140 = -120/140 ≈ -0,857 m/s (chuyển động lùi).",
+    "category": "Động lực học vật rắn"
+  },
+  {
+    "id": 12,
+    "question": "Nguyên tắc hoạt động của động cơ phản lực tên lửa dựa trên định luật nào?",
+    "options": [
+      "Định luật bảo toàn cơ năng",
+      "Định luật bảo toàn động lượng và phương trình chuyển động của hệ có khối lượng thay đổi",
+      "Định luật vạn vật hấp dẫn",
+      "Định lý biến thiên mômen động lượng"
+    ],
+    "answer": 1,
+    "explanation": "Động cơ phản lực hoạt động bằng cách phụt một lượng khí phụt ra phía sau với vận tốc cao. Theo định luật bảo toàn động lượng, thân tên lửa nhận được một xung lượng phản lực hướng về phía trước để tăng tốc.",
+    "category": "Động lực học vật rắn"
+  },
+  {
+    "id": 13,
+    "question": "Vật rắn tuyệt đối là một mô hình vật lý lý tưởng hóa trong đó:",
+    "options": [
+      "Khoảng cách giữa hai điểm bất kỳ thuộc vật luôn luôn không đổi trong suốt quá trình chuyển động",
+      "Vật có khối lượng vô cùng lớn",
+      "Vật không bao giờ chịu tác dụng của lực ma sát",
+      "Vật chỉ có thể chuyển động thẳng đều"
+    ],
+    "answer": 0,
+    "explanation": "Vật rắn tuyệt đối được định nghĩa là hệ chất điểm mà khoảng cách giữa hai điểm bất kỳ của vật luôn luôn bất biến (vật hoàn toàn không bị biến dạng dưới tác dụng của ngoại lực).",
+    "category": "Động lực học vật rắn"
+  },
+  {
+    "id": 14,
+    "question": "Chuyển động tịnh tiến của vật rắn là chuyển động mà trong đó:",
+    "options": [
+      "Đoạn thẳng nối hai điểm bất kỳ thuộc vật luôn giữ nguyên phương song song với chính nó",
+      "Quỹ đạo của mọi điểm bắt buộc phải là đường thẳng",
+      "Vật chỉ chuyển động với vận tốc không đổi",
+      "Các điểm trên vật có vận tốc khác nhau tùy thuộc vào vị trí"
+    ],
+    "answer": 0,
+    "explanation": "Trong chuyển động tịnh tiến, đường thẳng nối 2 điểm bất kỳ của vật luôn song song với chính nó. Lưu ý rằng quỹ đạo của các điểm có thể là đường cong (ví dụ các cabin đu quay), nhưng tại mỗi thời điểm mọi điểm đều có cùng vận tốc và gia tốc.",
+    "category": "Động lực học vật rắn"
+  },
+  {
+    "id": 15,
+    "question": "Trong chuyển động tịnh tiến của vật rắn, phát biểu nào sau đây là ĐÚNG?",
+    "options": [
+      "Mọi điểm của vật rắn đều có cùng quỹ đạo, cùng vận tốc và cùng gia tốc tại mỗi thời điểm",
+      "Điểm ở xa khối tâm có vận tốc lớn hơn điểm ở gần khối tâm",
+      "Các điểm khác nhau chuyển động theo các quỹ đạo có hình dạng khác nhau",
+      "Vận tốc góc của vật rắn khác không"
+    ],
+    "answer": 0,
+    "explanation": "Đặc điểm căn bản của chuyển động tịnh tiến là tại mỗi thời điểm, vectơ vận tốc v và vectơ gia tốc a của mọi chất điểm thuộc vật rắn là hoàn toàn như nhau và bằng vận tốc, gia tốc khối tâm.",
+    "category": "Động lực học vật rắn"
+  },
+  {
+    "id": 16,
+    "question": "Trong chuyển động quay của vật rắn quanh một trục cố định Δ, phát biểu nào sau đây SAI?",
+    "options": [
+      "Mọi điểm của vật rắn đều chuyển động theo các đường tròn đồng trục nằm trong các mặt phẳng vuông góc với trục quay",
+      "Tất cả các điểm trên vật rắn (không nằm trên trục quay) đều có cùng vận tốc góc ω và gia tốc góc β tại mỗi thời điểm",
+      "Điểm càng xa trục quay thì có vận tốc dài v và gia tốc tiếp tuyến a_t càng lớn",
+      "Tất cả các điểm trên vật rắn đều có cùng vận tốc dài v như nhau"
+    ],
+    "answer": 3,
+    "explanation": "Trong chuyển động quay, vận tốc dài v = ω.r tỉ lệ thuận với khoảng cách r từ điểm đó đến trục quay. Điểm càng xa trục quay thì v càng lớn, điểm nằm trên trục quay có v = 0. Do đó phát biểu \"mọi điểm có cùng vận tốc dài như nhau\" là sai.",
+    "category": "Động lực học vật rắn"
+  },
+  {
+    "id": 17,
+    "question": "Đối với một điểm trên vật rắn quay quanh trục cố định ở khoảng cách r tới trục quay, công thức tính vận tốc dài v, gia tốc tiếp tuyến a_t và gia tốc pháp tuyến a_n là:",
+    "options": [
+      "v = ω.r; a_t = β.r; a_n = ω^2.r",
+      "v = ω/r; a_t = β/r; a_n = ω.r^2",
+      "v = β.r; a_t = ω.r; a_n = β^2.r",
+      "v = ω.r; a_t = ω^2.r; a_n = β.r"
+    ],
+    "answer": 0,
+    "explanation": "Mối liên hệ chuẩn giữa đại lượng góc và dài: v = ω.r; a_t = β.r; a_n = v^2/r = ω^2.r.",
+    "category": "Động lực học vật rắn"
+  },
+  {
+    "id": 18,
+    "question": "Một bánh xe quay quanh trục cố định với gia tốc góc không đổi β = 2 rad/s^2. Một điểm nằm ở vành bánh xe cách trục 0,5 m có gia tốc tiếp tuyến bằng:",
+    "options": [
+      "1 m/s^2",
+      "2 m/s^2",
+      "4 m/s^2",
+      "0,5 m/s^2"
+    ],
+    "answer": 0,
+    "explanation": "Gia tốc tiếp tuyến: a_t = β * r = 2 rad/s^2 * 0,5 m = 1 m/s^2.",
+    "category": "Động lực học vật rắn"
+  },
+  {
+    "id": 19,
+    "question": "Mômen của lực F đối với một trục quay cố định Δ bằng không khi nào?",
+    "options": [
+      "Khi giá của lực song song với trục quay Δ hoặc cắt trục quay Δ",
+      "Khi giá của lực vuông góc với trục quay và không cắt trục",
+      "Khi lực có độ lớn rất lớn",
+      "Khi lực đặt tại điểm cách xa trục quay"
+    ],
+    "answer": 0,
+    "explanation": "Lực không gây ra tác dụng làm quay quanh trục Δ khi giá của lực song song với trục quay (cánh tay đòn bằng 0, không có thành phần trong mặt phẳng vuông góc) hoặc giá của lực cắt trục quay. Khi đó mômen của lực đối với trục quay M_Δ = 0.",
+    "category": "Động lực học vật rắn"
+  },
+  {
+    "id": 20,
+    "question": "Phương trình cơ bản của chuyển động quay của vật rắn quanh một trục cố định Δ có dạng là:",
+    "options": [
+      "M_Δ = I.β = I.(dω/dt)",
+      "M_Δ = m.a",
+      "M_Δ = I.ω",
+      "M_Δ = 0.5.I.β^2"
+    ],
+    "answer": 0,
+    "explanation": "Phương trình cơ bản chuyển động quay là M_Δ = I.β = I.(dω/dt), trong đó M_Δ là tổng mômen ngoại lực đối với trục quay, I là mômen quán tính của vật đối với trục đó, β là gia tốc góc. Phương trình này đóng vai trò tương tự như F = m.a trong chuyển động tịnh tiến.",
+    "category": "Động lực học vật rắn"
+  },
+  {
+    "id": 21,
+    "question": "Gia tốc góc β của vật rắn quay quanh trục cố định có độ lớn:",
+    "options": [
+      "Tỉ lệ thuận với tổng mômen ngoại lực tác dụng đối với trục và tỉ lệ nghịch với mômen quán tính I của vật: β = M_Δ / I",
+      "Tỉ lệ nghịch với tổng mômen ngoại lực",
+      "Tỉ lệ thuận với mômen quán tính I",
+      "Chỉ phụ thuộc vào bán kính của vật"
+    ],
+    "answer": 0,
+    "explanation": "Từ phương trình M_Δ = I.β => β = M_Δ / I. Mômen ngoại lực càng lớn thì gia tốc góc càng lớn; mômen quán tính càng lớn (quán tính quay lớn) thì gia tốc góc càng nhỏ.",
+    "category": "Động lực học vật rắn"
+  },
+  {
+    "id": 22,
+    "question": "Tác dụng một lực tiếp tuyến F = 20 N vào vành của một bánh xe hình đĩa có bán kính R = 0,2 m quay quanh trục đi qua tâm. Mômen của lực này đối với trục quay là:",
+    "options": [
+      "4 N.m",
+      "100 N.m",
+      "2 N.m",
+      "40 N.m"
+    ],
+    "answer": 0,
+    "explanation": "Vì lực tiếp tuyến vuông góc với bán kính tại tiếp điểm nên cánh tay đòn chính bằng bán kính d = R = 0,2 m. Mômen lực: M = F * d = 20 * 0,2 = 4 N.m.",
+    "category": "Động lực học vật rắn"
+  },
+  {
+    "id": 23,
+    "question": "Một đĩa đặc có mômen quán tính I = 0,4 kg.m^2 đang đứng yên thì chịu tác dụng của một mômen lực không đổi M = 2 N.m. Tốc độ góc của đĩa sau 5 giây là:",
+    "options": [
+      "25 rad/s",
+      "10 rad/s",
+      "5 rad/s",
+      "50 rad/s"
+    ],
+    "answer": 0,
+    "explanation": "Gia tốc góc: β = M / I = 2 / 0,4 = 5 rad/s^2. Vận tốc góc sau 5 s (từ trạng thái nghỉ ω0 = 0): ω = β*t = 5 * 5 = 25 rad/s.",
+    "category": "Động lực học vật rắn"
+  },
+  {
+    "id": 24,
+    "question": "Một bánh đà đang quay với tốc độ góc ω0 = 40 rad/s thì bị hãm lại bởi một mômen ma sát không đổi. Sau 10 giây bánh đà dừng hẳn. Độ lớn của gia tốc góc hãm là:",
+    "options": [
+      "4 rad/s^2",
+      "0,25 rad/s^2",
+      "400 rad/s^2",
+      "40 rad/s^2"
+    ],
+    "answer": 0,
+    "explanation": "Áp dụng ω = ω0 + β.t với ω = 0: 0 = 40 + β*10 => β = -4 rad/s^2. Độ lớn gia tốc góc hãm là 4 rad/s^2.",
+    "category": "Động lực học vật rắn"
+  },
+  {
+    "id": 25,
+    "question": "Trong bài toán bánh đà ở câu trên, số vòng quay bánh đà quay được từ lúc bắt đầu hãm đến khi dừng hẳn là:",
+    "options": [
+      "N = 200 / (2π) ≈ 31,8 vòng",
+      "N = 400 vòng",
+      "N = 200 vòng",
+      "N = 50 / π ≈ 15,9 vòng"
+    ],
+    "answer": 0,
+    "explanation": "Góc quay được: θ = ω0*t + 0.5*β*t^2 = 40*10 - 0.5*4*10^2 = 400 - 200 = 200 rad. Số vòng quay: N = θ / (2π) = 200 / (2π) ≈ 31,83 vòng.",
+    "category": "Động lực học vật rắn"
+  },
+  {
+    "id": 26,
+    "question": "Cặp đại lượng nào sau đây trong chuyển động quay quanh trục cố định tương ứng tương đương với cặp đại lượng (Lực F, Khối lượng m) trong chuyển động tịnh tiến?",
+    "options": [
+      "(Mômen lực M, Mômen quán tính I)",
+      "(Vận tốc góc ω, Mômen quán tính I)",
+      "(Gia tốc góc β, Động năng quay)",
+      "(Mômen động lượng L, Khối lượng m)"
+    ],
+    "answer": 0,
+    "explanation": "Bảng tương đương động lực học: Chuyển động tịnh tiến có Lực F, Khối lượng m, Gia tốc a; Chuyển động quay có Mômen lực M, Mômen quán tính I, Gia tốc góc β (F = m.a tương đương M = I.β).",
+    "category": "Động lực học vật rắn"
+  },
+  {
+    "id": 27,
+    "question": "Mômen quán tính I của một hệ chất điểm đối với một trục quay Δ được định nghĩa theo công thức:",
+    "options": [
+      "I = Σ mi.ri^2 (với ri là khoảng cách từ chất điểm thứ i đến trục quay Δ)",
+      "I = Σ mi.ri",
+      "I = Σ mi^2.ri",
+      "I = (Σ mi.ri)^2"
+    ],
+    "answer": 0,
+    "explanation": "Mômen quán tính của hệ chất điểm đối với một trục là tổng tích số của khối lượng từng chất điểm với bình phương khoảng cách từ chất điểm đó đến trục quay: I = Σ mi.ri^2. Đối với vật thể liên tục: I = integral(r^2 dm).",
+    "category": "Động lực học vật rắn"
+  },
+  {
+    "id": 28,
+    "question": "Đơn vị đo của mômen quán tính I trong hệ SI là:",
+    "options": [
+      "kg.m^2",
+      "kg.m",
+      "N.m",
+      "kg/m^2"
+    ],
+    "answer": 0,
+    "explanation": "Từ công thức I = m.r^2, đơn vị đo của I là [m].[r]^2 = kg.m^2.",
+    "category": "Động lực học vật rắn"
+  },
+  {
+    "id": 29,
+    "question": "Mômen quán tính I của vật rắn thể hiện ý nghĩa vật lý nào?",
+    "options": [
+      "Đặc trưng cho mức quán tính của vật rắn trong chuyển động quay quanh trục (mức độ cản trở sự thay đổi trạng thái quay)",
+      "Đặc trưng cho khả năng tích trữ điện tích của vật",
+      "Đo lực hấp dẫn tác dụng lên vật",
+      "Chỉ phụ thuộc vào vận tốc quay của vật"
+    ],
+    "answer": 0,
+    "explanation": "Mômen quán tính I là đại lượng vật lý đặc trưng cho quán tính của vật rắn trong chuyển động quay: I càng lớn thì vật càng khó thay đổi vận tốc góc khi chịu cùng một mômen ngoại lực.",
+    "category": "Động lực học vật rắn"
+  },
+  {
+    "id": 30,
+    "question": "Mômen quán tính của một vật rắn phụ thuộc vào các yếu tố nào sau đây?",
+    "options": [
+      "Khối lượng của vật, hình dạng kích thước của vật, và vị trí của trục quay so với vật",
+      "Chỉ phụ thuộc vào khối lượng của vật",
+      "Phụ thuộc vào vận tốc góc ω của vật",
+      "Phụ thuộc vào mômen ngoại lực tác dụng"
+    ],
+    "answer": 0,
+    "explanation": "Mômen quán tính I là một thuộc tính hình học - khối lượng của vật đối với một trục quay cụ thể. Nó phụ thuộc vào tổng khối lượng, hình dạng phân bố khối lượng và khoảng cách từ khối lượng tới trục quay. Nó không phụ thuộc vào trạng thái chuyển động (ω, β hay M).",
+    "category": "Động lực học vật rắn"
+  },
+  {
+    "id": 31,
+    "question": "Mômen quán tính của một vành tròn đồng chất hoặc hình trụ rỗng mỏng khối lượng M, bán kính R đối với trục đối xứng đi qua tâm vuông góc với mặt phẳng vành là:",
+    "options": [
+      "I = M.R^2",
+      "I = 0.5.M.R^2",
+      "I = (2/5).M.R^2",
+      "I = (2/3).M.R^2"
+    ],
+    "answer": 0,
+    "explanation": "Vì tất cả các phần tử khối lượng của vành tròn đều cách trục quay cùng một khoảng cách cố định bằng bán kính R, nên I = integral(R^2 dm) = R^2 * integral(dm) = M.R^2.",
+    "category": "Động lực học vật rắn"
+  },
+  {
+    "id": 32,
+    "question": "Mômen quán tính của một đĩa tròn đồng chất đặc (hoặc hình trụ đặc) khối lượng M, bán kính R đối với trục đối xứng đi qua tâm đĩa là:",
+    "options": [
+      "I = 0.5.M.R^2",
+      "I = M.R^2",
+      "I = (2/5).M.R^2",
+      "I = (1/4).M.R^2"
+    ],
+    "answer": 0,
+    "explanation": "Tích phân phân bố khối lượng của đĩa tròn đặc cho kết quả I = (1/2)*M.R^2 = 0,5.M.R^2.",
+    "category": "Động lực học vật rắn"
+  },
+  {
+    "id": 33,
+    "question": "Mômen quán tính của một quả cầu đặc đồng chất khối lượng M, bán kính R đối với trục đi qua tâm quả cầu là:",
+    "options": [
+      "I = (2/5).M.R^2",
+      "I = (2/3).M.R^2",
+      "I = 0.5.M.R^2",
+      "I = M.R^2"
+    ],
+    "answer": 0,
+    "explanation": "Đối với quả cầu đặc đồng chất quay quanh trục đi qua tâm khối cầu, I = (2/5)*M.R^2.",
+    "category": "Động lực học vật rắn"
+  },
+  {
+    "id": 34,
+    "question": "Mômen quán tính của một vỏ cầu mỏng đồng chất khối lượng M, bán kính R đối với trục đi qua tâm là:",
+    "options": [
+      "I = (2/3).M.R^2",
+      "I = (2/5).M.R^2",
+      "I = 0.5.M.R^2",
+      "I = M.R^2"
+    ],
+    "answer": 0,
+    "explanation": "Đối với vỏ cầu mỏng (khối lượng phân bố trên mặt cầu), tích phân cho mômen quán tính đối với trục qua tâm là I = (2/3)*M.R^2.",
+    "category": "Động lực học vật rắn"
+  },
+  {
+    "id": 35,
+    "question": "Mômen quán tính của một thanh mảnh đồng chất tiết diện đều chiều dài L, khối lượng M đối với trục đi qua trung điểm của thanh và vuông góc với thanh là:",
+    "options": [
+      "I_G = (1/12).M.L^2",
+      "I_G = (1/3).M.L^2",
+      "I_G = 0.5.M.L^2",
+      "I_G = M.L^2"
+    ],
+    "answer": 0,
+    "explanation": "Tích phân từ -L/2 đến +L/2 của x^2*(M/L)dx cho kết quả: I_G = (1/12)*M.L^2.",
+    "category": "Động lực học vật rắn"
+  },
+  {
+    "id": 36,
+    "question": "Định lý Huygens - Steiner (định lý trục song song) phát biểu rằng mômen quán tính I_Δ của vật rắn đối với một trục Δ bất kỳ liên hệ với mômen quán tính I_G đối với trục đi qua khối tâm G song song với Δ theo công thức:",
+    "options": [
+      "I_Δ = I_G + M.d^2 (với d là khoảng cách giữa hai trục song song)",
+      "I_Δ = I_G - M.d^2",
+      "I_Δ = I_G + M.d",
+      "I_Δ = I_G / d^2"
+    ],
+    "answer": 0,
+    "explanation": "Định lý Huygens - Steiner: I_Δ = I_G + M.d^2, trong đó I_G là mômen quán tính đối với trục đi qua khối tâm G, d là khoảng cách vuông góc giữa hai trục song song, M là khối lượng của vật.",
+    "category": "Động lực học vật rắn"
+  },
+  {
+    "id": 37,
+    "question": "Áp dụng định lý Huygens - Steiner, mômen quán tính của thanh mảnh đồng chất chiều dài L, khối lượng M đối với trục vuông góc với thanh đi qua một đầu của thanh là:",
+    "options": [
+      "I = (1/3).M.L^2",
+      "I = (1/12).M.L^2",
+      "I = (1/4).M.L^2",
+      "I = (5/12).M.L^2"
+    ],
+    "answer": 0,
+    "explanation": "Trục qua một đầu thanh song song với trục qua khối tâm và cách khối tâm một khoảng d = L/2. Theo định lý Steiner: I = I_G + M*d^2 = (1/12)*M*L^2 + M*(L/2)^2 = (1/12 + 1/4)*M*L^2 = (4/12)*M*L^2 = (1/3)*M*L^2.",
+    "category": "Động lực học vật rắn"
+  },
+  {
+    "id": 38,
+    "question": "Một đĩa tròn đặc khối lượng M = 2 kg, bán kính R = 0,2 m. Mômen quán tính của đĩa đối với trục vuông góc với mặt đĩa và tiếp xúc với mép đĩa (trục qua một điểm trên vành) là:",
+    "options": [
+      "I = 1,5.M.R^2 = 0,12 kg.m^2",
+      "I = 0,5.M.R^2 = 0,04 kg.m^2",
+      "I = M.R^2 = 0,08 kg.m^2",
+      "I = 2.M.R^2 = 0,16 kg.m^2"
+    ],
+    "answer": 0,
+    "explanation": "Mômen quán tính đối với trục qua tâm: I_G = 0.5*M*R^2. Trục qua mép vành cách tâm d = R. Theo định lý Steiner: I = I_G + M*R^2 = 0.5*M*R^2 + M*R^2 = 1.5*M*R^2 = 1.5 * 2 * (0,2)^2 = 3 * 0,04 = 0,12 kg.m^2.",
+    "category": "Động lực học vật rắn"
+  },
+  {
+    "id": 39,
+    "question": "Mômen động lượng L của một vật rắn quay quanh trục cố định Δ với vận tốc góc ω có biểu thức là:",
+    "options": [
+      "L = I.ω",
+      "L = I.β",
+      "L = 0.5.I.ω^2",
+      "L = M.v"
+    ],
+    "answer": 0,
+    "explanation": "Mômen động lượng của vật rắn đối với trục quay Δ bằng tích của mômen quán tính I đối với trục đó và vectơ vận tốc góc ω: L = I.ω (tương đương p = m.v trong chuyển động tịnh tiến).",
+    "category": "Động lực học vật rắn"
+  },
+  {
+    "id": 40,
+    "question": "Định lý về mômen động lượng của vật rắn quay quanh trục cố định được viết dưới dạng vi phân là:",
+    "options": [
+      "dL / dt = M_Δ (đạo hàm mômen động lượng theo thời gian bằng tổng mômen ngoại lực)",
+      "dL / dt = 0",
+      "dL / dt = I",
+      "dL / dt = ω"
+    ],
+    "answer": 0,
+    "explanation": "Từ L = I.ω, lấy đạo hàm theo thời gian: dL/dt = I.(dω/dt) = I.β = M_Δ. Tốc độ biến thiên mômen động lượng bằng tổng mômen ngoại lực tác dụng lên vật đối với trục quay.",
+    "category": "Động lực học vật rắn"
+  },
+  {
+    "id": 41,
+    "question": "Định luật bảo toàn mômen động lượng cho vật rắn quay quanh trục cố định khẳng định rằng:",
+    "options": [
+      "Nếu tổng các mômen ngoại lực đối với trục quay bằng không (M_Δ = 0) thì mômen động lượng của vật được bảo toàn: L = I.ω = const",
+      "Mômen động lượng luôn bằng không",
+      "Mômen động lượng chỉ được bảo toàn khi vật không quay",
+      "Vận tốc góc ω luôn là một hằng số trong mọi trường hợp"
+    ],
+    "answer": 0,
+    "explanation": "Khi M_Δ = 0, dL/dt = 0 => L = I.ω = const. Nếu một vật (hoặc hệ) cô lập thay đổi mômen quán tính từ I1 sang I2 thì vận tốc góc biến đổi tương ứng sao cho: I1.ω1 = I2.ω2.",
+    "category": "Động lực học vật rắn"
+  },
+  {
+    "id": 42,
+    "question": "Một vận động viên trượt băng nghệ thuật đang quay tròn trên mũi giày với hai tay dang rộng, khi co hai tay lại sát thân người thì tốc độ quay tròn của người đó sẽ:",
+    "options": [
+      "Tăng lên rõ rệt vì khi co tay lại, mômen quán tính I giảm xuống, do L = I.ω = const nên ω phải tăng lên",
+      "Giảm đi vì khối lượng bị dồn nén lại",
+      "Không đổi vì không có ai tác dụng lực đẩy",
+      "Dừng lại ngay lập tức"
+    ],
+    "answer": 0,
+    "explanation": "Hệ người trượt băng không chịu mômen ngoại lực theo trục thẳng đứng nên mômen động lượng bảo toàn: I1.ω1 = I2.ω2. Khi co tay lại, khối lượng dồn vào gần trục quay làm I2 < I1 => ω2 = (I1/I2)*ω1 > ω1, người quay nhanh hơn nhiều.",
+    "category": "Động lực học vật rắn"
+  },
+  {
+    "id": 43,
+    "question": "Một người ngồi trên một ghế xoay đang quay không ma sát với tốc độ 0,5 vòng/s với hai quả tạ cầm dang ngang hai tay. Khi người đó thu tạ lại gần ngực, mômen quán tính của hệ giảm từ 6 kg.m^2 xuống còn 2 kg.m^2. Tốc độ quay mới của người đó là:",
+    "options": [
+      "1,5 vòng/s",
+      "1,0 vòng/s",
+      "0,167 vòng/s",
+      "3,0 vòng/s"
+    ],
+    "answer": 0,
+    "explanation": "Bảo toàn mômen động lượng: I1 * f1 = I2 * f2 => f2 = (I1 / I2) * f1 = (6 / 2) * 0,5 = 3 * 0,5 = 1,5 vòng/s.",
+    "category": "Động lực học vật rắn"
+  },
+  {
+    "id": 44,
+    "question": "Hiện tượng con quay hồi chuyển (gyroscope) duy trì phương của trục quay trong không gian khi đang quay với tốc độ góc lớn là một ứng dụng của:",
+    "options": [
+      "Định luật bảo toàn mômen động lượng",
+      "Định lý động năng",
+      "Định luật vạn vật hấp dẫn",
+      "Nguyên lý đòn bẩy"
+    ],
+    "answer": 0,
+    "explanation": "Khi rotor con quay quay với tốc độ góc lớn, vectơ mômen động lượng L = I.ω rất lớn hướng dọc theo trục quay. Để làm đổi hướng trục quay cần một mômen ngoại lực cực lớn, do đó trục quay có xu hướng chống lại sự đổi hướng và duy trì phương cố định trong không gian (ứng dụng trong la bàn con quay tàu ngầm, máy bay, kính viễn vọng không gian).",
+    "category": "Động lực học vật rắn"
+  },
+  {
+    "id": 45,
+    "question": "Động năng của vật rắn quay quanh một trục cố định Δ với vận tốc góc ω được tính bằng công thức:",
+    "options": [
+      "W_đ = 0.5.I.ω^2",
+      "W_đ = I.ω",
+      "W_đ = 0.5.M.v^2",
+      "W_đ = I.β^2"
+    ],
+    "answer": 0,
+    "explanation": "Động năng toàn phần của vật rắn quay quanh trục cố định bằng tổng động năng của từng chất điểm: W_đ = Σ (1/2)*mi*vi^2 = Σ (1/2)*mi*(ri*ω)^2 = (1/2)*[Σ mi.ri^2]*ω^2 = (1/2)*I.ω^2.",
+    "category": "Động lực học vật rắn"
+  },
+  {
+    "id": 46,
+    "question": "Công của mômen lực M_Δ làm vật rắn quay được một góc vi phân dθ được tính bởi:",
+    "options": [
+      "dA = M_Δ.dθ",
+      "dA = M_Δ / dθ",
+      "dA = F.dθ",
+      "dA = I.dθ"
+    ],
+    "answer": 0,
+    "explanation": "Công của lực tác dụng trong chuyển động quay: dA = F_t.ds = F_t.(r.dθ) = (F_t.r).dθ = M_Δ.dθ. Tích phân toàn phần: A = integral(M_Δ dθ).",
+    "category": "Động lực học vật rắn"
+  },
+  {
+    "id": 47,
+    "question": "Công suất tức thời P của một lực làm quay vật rắn với vận tốc góc ω dưới tác dụng của mômen lực M_Δ là:",
+    "options": [
+      "P = M_Δ.ω",
+      "P = M_Δ / ω",
+      "P = M_Δ.β",
+      "P = 0.5.M_Δ.ω^2"
+    ],
+    "answer": 0,
+    "explanation": "Công suất P = dA / dt = (M_Δ.dθ) / dt = M_Δ * (dθ/dt) = M_Δ.ω (tương đương P = F.v trong chuyển động tịnh tiến).",
+    "category": "Động lực học vật rắn"
+  },
+  {
+    "id": 48,
+    "question": "Định lý động năng cho vật rắn quay quanh trục cố định phát biểu rằng:",
+    "options": [
+      "Độ biến thiên động năng quay của vật rắn bằng tổng công của các ngoại lực làm vật quay: ΔW_đ = 0.5.I.ω2^2 - 0.5.I.ω1^2 = A",
+      "Động năng quay của vật rắn luôn là một hằng số",
+      "Công của mômen lực luôn bằng mômen quán tính",
+      "Độ biến thiên động năng quay bằng vận tốc góc"
+    ],
+    "answer": 0,
+    "explanation": "Tích phân phương trình chuyển động quay M_Δ = I.dω/dt theo góc quay cho định lý động năng: A = integral(M_Δ dθ) = integral(I.ω dω) = (1/2)I.ω2^2 - (1/2)I.ω1^2 = ΔW_đ.",
+    "category": "Động lực học vật rắn"
+  },
+  {
+    "id": 49,
+    "question": "Động năng toàn phần của một vật rắn chuyển động phẳng vừa tịnh tiến vừa quay (ví dụ bánh xe lăn không trượt, vận tốc khối tâm v_G, vận tốc góc ω) là:",
+    "options": [
+      "W_đ = 0.5.M.v_G^2 + 0.5.I_G.ω^2 (động năng tịnh tiến của khối tâm cộng động năng quay quanh trục qua khối tâm)",
+      "W_đ = 0.5.M.v_G^2",
+      "W_đ = 0.5.I_G.ω^2",
+      "W_đ = M.v_G^2 + I_G.ω^2"
+    ],
+    "answer": 0,
+    "explanation": "Theo định lý Koenig, động năng của vật rắn chuyển động phẳng bằng tổng của động năng tịnh tiến của toàn bộ khối lượng đặt tại khối tâm và động năng của chuyển động quay đối với trục đi qua khối tâm: W_đ = (1/2)M.v_G^2 + (1/2)I_G.ω^2.",
+    "category": "Động lực học vật rắn"
+  },
+  {
+    "id": 50,
+    "question": "Thả cho ba vật có cùng khối lượng M và bán kính R đồng thời lăn không trượt từ cùng một độ cao trên mặt phẳng nghiêng: (1) một quả cầu đặc, (2) một đĩa tròn đặc, (3) một vành tròn rỗng. Vật nào sẽ về tới chân dốc đầu tiên (có vận tốc khối tâm lớn nhất)?",
+    "options": [
+      "Quả cầu đặc (1)",
+      "Đĩa tròn đặc (2)",
+      "Vành tròn rỗng (3)",
+      "Cả ba vật chạm chân dốc cùng một lúc vì có cùng khối lượng và bán kính"
+    ],
+    "answer": 0,
+    "explanation": "Bảo toàn cơ năng: Mgh = (1/2)M.v^2 + (1/2)I.ω^2 = (1/2)M.v^2*(1 + I/(M.R^2)). Vật có tỉ số c = I/(M.R^2) càng nhỏ thì động năng quay chiếm ít năng lượng hơn, do đó vận tốc tịnh tiến v càng lớn. Tỉ số c của quả cầu đặc là 2/5 = 0,4; của đĩa đặc là 1/2 = 0,5; của vành tròn là 1. Do 0,4 < 0,5 < 1 nên quả cầu đặc có gia tốc lớn nhất và về đích sớm nhất.",
+    "category": "Động lực học vật rắn"
+  }
+]

@@ -18,6 +18,13 @@ function titleCase(value) {
 
 function humanizeFileName(filePath) {
   const stem = path.basename(filePath, '.json');
+  const specialNames = {
+    'chapter1-dong-hoc-chat-diem': 'Chương 1: Động Học Chất Điểm',
+    'chapter2-dong-luc-hoc-chat-diem': 'Chương 2: Động Lực Học Chất Điểm',
+    'chapter3-dong-luc-hoc-vat-ran': 'Chương 3: Động Lực Học Vật Rắn'
+  };
+  if (specialNames[stem]) return specialNames[stem];
+
   const chapterMatch = stem.match(/^chapter(\d+)-(.+)$/i);
   if (chapterMatch) {
     const topic = chapterMatch[2].replaceAll('-', ' ').replaceAll('_', ' ');
@@ -34,6 +41,7 @@ function categoryFromPath(relativePath, questionCount) {
   const parent = path.dirname(relativePath).split(path.sep).at(-1).trim();
   if (parent === 'lý thuyết') return 'Lý thuyết';
   if (parent === 'thực hành') return 'Thực hành';
+  if (parent === 'vật lý đại cương' || parent === 'vat-ly-dai-cuong') return 'Vật Lý Đại Cương';
   if (parent.startsWith('dsa_quiz_')) return `DSA · ${questionCount} câu`;
   return titleCase(parent.replaceAll('-', ' ').replaceAll('_', ' '));
 }

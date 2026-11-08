@@ -1,0 +1,652 @@
+[
+  {
+    "id": 1,
+    "question": "Theo định luật I Newton, một vật sẽ tiếp tục đứng yên hoặc chuyển động thẳng đều khi nào?",
+    "options": [
+      "Khi vật không chịu tác dụng của lực nào hoặc tổng các lực tác dụng lên nó bằng không (hệ lực cân bằng)",
+      "Khi lực tác dụng lên vật có độ lớn không đổi",
+      "Khi vật chuyển động trên mặt phẳng nằm ngang không có ma sát",
+      "Khi gia tốc của vật có giá trị không đổi"
+    ],
+    "answer": 0,
+    "explanation": "Định luật I Newton (định luật quán tính) khẳng định: Nếu một vật không chịu tác dụng của lực nào hoặc chịu các lực có hợp lực bằng không, vật đang đứng yên sẽ tiếp tục đứng yên, đang chuyển động sẽ tiếp tục chuyển động thẳng đều.",
+    "category": "Động lực học chất điểm"
+  },
+  {
+    "id": 2,
+    "question": "Quán tính là tính chất của mọi vật thể có xu hướng:",
+    "options": [
+      "Luôn chuyển động về phía trước",
+      "Bảo toàn vận tốc cả về hướng và độ lớn (chống lại sự thay đổi trạng thái chuyển động)",
+      "Hút các vật thể khác về phía nó",
+      "Chỉ xuất hiện khi vật chịu tác dụng của trọng lực"
+    ],
+    "answer": 1,
+    "explanation": "Quán tính là thuộc tính cố hữu của vật chất, đặc trưng cho xu hướng bảo toàn trạng thái đứng yên hoặc chuyển động thẳng đều vốn có, tức là cưỡng lại sự thay đổi vận tốc (cả về hướng lẫn độ lớn).",
+    "category": "Động lực học chất điểm"
+  },
+  {
+    "id": 3,
+    "question": "Định luật I Newton chỉ nghiệm đúng trong loại hệ quy chiếu nào sau đây?",
+    "options": [
+      "Hệ quy chiếu phi quán tính",
+      "Hệ quy chiếu quán tính",
+      "Hệ quy chiếu quay có gia tốc ly tâm",
+      "Mọi hệ quy chiếu bất kỳ"
+    ],
+    "answer": 1,
+    "explanation": "Hệ quy chiếu mà trong đó các định luật Newton (đặc biệt là định luật I) được nghiệm đúng được định nghĩa là hệ quy chiếu quán tính. Trong hệ quy chiếu phi quán tính (có gia tốc), định luật I không còn đúng nếu không bổ sung thêm lực quán tính.",
+    "category": "Động lực học chất điểm"
+  },
+  {
+    "id": 4,
+    "question": "Biểu thức toán học tổng quát của định luật II Newton dưới dạng vi phân là:",
+    "options": [
+      "F = dp / dt (lực bằng tốc độ biến thiên của động lượng theo thời gian)",
+      "F = m.v",
+      "F = d^2p / dt^2",
+      "F = p.t"
+    ],
+    "answer": 0,
+    "explanation": "Dạng tổng quát ban đầu của định luật II Newton là F = dp/dt. Khi khối lượng m không đổi theo thời gian, F = d(mv)/dt = m(dv/dt) = m.a.",
+    "category": "Động lực học chất điểm"
+  },
+  {
+    "id": 5,
+    "question": "Theo định luật II Newton F = m.a, vectơ gia tốc a của vật có đặc điểm:",
+    "options": [
+      "Cùng hướng với vectơ hợp lực F tác dụng lên vật, độ lớn tỉ lệ thuận với độ lớn lực F và tỉ lệ nghịch với khối lượng m",
+      "Ngược hướng với vectơ lực F tác dụng lên vật",
+      "Luôn vuông góc với vectơ hợp lực F",
+      "Chỉ phụ thuộc vào vận tốc ban đầu của vật"
+    ],
+    "answer": 0,
+    "explanation": "Từ a = F / m, vectơ gia tốc a luôn có cùng phương, cùng chiều với vectơ hợp lực F; độ lớn tỉ lệ thuận với F và tỉ lệ nghịch với khối lượng quán tính m.",
+    "category": "Động lực học chất điểm"
+  },
+  {
+    "id": 6,
+    "question": "Đơn vị đo của lực trong hệ SI là Newton (N). Một Newton tương đương với:",
+    "options": [
+      "1 kg.m/s",
+      "1 kg.m/s^2",
+      "1 kg.m^2/s^2",
+      "1 kg/s^2"
+    ],
+    "answer": 1,
+    "explanation": "Theo công thức F = m.a, đơn vị của lực là [F] = [m].[a] = 1 kg * 1 m/s^2 = 1 kg.m/s^2, được đặt tên là Newton (N).",
+    "category": "Động lực học chất điểm"
+  },
+  {
+    "id": 7,
+    "question": "Cặp lực và phản lực trong định luật III Newton KHÔNG có đặc điểm nào sau đây?",
+    "options": [
+      "Cùng phương, ngược chiều và cùng độ lớn",
+      "Cùng bản chất vật lý (cùng là lực điện, lực đàn hồi, hoặc lực hấp dẫn...)",
+      "Xuất hiện và mất đi đồng thời",
+      "Cùng tác dụng lên một vật nên triệt tiêu lẫn nhau tạo thành trạng thái cân bằng"
+    ],
+    "answer": 3,
+    "explanation": "Lực và phản lực trong định luật III Newton tác dụng lên hai vật KHÁC NHAU (vật A tác dụng lên B thì phản lực do B tác dụng lên A), do đó chúng không thể triệt tiêu hay cân bằng lẫn nhau.",
+    "category": "Động lực học chất điểm"
+  },
+  {
+    "id": 8,
+    "question": "Một quyển sách nằm yên trên mặt bàn nằm ngang. Cặp lực nào sau đây là cặp lực trực đối cân bằng (triệt tiêu nhau)?",
+    "options": [
+      "Trọng lực tác dụng lên sách và phản lực của mặt bàn tác dụng lên sách",
+      "Trọng lực tác dụng lên sách và lực hút của sách tác dụng lên Trái Đất",
+      "Áp lực của sách lên mặt bàn và phản lực của bàn lên sách",
+      "Lực ma sát nghỉ và trọng lực của sách"
+    ],
+    "answer": 0,
+    "explanation": "Trọng lực P và phản lực N đều cùng tác dụng lên quyển sách, có cùng phương thẳng đứng, ngược chiều, cùng độ lớn nên là hai lực cân bằng (triệt tiêu nhau làm sách đứng yên). Còn áp lực của sách lên bàn và phản lực của bàn lên sách là cặp lực - phản lực định luật III (đặt lên 2 vật khác nhau).",
+    "category": "Động lực học chất điểm"
+  },
+  {
+    "id": 9,
+    "question": "Đại lượng vật lý nào đặc trưng cho mức quán tính của một chất điểm trong chuyển động tịnh tiến?",
+    "options": [
+      "Vận tốc",
+      "Khối lượng quán tính m",
+      "Gia tốc",
+      "Trọng lượng P"
+    ],
+    "answer": 1,
+    "explanation": "Khối lượng m là số đo mức quán tính của vật: vật có khối lượng càng lớn thì mức quán tính càng lớn, càng khó làm thay đổi vận tốc của nó (gia tốc a = F/m càng nhỏ với cùng một lực F).",
+    "category": "Động lực học chất điểm"
+  },
+  {
+    "id": 10,
+    "question": "Hai thuộc tính cơ bản của khối lượng trong cơ học cổ điển là gì?",
+    "options": [
+      "Khối lượng quán tính (đo mức cản trở gia tốc) và khối lượng hấp dẫn (đo khả năng tương tác hấp dẫn)",
+      "Khối lượng thể tích và khối lượng riêng",
+      "Khối lượng tĩnh và khối lượng động",
+      "Khối lượng bề mặt và khối lượng tâm"
+    ],
+    "answer": 0,
+    "explanation": "Trong cơ học Newton, khối lượng biểu hiện qua hai đặc tính: quán tính cưỡng lại sự thay đổi chuyển động (F = m_qt.a) và tính hấp dẫn tạo ra và chịu tác dụng của trường hấp dẫn (F = G.m_hd1.m_hd2/r^2). Thực nghiệm chứng minh hai khối lượng này tương đương tuyệt đối.",
+    "category": "Động lực học chất điểm"
+  },
+  {
+    "id": 11,
+    "question": "Một lực F = 10 N tác dụng vào vật khối lượng m = 2 kg đang đứng yên trên sàn nhẵn. Sau 4 giây, vận tốc của vật đạt được là:",
+    "options": [
+      "10 m/s",
+      "20 m/s",
+      "40 m/s",
+      "5 m/s"
+    ],
+    "answer": 1,
+    "explanation": "Gia tốc của vật: a = F / m = 10 / 2 = 5 m/s^2. Vì v0 = 0 nên vận tốc sau t = 4 s là: v = a*t = 5 * 4 = 20 m/s.",
+    "category": "Động lực học chất điểm"
+  },
+  {
+    "id": 12,
+    "question": "Một viên đạn khối lượng 10 g đang bay với vận tốc 400 m/s thì xuyên vào một tấm gỗ dày và dừng lại sau khi đi được 8 cm. Lực cản trung bình của tấm gỗ là:",
+    "options": [
+      "F_c = 1000 N",
+      "F_c = 10000 N",
+      "F_c = 5000 N",
+      "F_c = 20000 N"
+    ],
+    "answer": 1,
+    "explanation": "Áp dụng hệ thức độc lập: v^2 - v0^2 = 2.a.s => 0 - 400^2 = 2 * a * 0,08 => a = -160000 / 0,16 = -1.000.000 m/s^2. Lực cản: F_c = m*|a| = 0,01 kg * 1.000.000 m/s^2 = 10.000 N.",
+    "category": "Động lực học chất điểm"
+  },
+  {
+    "id": 13,
+    "question": "Định luật vạn vật hấp dẫn của Newton phát biểu rằng lực hút giữa hai chất điểm m1, m2 cách nhau khoảng cách r có độ lớn là:",
+    "options": [
+      "F = G.(m1.m2) / r^2",
+      "F = G.(m1 + m2) / r^2",
+      "F = G.(m1.m2) / r",
+      "F = G.(m1.m2)^2 / r^2"
+    ],
+    "answer": 0,
+    "explanation": "Hai chất điểm bất kỳ hút nhau bằng một lực tỷ lệ thuận với tích hai khối lượng và tỷ lệ nghịch với bình phương khoảng cách giữa chúng: F = G.(m1.m2)/r^2, với hằng số hấp dẫn G ≈ 6,67.10^-11 N.m^2/kg^2.",
+    "category": "Động lực học chất điểm"
+  },
+  {
+    "id": 14,
+    "question": "Gia tốc rơi tự do g_h ở độ cao h so với mặt đất (bán kính Trái Đất là R, gia tốc tại mặt đất là g0) được tính theo công thức:",
+    "options": [
+      "g_h = g0.[R / (R + h)]^2",
+      "g_h = g0.[(R + h) / R]^2",
+      "g_h = g0.[R / (R + h)]",
+      "g_h = g0.(1 - h/R)"
+    ],
+    "answer": 0,
+    "explanation": "Tại mặt đất g0 = G*M/R^2; ở độ cao h thì g_h = G*M/(R+h)^2. Chia hai vế ta được: g_h = g0 * [R / (R + h)]^2.",
+    "category": "Động lực học chất điểm"
+  },
+  {
+    "id": 15,
+    "question": "Lực đàn hồi của lò xo tuân theo định luật Hooke có biểu thức vectơ là:",
+    "options": [
+      "F_dh = -k.Δl (lực có chiều chống lại sự biến dạng của lò xo)",
+      "F_dh = k.Δl^2",
+      "F_dh = -0.5.k.Δl",
+      "F_dh = k / Δl"
+    ],
+    "answer": 0,
+    "explanation": "Định luật Hooke: F_dh = -k.Δl, trong đó dấu trừ thể hiện lực đàn hồi luôn hướng ngược với chiều biến dạng (kéo về vị trí cân bằng không biến dạng).",
+    "category": "Động lực học chất điểm"
+  },
+  {
+    "id": 16,
+    "question": "Độ lớn của lực ma sát trượt F_mst giữa hai bề mặt tiếp xúc được xác định theo công thức:",
+    "options": [
+      "F_mst = μ_t.N (với N là áp lực pháp tuyến và μ_t là hệ số ma sát trượt)",
+      "F_mst = μ_t.P.tanα",
+      "F_mst = μ_t / N",
+      "F_mst = μ_t.S_tx (với S_tx là diện tích tiếp xúc)"
+    ],
+    "answer": 0,
+    "explanation": "Lực ma sát trượt có độ lớn F_mst = μ_t.N. Trong thực tế giới hạn cổ điển, độ lớn này chỉ phụ thuộc vào áp lực pháp tuyến N và bản chất/tình trạng bề mặt tiếp xúc (hệ số μ_t), không phụ thuộc vào diện tích tiếp xúc hay tốc độ trượt tương đối.",
+    "category": "Động lực học chất điểm"
+  },
+  {
+    "id": 17,
+    "question": "Lực ma sát nghỉ cực đại (F_msn,max) có quan hệ như thế nào với lực ma sát trượt?",
+    "options": [
+      "Lực ma sát nghỉ cực đại luôn xấp xỉ bằng hoặc hơi lớn hơn lực ma sát trượt (F_msn,max ≥ F_mst)",
+      "Lực ma sát nghỉ cực đại luôn nhỏ hơn lực ma sát trượt rất nhiều",
+      "Lực ma sát nghỉ cực đại luôn bằng 0",
+      "Lực ma sát nghỉ cực đại không phụ thuộc vào áp lực pháp tuyến"
+    ],
+    "answer": 0,
+    "explanation": "Thực nghiệm cho thấy để bắt đầu làm một vật trượt, cần một lực thắng được lực ma sát nghỉ cực đại F_msn,max = μ_n.N, trong đó hệ số ma sát nghỉ μ_n thường hơi lớn hơn hệ số ma sát trượt μ_t một chút.",
+    "category": "Động lực học chất điểm"
+  },
+  {
+    "id": 18,
+    "question": "Khi kéo một vật trượt trên mặt sàn nằm ngang với lực kéo song song với mặt sàn, nếu tăng khối lượng của vật lên gấp đôi thì lực ma sát trượt sẽ:",
+    "options": [
+      "Không đổi",
+      "Tăng lên gấp đôi vì áp lực pháp tuyến N = P = mg tăng gấp đôi",
+      "Giảm đi một nửa",
+      "Tăng lên 4 lần"
+    ],
+    "answer": 1,
+    "explanation": "Trên mặt sàn nằm ngang, áp lực N = mg. Do đó F_mst = μ_t*N = μ_t*mg. Khi khối lượng m tăng gấp 2 lần thì áp lực N tăng 2 lần, kéo theo F_mst tăng gấp đôi.",
+    "category": "Động lực học chất điểm"
+  },
+  {
+    "id": 19,
+    "question": "Đặc điểm nào sau đây về lực căng của một sợi dây lý tưởng (nhẹ, không dãn, khối lượng không đáng kể) là đúng?",
+    "options": [
+      "Lực căng ở hai đầu dây luôn có độ lớn bằng nhau và hướng dọc theo sợi dây vào phía trong dây",
+      "Lực căng dây luôn vuông góc với sợi dây",
+      "Lực căng dây ở đầu gắn vật luôn lớn hơn đầu treo",
+      "Lực căng dây tỉ lệ với bình phương gia tốc của vật"
+    ],
+    "answer": 0,
+    "explanation": "Dây lý tưởng có khối lượng không đáng kể và không dãn thì lực căng dây có độ lớn bằng nhau tại mọi điểm dọc theo dây, hướng dọc theo phương sợi dây về phía lòng dây.",
+    "category": "Động lực học chất điểm"
+  },
+  {
+    "id": 20,
+    "question": "Một vật khối lượng 5 kg được kéo trượt đều trên sàn nằm ngang bởi lực kéo F = 15 N song song mặt sàn. Lấy g = 10 m/s^2. Hệ số ma sát trượt giữa vật và sàn là:",
+    "options": [
+      "μ = 0,2",
+      "μ = 0,3",
+      "μ = 0,15",
+      "μ = 0,5"
+    ],
+    "answer": 1,
+    "explanation": "Vật chuyển động thẳng đều nên gia tốc a = 0 => F_keo = F_mst = μ*N. Với N = mg = 5*10 = 50 N, ta có: 15 = μ * 50 => μ = 15 / 50 = 0,3.",
+    "category": "Động lực học chất điểm"
+  },
+  {
+    "id": 21,
+    "question": "Lực ma sát lăn có đặc điểm nổi bật nào so với lực ma sát trượt?",
+    "options": [
+      "Hệ số ma sát lăn lớn hơn nhiều so với hệ số ma sát trượt",
+      "Lực ma sát lăn nhỏ hơn rất nhiều so với lực ma sát trượt trong cùng điều kiện tải trọng",
+      "Lực ma sát lăn không phụ thuộc vào bán kính của bánh xe",
+      "Lực ma sát lăn luôn cùng chiều với chiều chuyển động của trục bánh xe"
+    ],
+    "answer": 1,
+    "explanation": "Lực cản do ma sát lăn nhỏ hơn ma sát trượt từ hàng chục đến hàng trăm lần, đó là lý do con người phát minh ra bánh xe và ổ bi để giảm lực cản chuyển động.",
+    "category": "Động lực học chất điểm"
+  },
+  {
+    "id": 22,
+    "question": "Điều kiện để một vật nằm yên không trượt trên mặt phẳng nghiêng góc nghiêng α có hệ số ma sát nghỉ μ_n là:",
+    "options": [
+      "tanα ≤ μ_n",
+      "sinα ≤ μ_n",
+      "tanα ≥ μ_n",
+      "cosα ≤ μ_n"
+    ],
+    "answer": 0,
+    "explanation": "Lực kéo vật xuống dốc là Pt = mg.sinα; lực ma sát nghỉ cực đại giữ vật là F_msn,max = μ_n.N = μ_n.mg.cosα. Để vật đứng yên: mg.sinα ≤ μ_n.mg.cosα <=> sinα / cosα ≤ μ_n <=> tanα ≤ μ_n.",
+    "category": "Động lực học chất điểm"
+  },
+  {
+    "id": 23,
+    "question": "Một hệ quy chiếu K' chuyển động tịnh tiến có gia tốc a0 so với hệ quy chiếu quán tính K. Lực quán tính tịnh tiến tác dụng lên chất điểm khối lượng m trong hệ K' là:",
+    "options": [
+      "F_qt = m.a0",
+      "F_qt = -m.a0 (ngược hướng với vectơ gia tốc a0)",
+      "F_qt = m.(g + a0)",
+      "F_qt = 0"
+    ],
+    "answer": 1,
+    "explanation": "Trong hệ quy chiếu phi quán tính tịnh tiến với gia tốc a0, để áp dụng định luật II Newton ta phải bổ sung lực quán tính F_qt = -m.a0. Lực này có độ lớn m.a0 và luôn ngược chiều với gia tốc a0 của hệ.",
+    "category": "Động lực học chất điểm"
+  },
+  {
+    "id": 24,
+    "question": "Bản chất của lực quán tính khác lực cơ học thông thường (lực tương tác) ở điểm cơ bản nào?",
+    "options": [
+      "Lực quán tính không có vật tác dụng gây ra (không có phản lực tương ứng tuân theo định luật III Newton)",
+      "Lực quán tính không gây ra gia tốc cho vật",
+      "Lực quán tính chỉ xuất hiện trong chân không",
+      "Lực quán tính không phụ thuộc vào khối lượng của vật"
+    ],
+    "answer": 0,
+    "explanation": "Lực cơ học xuất phát từ sự tương tác giữa các vật thể với nhau. Lực quán tính là một lực ảo xuất hiện do tính chất có gia tốc của hệ quy chiếu đang chọn, không có vật thể thứ hai gây ra nó và không tuân theo định luật III Newton (không có phản lực).",
+    "category": "Động lực học chất điểm"
+  },
+  {
+    "id": 25,
+    "question": "Một người đứng trên bàn cân đặt trong thang máy. Khi thang máy chuyển động thẳng đứng đi lên nhanh dần đều với gia tốc a, số chỉ của cân (trọng lượng biểu kiến) sẽ:",
+    "options": [
+      "Bằng đúng trọng lượng thực P = mg",
+      "Tăng lên và bằng N = m.(g + a)",
+      "Giảm đi và bằng N = m.(g - a)",
+      "Bằng 0"
+    ],
+    "answer": 1,
+    "explanation": "Thang máy đi lên nhanh dần đều nên gia tốc a hướng lên. Lực quán tính F_qt = -m.a hướng xuống. Áp lực của người lên cân: N = mg + F_qt = m(g + a) > mg (hiện tượng tăng trọng lượng).",
+    "category": "Động lực học chất điểm"
+  },
+  {
+    "id": 26,
+    "question": "Khi thang máy bị đứt cáp và rơi tự do xuống dưới với gia tốc a = g, người trong thang máy sẽ ở trạng thái:",
+    "options": [
+      "Trọng lượng tăng gấp đôi: N = 2mg",
+      "Trọng lượng không đổi: N = mg",
+      "Không trọng lượng: số chỉ của cân N = m.(g - g) = 0",
+      "Chịu một lực ép cực mạnh lên sàn thang máy"
+    ],
+    "answer": 2,
+    "explanation": "Thang máy rơi tự do với gia tốc a = g hướng xuống, lực quán tính hướng lên F_qt = mg. Lực ép lên sàn thang máy N = mg - F_qt = m(g - g) = 0. Đây là hiện tượng không trọng lượng.",
+    "category": "Động lực học chất điểm"
+  },
+  {
+    "id": 27,
+    "question": "Lực quán tính ly tâm xuất hiện trong hệ quy chiếu nào và có chiều như thế nào?",
+    "options": [
+      "Xuất hiện trong hệ quy chiếu quay quanh một trục, có hướng từ trục quay hướng ra xa dọc theo phương bán kính",
+      "Xuất hiện trong hệ quy chiếu đứng yên, hướng vào trục quay",
+      "Xuất hiện trong hệ quy chiếu tịnh tiến đều, tiếp tuyến quỹ đạo",
+      "Luôn hướng thẳng đứng lên trời"
+    ],
+    "answer": 0,
+    "explanation": "Trong hệ quy chiếu quay với tốc độ góc ω, chất điểm chịu lực quán tính ly tâm F_lt = m*ω^2*r vuông góc với trục quay và hướng ly tâm (từ trục quay ra xa).",
+    "category": "Động lực học chất điểm"
+  },
+  {
+    "id": 28,
+    "question": "Một con lắc đơn treo trên trần của một toa tàu đang chuyển động thẳng biến đổi đều với gia tốc a trên đường ray ngang. Khi con lắc cân bằng so với toa tàu, dây treo lệch khỏi phương thẳng đứng một góc θ xác định bởi:",
+    "options": [
+      "tanθ = a / g",
+      "sinθ = a / g",
+      "cosθ = a / g",
+      "tanθ = g / a"
+    ],
+    "answer": 0,
+    "explanation": "Trong hệ quy chiếu toa tàu, vật nặng chịu trọng lực P = mg thẳng đứng xuống dưới và lực quán tính F_qt = ma theo phương ngang. Hợp lực của chúng hợp với phương thẳng đứng góc θ thoả mãn: tanθ = F_qt / P = (ma) / (mg) = a / g.",
+    "category": "Động lực học chất điểm"
+  },
+  {
+    "id": 29,
+    "question": "Một vật trượt xuống một mặt phẳng nghiêng góc α so với phương ngang có hệ số ma sát trượt μ. Gia tốc chuyển động của vật là:",
+    "options": [
+      "a = g.(sinα - μ.cosα)",
+      "a = g.(sinα + μ.cosα)",
+      "a = g.(cosα - μ.sinα)",
+      "a = g.sinα"
+    ],
+    "answer": 0,
+    "explanation": "Chiếu phương trình định luật II lên phương mặt phẳng nghiêng: Px - F_mst = m.a <=> mg.sinα - μ.N = ma. Với N = mg.cosα, ta được: ma = mg.sinα - μ.mg.cosα => a = g.(sinα - μ.cosα).",
+    "category": "Động lực học chất điểm"
+  },
+  {
+    "id": 30,
+    "question": "Trong máy Atwood gồm hai vật có khối lượng m1 > m2 được nối với nhau qua một ròng rọc nhẹ lý tưởng cố định, gia tốc a của mỗi vật là:",
+    "options": [
+      "a = [(m1 - m2) / (m1 + m2)].g",
+      "a = [(m1 + m2) / (m1 - m2)].g",
+      "a = [(m1 - m2) / m1].g",
+      "a = g / 2"
+    ],
+    "answer": 0,
+    "explanation": "Phương trình chuyển động cho 2 vật: m1.g - T = m1.a và T - m2.g = m2.a. Cộng hai phương trình để khử lực căng T: (m1 - m2)g = (m1 + m2)a => a = [(m1 - m2) / (m1 + m2)]*g.",
+    "category": "Động lực học chất điểm"
+  },
+  {
+    "id": 31,
+    "question": "Lực căng của sợi dây trong máy Atwood ở câu trên có biểu thức là:",
+    "options": [
+      "T = [2.m1.m2 / (m1 + m2)].g",
+      "T = [(m1 - m2) / (m1 + m2)].g",
+      "T = (m1 + m2).g",
+      "T = (m1.m2).g"
+    ],
+    "answer": 0,
+    "explanation": "Thế a vào biểu thức T = m2(g + a) = m2*[g + (m1 - m2)/(m1 + m2)*g] = [2*m1*m2 / (m1 + m2)]*g.",
+    "category": "Động lực học chất điểm"
+  },
+  {
+    "id": 32,
+    "question": "Một vật trượt lên một dốc nghiêng góc α với vận tốc ban đầu v0, hệ số ma sát μ. Gia tốc hãm của vật khi đang đi lên dốc là:",
+    "options": [
+      "a = -g.(sinα + μ.cosα)",
+      "a = -g.(sinα - μ.cosα)",
+      "a = -g.sinα",
+      "a = -g.μ.cosα"
+    ],
+    "answer": 0,
+    "explanation": "Khi vật đi lên dốc, cả thành phần trọng lực dọc dốc Px = mg.sinα và lực ma sát F_mst = μ.mg.cosα đều hướng xuống chân dốc, chống lại chuyển động: ma = -mg.sinα - μ.mg.cosα => a = -g.(sinα + μ.cosα).",
+    "category": "Động lực học chất điểm"
+  },
+  {
+    "id": 33,
+    "question": "Một khối gỗ m = 2 kg nằm trên mặt bàn không ma sát, được nối qua ròng rọc nhẹ với quả nặng m' = 0,5 kg treo thẳng đứng. Lấy g = 10 m/s^2. Gia tốc của hệ là:",
+    "options": [
+      "a = 2 m/s^2",
+      "a = 2,5 m/s^2",
+      "a = 1 m/s^2",
+      "a = 5 m/s^2"
+    ],
+    "answer": 0,
+    "explanation": "Hợp lực gây gia tốc cho cả hệ (m + m') là trọng lực của quả nặng treo: F = m'*g. Do đó gia tốc của hệ: a = (m'*g) / (m + m') = (0,5 * 10) / (2 + 0,5) = 5 / 2,5 = 2 m/s^2.",
+    "category": "Động lực học chất điểm"
+  },
+  {
+    "id": 34,
+    "question": "Lực ép (áp lực) của một vật khối lượng m lên mặt phẳng nghiêng góc α khi vật đang trượt xuống là:",
+    "options": [
+      "N = m.g.cosα",
+      "N = m.g.sinα",
+      "N = m.g.tanα",
+      "N = m.g"
+    ],
+    "answer": 0,
+    "explanation": "Theo phương vuông góc với mặt phẳng nghiêng, không có chuyển động nên N - Py = 0 => N = Py = mg.cosα. Áp lực của vật ép lên dốc có độ lớn bằng phản lực pháp tuyến N = mg.cosα.",
+    "category": "Động lực học chất điểm"
+  },
+  {
+    "id": 35,
+    "question": "Một vật có khối lượng 10 kg được kéo lên thẳng đứng với gia tốc a = 2 m/s^2. Lấy g = 9,8 m/s^2. Lực căng dây kéo vật là:",
+    "options": [
+      "118 N",
+      "98 N",
+      "78 N",
+      "20 N"
+    ],
+    "answer": 0,
+    "explanation": "Áp dụng định luật II Newton: T - P = ma => T = m(g + a) = 10*(9,8 + 2) = 10 * 11,8 = 118 N.",
+    "category": "Động lực học chất điểm"
+  },
+  {
+    "id": 36,
+    "question": "Khi giải một bài toán động lực học chất điểm bằng phương pháp chiếu, việc chọn hệ trục tọa độ phù hợp thường tuân theo quy tắc nào?",
+    "options": [
+      "Chọn một trục tọa độ trùng với phương chuyển động (hoặc phương của gia tốc) và trục còn lại vuông góc với phương chuyển động",
+      "Luôn luôn bắt buộc chọn trục Ox nằm ngang và trục Oy thẳng đứng",
+      "Chọn hệ trục tọa độ sao cho tất cả các góc hợp lực đều bằng 45°",
+      "Không cần chọn hệ trục tọa độ mà chỉ cần tính toán vô hướng"
+    ],
+    "answer": 0,
+    "explanation": "Quy tắc thuận tiện nhất là chọn một trục (thường là Ox) dọc theo phương chuyển động để gia tốc ax = a, khi đó trục vuông góc (Oy) sẽ có gia tốc ay = 0, giúp đơn giản hóa hệ phương trình chiếu.",
+    "category": "Động lực học chất điểm"
+  },
+  {
+    "id": 37,
+    "question": "Vectơ động lượng p của một chất điểm khối lượng m chuyển động với vận tốc v được định nghĩa là:",
+    "options": [
+      "p = m.v (vectơ cùng phương, cùng chiều với vectơ vận tốc v)",
+      "p = 0.5.m.v^2",
+      "p = m.a",
+      "p = m / v"
+    ],
+    "answer": 0,
+    "explanation": "Động lượng là đại lượng vectơ đo lượng chuyển động cơ học: p = m.v. Vì khối lượng m > 0 nên vectơ động lượng luôn cùng hướng với vectơ vận tốc v.",
+    "category": "Động lực học chất điểm"
+  },
+  {
+    "id": 38,
+    "question": "Xung lượng của lực F tác dụng lên chất điểm trong khoảng thời gian từ t1 đến t2 được tính theo tích phân:",
+    "options": [
+      "J = integral_{t1}^{t2} F dt",
+      "J = integral_{t1}^{t2} p dt",
+      "J = F / Δt",
+      "J = dF / dt"
+    ],
+    "answer": 0,
+    "explanation": "Xung lượng của lực là tác dụng tích lũy của lực trong một khoảng thời gian: J = integral(F dt). Nếu lực không đổi: J = F.Δt. Đơn vị của xung lượng là N.s hay kg.m/s.",
+    "category": "Động lực học chất điểm"
+  },
+  {
+    "id": 39,
+    "question": "Định lý biến thiên động lượng của chất điểm phát biểu rằng:",
+    "options": [
+      "Độ biến thiên động lượng của chất điểm trong một khoảng thời gian bằng xung lượng của tổng lực tác dụng lên chất điểm trong khoảng thời gian đó (Δp = J)",
+      "Động lượng của chất điểm luôn không đổi theo thời gian",
+      "Đạo hàm của động lượng theo thời gian bằng động năng của chất điểm",
+      "Xung lượng của lực luôn bằng 0"
+    ],
+    "answer": 0,
+    "explanation": "Từ F = dp/dt => dp = F.dt. Lấy tích phân hai vế: Δp = p2 - p1 = integral(F dt) = J. Độ biến thiên động lượng bằng xung lượng của lực.",
+    "category": "Động lực học chất điểm"
+  },
+  {
+    "id": 40,
+    "question": "Hệ chất điểm được gọi là hệ cô lập (hệ kín) khi nào?",
+    "options": [
+      "Khi không có ngoại lực tác dụng lên hệ hoặc tổng các ngoại lực tác dụng lên hệ triệt tiêu nhau (Σ F_ngoại = 0)",
+      "Khi tất cả các vật trong hệ đều đứng yên",
+      "Khi nội lực giữa các chất điểm trong hệ bằng không",
+      "Khi hệ chuyển động không có ma sát trong trọng trường"
+    ],
+    "answer": 0,
+    "explanation": "Hệ cô lập (kín) là hệ cơ học không có tương tác với môi trường bên ngoài, tức là không chịu ngoại lực hoặc tổng vectơ các ngoại lực tác dụng lên hệ bằng 0.",
+    "category": "Động lực học chất điểm"
+  },
+  {
+    "id": 41,
+    "question": "Định luật bảo toàn động lượng phát biểu rằng:",
+    "options": [
+      "Tổng vectơ động lượng của một hệ cô lập là một đại lượng không đổi theo thời gian: Σ pi = const",
+      "Động lượng của từng vật riêng lẻ trong hệ cô lập không bao giờ thay đổi",
+      "Tổng động lượng của mọi hệ luôn bằng 0",
+      "Động lượng chỉ được bảo toàn khi không có nội lực tác dụng"
+    ],
+    "answer": 0,
+    "explanation": "Trong hệ cô lập, do tổng ngoại lực bằng 0, đạo hàm của tổng động lượng d(Σ p)/dt = 0, do đó tổng vectơ động lượng của hệ cô lập được bảo toàn: p_hệ = const.",
+    "category": "Động lực học chất điểm"
+  },
+  {
+    "id": 42,
+    "question": "Nếu tổng ngoại lực tác dụng lên một hệ không bằng 0, nhưng hình chiếu của tổng ngoại lực lên trục Ox bằng 0 (Σ F_ngoại,x = 0), thì:",
+    "options": [
+      "Động lượng của hệ không được bảo toàn theo bất kỳ phương nào",
+      "Thành phần động lượng của hệ theo phương Ox được bảo toàn: P_x = const",
+      "Hệ đứng yên theo phương Ox",
+      "Gia tốc của hệ bằng 0 theo mọi phương"
+    ],
+    "answer": 1,
+    "explanation": "Theo định lý động lượng chiếu lên trục Ox: d(Px)/dt = Σ F_ngoại,x. Khi Σ F_ngoại,x = 0 thì Px = const, tức là động lượng của hệ được bảo toàn theo phương Ox.",
+    "category": "Động lực học chất điểm"
+  },
+  {
+    "id": 43,
+    "question": "Một viên đạn khối lượng m = 20 g bay với vận tốc v = 500 m/s cắm vào một bao cát khối lượng M = 9,98 kg đang nằm yên và nằm yên trong bao cát (va chạm mềm). Vận tốc của bao cát ngay sau va chạm là:",
+    "options": [
+      "1 m/s",
+      "2 m/s",
+      "5 m/s",
+      "0,5 m/s"
+    ],
+    "answer": 0,
+    "explanation": "Áp dụng định luật bảo toàn động lượng cho va chạm mềm: m.v = (m + M).V => V = (m.v) / (m + M) = (0,02 * 500) / (0,02 + 9,98) = 10 / 10 = 1 m/s.",
+    "category": "Động lực học chất điểm"
+  },
+  {
+    "id": 44,
+    "question": "Một quả bóng khối lượng 0,5 kg đập vuông góc vào bức tường với tốc độ 10 m/s và bật ngược trở lại theo phương cũ với tốc độ 8 m/s. Độ lớn biến thiên động lượng của quả bóng là:",
+    "options": [
+      "1 kg.m/s",
+      "9 kg.m/s",
+      "10 kg.m/s",
+      "0 kg.m/s"
+    ],
+    "answer": 1,
+    "explanation": "Chọn chiều dương là chiều bật ra: p1 = -m*v1 = -0,5*10 = -5 kg.m/s; p2 = +m*v2 = 0,5*8 = +4 kg.m/s. Độ biến thiên động lượng: Δp = p2 - p1 = 4 - (-5) = 9 kg.m/s.",
+    "category": "Động lực học chất điểm"
+  },
+  {
+    "id": 45,
+    "question": "Vectơ mômen của lực F đối với điểm gốc O được xác định bằng tích có hướng:",
+    "options": [
+      "M_O = r x F",
+      "M_O = F x r",
+      "M_O = r . F (tích vô hướng)",
+      "M_O = r / F"
+    ],
+    "answer": 0,
+    "explanation": "Vectơ mômen lực đối với điểm O là tích có hướng của vectơ vị trí r và vectơ lực F: M_O = r x F. Vectơ M_O vuông góc với mặt phẳng chứa r và F, chiều theo quy tắc vặn nút chai.",
+    "category": "Động lực học chất điểm"
+  },
+  {
+    "id": 46,
+    "question": "Độ lớn của mômen lực M_O đối với điểm O được tính bằng công thức nào (với d là khoảng cách từ O đến giá của lực)?",
+    "options": [
+      "M = F.d = F.r.sinα (với α là góc giữa vectơ r và F)",
+      "M = F.r.cosα",
+      "M = F / d",
+      "M = F.d^2"
+    ],
+    "answer": 0,
+    "explanation": "Độ lớn của tích có hướng |r x F| = r*F*sinα. Vì d = r*sinα là cánh tay đòn của lực (khoảng cách vuông góc từ điểm O đến giá của lực), ta có M = F*d.",
+    "category": "Động lực học chất điểm"
+  },
+  {
+    "id": 47,
+    "question": "Vectơ mômen động lượng L_O của một chất điểm có vectơ vị trí r và động lượng p đối với điểm O là:",
+    "options": [
+      "L_O = r x p = m.(r x v)",
+      "L_O = p x r",
+      "L_O = r . p",
+      "L_O = m.(r . v)"
+    ],
+    "answer": 0,
+    "explanation": "Mômen động lượng của chất điểm đối với gốc O là tích vectơ giữa vectơ vị trí r và vectơ động lượng p: L_O = r x p = m*(r x v). Đơn vị trong hệ SI là kg.m^2/s hay J.s.",
+    "category": "Động lực học chất điểm"
+  },
+  {
+    "id": 48,
+    "question": "Định lý về mômen động lượng của một chất điểm đối với gốc O phát biểu rằng:",
+    "options": [
+      "Đạo hàm theo thời gian của vectơ mômen động lượng bằng vectơ mômen của tổng ngoại lực đối với điểm đó: dL_O / dt = M_O",
+      "dL_O / dt = 0 trong mọi trường hợp",
+      "dL_O / dt = F",
+      "Mômen động lượng luôn vuông góc với vận tốc"
+    ],
+    "answer": 0,
+    "explanation": "Lấy đạo hàm L_O: dL_O/dt = d(r x p)/dt = (dr/dt x p) + (r x dp/dt) = (v x mv) + (r x F). Do v x v = 0 và r x F = M_O, ta có định lý cơ bản: dL_O/dt = M_O.",
+    "category": "Động lực học chất điểm"
+  },
+  {
+    "id": 49,
+    "question": "Khi tổng mômen của các lực tác dụng lên chất điểm đối với điểm O bằng không (M_O = 0), thì:",
+    "options": [
+      "Vectơ mômen động lượng L_O được bảo toàn không đổi cả về hướng lẫn độ lớn: L_O = const",
+      "Chất điểm bắt buộc phải đứng yên tại chỗ",
+      "Vận tốc của chất điểm bằng không",
+      "Động lượng của chất điểm bằng không"
+    ],
+    "answer": 0,
+    "explanation": "Từ dL_O/dt = M_O, khi M_O = 0 suy ra dL_O/dt = 0, nghĩa là vectơ mômen động lượng L_O của chất điểm đối với điểm O là một hằng số bảo toàn (cả phương, chiều và độ lớn).",
+    "category": "Động lực học chất điểm"
+  },
+  {
+    "id": 50,
+    "question": "Trong trường lực xuyên tâm (lực tác dụng luôn có giá đi qua điểm cố định O, ví dụ lực hấp dẫn), quỹ đạo chuyển động của chất điểm có tính chất gì?",
+    "options": [
+      "Quỹ đạo luôn là một đường cong phẳng nằm trong mặt phẳng vuông góc với vectơ mômen động lượng L_O không đổi",
+      "Quỹ đạo luôn là đường xoắn ốc 3 chiều",
+      "Quỹ đạo luôn là đường thẳng đi qua O",
+      "Chất điểm không có gia tốc"
+    ],
+    "answer": 0,
+    "explanation": "Vì lực F luôn có phương đi qua gốc O nên r và F cùng phương => M_O = r x F = 0. Do đó mômen động lượng L_O = r x p = const. Vì L_O không đổi và luôn vuông góc với r, vectơ vị trí r luôn nằm trong mặt phẳng cố định vuông góc với L_O, nghĩa là quỹ đạo là một đường phẳng (định luật bảo toàn diện tích / định luật II Kepler).",
+    "category": "Động lực học chất điểm"
+  }
+]

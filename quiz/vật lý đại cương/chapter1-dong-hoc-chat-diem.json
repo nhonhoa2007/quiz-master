@@ -1,0 +1,652 @@
+[
+  {
+    "id": 1,
+    "question": "Trong cơ học cổ điển, một vật thể được coi là chất điểm khi nào?",
+    "options": [
+      "Khi khối lượng của vật rất bé đến mức có thể bỏ qua",
+      "Khi kích thước của vật rất nhỏ so với quãng đường chuyển động hoặc khoảng cách khảo sát",
+      "Khi vật đứng yên tuyệt đối trong một hệ quy chiếu",
+      "Khi vật không biến dạng trong suốt quá trình chuyển động"
+    ],
+    "answer": 1,
+    "explanation": "Chất điểm là một mô hình lý tưởng hóa: vật được coi là chất điểm khi kích thước hình học của nó rất nhỏ so với phạm vi không gian hoặc quãng đường mà nó di chuyển. Khối lượng của vật vẫn được bảo toàn tại điểm đó.",
+    "category": "Động học chất điểm"
+  },
+  {
+    "id": 2,
+    "question": "Một hệ quy chiếu hoàn chỉnh trong cơ học bao gồm các yếu tố nào?",
+    "options": [
+      "Vật làm mốc và một hệ tọa độ gắn cố định với vật mốc",
+      "Một hệ trục tọa độ Descartes Oxyz và thước đo chiều dài",
+      "Vật làm mốc, một hệ tọa độ gắn với vật mốc, và một đồng hồ (gốc thời gian) để đo thời gian",
+      "Một điểm gốc và vectơ vận tốc ban đầu"
+    ],
+    "answer": 2,
+    "explanation": "Để xác định hoàn chỉnh trạng thái vị trí và chuyển động theo thời gian của chất điểm, hệ quy chiếu cần 3 yếu tố: vật làm mốc, hệ tọa độ gắn liền với vật mốc, và gốc thời gian kèm đồng hồ đo.",
+    "category": "Động học chất điểm"
+  },
+  {
+    "id": 3,
+    "question": "Trong hệ tọa độ Descartes Oxyz, vectơ vị trí r của chất điểm M(x, y, z) có biểu thức và độ lớn là:",
+    "options": [
+      "r = x.i + y.j + z.k và độ lớn |r| = sqrt(x^2 + y^2 + z^2)",
+      "r = x + y + z và độ lớn |r| = x + y + z",
+      "r = (x^2)i + (y^2)j + (z^2)k và độ lớn |r| = x^2 + y^2 + z^2",
+      "r = x.i - y.j + z.k và độ lớn |r| = sqrt(x^2 - y^2 + z^2)"
+    ],
+    "answer": 0,
+    "explanation": "Vectơ vị trí r nối từ gốc O(0,0,0) đến M(x,y,z) được biểu diễn qua ba vectơ đơn vị i, j, k: r = x.i + y.j + z.k, với độ lớn chuẩn Euclid |r| = sqrt(x^2 + y^2 + z^2).",
+    "category": "Động học chất điểm"
+  },
+  {
+    "id": 4,
+    "question": "Công thức chuyển đổi từ tọa độ cầu (r, θ, φ) sang tọa độ Descartes (x, y, z) là:",
+    "options": [
+      "x = r.cosθ.cosφ; y = r.cosθ.sinφ; z = r.sinθ",
+      "x = r.sinθ.cosφ; y = r.sinθ.sinφ; z = r.cosθ",
+      "x = r.sinφ; y = r.cosφ; z = r.cosθ",
+      "x = r.tanθ.cosφ; y = r.tanθ.sinφ; z = r.cotθ"
+    ],
+    "answer": 1,
+    "explanation": "Trong hệ tọa độ cầu, r là bán kính vec-tơ, θ là góc cực (góc hợp giữa r và trục Oz), φ là góc kinh độ trên mặt phẳng Oxy. Do đó: z = r.cosθ, hình chiếu trên mp Oxy là r.sinθ, nên x = r.sinθ.cosφ và y = r.sinθ.sinφ.",
+    "category": "Động học chất điểm"
+  },
+  {
+    "id": 5,
+    "question": "Phương trình chuyển động của một chất điểm cho biết điều gì?",
+    "options": [
+      "Chỉ cho biết hình dạng đường cong mà chất điểm vạch ra trong không gian",
+      "Biểu diễn vị trí của chất điểm trong không gian theo thời gian t",
+      "Chỉ cho biết độ lớn của gia tốc tức thời tại mỗi điểm",
+      "Cho biết tổng ngoại lực tác dụng lên chất điểm"
+    ],
+    "answer": 1,
+    "explanation": "Phương trình chuyển động r = r(t) hay hệ {x=x(t), y=y(t), z=z(t)} xác định chính xác vị trí không gian của chất điểm ở từng thời điểm t.",
+    "category": "Động học chất điểm"
+  },
+  {
+    "id": 6,
+    "question": "Phương trình quỹ đạo của chất điểm được tìm bằng cách nào từ phương trình chuyển động?",
+    "options": [
+      "Tính đạo hàm bậc nhất của tọa độ theo thời gian t",
+      "Tích phân vectơ vị trí theo thời gian t",
+      "Khử tham số thời gian t giữa các phương trình tọa độ để tìm phương trình liên hệ trực tiếp giữa các tọa độ không gian",
+      "Nhân các tọa độ x, y, z với thời gian t"
+    ],
+    "answer": 2,
+    "explanation": "Quỹ đạo là đường hình học chất điểm vạch ra trong không gian. Để tìm phương trình quỹ đạo f(x, y, z) = C độc lập với thời gian, ta khử biến số thời gian t từ hệ phương trình chuyển động x(t), y(t), z(t).",
+    "category": "Động học chất điểm"
+  },
+  {
+    "id": 7,
+    "question": "Một chất điểm chuyển động với phương trình x = 2t + 1 (m), y = 4t - 3 (m). Dạng quỹ đạo của chất điểm là:",
+    "options": [
+      "Đường tròn bán kính 2m",
+      "Đường parabol đỉnh (1, -3)",
+      "Đường thẳng có phương trình y = 2x - 5",
+      "Đường elip trục lớn 4m"
+    ],
+    "answer": 2,
+    "explanation": "Từ x = 2t + 1 suy ra t = (x - 1)/2. Thế vào y: y = 4*(x - 1)/2 - 3 = 2(x - 1) - 3 = 2x - 5. Đây là phương trình đường thẳng bậc nhất.",
+    "category": "Động học chất điểm"
+  },
+  {
+    "id": 8,
+    "question": "Chất điểm chuyển động với x = 3.cos(2t) (cm) và y = 3.sin(2t) (cm). Quỹ đạo của chất điểm là:",
+    "options": [
+      "Đường elip có trục lớn 6 cm",
+      "Đường tròn tâm tại gốc O, bán kính R = 3 cm",
+      "Đường thẳng đi qua gốc tọa độ",
+      "Đường xoắn ốc quanh trục Oz"
+    ],
+    "answer": 1,
+    "explanation": "Ta có x^2 + y^2 = 9.cos^2(2t) + 9.sin^2(2t) = 9*(cos^2(2t) + sin^2(2t)) = 9. Phương trình x^2 + y^2 = 3^2 mô tả đường tròn tâm O bán kính R = 3 cm.",
+    "category": "Động học chất điểm"
+  },
+  {
+    "id": 9,
+    "question": "Phát biểu nào sau đây đúng khi so sánh quãng đường đi được s và độ lớn của vectơ độ dời |Δr|?",
+    "options": [
+      "Quãng đường đi được s luôn nhỏ hơn hoặc bằng độ lớn vectơ độ dời",
+      "Quãng đường đi được s luôn lớn hơn hoặc bằng độ lớn vectơ độ dời: s ≥ |Δr|; dấu bằng chỉ xảy ra khi vật chuyển động thẳng và không đổi chiều",
+      "Quãng đường đi được s luôn bằng độ lớn vectơ độ dời trong mọi chuyển động",
+      "Quãng đường s có thể mang giá trị âm nếu vật chuyển động ngược chiều dương"
+    ],
+    "answer": 1,
+    "explanation": "Độ dời Δr = r2 - r1 chỉ phụ thuộc vị trí đầu và cuối, còn quãng đường s là tổng chiều dài đường đi thực tế. Do đó s ≥ |Δr|, dấu bằng chỉ xảy ra khi chuyển động thẳng một chiều không quay đầu. Quãng đường s luôn là đại lượng vô hướng không âm.",
+    "category": "Động học chất điểm"
+  },
+  {
+    "id": 10,
+    "question": "Vectơ vận tốc trung bình của chất điểm trong khoảng thời gian từ t1 đến t2 = t1 + Δt được định nghĩa là:",
+    "options": [
+      "v_tb = Δr / Δt (tỉ số giữa vectơ độ dời và khoảng thời gian thực hiện độ dời)",
+      "v_tb = s / Δt (tỉ số giữa quãng đường và thời gian)",
+      "v_tb = (v1 + v2) / 2",
+      "v_tb = d(r)/dt"
+    ],
+    "answer": 0,
+    "explanation": "Vectơ vận tốc trung bình v_tb = Δr / Δt là một đại lượng vectơ, có phương và chiều cùng phương chiều với vectơ độ dời Δr.",
+    "category": "Động học chất điểm"
+  },
+  {
+    "id": 11,
+    "question": "Vectơ vận tốc tức thời v tại thời điểm t được xác định bằng biểu thức vi phân nào?",
+    "options": [
+      "v = Δr / Δt",
+      "v = dr / dt (đạo hàm bậc nhất của vectơ vị trí theo thời gian)",
+      "v = d^2r / dt^2",
+      "v = integral(r dt)"
+    ],
+    "answer": 1,
+    "explanation": "Vận tốc tức thời là giới hạn của vận tốc trung bình khi Δt tiến tới 0, chính là đạo hàm bậc nhất của vectơ vị trí theo thời gian: v = dr/dt.",
+    "category": "Động học chất điểm"
+  },
+  {
+    "id": 12,
+    "question": "Vectơ vận tốc tức thời của một chất điểm chuyển động cong có các đặc điểm hình học nào?",
+    "options": [
+      "Điểm đặt tại gốc tọa độ, hướng vuông góc với quỹ đạo",
+      "Điểm đặt tại chất điểm, phương tiếp tuyến với quỹ đạo tại điểm đang xét, chiều là chiều chuyển động",
+      "Điểm đặt tại tâm đường cong quỹ đạo, phương hướng ra ngoài",
+      "Phương luôn song song với trục hoành Ox"
+    ],
+    "answer": 1,
+    "explanation": "Vectơ vận tốc tức thời v luôn có gốc đặt tại vị trí tức thời của chất điểm, phương tiếp tuyến với quỹ đạo cong tại điểm đó và có chiều trùng với chiều chuyển động của chất điểm.",
+    "category": "Động học chất điểm"
+  },
+  {
+    "id": 13,
+    "question": "Tốc độ tức thời (độ lớn của vectơ vận tốc tức thời) v được liên hệ với độ dài cung s theo biểu thức:",
+    "options": [
+      "v = ds / dt",
+      "v = s / t",
+      "v = d^2s / dt^2",
+      "v = integral(s dt)"
+    ],
+    "answer": 0,
+    "explanation": "Khi Δt -> 0, độ lớn vi phân độ dời |dr| xấp xỉ bằng vi phân cung đường ds, do đó tốc độ tức thời bằng đạo hàm bậc nhất của quãng đường theo thời gian: v = ds/dt = sqrt(vx^2 + vy^2 + vz^2).",
+    "category": "Động học chất điểm"
+  },
+  {
+    "id": 14,
+    "question": "Một chất điểm có phương trình bán kính vectơ r = 3t.i + 4t^2.j (m). Độ lớn vận tốc của chất điểm tại thời điểm t = 1 s là:",
+    "options": [
+      "v = 7 m/s",
+      "v = 5 m/s",
+      "v = sqrt(3^2 + 8^2) = sqrt(73) ≈ 8,54 m/s",
+      "v = 11 m/s"
+    ],
+    "answer": 2,
+    "explanation": "Ta có vx = dx/dt = 3; vy = dy/dt = 8t. Tại t = 1 s: vx = 3 m/s, vy = 8 m/s. Độ lớn vận tốc v = sqrt(vx^2 + vy^2) = sqrt(3^2 + 8^2) = sqrt(73) ≈ 8,54 m/s.",
+    "category": "Động học chất điểm"
+  },
+  {
+    "id": 15,
+    "question": "Một xe chạy trên nửa đoạn đường đầu với tốc độ 40 km/h, nửa đoạn đường sau với tốc độ 60 km/h. Tốc độ trung bình trên toàn bộ quãng đường là:",
+    "options": [
+      "50 km/h",
+      "48 km/h",
+      "52 km/h",
+      "45 km/h"
+    ],
+    "answer": 1,
+    "explanation": "Thời gian đi nửa đầu: t1 = (s/2)/40 = s/80. Nửa sau: t2 = (s/2)/60 = s/120. Tổng thời gian t = s*(1/80 + 1/120) = s*(5/240) = s/48. Tốc độ trung bình v_tb = s / t = 48 km/h (trung bình điều hòa: 2*v1*v2/(v1+v2) = 2*40*60/100 = 48 km/h).",
+    "category": "Động học chất điểm"
+  },
+  {
+    "id": 16,
+    "question": "Trong mặt phẳng tọa độ Oxy, chất điểm chuyển động với vận tốc vx = 6t (m/s) và vy = 8 (m/s). Tại thời điểm t = 0 vật ở gốc tọa độ O. Phương trình quỹ đạo của chất điểm là:",
+    "options": [
+      "y = 8x",
+      "x = 3*(y/8)^2 = (3/64)*y^2 (parabol)",
+      "x^2 + y^2 = 64",
+      "y = 6x^2 + 8"
+    ],
+    "answer": 1,
+    "explanation": "Tích phân: x(t) = integral(6t dt) = 3t^2; y(t) = integral(8 dt) = 8t (do x(0)=0, y(0)=0). Từ y = 8t => t = y/8. Thay vào x: x = 3*(y/8)^2 = 3/64 * y^2. Quỹ đạo là một đường parabol.",
+    "category": "Động học chất điểm"
+  },
+  {
+    "id": 17,
+    "question": "Vectơ gia tốc tức thời a của chất điểm được định nghĩa bằng biểu thức vi phân nào?",
+    "options": [
+      "a = dv / dt = d^2r / dt^2",
+      "a = v / t",
+      "a = dr / dt",
+      "a = integral(v dt)"
+    ],
+    "answer": 0,
+    "explanation": "Gia tốc tức thời là đạo hàm bậc nhất của vectơ vận tốc theo thời gian, tương đương đạo hàm bậc hai của vectơ vị trí theo thời gian: a = dv/dt = d^2r/dt^2.",
+    "category": "Động học chất điểm"
+  },
+  {
+    "id": 18,
+    "question": "Trong hệ tọa độ tự nhiên (hệ tọa độ Frenet), vectơ gia tốc toàn phần a được phân tích thành:",
+    "options": [
+      "a = ax.i + ay.j",
+      "a = a_t.τ + a_n.n (vectơ gia tốc tiếp tuyến và vectơ gia tốc pháp tuyến)",
+      "a = a_r.e_r + a_θ.e_θ",
+      "a = a_x + a_y + a_z"
+    ],
+    "answer": 1,
+    "explanation": "Trong hệ tọa độ tự nhiên dọc theo quỹ đạo cong, a = a_t.τ + a_n.n, trong đó τ là vectơ đơn vị tiếp tuyến, n là vectơ đơn vị pháp tuyến chính hướng về tâm cong của quỹ đạo.",
+    "category": "Động học chất điểm"
+  },
+  {
+    "id": 19,
+    "question": "Gia tốc tiếp tuyến a_t đặc trưng cho điều gì trong chuyển động của chất điểm?",
+    "options": [
+      "Sự thay đổi về phương và hướng của vectơ vận tốc",
+      "Sự thay đổi về độ lớn (tốc độ) của vectơ vận tốc",
+      "Sự biến thiên của bán kính cong quỹ đạo",
+      "Sự quay của hệ quy chiếu"
+    ],
+    "answer": 1,
+    "explanation": "Độ lớn gia tốc tiếp tuyến a_t = dv/dt đặc trưng cho tốc độ thay đổi về độ lớn (độ nhanh/chậm) của vectơ vận tốc. Khi a_t = 0, chuyển động có tốc độ không đổi (chuyển động đều).",
+    "category": "Động học chất điểm"
+  },
+  {
+    "id": 20,
+    "question": "Gia tốc pháp tuyến a_n có biểu thức và ý nghĩa vật lý là:",
+    "options": [
+      "a_n = dv/dt, đặc trưng cho sự tăng tốc của vật",
+      "a_n = v^2 / R, đặc trưng cho sự thay đổi về phương hướng của vectơ vận tốc",
+      "a_n = R / v^2, đặc trưng cho sự quay của trục tọa độ",
+      "a_n = v / R, đặc trưng cho độ dời góc"
+    ],
+    "answer": 1,
+    "explanation": "Gia tốc pháp tuyến có độ lớn a_n = v^2 / R (với R là bán kính chính khúc tại điểm đó), luôn vuông góc với tiếp tuyến và hướng về phía lõm (tâm cong) của quỹ đạo, đặc trưng cho sự thay đổi về phương của vận tốc.",
+    "category": "Động học chất điểm"
+  },
+  {
+    "id": 21,
+    "question": "Độ lớn của vectơ gia tốc toàn phần a được tính theo các thành phần tiếp tuyến và pháp tuyến là:",
+    "options": [
+      "a = a_t + a_n",
+      "a = a_t - a_n",
+      "a = sqrt(a_t^2 + a_n^2)",
+      "a = sqrt(a_t * a_n)"
+    ],
+    "answer": 2,
+    "explanation": "Do vectơ gia tốc tiếp tuyến a_t.τ và pháp tuyến a_n.n vuông góc với nhau tại mọi điểm trên quỹ đạo, độ lớn gia tốc toàn phần tuân theo định lý Pythagore: a = sqrt(a_t^2 + a_n^2).",
+    "category": "Động học chất điểm"
+  },
+  {
+    "id": 22,
+    "question": "Khi chất điểm chuyển động cong đều (tốc độ không đổi), gia tốc của chất điểm có đặc điểm gì?",
+    "options": [
+      "a = 0 vì tốc độ không đổi",
+      "a_t = 0, gia tốc toàn phần bằng gia tốc pháp tuyến a = a_n = v^2/R hướng vào tâm cong",
+      "a_n = 0, chỉ có gia tốc tiếp tuyến",
+      "a_t và a_n đều khác 0"
+    ],
+    "answer": 1,
+    "explanation": "Chuyển động cong đều có độ lớn vận tốc không đổi nên a_t = dv/dt = 0. Tuy nhiên phương của vectơ vận tốc luôn thay đổi nên a_n = v^2/R ≠ 0. Khi đó gia tốc toàn phần a = a_n hướng vào tâm cong quỹ đạo.",
+    "category": "Động học chất điểm"
+  },
+  {
+    "id": 23,
+    "question": "Điều kiện để một chuyển động là chuyển động nhanh dần là gì?",
+    "options": [
+      "a_t > 0 (vectơ gia tốc tiếp tuyến cùng chiều với vectơ vận tốc, tức tích vô hướng a.v > 0)",
+      "a_t < 0 (vectơ gia tốc tiếp tuyến ngược chiều vectơ vận tốc)",
+      "a_n > 0",
+      "a = 0"
+    ],
+    "answer": 0,
+    "explanation": "Chuyển động nhanh dần khi độ lớn vận tốc tăng theo thời gian (dv/dt > 0 <=> a_t > 0). Khi đó vectơ gia tốc tiếp tuyến a_t cùng hướng với vectơ vận tốc v, dẫn đến tích vô hướng a.v = a_t*v > 0.",
+    "category": "Động học chất điểm"
+  },
+  {
+    "id": 24,
+    "question": "Nếu chất điểm chuyển động trên đường thẳng thì thành phần gia tốc nào bằng 0?",
+    "options": [
+      "Gia tốc tiếp tuyến a_t = 0",
+      "Gia tốc pháp tuyến a_n = 0 (vì bán kính cong R tiến tới vô cùng)",
+      "Gia tốc toàn phần a = 0",
+      "Không có thành phần nào bằng 0"
+    ],
+    "answer": 1,
+    "explanation": "Đối với đường thẳng, bán kính cong R -> vô cùng, phương của vectơ vận tốc không đổi nên a_n = v^2 / R = 0. Toàn bộ gia tốc nếu có chỉ là gia tốc tiếp tuyến: a = a_t.",
+    "category": "Động học chất điểm"
+  },
+  {
+    "id": 25,
+    "question": "Công thức dùng để xác định bán kính chính khúc (bán kính cong) R của quỹ đạo tại một điểm là:",
+    "options": [
+      "R = a_n / v^2",
+      "R = v^2 / a_n",
+      "R = v / a_t",
+      "R = a_t^2 / a_n"
+    ],
+    "answer": 1,
+    "explanation": "Từ công thức gia tốc pháp tuyến a_n = v^2 / R, suy ra bán kính chính khúc của quỹ đạo tại điểm đang xét là R = v^2 / a_n.",
+    "category": "Động học chất điểm"
+  },
+  {
+    "id": 26,
+    "question": "Một điểm chuyển động trên đường tròn bán kính R = 2 m với gia tốc tiếp tuyến không đổi a_t = 3 m/s^2. Tại thời điểm tốc độ v = 4 m/s, độ lớn gia tốc toàn phần là:",
+    "options": [
+      "a = 5 m/s^2",
+      "a = 8 m/s^2",
+      "a = sqrt(3^2 + 8^2) = sqrt(73) ≈ 8,54 m/s^2",
+      "a = 11 m/s^2"
+    ],
+    "answer": 2,
+    "explanation": "Gia tốc pháp tuyến: a_n = v^2 / R = 4^2 / 2 = 16 / 2 = 8 m/s^2. Gia tốc toàn phần: a = sqrt(a_t^2 + a_n^2) = sqrt(3^2 + 8^2) = sqrt(9 + 64) = sqrt(73) ≈ 8,54 m/s^2.",
+    "category": "Động học chất điểm"
+  },
+  {
+    "id": 27,
+    "question": "Chuyển động thẳng đều là chuyển động có đặc điểm nào sau đây?",
+    "options": [
+      "Quỹ đạo là đường cong và tốc độ thay đổi đều",
+      "Quỹ đạo thẳng, gia tốc vectơ a = 0 (cả a_t = 0 và a_n = 0), vận tốc không đổi theo thời gian v = const",
+      "Gia tốc a = const khác 0",
+      "Vận tốc biến thiên tuần hoàn theo thời gian"
+    ],
+    "answer": 1,
+    "explanation": "Chuyển động thẳng đều có quỹ đạo thẳng (a_n = 0) và tốc độ không đổi (a_t = 0), dẫn đến vectơ gia tốc triệt tiêu a = 0, vận tốc v = const, phương trình tọa độ x = x0 + v*t.",
+    "category": "Động học chất điểm"
+  },
+  {
+    "id": 28,
+    "question": "Phương trình vận tốc và tọa độ của chuyển động thẳng biến đổi đều với gia tốc a = const là:",
+    "options": [
+      "v = v0 + at và x = x0 + v0.t + 0.5.a.t^2",
+      "v = v0 + a.t^2 và x = x0 + v0.t",
+      "v = a.t và x = a.t^2",
+      "v = v0 - at và x = v0.t - a.t^2"
+    ],
+    "answer": 0,
+    "explanation": "Tích phân phương trình gia tốc a = dv/dt = const cho v(t) = v0 + at. Tích phân tiếp v = dx/dt cho phương trình tọa độ x(t) = x0 + v0.t + (1/2)at^2.",
+    "category": "Động học chất điểm"
+  },
+  {
+    "id": 29,
+    "question": "Công thức liên hệ giữa vận tốc, gia tốc và độ dời (công thức độc lập thời gian) trong chuyển động thẳng biến đổi đều là:",
+    "options": [
+      "v^2 - v0^2 = 2.a.Δx",
+      "v - v0 = 2.a.Δx",
+      "v^2 + v0^2 = 2.a.Δx",
+      "v^2 - v0^2 = a.Δx / 2"
+    ],
+    "answer": 0,
+    "explanation": "Khử biến thời gian t = (v - v0)/a từ phương trình quãng đường/độ dời, ta thu được hệ thức độc lập thời gian nổi tiếng: v^2 - v0^2 = 2.a.Δx (hoặc 2.a.s).",
+    "category": "Động học chất điểm"
+  },
+  {
+    "id": 30,
+    "question": "Đồ thị vận tốc theo thời gian v(t) của chuyển động thẳng biến đổi đều có dạng là:",
+    "options": [
+      "Một đường cong parabol đi qua gốc tọa độ",
+      "Một đường thẳng xiên có hệ số góc (độ dốc) bằng gia tốc a",
+      "Một đường hyperbol",
+      "Một đường thẳng song song với trục thời gian Ot"
+    ],
+    "answer": 1,
+    "explanation": "Phương trình vận tốc v = v0 + at là hàm bậc nhất theo t, biểu diễn trên đồ thị v-t là một đường thẳng xiên, hệ số góc tanα = dv/dt = a.",
+    "category": "Động học chất điểm"
+  },
+  {
+    "id": 31,
+    "question": "Sự rơi tự do là sự chuyển động của một vật thể:",
+    "options": [
+      "Dưới tác dụng của trọng lực và lực cản không khí",
+      "Chỉ chịu tác dụng duy nhất của trọng lực trong không gian không có lực cản",
+      "Có vận tốc ban đầu hướng thẳng đứng xuống dưới",
+      "Có gia tốc thay đổi liên tục theo thời gian"
+    ],
+    "answer": 1,
+    "explanation": "Theo định nghĩa vật lý, sự rơi tự do là sự chuyển động của một vật chỉ chịu tác dụng duy nhất của trọng lực (bỏ qua mọi sức cản môi trường).",
+    "category": "Động học chất điểm"
+  },
+  {
+    "id": 32,
+    "question": "Một vật rơi tự do không vận tốc đầu từ độ cao h. Vận tốc chạm đất của vật được tính bằng công thức:",
+    "options": [
+      "v = g.h",
+      "v = sqrt(2gh)",
+      "v = 2g.h",
+      "v = sqrt(gh / 2)"
+    ],
+    "answer": 1,
+    "explanation": "Áp dụng công thức v^2 - v0^2 = 2gh với v0 = 0, ta có v^2 = 2gh => v = sqrt(2gh).",
+    "category": "Động học chất điểm"
+  },
+  {
+    "id": 33,
+    "question": "Thời gian rơi tự do từ độ cao h (không vận tốc đầu, gia tốc trọng trường g) được tính bằng:",
+    "options": [
+      "t = sqrt(2h / g)",
+      "t = 2h / g",
+      "t = sqrt(h / g)",
+      "t = h / (2g)"
+    ],
+    "answer": 0,
+    "explanation": "Từ phương trình quãng đường rơi tự do h = (1/2)gt^2, suy ra thời gian rơi t = sqrt(2h / g).",
+    "category": "Động học chất điểm"
+  },
+  {
+    "id": 34,
+    "question": "Một vật rơi tự do từ độ cao 45 m tại nơi có g = 10 m/s^2. Quãng đường vật rơi được trong giây cuối cùng trước khi chạm đất là:",
+    "options": [
+      "15 m",
+      "25 m",
+      "35 m",
+      "20 m"
+    ],
+    "answer": 1,
+    "explanation": "Tổng thời gian rơi t = sqrt(2*45/10) = sqrt(9) = 3 s. Quãng đường rơi trong 2 giây đầu: s2 = (1/2)*10*2^2 = 20 m. Quãng đường rơi trong giây cuối cùng (giây thứ 3): Δs = s3 - s2 = 45 - 20 = 25 m.",
+    "category": "Động học chất điểm"
+  },
+  {
+    "id": 35,
+    "question": "Trong khảo sát chuyển động ném xiên bỏ qua sức cản không khí, chuyển động thành phần theo phương ngang Ox là:",
+    "options": [
+      "Chuyển động thẳng đều với gia tốc ax = 0 và vận tốc vx = v0.cosα = const",
+      "Chuyển động thẳng biến đổi đều với gia tốc ax = g",
+      "Chuyển động tròn đều bán kính v0",
+      "Chuyển động chậm dần đều"
+    ],
+    "answer": 0,
+    "explanation": "Bỏ qua sức cản không khí, trọng lực chỉ tác dụng theo phương thẳng đứng. Do đó theo phương ngang Ox, không có lực tác dụng nên ax = 0 => vx = v0.cosα = const, chuyển động thành phần theo phương Ox là chuyển động thẳng đều.",
+    "category": "Động học chất điểm"
+  },
+  {
+    "id": 36,
+    "question": "Chuyển động thành phần theo phương thẳng đứng Oy (hướng lên) của một vật được ném xiên góc α với vận tốc ban đầu v0 là:",
+    "options": [
+      "Chuyển động thẳng đều với vy = v0.sinα",
+      "Chuyển động thẳng biến đổi đều với gia tốc ay = -g và vận tốc vy = v0.sinα - gt",
+      "Chuyển động nhanh dần đều với gia tốc ay = g",
+      "Dao động điều hòa quanh gốc tọa độ"
+    ],
+    "answer": 1,
+    "explanation": "Trọng lực hướng thẳng đứng xuống dưới, ngược chiều trục Oy chọn hướng lên, nên ay = -g = const. Vận tốc vy = v0.sinα - gt và tọa độ y = (v0.sinα)t - 0.5.g.t^2.",
+    "category": "Động học chất điểm"
+  },
+  {
+    "id": 37,
+    "question": "Phương trình quỹ đạo của vật ném xiên trong hệ tọa độ Oxy (gốc tại điểm ném) có dạng:",
+    "options": [
+      "y = x.tanα - [g / (2.v0^2.cos^2α)].x^2 (dạng đường cong Parabol)",
+      "y = x.cotα + (g / 2v0^2).x^2",
+      "x^2 + y^2 = v0^2",
+      "y = x.tanα - g.x / (2.v0)"
+    ],
+    "answer": 0,
+    "explanation": "Khử t = x / (v0.cosα) từ phương trình y = (v0.sinα)t - (1/2)gt^2 ta được y = x.tanα - [g / (2v0^2.cos^2α)].x^2. Đây là hàm bậc hai theo x, quỹ đạo là một nhánh parabol bề lõm quay xuống.",
+    "category": "Động học chất điểm"
+  },
+  {
+    "id": 38,
+    "question": "Tại điểm cao nhất của quỹ đạo trong chuyển động ném xiên, vận tốc của vật có giá trị bằng:",
+    "options": [
+      "0",
+      "v = vx = v0.cosα",
+      "v = vy = v0.sinα",
+      "v = v0"
+    ],
+    "answer": 1,
+    "explanation": "Tại đỉnh quỹ đạo cao nhất, thành phần vận tốc theo phương đứng vy = 0, nhưng thành phần theo phương ngang vx = v0.cosα vẫn được duy trì, do đó vận tốc toàn phần v = sqrt(vx^2 + vy^2) = v0.cosα ≠ 0.",
+    "category": "Động học chất điểm"
+  },
+  {
+    "id": 39,
+    "question": "Độ cao cực đại H (tầm cao) mà vật ném xiên đạt được được xác định bởi công thức:",
+    "options": [
+      "H = (v0^2.sin^2α) / (2g)",
+      "H = (v0^2.sin2α) / g",
+      "H = (v0.sinα) / g",
+      "H = v0^2 / (2g)"
+    ],
+    "answer": 0,
+    "explanation": "Khi lên đến đỉnh cao nhất, vy = 0 <=> v0.sinα - gt_h = 0 => t_h = (v0.sinα)/g. Thay vào y: H = (v0.sinα)^2 / (2g) = (v0^2.sin^2α) / (2g).",
+    "category": "Động học chất điểm"
+  },
+  {
+    "id": 40,
+    "question": "Tầm xa L (khoảng cách trên mặt đất từ điểm ném đến điểm rơi) của vật ném xiên được tính bằng:",
+    "options": [
+      "L = (v0^2.sin2α) / g",
+      "L = (v0^2.cos2α) / g",
+      "L = (v0^2.sin^2α) / g",
+      "L = (2.v0^2.cosα) / g"
+    ],
+    "answer": 0,
+    "explanation": "Thời gian bay tổng cộng khi vật chạm đất (y = 0) là T = 2*(v0.sinα)/g. Tầm xa L = vx * T = (v0.cosα) * [2v0.sinα / g] = (v0^2.sin2α) / g.",
+    "category": "Động học chất điểm"
+  },
+  {
+    "id": 41,
+    "question": "Với một vận tốc ban đầu v0 xác định, góc ném α bằng bao nhiêu thì tầm ném xa L đạt giá trị lớn nhất?",
+    "options": [
+      "α = 30°",
+      "α = 45°",
+      "α = 60°",
+      "α = 90°"
+    ],
+    "answer": 1,
+    "explanation": "Tầm xa L = (v0^2.sin2α)/g đạt cực đại khi sin(2α) = 1 <=> 2α = 90° <=> α = 45°. Khi đó tầm xa cực đại L_max = v0^2 / g.",
+    "category": "Động học chất điểm"
+  },
+  {
+    "id": 42,
+    "question": "Một vật được ném ngang từ độ cao h = 20 m với tốc độ đầu v0 = 15 m/s. Lấy g = 10 m/s^2. Tầm bay xa của vật khi chạm đất là:",
+    "options": [
+      "20 m",
+      "30 m",
+      "45 m",
+      "15 m"
+    ],
+    "answer": 1,
+    "explanation": "Thời gian rơi của ném ngang bằng thời gian rơi tự do từ cùng độ cao: t = sqrt(2h / g) = sqrt(2*20 / 10) = 2 s. Tầm xa L = v0 * t = 15 * 2 = 30 m.",
+    "category": "Động học chất điểm"
+  },
+  {
+    "id": 43,
+    "question": "Vận tốc góc ω và gia tốc góc β trong chuyển động tròn được định nghĩa theo biểu thức vi phân là:",
+    "options": [
+      "ω = dθ/dt và β = dω/dt = d^2θ/dt^2",
+      "ω = θ / t và β = ω / t",
+      "ω = ds/dt và β = dv/dt",
+      "ω = d^2θ/dt^2 và β = dθ/dt"
+    ],
+    "answer": 0,
+    "explanation": "Vận tốc góc là đạo hàm bậc nhất của tọa độ góc theo thời gian ω = dθ/dt (rad/s). Gia tốc góc là đạo hàm bậc nhất của vận tốc góc theo thời gian β = dω/dt = d^2θ/dt^2 (rad/s^2).",
+    "category": "Động học chất điểm"
+  },
+  {
+    "id": 44,
+    "question": "Vectơ vận tốc góc ω trong chuyển động tròn có phương và chiều như thế nào?",
+    "options": [
+      "Tiếp tuyến với quỹ đạo tròn và cùng chiều chuyển động",
+      "Nằm trên trục quay vuông góc với mặt phẳng quỹ đạo tròn, chiều xác định theo quy tắc vặn nút chai (bàn tay phải)",
+      "Hướng vào tâm của quỹ đạo tròn",
+      "Hướng ra xa trục quay"
+    ],
+    "answer": 1,
+    "explanation": "Vectơ vận tốc góc ω là một vectơ giả (axial vector) nằm trên trục quay vuông góc với mặt phẳng quỹ đạo tròn. Chiều của ω tuân theo quy tắc vặn nút chai: nhìn theo chiều chuyển động quay, tiến theo chiều tiến của đinh ốc.",
+    "category": "Động học chất điểm"
+  },
+  {
+    "id": 45,
+    "question": "Vectơ gia tốc góc β có mối quan hệ về phương và chiều với vectơ vận tốc góc ω như thế nào?",
+    "options": [
+      "Luôn vuông góc với vectơ vận tốc góc ω",
+      "Cùng phương với ω; cùng chiều với ω khi quay nhanh dần (β > 0) và ngược chiều với ω khi quay chậm dần (β < 0)",
+      "Luôn luôn ngược chiều với ω trong mọi trường hợp",
+      "Hướng tiếp tuyến với đường tròn"
+    ],
+    "answer": 1,
+    "explanation": "Vectơ gia tốc góc β = dω/dt nằm trên trục quay, cùng phương với ω. Khi quay nhanh dần, độ lớn ω tăng nên β cùng chiều ω. Khi quay chậm dần, độ lớn ω giảm nên β ngược chiều ω.",
+    "category": "Động học chất điểm"
+  },
+  {
+    "id": 46,
+    "question": "Hệ thức liên hệ giữa các đại lượng dài (v, a_t, a_n) và các đại lượng góc (ω, β) trong chuyển động tròn bán kính R là:",
+    "options": [
+      "v = ω.R; a_t = β.R; a_n = ω^2.R = v^2 / R",
+      "v = ω / R; a_t = β / R; a_n = ω.R",
+      "v = β.R; a_t = ω.R; a_n = β^2.R",
+      "v = ω.R^2; a_t = β.R^2; a_n = ω^2 / R"
+    ],
+    "answer": 0,
+    "explanation": "Hệ thức chuẩn giữa đại lượng dài và góc: quãng đường s = R.θ, tốc độ dài v = ω.R, gia tốc tiếp tuyến a_t = β.R, gia tốc pháp tuyến a_n = ω^2.R = v^2/R. Dưới dạng vectơ: v = ω x r; a_t = β x r; a_n = ω x v.",
+    "category": "Động học chất điểm"
+  },
+  {
+    "id": 47,
+    "question": "Phương trình góc quay và vận tốc góc trong chuyển động tròn biến đổi đều (gia tốc góc β = const) là:",
+    "options": [
+      "ω = ω0 + β.t và θ = θ0 + ω0.t + 0.5.β.t^2",
+      "ω = ω0 + β.t^2 và θ = θ0 + ω0.t",
+      "ω = β.t và θ = β.t^2",
+      "ω = ω0 - β.t và θ = ω0.t - β.t^2"
+    ],
+    "answer": 0,
+    "explanation": "Hoàn toàn tương đương với chuyển động thẳng biến đổi đều: tích phân dω/dt = β = const cho ω(t) = ω0 + β.t; tích phân dθ/dt = ω cho θ(t) = θ0 + ω0.t + (1/2)β.t^2. Hệ thức độc lập: ω^2 - ω0^2 = 2β(θ - θ0).",
+    "category": "Động học chất điểm"
+  },
+  {
+    "id": 48,
+    "question": "Chu kỳ T và tần số f của chất điểm chuyển động tròn đều với tốc độ góc ω liên hệ với nhau theo công thức:",
+    "options": [
+      "T = 2π / ω; f = 1 / T = ω / (2π)",
+      "T = ω / (2π); f = 2π / ω",
+      "T = 2π.ω; f = 1 / (2π.ω)",
+      "T = π / ω; f = 2 / T"
+    ],
+    "answer": 0,
+    "explanation": "Chu kỳ T là thời gian quay hết một vòng (2π rad): T = 2π / ω (giây). Tần số f là số vòng quay trong 1 giây: f = 1 / T = ω / (2π) (Hertz hoặc vòng/s).",
+    "category": "Động học chất điểm"
+  },
+  {
+    "id": 49,
+    "question": "Bán kính chính khúc R tại đỉnh của quỹ đạo ném xiên (góc ném α, vận tốc ban đầu v0) bằng:",
+    "options": [
+      "R = (v0^2.cos^2α) / g",
+      "R = (v0^2.sin^2α) / g",
+      "R = v0^2 / g",
+      "R = (v0^2.cosα) / (2g)"
+    ],
+    "answer": 0,
+    "explanation": "Tại đỉnh quỹ đạo ném xiên: vận tốc chỉ còn thành phần nằm ngang v = vx = v0.cosα. Gia tốc của vật là trọng lực g thẳng đứng hướng xuống, vuông góc với vận tốc nên đóng vai trò là gia tốc pháp tuyến: a_n = g. Do đó R = v^2 / a_n = (v0.cosα)^2 / g = (v0^2.cos^2α) / g.",
+    "category": "Động học chất điểm"
+  },
+  {
+    "id": 50,
+    "question": "Bài toán nghịch của động học chất điểm là bài toán giải quyết vấn đề gì?",
+    "options": [
+      "Biết phương trình chuyển động r(t), tìm vận tốc và gia tốc bằng phép tính đạo hàm",
+      "Biết gia tốc a(t) và điều kiện ban đầu (vị trí r0, vận tốc v0), tìm vận tốc và phương trình chuyển động bằng phép tính tích phân",
+      "Xác định các lực tác dụng lên vật dựa trên định luật II Newton",
+      "Tìm năng lượng cơ học của hệ chất điểm"
+    ],
+    "answer": 1,
+    "explanation": "Bài toán thuận là biết quy luật chuyển động r(t) đi tìm v(t) và a(t) bằng phép vi phân (đạo hàm). Bài toán nghịch là biết quy luật gia tốc a(t) cùng các điều kiện ban đầu tại t=0 để tìm lại vận tốc v(t) và quỹ đạo r(t) bằng phép tích phân.",
+    "category": "Động học chất điểm"
+  }
+]

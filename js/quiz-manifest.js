@@ -56,6 +56,48 @@ window.QUIZ_MANIFEST = [
     "description": "50 câu hỏi"
   },
   {
+    "file": "quiz/dsa_quiz_5_sets_full_topics_50_each/dsa_quiz_full_topics_coverage_report.json",
+    "name": "Dsa Quiz Full Topics Coverage Report · DSA · 5 câu",
+    "displayName": "Dsa Quiz Full Topics Coverage Report · DSA · 5 câu",
+    "category": "DSA · 5 câu",
+    "description": "5 câu hỏi"
+  },
+  {
+    "file": "quiz/dsa_quiz_5_sets_full_topics_50_each/dsa_quiz_full_topics_set_1.json",
+    "name": "Dsa Quiz Full Topics Set 1 · DSA · 50 câu",
+    "displayName": "Dsa Quiz Full Topics Set 1 · DSA · 50 câu",
+    "category": "DSA · 50 câu",
+    "description": "50 câu hỏi"
+  },
+  {
+    "file": "quiz/dsa_quiz_5_sets_full_topics_50_each/dsa_quiz_full_topics_set_2.json",
+    "name": "Dsa Quiz Full Topics Set 2 · DSA · 50 câu",
+    "displayName": "Dsa Quiz Full Topics Set 2 · DSA · 50 câu",
+    "category": "DSA · 50 câu",
+    "description": "50 câu hỏi"
+  },
+  {
+    "file": "quiz/dsa_quiz_5_sets_full_topics_50_each/dsa_quiz_full_topics_set_3.json",
+    "name": "Dsa Quiz Full Topics Set 3 · DSA · 50 câu",
+    "displayName": "Dsa Quiz Full Topics Set 3 · DSA · 50 câu",
+    "category": "DSA · 50 câu",
+    "description": "50 câu hỏi"
+  },
+  {
+    "file": "quiz/dsa_quiz_5_sets_full_topics_50_each/dsa_quiz_full_topics_set_4.json",
+    "name": "Dsa Quiz Full Topics Set 4 · DSA · 50 câu",
+    "displayName": "Dsa Quiz Full Topics Set 4 · DSA · 50 câu",
+    "category": "DSA · 50 câu",
+    "description": "50 câu hỏi"
+  },
+  {
+    "file": "quiz/dsa_quiz_5_sets_full_topics_50_each/dsa_quiz_full_topics_set_5.json",
+    "name": "Dsa Quiz Full Topics Set 5 · DSA · 50 câu",
+    "displayName": "Dsa Quiz Full Topics Set 5 · DSA · 50 câu",
+    "category": "DSA · 50 câu",
+    "description": "50 câu hỏi"
+  },
+  {
     "file": "quiz/dsa_quiz_5_sets_separated/dsa_quiz_set_1.json",
     "name": "C++ Review and Algorithm Analysis · DSA · 20 câu",
     "displayName": "C++ Review and Algorithm Analysis · DSA · 20 câu",
@@ -148,30 +190,51 @@ window.QUIZ_MANIFEST = [
   },
   {
     "file": "quiz/test/graph-hash.json",
-    "name": "Graph Hash · Test",
-    "displayName": "Graph Hash · Test",
+    "name": "Graph Hash",
+    "displayName": "Graph Hash",
     "category": "Test",
     "description": "90 câu hỏi"
   },
   {
     "file": "quiz/test/test1.json",
-    "name": "Test 1 · C/C++ Review",
-    "displayName": "Test 1 · C/C++ Review",
+    "name": "Test1",
+    "displayName": "Test1",
     "category": "Test",
     "description": "90 câu hỏi"
   },
   {
     "file": "quiz/test/test2.json",
-    "name": "Test 2 · C/C++ Review",
-    "displayName": "Test 2 · C/C++ Review",
+    "name": "Test2",
+    "displayName": "Test2",
     "category": "Test",
     "description": "90 câu hỏi"
   },
   {
     "file": "quiz/test/test3.json",
-    "name": "Test 3 · C/C++ Review",
-    "displayName": "Test 3 · C/C++ Review",
+    "name": "Test3",
+    "displayName": "Test3",
     "category": "Test",
     "description": "90 câu hỏi"
+  },
+  {
+    "file": "quiz/vật lý đại cương/chapter1-dong-hoc-chat-diem.json",
+    "name": "Chương 1: Động Học Chất Điểm",
+    "displayName": "Chương 1: Động Học Chất Điểm",
+    "category": "Vật Lý Đại Cương",
+    "description": "50 câu hỏi"
+  },
+  {
+    "file": "quiz/vật lý đại cương/chapter2-dong-luc-hoc-chat-diem.json",
+    "name": "Chương 2: Động Lực Học Chất Điểm",
+    "displayName": "Chương 2: Động Lực Học Chất Điểm",
+    "category": "Vật Lý Đại Cương",
+    "description": "50 câu hỏi"
+  },
+  {
+    "file": "quiz/vật lý đại cương/chapter3-dong-luc-hoc-vat-ran.json",
+    "name": "Chương 3: Động Lực Học Vật Rắn",
+    "displayName": "Chương 3: Động Lực Học Vật Rắn",
+    "category": "Vật Lý Đại Cương",
+    "description": "50 câu hỏi"
   }
 ];
